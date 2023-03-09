@@ -4,42 +4,275 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./css/blur-effect.css">
-  <link rel="stylesheet" href="./css/grain-effect.css">
-  <link rel="stylesheet" href="./css/graphic-section.css">
-  <link rel="stylesheet" href="./css/vibrate.css">
-  <link rel="stylesheet" href="./css/how-we-are-different.css">
-  <title>How we are different</title>
-  <script src="./js/howWeAreDifferent.js" type="module"></script>
+  <title>Simple form</title>
+  <link rel="stylesheet" href="./font/helvetica-now/helvetica-now.css">
+  <link rel="stylesheet" href="./css/boilerplate.css">
+  <link rel="stylesheet" href="./css/simple-form.css">
+  <script src="./js/validateForm.js" defer></script>
 </head>
 <body>
-  <section class="how-we-are-different graphic-section" data-how-we-are-different-section>
-    <div class="how-we-are-different__wrapper graphic-section__wrapper grain-effect blur-effect">
-      <div class="how-we-are-different__bg" data-hwad-bg>
-        <img src="./images/hwad-bg.png" alt="An illustration of an old soaked piece of paper">
-      </div>
-      <div class="how-we-are-different__highlights" data-hwad-highlights-container>
-        <div class="how-we-are-different__highlights-highlight how-we-are-different__highlights-highlight--left">
-          <img src="./images/hwad-highlight.png" class="how-we-are-different__highlights-highlight-image" alt="A highlight that goes around 'honestly priced' illustration">
-        </div>
-        <div class="how-we-are-different__highlights-highlight how-we-are-different__highlights-highlight--center">
-          <img src="./images/hwad-highlight.png" class="how-we-are-different__highlights-highlight-image" alt="A highlight that goes around 'made with love' illustration">
-        </div>
-        <div class="how-we-are-different__highlights-highlight how-we-are-different__highlights-highlight--right">
-          <img src="./images/hwad-highlight.png" class="how-we-are-different__highlights-highlight-image" alt="A highlight that goes around 'developed by dentist' illustration">
-        </div>
-      </div>
-      <div class="how-we-are-different__drawn-differences" data-hwad-drawn-differences>
-        <img src="./images/hwad-drawn-differences.png" alt="An illustration of our advantages over others(honestly priced, developed by dentist, made with love)">
-      </div>
-      <div class="how-we-are-different__written-differences" data-hwad-written-differences>
-        <img src="./images/hwad-written-differences.png" alt="Honestly priced, developed by dentist, made with love captions">
-      </div>
-      <div class="how-we-are-different__title-flag" data-hwad-title-flag>
-        <img src="./images/hwad-title-flag.png" alt="A flag that is located under the 'how we are different' lottie title of the section">
-      </div>
-      <div class="how-we-are-different__lottie" data-hwad-lottie-container></div>
+  <h1>Simple form</h1>
+  <form class="simple-form" action="" data-simple-form-1>
+    <div class="simple-form__row">
+      <fieldset class="simple-form__form-group">
+        <label class="simple-form__label" for="first-name-field">First name:</label>
+        <input type="text" class="simple-form__input simple-form__input--text" id="first-name-field" name="first-name">
+      </fieldset>
+      <fieldset class="simple-form__form-group">
+        <label class="simple-form__label" for="last-name-field">Last name:</label>
+        <input type="text" class="simple-form__input simple-form__input--text" id="last-name-field" name="last-name">
+      </fieldset>
     </div>
-  </section>
+    <div class="simple-form__row">
+      <fieldset class="simple-form__form-group">
+        <label class="simple-form__label" for="email-field">Email:</label>
+        <input type="email" class="simple-form__input simple-form__input--email" id="email-field" name="email">
+      </fieldset>
+      <fieldset class="simple-form__form-group">
+        <label class="simple-form__label" for="mobile-phone-field">Mobile phone:</label>
+        <input type="tel" class="simple-form__input simple-form__input--phone" id="mobile-phone-field" name="mobile-phone">
+      </fieldset>
+    </div>
+    <div class="simple-form__row">
+      <fieldset class="simple-form__form-group simple-form__form-group--yes-no-question">
+        <div class="simple-form__question">Are you part of a DSO?</div>
+        <div class="simple-form__radio-option">
+          <input type="radio" class="simple-form__input simple-form__input--radio" id="DSO-option-yes" name="DSO-option" value="DSO-option-yes">
+          <label class="simple-form__label simple-form__label--radio" for="DSO-option-yes">Yes</label>
+        </div>
+        <div class="simple-form__radio-option">
+          <input type="radio" class="simple-form__input simple-form__input--radio" id="DSO-option-no" name="DSO-option" value="DSO-option-no">
+          <label class="simple-form__label simple-form__label--radio" for="DSO-option-no">No</label>
+        </div>
+      </fieldset>
+    </div>
+    <hr class="simple-form__separator">
+    <div class="simple-form__row">
+      <h2 class="simple-form__sub-heading">Social Media! (Share and we'll follow you!)</h2>
+    </div>
+    <div class="simple-form__row">
+      <fieldset class="simple-form__form-group">
+        <label class="simple-form__label" for="office-instagram-field">Office Instagram:</label>
+        <input type="text" class="simple-form__input simple-form__input--text" id="office-instagram-field" name="office-instagram">
+      </fieldset>
+      <fieldset class="simple-form__form-group">
+        <label class="simple-form__label" for="office-twitter-field">Office Twitter:</label>
+        <input type="text" class="simple-form__input simple-form__input--text" id="office-twitter-field" name="office-twitter">
+      </fieldset>
+    </div>
+    <div class="simple-form__row">
+      <fieldset class="simple-form__form-group">
+        <label class="simple-form__label" for="office-fecebook-field">Office Facebook:</label>
+        <input type="text" class="simple-form__input simple-form__input--text" id="office-fecebook-field" name="office-fecebook">
+      </fieldset>
+      <fieldset class="simple-form__form-group">
+        <label class="simple-form__label" for="office-tiktok-field">Office TikTok:</label>
+        <input type="text" class="simple-form__input simple-form__input--text" id="office-tiktok-field" name="office-tiktok">
+      </fieldset>
+    </div>
+    <hr class="simple-form__separator">
+    <div class="simple-form__row">
+      <h2 class="simple-form__sub-heading">Let's get you your samples!</h2>
+    </div>
+    <div class="simple-form__row">
+      <fieldset class="simple-form__form-group simple-form__form-group--line-dropdown">
+        <label for="samples-type" class="simple-form__question simple-form__question--dropdown">Type of samples:</label>
+        <select class="simple-form__input simple-form__input--dropdown" name="samples-type" id="samples-type">
+          <option value="fluoride-varnish-cups">Fluoride varnish cups</option>
+          <option value="fluoride-varnish-sticks">Fluoride varnish sticks</option>
+          <option value="prophy-paste">Prophy paste</option>
+          <option value="prophy-paste-and-fluoride-varnish">Prophy paste and fluoride varnish</option>
+        </select>
+      </fieldset>
+    </div>
+    <div class="simple-form__row">
+      <fieldset class="simple-form__form-group simple-form__form-group--line-dropdown">
+        <label id="where-heard-for-wonderful" class="simple-form__question simple-form__question--dropdown">Where did you find out about wonderful?</label>
+        <select class="simple-form__input simple-form__input--dropdown" name="where-heard-for-wonderful" id="where-heard-for-wonderful" data-where-heard-for-wonderful-select>
+          <option value="word-of-mouth">Word of mouth</option>
+          <option value="facebook-post">Facebook post</option>
+          <option value="instagram-post">Instagram post</option>
+          <option value="google-search">Google search</option>
+          <option value="facebook-ad">Facebook ad</option>
+          <option value="instagram-ad">Instagram ad</option>
+          <option value="received-email">Received an email</option>
+          <option value="other">Other</option>
+        </select>
+      </fieldset>
+    </div>
+    <div class="simple-form__row simple-form__row--additional-field hidden" data-where-heard-for-wonderful-additional-field>
+      <label class="simple-form__label simple-form__label--additional-field" for="where-heard-for-wonderful-other">Please describe:</label>
+      <input type="text" class="simple-form__input simple-form__input--text simple-form__input--additional-field" id="where-heard-for-wonderful-other" name="where-heard-for-wonderful-other">
+    </div>
+    <div class="simple-form__row">
+      <fieldset class="simple-form__form-group">
+        <div class="simple-form__question">Which brands do you use?</div>
+        <div class="simple-form__options">
+          <div class="simple-form__options-set">
+            <div class="simple-form__options-set-title">Prophy Paste</div>
+            <div class="simple-form__options-grid">
+              <fieldset class="simple-form__form-group simple-form__form-group--checkbox">
+                <input type="checkbox" class="simple-form__input simple-form__input--checkbox" id="option-prophy-nupro" name="option-prophy-nupro" value="option-prophy-nupro">
+                <label class="simple-form__label simple-form__label--checkbox" for="option-prophy-nupro">nupro</label>
+              </fieldset>
+              <fieldset class="simple-form__form-group simple-form__form-group--checkbox">
+                <input type="checkbox" class="simple-form__input simple-form__input--checkbox" id="option-next" name="option-next" value="option-next">
+                <label class="simple-form__label simple-form__label--checkbox" for="option-next">next</label>
+              </fieldset>
+              <fieldset class="simple-form__form-group simple-form__form-group--checkbox">
+                <input type="checkbox" class="simple-form__input simple-form__input--checkbox" id="option-zooby" name="option-zooby" value="option-zooby">
+                <label class="simple-form__label simple-form__label--checkbox" for="option-zooby">zooby</label>
+              </fieldset>
+              <fieldset class="simple-form__form-group simple-form__form-group--checkbox">
+                <input type="checkbox" class="simple-form__input simple-form__input--checkbox" id="option-schein" name="option-schein" value="option-schein">
+                <label class="simple-form__label simple-form__label--checkbox" for="option-schein">schein</label>
+              </fieldset>
+              <fieldset class="simple-form__form-group simple-form__form-group--checkbox">
+                <input type="checkbox" class="simple-form__input simple-form__input--checkbox" id="option-benco" name="option-benco" value="option-benco">
+                <label class="simple-form__label simple-form__label--checkbox" for="option-benco">benco</label>
+              </fieldset>
+              <fieldset class="simple-form__form-group simple-form__form-group--checkbox">
+                <input type="checkbox" class="simple-form__input simple-form__input--checkbox" id="option-d-lish" name="option-d-lish" value="option-d-lish">
+                <label class="simple-form__label simple-form__label--checkbox" for="option-d-lish">d-lish</label>
+              </fieldset>
+              <fieldset class="simple-form__form-group simple-form__form-group--checkbox">
+                <input type="checkbox" class="simple-form__input simple-form__input--checkbox" id="option-young" name="option-young" value="option-young">
+                <label class="simple-form__label simple-form__label--checkbox" for="option-young">young</label>
+              </fieldset>
+              <fieldset class="simple-form__form-group simple-form__form-group--checkbox">
+                <input type="checkbox" class="simple-form__input simple-form__input--checkbox" id="which-brands-prophy-other" name="which-brands-prophy-other" value="which-brands-prophy-other" data-which-brands-prophy-other>
+                <label class="simple-form__label simple-form__label--checkbox" for="which-brands-prophy-other">other</label>
+                <input type="text" class="simple-form__input simple-form__input--text simple-form__input--additional-field simple-form__input--additional-field--checkbox hidden" id="which-brands-prophy-other-textbox" name="which-brands-prophy-other-textbox">
+              </fieldset>
+            </div>
+          </div>
+          <div class="simple-form__options-set">
+            <div class="simple-form__options-set-title">Fluoride Varnish</div>
+            <div class="simple-form__options-grid">
+              <fieldset class="simple-form__form-group simple-form__form-group--checkbox">
+                <input type="checkbox" class="simple-form__input simple-form__input--checkbox" id="option-vanish" name="option-vanish" value="option-vanish">
+                <label class="simple-form__label simple-form__label--checkbox" for="option-vanish">vanish</label>
+              </fieldset>
+              <fieldset class="simple-form__form-group simple-form__form-group--checkbox">
+                <input type="checkbox" class="simple-form__input simple-form__input--checkbox" id="option-profluorid" name="option-profluorid" value="option-profluorid">
+                <label class="simple-form__label simple-form__label--checkbox" for="option-profluorid">profluorid</label>
+              </fieldset>
+              <fieldset class="simple-form__form-group simple-form__form-group--checkbox">
+                <input type="checkbox" class="simple-form__input simple-form__input--checkbox" id="option-fluoride-varnish-nupro" name="option-fluoride-varnish-nupro" value="option-fluoride-varnish-nupro">
+                <label class="simple-form__label simple-form__label--checkbox" for="option-fluoride-varnish-nupro">nupro</label>
+              </fieldset>
+              <fieldset class="simple-form__form-group simple-form__form-group--checkbox">
+                <input type="checkbox" class="simple-form__input simple-form__input--checkbox" id="option-kolorz" name="option-kolorz" value="option-kolorz">
+                <label class="simple-form__label simple-form__label--checkbox" for="option-kolorz">kolorz</label>
+              </fieldset>
+              <fieldset class="simple-form__form-group simple-form__form-group--checkbox">
+                <input type="checkbox" class="simple-form__input simple-form__input--checkbox" id="option-fluorodose" name="option-fluorodose" value="option-fluorodose">
+                <label class="simple-form__label simple-form__label--checkbox" for="option-fluorodose">fluorodose</label>
+              </fieldset>
+              <fieldset class="simple-form__form-group simple-form__form-group--checkbox">
+                <input type="checkbox" class="simple-form__input simple-form__input--checkbox" id="option-duraflor" name="option-duraflor" value="option-duraflor">
+                <label class="simple-form__label simple-form__label--checkbox" for="option-duraflor">duraflor</label>
+              </fieldset>
+              <fieldset class="simple-form__form-group simple-form__form-group--checkbox">
+                <input type="checkbox" class="simple-form__input simple-form__input--checkbox" id="option-valla" name="option-valla" value="option-valla">
+                <label class="simple-form__label simple-form__label--checkbox" for="option-valla">valla</label>
+              </fieldset>
+              <fieldset class="simple-form__form-group simple-form__form-group--checkbox">
+                <input type="checkbox" class="simple-form__input simple-form__input--checkbox" id="which-brands-fluoride-varnish-other" name="which-brands-fluoride-varnish-other" value="which-brands-fluoride-varnish-other" data-which-brands-fluoride-varnish-other>
+                <label class="simple-form__label simple-form__label--checkbox" for="which-brands-fluoride-varnish-other">other</label>
+                <input type="text" class="simple-form__input simple-form__input--text simple-form__input--additional-field simple-form__input--additional-field--checkbox hidden" id="which-brands-fluoride-varnish-other-textbox" name="which-brands-fluoride-varnish-other-textbox">
+              </fieldset>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+    <div class="simple-form__row">
+      <fieldset class="simple-form__form-group">
+        <div class="simple-form__question">What do you dislike about your current brand?</div>
+        <div class="simple-form__options">
+          <div class="simple-form__options-set">
+            <div class="simple-form__options-grid simple-form__options-grid--three-column">
+              <fieldset class="simple-form__form-group simple-form__form-group--checkbox">
+                <input type="checkbox" class="simple-form__input simple-form__input--checkbox" id="option-tastes-bad" name="option-tastes-bad" value="option-tastes-bad">
+                <label class="simple-form__label simple-form__label--checkbox" for="option-tastes-bad">tastes bad</label>
+              </fieldset>
+              <fieldset class="simple-form__form-group simple-form__form-group--checkbox">
+                <input type="checkbox" class="simple-form__input simple-form__input--checkbox" id="option-too-expensive" name="option-too-expensive" value="option-too-expensive">
+                <label class="simple-form__label simple-form__label--checkbox" for="option-too-expensive">too expensive</label>
+              </fieldset>
+              <fieldset class="simple-form__form-group simple-form__form-group--checkbox">
+                <input type="checkbox" class="simple-form__input simple-form__input--checkbox" id="option-patients-hate-it" name="option-patients-hate-it" value="option-patients-hate-it">
+                <label class="simple-form__label simple-form__label--checkbox" for="option-patients-hate-it">zooby</label>
+              </fieldset>
+              <fieldset class="simple-form__form-group simple-form__form-group--checkbox">
+                <input type="checkbox" class="simple-form__input simple-form__input--checkbox" id="option-schein" name="option-schein" value="option-schein">
+                <label class="simple-form__label simple-form__label--checkbox" for="option-schein">schein</label>
+              </fieldset>
+              <fieldset class="simple-form__form-group simple-form__form-group--checkbox">
+                <input type="checkbox" class="simple-form__input simple-form__input--checkbox" id="option-low-quality" name="option-low-quality" value="option-low-quality">
+                <label class="simple-form__label simple-form__label--checkbox" for="option-low-quality">low quality</label>
+              </fieldset>
+              <fieldset class="simple-form__form-group simple-form__form-group--checkbox">
+                <input type="checkbox" class="simple-form__input simple-form__input--checkbox" id="option-it-is-just-ok" name="option-it-is-just-ok" value="option-it-is-just-ok">
+                <label class="simple-form__label simple-form__label--checkbox" for="option-it-is-just-ok">it's just ok</label>
+              </fieldset>
+              <fieldset class="simple-form__form-group simple-form__form-group--checkbox">
+                <input type="checkbox" class="simple-form__input simple-form__input--checkbox" id="option-bad-company" name="option-bad-company" value="option-bad-company">
+                <label class="simple-form__label simple-form__label--checkbox" for="option-bad-company">bad company</label>
+              </fieldset>
+              <fieldset class="simple-form__form-group simple-form__form-group--checkbox">
+                <input type="checkbox" class="simple-form__input simple-form__input--checkbox" id="option-not-made-in-usa" name="option-not-made-in-usa" value="option-not-made-in-usa">
+                <label class="simple-form__label simple-form__label--checkbox" for="option-not-made-in-usa">not made in USA</label>
+              </fieldset>
+              <fieldset class="simple-form__form-group simple-form__form-group--checkbox">
+                <input type="checkbox" class="simple-form__input simple-form__input--checkbox" id="option-too-many-additives" name="option-too-many-additives" value="option-too-many-additives">
+                <label class="simple-form__label simple-form__label--checkbox" for="option-too-many-additives">too many additives (Dyes, TiO2, SLS, etc)</label>
+              </fieldset>
+              <fieldset class="simple-form__form-group simple-form__form-group--checkbox">
+                <input type="checkbox" class="simple-form__input simple-form__input--checkbox" id="what-dislike-other" name="what-dislike-other" value="what-dislike-other" data-what-dislike-other-checkbox>
+                <label class="simple-form__label simple-form__label--checkbox" for="what-dislike-other">other</label>
+                <input type="text" class="simple-form__input simple-form__input--text simple-form__input--additional-field simple-form__input--additional-field--checkbox initial-width hidden" id="what-dislike-other-textbox" name="what-dislike-other-textbox">
+              </fieldset>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+    <div class="simple-form__row">
+      <fieldset class="simple-form__form-group simple-form__form-group--block-dropdown">
+        <label id="how-much-for-prophy" class="simple-form__question simple-form__question--dropdown">
+          How much do you pay for your prophy paste? 
+          <br>
+          (eg: 1 Box of 200 cups of Nupro at $80 = $0.40/cup 🤯)
+        </label>
+        <select class="simple-form__input simple-form__input--dropdown ml-4" name="how-much-for-prophy" id="how-much-for-prophy">
+          <option value="0-15-or-less">$0.15/cup or less</option>
+          <option value="0-16--0-20">$0.16-$0.20/cup</option>
+          <option value="0-21--0-25">$0.21-$0.25/cup</option>
+          <option value="0-25-or-more">$0.25/cup or more</option>
+        </select>
+      </fieldset>
+    </div>
+    <div class="simple-form__row">
+      <fieldset class="simple-form__form-group simple-form__form-group--block-dropdown">
+        <label id="how-much-for-prophy" class="simple-form__question simple-form__question--dropdown">
+          How much do you pay for your fluoride varnish? 
+          <br>
+          (eg: 1 Box of 100 doses of Vanish at $150 = $1.50/dose 🤯)
+        </label>
+        <select class="simple-form__input simple-form__input--dropdown ml-4" name="how-much-for-prophy" id="how-much-for-prophy">
+          <option value="0-50-or-less">$0.50/dose or less</option>
+          <option value="0-51--0-75">$0.51-$0.75/dose</option>
+          <option value="0-76--1-00">$0.76-$1/dose</option>
+          <option value="1-01--1-25">$1.01-1.25/dose</option>
+          <option value="1-25-or-more">$1.25/dose or more</option>
+        </select>
+      </fieldset>
+    </div>
+    <div class="simple-form__row">
+      <input type="submit" class="simple-form__input simple-form__input--submit" value="Submit">
+    </div>
+  </form>
 </body>
 </html>
