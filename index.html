@@ -34,6 +34,18 @@
       </fieldset>
     </div>
     <div class="simple-form__row">
+      <fieldset class="simple-form__form-group">
+        <label class="simple-form__label" for="address-field">Address:</label>
+        <input type="text" class="simple-form__input simple-form__input--address" id="address-field" name="address">
+      </fieldset>
+    </div>
+    <div class="simple-form__row">
+      <fieldset class="simple-form__form-group">
+        <label class="simple-form__label" for="how-many-recalls-field">How many recalls does your office do a day?</label>
+        <input type="text" class="simple-form__input simple-form__input--how-many-recalls" id="how-many-recalls-field" name="how-many-recalls">
+      </fieldset>
+    </div>
+    <div class="simple-form__row">
       <fieldset class="simple-form__form-group simple-form__form-group--yes-no-question">
         <div class="simple-form__question">Are you part of a DSO?</div>
         <div class="simple-form__radio-option">
@@ -78,6 +90,7 @@
       <fieldset class="simple-form__form-group simple-form__form-group--line-dropdown">
         <label for="samples-type" class="simple-form__question simple-form__question--dropdown">Type of samples:</label>
         <select class="simple-form__input simple-form__input--dropdown" name="samples-type" id="samples-type">
+          <option value="not-selected" selected>--------------</option>
           <option value="fluoride-varnish-cups">Fluoride varnish cups</option>
           <option value="fluoride-varnish-sticks">Fluoride varnish sticks</option>
           <option value="prophy-paste">Prophy paste</option>
@@ -89,6 +102,7 @@
       <fieldset class="simple-form__form-group simple-form__form-group--line-dropdown">
         <label id="where-heard-for-wonderful" class="simple-form__question simple-form__question--dropdown">Where did you find out about wonderful?</label>
         <select class="simple-form__input simple-form__input--dropdown" name="where-heard-for-wonderful" id="where-heard-for-wonderful" data-where-heard-for-wonderful-select>
+          <option value="not-selected" selected>--------------</option>
           <option value="word-of-mouth">Word of mouth</option>
           <option value="facebook-post">Facebook post</option>
           <option value="instagram-post">Instagram post</option>
@@ -203,11 +217,7 @@
               </fieldset>
               <fieldset class="simple-form__form-group simple-form__form-group--checkbox">
                 <input type="checkbox" class="simple-form__input simple-form__input--checkbox" id="option-patients-hate-it" name="option-patients-hate-it" value="option-patients-hate-it">
-                <label class="simple-form__label simple-form__label--checkbox" for="option-patients-hate-it">zooby</label>
-              </fieldset>
-              <fieldset class="simple-form__form-group simple-form__form-group--checkbox">
-                <input type="checkbox" class="simple-form__input simple-form__input--checkbox" id="option-schein" name="option-schein" value="option-schein">
-                <label class="simple-form__label simple-form__label--checkbox" for="option-schein">schein</label>
+                <label class="simple-form__label simple-form__label--checkbox" for="option-patients-hate-it">patients hate it</label>
               </fieldset>
               <fieldset class="simple-form__form-group simple-form__form-group--checkbox">
                 <input type="checkbox" class="simple-form__input simple-form__input--checkbox" id="option-low-quality" name="option-low-quality" value="option-low-quality">
@@ -232,7 +242,7 @@
               <fieldset class="simple-form__form-group simple-form__form-group--checkbox">
                 <input type="checkbox" class="simple-form__input simple-form__input--checkbox" id="what-dislike-other" name="what-dislike-other" value="what-dislike-other" data-what-dislike-other-checkbox>
                 <label class="simple-form__label simple-form__label--checkbox" for="what-dislike-other">other</label>
-                <input type="text" class="simple-form__input simple-form__input--text simple-form__input--additional-field simple-form__input--additional-field--checkbox initial-width hidden" id="what-dislike-other-textbox" name="what-dislike-other-textbox">
+                <input type="text" class="simple-form__input simple-form__input--text simple-form__input--additional-field simple-form__input--additional-field--checkbox hidden" id="what-dislike-other-textbox" name="what-dislike-other-textbox">
               </fieldset>
             </div>
           </div>
@@ -247,6 +257,7 @@
           (eg: 1 Box of 200 cups of Nupro at $80 = $0.40/cup 🤯)
         </label>
         <select class="simple-form__input simple-form__input--dropdown ml-4" name="how-much-for-prophy" id="how-much-for-prophy">
+          <option value="not-selected" selected>--------------</option>
           <option value="0-15-or-less">$0.15/cup or less</option>
           <option value="0-16--0-20">$0.16-$0.20/cup</option>
           <option value="0-21--0-25">$0.21-$0.25/cup</option>
@@ -262,11 +273,29 @@
           (eg: 1 Box of 100 doses of Vanish at $150 = $1.50/dose 🤯)
         </label>
         <select class="simple-form__input simple-form__input--dropdown ml-4" name="how-much-for-prophy" id="how-much-for-prophy">
+          <option value="not-selected" selected>--------------</option>
           <option value="0-50-or-less">$0.50/dose or less</option>
           <option value="0-51--0-75">$0.51-$0.75/dose</option>
           <option value="0-76--1-00">$0.76-$1/dose</option>
           <option value="1-01--1-25">$1.01-1.25/dose</option>
           <option value="1-25-or-more">$1.25/dose or more</option>
+        </select>
+      </fieldset>
+    </div>
+    <div class="simple-form__row">
+      <fieldset class="simple-form__form-group simple-form__form-group--block-dropdown">
+        <label id="how-much-for-prophy" class="simple-form__question simple-form__question--dropdown">
+          What i care about most when purchasing fluoride varnish and prophy paste?
+        </label>
+        <select class="simple-form__input simple-form__input--dropdown ml-4" name="how-much-for-prophy" id="how-much-for-prophy">
+          <option value="not-selected" selected>--------------</option>
+          <option value="product-quality">product quality</option>
+          <option value="cost-savings">cost savings</option>
+          <option value="great-taste">great taste</option>
+          <option value="less-additives">less additives</option>
+          <option value="ease-of-use">ease of use</option>
+          <option value="excellent-service">excellent service</option>
+          <option value="speedy-delivery">speedy delivery</option>
         </select>
       </fieldset>
     </div>

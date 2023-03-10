@@ -1,7 +1,17 @@
 .simple-form {
+  --base-font-size: 1rem;
+  --controls-font-size: 1.1rem;
+  --sub-heading-font-size: 1.3rem;
   font-family: "Helvetica Now";
-  font-size: 1rem;
+  font-size: var(--base-font-size);
   padding-inline: 0.5em;
+}
+@media screen and (max-width: 31.25rem) {
+  .simple-form { /*  500px */
+    --base-font-size: 0.9rem;
+    --controls-font-size: 1rem;
+    --sub-heading-font-size: 1.2rem;
+  }
 }
 .simple-form__row {
   padding: 0.5em;
@@ -13,6 +23,14 @@
       -ms-flex-direction: row;
           flex-direction: row;
   gap: 2em;
+}
+@media screen and (max-width: 50rem) {
+  .simple-form__row { /*  800px */
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
 }
 .simple-form__row--additional-field {
   padding: 0;
@@ -45,6 +63,18 @@
       -ms-flex-align: center;
           align-items: center;
 }
+@media screen and (max-width: 50rem) {
+  .simple-form__form-group--yes-no-question, .simple-form__form-group--line-dropdown { /*  800px */
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    gap: 1rem;
+  }
+}
 .simple-form__form-group--checkbox {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
@@ -59,21 +89,21 @@
 }
 .simple-form__label {
   padding: 0.2em;
-  font-size: 1.1rem;
+  font-size: var(--controls-font-size);
 }
 .simple-form__label--radio {
   padding-inline: 0;
 }
 .simple-form__label--additional-field {
   padding-left: 0.5em;
-  font-size: 1rem;
+  font-size: var(--base-font-size);
 }
 .simple-form__label--checkbox {
-  font-size: 1rem;
+  font-size: var(--base-font-size);
   border: 0.1rem solid #ffffff;
 }
 .simple-form__input {
-  font-size: 1.1rem;
+  font-size: var(--controls-font-size);
   padding: 0.2em;
   margin-inline: 0.2em;
 }
@@ -81,11 +111,29 @@
   padding-inline: 0;
   margin-inline: 0;
 }
+@media screen and (max-width: 50rem) {
+  .simple-form__input--radio { /*  800px */
+    margin-left: 0.8em;
+  }
+}
 .simple-form__input--dropdown {
   padding: 0.2em;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+@media screen and (max-width: 50rem) {
+  .simple-form__input--dropdown { /*  800px */
+    margin-left: 0.8em;
+  }
+}
+@media screen and (max-width: 31.25rem) {
+  .simple-form__input--dropdown { /*  500px */
+    width: 80%;
+  }
 }
 .simple-form__input--additional-field {
-  font-size: 1rem;
+  font-size: var(--base-font-size);
 }
 .simple-form__input--additional-field--checkbox {
   width: 100px;
@@ -97,7 +145,7 @@
   width: initial;
 }
 .simple-form__input--checkbox {
-  font-size: 1rem;
+  font-size: var(--base-font-size);
 }
 .simple-form__input--submit {
   border: 0;
@@ -113,7 +161,7 @@
   background-color: hsl(192, 100%, 50%);
 }
 .simple-form__question, .simple-form__options-set-title {
-  font-size: 1.1rem;
+  font-size: var(--controls-font-size);
   padding: 0.2em;
   margin-right: 2.5em;
 }
@@ -126,7 +174,7 @@
   border-top: 1px dashed #000000;
 }
 .simple-form__sub-heading {
-  font-size: 1.3rem;
+  font-size: var(--sub-heading-font-size);
   margin-inline: 0.2em;
   -webkit-margin-before: 0.4em;
           margin-block-start: 0.4em;
@@ -141,15 +189,41 @@
   padding-top: 0.3em;
   padding-left: 1em;
 }
+@media screen and (max-width: 50rem) {
+  .simple-form__options { /*  800px */
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
 .simple-form__options-grid {
   padding: 0.5em;
   width: 350px;
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
+@media screen and (max-width: 31.25rem) {
+  .simple-form__options-grid { /*  500px */
+    width: 200px;
+    grid-template-columns: 1fr;
+  }
+}
 .simple-form__options-grid--three-column {
   width: 700px;
   grid-template-columns: repeat(3, 1fr);
+}
+@media screen and (max-width: 50rem) {
+  .simple-form__options-grid--three-column { /*  800px */
+    width: 400px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 31.25rem) {
+  .simple-form__options-grid--three-column { /*  500px */
+    width: 200px;
+    grid-template-columns: 1fr;
+  }
 }
 
 .ml-4 {
