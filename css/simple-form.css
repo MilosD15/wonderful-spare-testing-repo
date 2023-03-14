@@ -32,6 +32,7 @@
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    gap: 1em;
   }
 }
 .simple-form__row--additional-field {
