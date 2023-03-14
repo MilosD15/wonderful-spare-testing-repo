@@ -1,8 +1,8 @@
 .simple-form {
-  --base-font-size: 1rem;
-  --controls-font-size: 1.1rem;
-  --sub-heading-font-size: 1.3rem;
-  --main-heading-font-size: 1.5rem;
+  --base-font-size: 0.9rem;
+  --controls-font-size: 1rem;
+  --sub-heading-font-size: 1.2rem;
+  --main-heading-font-size: 1.4rem;
   font-family: "Helvetica Now";
   font-size: var(--base-font-size);
   padding-inline: 0.5em;
