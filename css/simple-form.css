@@ -9,10 +9,10 @@
 }
 @media screen and (max-width: 31.25rem) {
   .simple-form { /*  500px */
-    --base-font-size: 0.9rem;
-    --controls-font-size: 1rem;
-    --sub-heading-font-size: 1.2rem;
-    --main-heading-font-size: 1.4rem;
+    --base-font-size: 0.8rem;
+    --controls-font-size: 0.9rem;
+    --sub-heading-font-size: 1.1rem;
+    --main-heading-font-size: 1.3rem;
   }
 }
 .simple-form__row {
