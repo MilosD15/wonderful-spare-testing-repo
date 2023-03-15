@@ -37,8 +37,130 @@
     </div>
     <div class="simple-form__row">
       <fieldset class="simple-form__form-group">
+        <label class="simple-form__label" for="office-name-field">Office Name:</label>
+        <input type="text" class="simple-form__input simple-form__input--office-name" id="office-name-field" name="office-name">
+      </fieldset>
+      <fieldset class="simple-form__form-group">
         <label class="simple-form__label" for="address-field">Address:</label>
         <input type="text" class="simple-form__input simple-form__input--address" id="address-field" name="address">
+      </fieldset>
+    </div>
+    <div class="simple-form__row">
+      <fieldset class="simple-form__form-group">
+        <label class="simple-form__label" for="city-field">City:</label>
+        <input type="text" class="simple-form__input simple-form__input--city" id="city-field" name="city">
+      </fieldset>
+      <fieldset class="simple-form__form-group">
+        <label for="state-field" class="simple-form__label">State:</label>
+        <select class="simple-form__input simple-form__input--dropdown simple-form__input--address-dropdown" name="state-field" id="state-field">
+          <option value="not-selected" selected>--------------</option>
+          <option value="state-alabama">Alabama</option>
+          <option value="state-alaska ">Alaska </option>
+          <option value="state-arizona">Arizona</option>
+          <option value="state-arkansas">Arkansas</option>
+          <option value="state-california">California</option>
+          <option value="state-colorado">Colorado</option>
+          <option value="state-connecticut">Connecticut</option>
+          <option value="state-delaware">Delaware</option>
+          <option value="state-florida">Florida</option>
+          <option value="state-georgia">Georgia</option>
+          <option value="state-hawaii">Hawaii</option>
+          <option value="state-idaho">Idaho</option>
+          <option value="state-illinois">Illinois</option>
+          <option value="state-indiana">Indiana</option>
+          <option value="state-iowa">Iowa</option>
+          <option value="state-kansas">Kansas</option>
+          <option value="state-kentucky">Kentucky</option>
+          <option value="state-louisiana">Louisiana</option>
+          <option value="state-maine">Maine</option>
+          <option value="state-maryland">Maryland</option>
+          <option value="state-massachusetts">Massachusetts</option>
+          <option value="state-michigan">Michigan</option>
+          <option value="state-minnesota">Minnesota</option>
+          <option value="state-mississippi">Mississippi</option>
+          <option value="state-missouri">Missouri</option>
+          <option value="state-montana">Montana</option>
+          <option value="state-nebraska">Nebraska</option>
+          <option value="state-nevada">Nevada</option>
+          <option value="state-new-hampshire">New Hampshire</option>
+          <option value="state-new-jersey">New Jersey</option>
+          <option value="state-new-mexico">New Mexico</option>
+          <option value="state-new-york">New York</option>
+          <option value="state-north-carolina">North Carolina</option>
+          <option value="state-north-dakota">North Dakota</option>
+          <option value="state-ohio">Ohio</option>
+          <option value="state-oklahoma">Oklahoma</option>
+          <option value="state-oregon">Oregon</option>
+          <option value="state-pennsylvania">Pennsylvania</option>
+          <option value="state-rhode-island">Rhode Island</option>
+          <option value="state-south-carolina">South Carolina</option>
+          <option value="state-south-dakota">South Dakota</option>
+          <option value="state-tennessee">Tennessee</option>
+          <option value="state-texas">Texas</option>
+          <option value="state-utah">Utah</option>
+          <option value="state-vermont">Vermont</option>
+          <option value="state-virginia">Virginia</option>
+          <option value="state-washington">Washington</option>
+          <option value="state-west-virginia">West Virginia</option>
+          <option value="state-wisconsin">Wisconsin</option>
+          <option value="state-wyoming">Wyoming</option>
+        </select>
+      </fieldset>
+      <fieldset class="simple-form__form-group">
+        <label for="postal-code-field" class="simple-form__label">Postal Code:</label>
+        <select class="simple-form__input simple-form__input--dropdown simple-form__input--address-dropdown" name="postal-code-field" id="postal-code-field">
+          <option value="not-selected" selected>--------------</option>
+          <option value="postal-code-alabama">Alabama (35004 – 36925)</option>
+          <option value="postal-code-alaska ">Alaska (99501 – 99950)</option>
+          <option value="postal-code-arizona">Arizona (85001 – 86556)</option>
+          <option value="postal-code-arkansas">Arkansas (71601 – 72959)</option>
+          <option value="postal-code-california">California (90001 – 96162)</option>
+          <option value="postal-code-colorado">Colorado (80001 – 81658)</option>
+          <option value="postal-code-connecticut">Connecticut (06001 – 06928)</option>
+          <option value="postal-code-delaware">Delaware (19701 – 19980)</option>
+          <option value="postal-code-florida">Florida (32003 – 34997)</option>
+          <option value="postal-code-georgia">Georgia (30002 – 39901)</option>
+          <option value="postal-code-hawaii">Hawaii (96701 – 96898)</option>
+          <option value="postal-code-idaho">Idaho (83201 – 83877)</option>
+          <option value="postal-code-illinois">Illinois (60001 – 62999)</option>
+          <option value="postal-code-indiana">Indiana (46001 – 47997)</option>
+          <option value="postal-code-iowa">Iowa (50001 – 52809)</option>
+          <option value="postal-code-kansas">Kansas (66002 – 67954)</option>
+          <option value="postal-code-kentucky">Kentucky (40003 – 42788)</option>
+          <option value="postal-code-louisiana">Louisiana (70001 – 71497)</option>
+          <option value="postal-code-maine">Maine (03901 – 04992)</option>
+          <option value="postal-code-maryland">Maryland (20588 – 21930)</option>
+          <option value="postal-code-massachusetts">Massachusetts (01001 – 05544)</option>
+          <option value="postal-code-michigan">Michigan (48001 – 49971)</option>
+          <option value="postal-code-minnesota">Minnesota (55001 – 56763)</option>
+          <option value="postal-code-mississippi">Mississippi (38601 – 39776)</option>
+          <option value="postal-code-missouri">Missouri (63001 – 65899)</option>
+          <option value="postal-code-montana">Montana (59001 – 59937)</option>
+          <option value="postal-code-nebraska">Nebraska (68001 – 69367)</option>
+          <option value="postal-code-nevada">Nevada (88901 – 89883)</option>
+          <option value="postal-code-new-hampshire">New Hampshire (03031 – 03897)</option>
+          <option value="postal-code-new-jersey">New Jersey (07001 – 08989)</option>
+          <option value="postal-code-new-mexico">New Mexico (87001 – 88439)</option>
+          <option value="postal-code-new-york">New York (00501 – 14925)</option>
+          <option value="postal-code-north-carolina">North Carolina (27006 – 28909)</option>
+          <option value="postal-code-north-dakota">North Dakota (58001 – 58856)</option>
+          <option value="postal-code-ohio">Ohio (43001 – 45999)</option>
+          <option value="postal-code-oklahoma">Oklahoma (73001 – 74966)</option>
+          <option value="postal-code-oregon">Oregon (97001 – 97920)</option>
+          <option value="postal-code-pennsylvania">Pennsylvania (15001 – 19640)</option>
+          <option value="postal-code-rhode-island">Rhode Island (02801 – 02940)</option>
+          <option value="postal-code-south-carolina">South Carolina (29001 – 29945)</option>
+          <option value="postal-code-south-dakota">South Dakota (57001 – 57799)</option>
+          <option value="postal-code-tennessee">Tennessee (37010 – 38589)</option>
+          <option value="postal-code-texas">Texas (73301 – 88595)</option>
+          <option value="postal-code-utah">Utah (84001 – 84791)</option>
+          <option value="postal-code-vermont">Vermont (05001 – 05907)</option>
+          <option value="postal-code-virginia">Virginia (20101 – 24658)</option>
+          <option value="postal-code-washington">Washington (98001 – 99403)</option>
+          <option value="postal-code-west-virginia">West Virginia (24701 – 26886)</option>
+          <option value="postal-code-wisconsin">Wisconsin (53001 – 54990)</option>
+          <option value="postal-code-wyoming">Wyoming (82001 – 83414)</option>
+        </select>
       </fieldset>
     </div>
     <div class="simple-form__row">
@@ -91,7 +213,7 @@
     <div class="simple-form__row">
       <fieldset class="simple-form__form-group simple-form__form-group--line-dropdown">
         <label for="samples-type" class="simple-form__question simple-form__question--dropdown">Type of samples:</label>
-        <select class="simple-form__input simple-form__input--dropdown" name="samples-type" id="samples-type">
+        <select class="simple-form__input simple-form__input--dropdown simple-form__input--capitalize" name="samples-type" id="samples-type">
           <option value="not-selected" selected>--------------</option>
           <option value="fluoride-varnish-cups">Fluoride varnish cups</option>
           <option value="fluoride-varnish-sticks">Fluoride varnish sticks</option>
@@ -102,7 +224,7 @@
     </div>
     <div class="simple-form__row">
       <fieldset class="simple-form__form-group simple-form__form-group--line-dropdown">
-        <label id="where-heard-for-wonderful" class="simple-form__question simple-form__question--dropdown">Where did you find out about wonderful?</label>
+        <label for="where-heard-for-wonderful" class="simple-form__question simple-form__question--dropdown">Where did you find out about wonderful?</label>
         <select class="simple-form__input simple-form__input--dropdown" name="where-heard-for-wonderful" id="where-heard-for-wonderful" data-where-heard-for-wonderful-select>
           <option value="not-selected" selected>--------------</option>
           <option value="word-of-mouth">Word of mouth</option>
@@ -253,8 +375,9 @@
     </div>
     <div class="simple-form__row">
       <fieldset class="simple-form__form-group simple-form__form-group--block-dropdown">
-        <label id="how-much-for-prophy" class="simple-form__question simple-form__question--dropdown">
-          How much do you pay for your prophy paste? (eg: 1 Box of 200 cups of Nupro at $80 = $0.40/cup 🤯)
+        <label for="how-much-for-prophy" class="simple-form__question simple-form__question--dropdown">
+          How much do you pay for your prophy paste? 
+          <span class="simple-form__question-example">(eg: 1 Box of 200 cups of Nupro at $80 = $0.40/cup 🤯)</span>
         </label>
         <select class="simple-form__input simple-form__input--dropdown ml-4" name="how-much-for-prophy" id="how-much-for-prophy">
           <option value="not-selected" selected>--------------</option>
@@ -267,10 +390,11 @@
     </div>
     <div class="simple-form__row">
       <fieldset class="simple-form__form-group simple-form__form-group--block-dropdown">
-        <label id="how-much-for-prophy" class="simple-form__question simple-form__question--dropdown">
-          How much do you pay for your fluoride varnish? (eg: 1 Box of 100 doses of Vanish at $150 = $1.50/dose 🤯)
+        <label for="how-much-for-fluoride-varnish" class="simple-form__question simple-form__question--dropdown">
+          How much do you pay for your fluoride varnish? 
+          <span class="simple-form__question-example">(eg: 1 Box of 100 doses of Vanish at $150 = $1.50/dose 🤯)</span>
         </label>
-        <select class="simple-form__input simple-form__input--dropdown ml-4" name="how-much-for-prophy" id="how-much-for-prophy">
+        <select class="simple-form__input simple-form__input--dropdown ml-4" name="how-much-for-fluoride-varnish" id="how-much-for-fluoride-varnish">
           <option value="not-selected" selected>--------------</option>
           <option value="0-50-or-less">$0.50/dose or less</option>
           <option value="0-51--0-75">$0.51-$0.75/dose</option>
@@ -282,10 +406,10 @@
     </div>
     <div class="simple-form__row">
       <fieldset class="simple-form__form-group simple-form__form-group--block-dropdown">
-        <label id="how-much-for-prophy" class="simple-form__question simple-form__question--dropdown">
-          What i care about most when purchasing fluoride varnish and prophy paste?
+        <label for="how-much-for-prophy-and-fluoride-varnish" class="simple-form__question simple-form__question--dropdown">
+          What I care about most when purchasing fluoride varnish and prophy paste?
         </label>
-        <select class="simple-form__input simple-form__input--dropdown ml-4" name="how-much-for-prophy" id="how-much-for-prophy">
+        <select class="simple-form__input simple-form__input--dropdown ml-4" name="how-much-for-prophy-and-fluoride-varnish" id="how-much-for-prophy-and-fluoride-varnish">
           <option value="not-selected" selected>--------------</option>
           <option value="product-quality">Product quality</option>
           <option value="cost-savings">Cost savings</option>

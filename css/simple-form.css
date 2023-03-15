@@ -116,6 +116,7 @@
   border: 0.1rem solid #ffffff;
 }
 .simple-form__input {
+  font-family: "Helvetica Now";
   font-size: var(--controls-font-size);
   padding: 0.2em;
   margin-inline: 0.2em;
@@ -130,7 +131,7 @@
   }
 }
 .simple-form__input--dropdown {
-  padding: 0.2em;
+  padding: 0.3em;
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
@@ -144,6 +145,15 @@
   .simple-form__input--dropdown { /*  500px */
     width: 80%;
   }
+}
+@media screen and (max-width: 50rem) {
+  .simple-form__input--address-dropdown { /*  800px */
+    margin-left: 0.2em;
+    width: initial;
+  }
+}
+.simple-form__input--capitalize {
+  text-transform: capitalize;
 }
 .simple-form__input--additional-field {
   font-size: var(--base-font-size);
@@ -180,6 +190,9 @@
 }
 .simple-form__question--dropdown, .simple-form__options-set-title--dropdown {
   margin-right: 0;
+}
+.simple-form__question-example, .simple-form__options-set-title-example {
+  font-size: var(--base-font-size);
 }
 .simple-form__separator {
   margin-block: 0.5em;
