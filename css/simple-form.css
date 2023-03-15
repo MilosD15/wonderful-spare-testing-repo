@@ -118,12 +118,19 @@
 .simple-form__input {
   font-family: "Helvetica Now";
   font-size: var(--controls-font-size);
+  width: 13.125rem; /* 210px */
   padding: 0.2em;
   margin-inline: 0.2em;
+}
+@media screen and (max-width: 50rem) {
+  .simple-form__input { /*  800px */
+    width: initial;
+  }
 }
 .simple-form__input--radio {
   padding-inline: 0;
   margin-inline: 0;
+  width: initial;
 }
 @media screen and (max-width: 50rem) {
   .simple-form__input--radio { /*  800px */
@@ -145,6 +152,9 @@
   .simple-form__input--dropdown { /*  500px */
     width: 80%;
   }
+}
+.simple-form__input--address-dropdown {
+  width: 13.75rem; /* 220px */
 }
 @media screen and (max-width: 50rem) {
   .simple-form__input--address-dropdown { /*  800px */
@@ -168,9 +178,11 @@
   width: initial;
 }
 .simple-form__input--checkbox {
+  width: initial;
   font-size: var(--base-font-size);
 }
 .simple-form__input--submit {
+  width: initial;
   border: 0;
   background-color: hsl(192, 100%, 60%);
   padding: 0.6rem 1.2rem;
