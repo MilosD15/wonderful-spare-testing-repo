@@ -74,7 +74,7 @@ if (document.querySelector("[data-additives-be-gone-section]")) {
       additivesBeGoneLottiePlayer = addNewPlayer();
     }
     if (!isSectionInViewPort(additivesBeGoneSection)) {
-      additivesBeGoneLottiePlayer.remove();
+      additivesBeGoneLottiePlayer?.remove();
       sectionWasAlreadyInViewport = false;
       lottieAnimationsState = "inactive";
     }
