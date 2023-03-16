@@ -36,10 +36,12 @@ body {
 }
 
 .made-with-love__character {
-    right: 8%;
+    right: 6%;
     top: 47%;
     width: 16%;
     overflow: hidden;
+    /* transform: translate(-20%, -6%);
+    transform: translate(14%, 3%); */
 }
 
 .made-with-love__character-image.priority {
