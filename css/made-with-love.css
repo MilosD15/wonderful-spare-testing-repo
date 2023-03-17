@@ -58,9 +58,9 @@ body {
 
 .made-with-love__bg-window-glass {
     position: absolute;
-    top: 24%;
-    right: 5%;
-    width: 22%;
+    top: 20%;
+    right: 3.5%;
+    width: 26%;
 }
 
 .made-with-love__bg-character-image.priority {
@@ -159,8 +159,7 @@ body {
         width: 18%;
     }
     .made-with-love__bg-window-glass {
-        top: 21%;
-        width: 22%;
+        top: 17%;
     }
     .made-with-love__table {
         bottom: -4%;
