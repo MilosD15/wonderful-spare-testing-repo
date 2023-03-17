@@ -26,25 +26,44 @@ body {
     aspect-ratio: 16 / 7;
 }
 
-.made-with-love__bg,
-.made-with-love__trees-outside {
+.made-with-love__bg {
+    transition: transform .3s ease;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    aspect-ratio: 16 / 8;
+}
+
+.made-with-love__bg-trees-outside,
+.made-with-love__bg-cook-kitchen {
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: auto;
-    transition: transform .3s ease;
 }
 
-.made-with-love__character {
-    right: 6%;
-    top: 47%;
+/* .made-with-love__bg-cook-kitchen {
+    background-color: black;
+} */
+
+.made-with-love__bg-character {
+    position: absolute;
+    right: 9%;
+    top: 41%;
     width: 16%;
     overflow: hidden;
-    /* transform: translate(-20%, -6%);
-    transform: translate(14%, 3%); */
 }
 
-.made-with-love__character-image.priority {
+.made-with-love__bg-window-glass {
+    position: absolute;
+    top: 24%;
+    right: 5%;
+    width: 22%;
+}
+
+.made-with-love__bg-character-image.priority {
     width: 1000%;
     animation: animate-character calc(var(--MADE-WITH-LOVE-SEC-character-anim-duration) * 1ms) steps(10) infinite;
 }
@@ -128,17 +147,20 @@ body {
     .made-with-love__wrapper {
         aspect-ratio: 16 / 12;
     }
-    .made-with-love__bg,
-    .made-with-love__trees-outside {
+    .made-with-love__bg {
         top: -2%;
         width: 142%;
         aspect-ratio: 16 / 9;
-        left: -18%;
+        left: -26%;
     }
-    .made-with-love__character {
-        right: -9%;
-        top: 42%;
-        width: 24%;
+    .made-with-love__bg-character {
+        right: 10%;
+        top: 32%;
+        width: 18%;
+    }
+    .made-with-love__bg-window-glass {
+        top: 21%;
+        width: 22%;
     }
     .made-with-love__table {
         bottom: -4%;

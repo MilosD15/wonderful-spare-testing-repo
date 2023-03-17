@@ -7,10 +7,8 @@ const madeWithLoveSection = document.querySelector('[data-made-with-love-section
 const lottieAnimationWrapper = madeWithLoveSection.querySelector('[data-mvl-lottie]');
 const cookRightHandElement = madeWithLoveSection.querySelector("[data-mvl-cook-right-hand]");
 const mvlBgElement = madeWithLoveSection.querySelector("[data-mvl-bg]");
-const mvlTreesOutsideElement = madeWithLoveSection.querySelector("[data-mvl-trees-outside]");
 const mvlTableElement = madeWithLoveSection.querySelector("[data-mvl-table]");
 const mvlCookToolElement = madeWithLoveSection.querySelector("[data-mvl-cook-tool]");
-const mvlWavingCharacterElement = madeWithLoveSection.querySelector("[data-mvl-waving-character]");
 
 // variables
 const timeBetweenLottieAnimationSequences = 1000; // milliseconds
@@ -70,9 +68,7 @@ observer.observe(madeWithLoveSection);
 
 // parallax
 const mvlBgParallax = new ElementParallax(madeWithLoveSection, mvlBgElement, { scale: 1 }, 0.25, { scale: 1.2 }, 1.75);
-const mvlTreesOutsideParallax = new ElementParallax(madeWithLoveSection, mvlTreesOutsideElement, { scale: 1 }, 0.25, { scale: 1.2 }, 1.75);
-const mvlWavingCharacterParallax = new ElementParallax(madeWithLoveSection, mvlWavingCharacterElement, { scale: 1, x: -20, y: -6 }, 0.25, { scale: 1.2, x: 14, y: 3 }, 1.75);
-const mvlTableParallax = new ElementParallax(madeWithLoveSection, mvlTableElement, { y: -1.5 }, 0.5, { y: 3 }, 2);
+const mvlTableParallax = new ElementParallax(madeWithLoveSection, mvlTableElement, { y: -1.5 }, 0.5, { y: 2 }, 2);
 const mvlCookToolParallax = new ElementParallax(madeWithLoveSection, mvlCookToolElement, { y: -4.5 }, 0.5, { y: 7.5 }, 2);
 
 document.addEventListener("DOMContentLoaded", handleParallax);
@@ -82,8 +78,6 @@ function handleParallax() {
     const currentScroll = document.documentElement.scrollTop;
   
     mvlBgParallax.apply(currentScroll);
-    mvlTreesOutsideParallax.apply(currentScroll);
-    mvlWavingCharacterParallax.apply(currentScroll);
     mvlTableParallax.apply(currentScroll);
     mvlCookToolParallax.apply(currentScroll);
   }
