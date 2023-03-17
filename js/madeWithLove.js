@@ -1,5 +1,5 @@
 // imports
-import lottieWeb from 'https://cdn.skypack.dev/lottie-web';
+import { isSectionInViewPort } from "./additional-func.js";
 import ElementParallax from './ElementParallax.js';
 
 // DOM elements
@@ -9,62 +9,107 @@ const cookRightHandElement = madeWithLoveSection.querySelector("[data-mvl-cook-r
 const mvlBgElement = madeWithLoveSection.querySelector("[data-mvl-bg]");
 const mvlTableElement = madeWithLoveSection.querySelector("[data-mvl-table]");
 const mvlCookToolElement = madeWithLoveSection.querySelector("[data-mvl-cook-tool]");
+const mvlLottiePlayer = madeWithLoveSection.querySelector("[data-mvl-lottie]");
 
-// variables
+// lottie animation
 const timeBetweenLottieAnimationSequences = 1000; // milliseconds
+let startToothHandAnimation = true;
 
-// initiating lottie animation object
-const lottieAnimation = lottieWeb.loadAnimation({
-    container: lottieAnimationWrapper,
-    path: './made-with-love-animation.json',
-    renderer: 'svg',
-    loop: false,
-    autoplay: false
+mvlLottiePlayer.load("../made-with-love.lottie");
+
+mvlLottiePlayer.addEventListener("ready", () => {
+    handleLottieAnimation();
+    mvlLottiePlayer.setSpeed(0.8);
 });
 
-// character starts to animate once lottie animation is loaded for the first time
-lottieAnimation.addEventListener("complete", () => {
-    cookRightHandElement.classList.add("animate");
+mvlLottiePlayer.addEventListener("frame", e => {
+    const frame = parseInt(e.detail.frame);
+    if (frame === 0) {
+        setTimeout(() => {
+            mvlLottiePlayer.setDirection(1);
+            mvlLottiePlayer.play();
+            mvlLottiePlayer.classList.remove("hide");
+        }, timeBetweenLottieAnimationSequences);
+    }
+    if (frame === 58) {
+        if (startToothHandAnimation) {
+            cookRightHandElement.classList.add("animate");
+            startToothHandAnimation = false;
+        }
+        setTimeout(() => {
+            mvlLottiePlayer.setDirection(-1);
+            mvlLottiePlayer.play();
+        }, timeBetweenLottieAnimationSequences);
+        setTimeout(() => {
+            mvlLottiePlayer.classList.add("hide");
+        }, timeBetweenLottieAnimationSequences + 2300);
+    }
 });
 
-// functions
-function applyAnimationDirection(direction) {
-    setTimeout(() => {
-        lottieAnimation.setDirection(direction);
-        lottieAnimation.play();
-    }, timeBetweenLottieAnimationSequences);
+window.addEventListener("load", handleLottieAnimation);
+window.addEventListener("scroll", handleLottieAnimation);
+
+function handleLottieAnimation() {
+    if (isSectionInViewPort(madeWithLoveSection)) {
+        mvlLottiePlayer.play();
+    }
+    if (!isSectionInViewPort(madeWithLoveSection)) {
+        mvlLottiePlayer.pause();
+    }
 }
 
-// ADD INTERSECTION OBSERVER TO START ANIMATING THINGS WHEN USER ENTERS INTO SECTION VIEW
-const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
+// // initiating lottie animation object
+// const lottieAnimation = lottieWeb.loadAnimation({
+//     container: lottieAnimationWrapper,
+//     path: './made-with-love-animation.json',
+//     renderer: 'svg',
+//     loop: false,
+//     autoplay: false
+// });
 
-        // play animation once user scrolls into this section
-        lottieAnimation.play();
+// // character starts to animate once lottie animation is loaded for the first time
+// lottieAnimation.addEventListener("complete", () => {
+//     cookRightHandElement.classList.add("animate");
+// });
 
-        // control animation flow (playing forward and backward)
-        lottieAnimation.addEventListener("enterFrame", e => {
-            if (e.totalTime === e.currentTime + 1) {
-                applyAnimationDirection(-1);
-            }
-            if (e.currentTime === 0) {
-                lottieAnimationWrapper.classList.add("hide");
-                applyAnimationDirection(1);
+// // functions
+// function applyAnimationDirection(direction) {
+//     setTimeout(() => {
+//         lottieAnimation.setDirection(direction);
+//         lottieAnimation.play();
+//     }, timeBetweenLottieAnimationSequences);
+// }
+
+// // ADD INTERSECTION OBSERVER TO START ANIMATING THINGS WHEN USER ENTERS INTO SECTION VIEW
+// const observer = new IntersectionObserver(entries => {
+//     entries.forEach(entry => {
+//         if (!entry.isIntersecting) return;
+
+//         // play animation once user scrolls into this section
+//         lottieAnimation.play();
+
+//         // control animation flow (playing forward and backward)
+//         lottieAnimation.addEventListener("enterFrame", e => {
+//             if (e.totalTime === e.currentTime + 1) {
+//                 applyAnimationDirection(-1);
+//             }
+//             if (e.currentTime === 0) {
+//                 lottieAnimationWrapper.classList.add("hide");
+//                 applyAnimationDirection(1);
         
-                setTimeout(() => {
-                    lottieAnimationWrapper.classList.remove("hide");
-                }, timeBetweenLottieAnimationSequences);
-            }
-        });
+//                 setTimeout(() => {
+//                     lottieAnimationWrapper.classList.remove("hide");
+//                 }, timeBetweenLottieAnimationSequences);
+//             }
+//         });
 
-        // don't observe anymore
-        observer.unobserve(entry.target);
-    });
-}, {
-    threshold: 0.6 // once user scrolled into 60% of the section, animation starts
-});
-observer.observe(madeWithLoveSection);
+//         // don't observe anymore
+//         observer.unobserve(entry.target);
+//     });
+// }, {
+//     threshold: 0.6 // once user scrolled into 60% of the section, animation starts
+// });
+// observer.observe(madeWithLoveSection);
 
 // parallax
 const mvlBgParallax = new ElementParallax(madeWithLoveSection, mvlBgElement, { scale: 1 }, 0.25, { scale: 1.2 }, 1.75);

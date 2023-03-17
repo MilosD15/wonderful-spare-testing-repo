@@ -1,7 +1,7 @@
 /* BOILERPLATE */
 body {
     width: 100%;
-    height: 300vh;
+    height: 400vh;
     margin: 0;
     display: grid;
     place-items: center;
@@ -101,9 +101,9 @@ body {
 }
 
 .made-with-love__lottie {
-    bottom: 15%;
-    right: 7%;
-    width: 45%;
+    bottom: 10%;
+    right: 8%;
+    width: 42%;
     aspect-ratio: 1 / 1;
     opacity: 1;
     transition: opacity .1s ease;
@@ -186,7 +186,7 @@ body {
         width: 30%;
     }
     .made-with-love__lottie {
-        bottom: 18%;
+        bottom: 24%;
         right: 50%;
         width: 90%;
         transform: translateX(50%);
