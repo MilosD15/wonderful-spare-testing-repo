@@ -13,13 +13,14 @@ const mvlLottiePlayer = madeWithLoveSection.querySelector("[data-mvl-lottie]");
 
 // lottie animation
 const timeBetweenLottieAnimationSequences = 1000; // milliseconds
+const lottieAnimationDuration = 2400;
 let startToothHandAnimation = true;
 
 mvlLottiePlayer.load("../made-with-love.lottie");
 
 mvlLottiePlayer.addEventListener("ready", () => {
     handleLottieAnimation();
-    mvlLottiePlayer.setSpeed(0.8);
+    mvlLottiePlayer.setSpeed(0.75);
 });
 
 mvlLottiePlayer.addEventListener("frame", e => {
@@ -42,7 +43,7 @@ mvlLottiePlayer.addEventListener("frame", e => {
         }, timeBetweenLottieAnimationSequences);
         setTimeout(() => {
             mvlLottiePlayer.classList.add("hide");
-        }, timeBetweenLottieAnimationSequences + 2300);
+        }, timeBetweenLottieAnimationSequences + lottieAnimationDuration);
     }
 });
 
