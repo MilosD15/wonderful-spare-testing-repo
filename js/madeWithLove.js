@@ -13,14 +13,14 @@ const mvlLottiePlayer = madeWithLoveSection.querySelector("[data-mvl-lottie]");
 
 // lottie animation
 const timeBetweenLottieAnimationSequences = 1000; // milliseconds
-const lottieAnimationDuration = 2600;
+const lottieAnimationDuration = 2300;
 let startToothHandAnimation = true;
 
 mvlLottiePlayer.load("../made-with-love.lottie");
 
 mvlLottiePlayer.addEventListener("ready", () => {
     handleLottieAnimation();
-    mvlLottiePlayer.setSpeed(0.65);
+    mvlLottiePlayer.setSpeed(0.8);
 });
 
 mvlLottiePlayer.addEventListener("frame", e => {
