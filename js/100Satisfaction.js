@@ -13,9 +13,16 @@ if (document.querySelector("[data-100-satisfaction-section]")) {
   // parallax
   const hundredSatisfactionBgParallax = new ElementParallax(hundredSatisfactionSection, hundredSatisfactionBgElement, 
     { scale: 1, x: -50, y: -50 }, 0, { scale: 1.05, x: -50, y: -50 }, 1.5);
-  const hundredSatisfactionHandshakeParallax = new ElementParallax(hundredSatisfactionSection, hundredSatisfactionHandshakeElement, 
-    { x: -50, y: -30 }, 0, { x: -50, y: -70 }, 2);
-
+  const hundredSatisfactionHandshakeParallax = getHandshakeParallax();
+  
+  function getHandshakeParallax() {
+    if (window.innerWidth < 1300) {
+      return new ElementParallax(hundredSatisfactionSection, hundredSatisfactionHandshakeElement, { x: -50, y: -35 }, 0, { x: -50, y: -70 }, 4);
+    } else {
+      return new ElementParallax(hundredSatisfactionSection, hundredSatisfactionHandshakeElement, { x: -50, y: -30 }, 0, { x: -50, y: -70 }, 2);
+    }
+  }
+  
   window.addEventListener("load", handleParallax);
   window.addEventListener("scroll", handleParallax);
 
