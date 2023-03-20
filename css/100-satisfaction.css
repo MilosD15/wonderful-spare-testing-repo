@@ -21,7 +21,7 @@ body {
 }
 .hundred-satisfaction__bg, .hundred-satisfaction__handshake {
   top: 50%;
-  left: 51%;
+  left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   width: 100%;
@@ -29,7 +29,7 @@ body {
 }
 .hundred-satisfaction__lottie {
   top: -3%;
-  left: 50%;
+  left: 49%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
   width: 46%;
@@ -46,10 +46,12 @@ body {
     aspect-ratio: 16/12;
   }
   .hundred-satisfaction__bg, .hundred-satisfaction__handshake {
+    left: 51%;
     width: 144%;
   }
   .hundred-satisfaction__lottie {
     top: -1%;
+    left: 50%;
     width: 76%;
   }
 }

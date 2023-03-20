@@ -1,5 +1,4 @@
 // imports
-import lottieWeb from 'https://cdn.skypack.dev/lottie-web';
 import ElementParallax from "./ElementParallax.js";
 import { isSectionInViewPort } from "./additional-func.js";
 
@@ -16,10 +15,12 @@ if (document.querySelector("[data-100-satisfaction-section]")) {
   const hundredSatisfactionHandshakeParallax = getHandshakeParallax();
   
   function getHandshakeParallax() {
-    if (window.innerWidth < 1300) {
-      return new ElementParallax(hundredSatisfactionSection, hundredSatisfactionHandshakeElement, { x: -50, y: -35 }, 0, { x: -50, y: -70 }, 4);
-    } else {
+    if (window.innerWidth > 800) {
       return new ElementParallax(hundredSatisfactionSection, hundredSatisfactionHandshakeElement, { x: -50, y: -30 }, 0, { x: -50, y: -70 }, 2);
+    } else if (window.innerWidth < 800 && window.innerWidth > 500) {
+      return new ElementParallax(hundredSatisfactionSection, hundredSatisfactionHandshakeElement, { x: -50, y: -30 }, 0, { x: -50, y: -70 }, 2.5);
+    } else {
+      return new ElementParallax(hundredSatisfactionSection, hundredSatisfactionHandshakeElement, { x: -50, y: -35 }, 0, { x: -50, y: -70 }, 4);
     }
   }
   
