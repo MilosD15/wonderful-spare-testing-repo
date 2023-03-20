@@ -120,7 +120,7 @@ function addNewPlayer() {
 
     player.addEventListener("ready", () => {
         player.play();
-        player.setSpeed(0.65);
+        player.setSpeed(0.75);
     });
 
     return player;
