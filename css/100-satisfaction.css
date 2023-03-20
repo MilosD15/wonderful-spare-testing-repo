@@ -36,3 +36,20 @@ body {
   height: auto;
   aspect-ratio: 1/1;
 }
+
+/* MEDIA QUERIES */
+@media screen and (max-width: 81.25rem) { /* 1300px */
+  .hundred-satisfaction {
+    aspect-ratio: 16/12;
+  }
+  .hundred-satisfaction__wrapper {
+    aspect-ratio: 16/12;
+  }
+  .hundred-satisfaction__bg, .hundred-satisfaction__handshake {
+    width: 144%;
+  }
+  .hundred-satisfaction__lottie {
+    top: -1%;
+    width: 76%;
+  }
+}
