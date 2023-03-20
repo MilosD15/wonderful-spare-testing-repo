@@ -119,7 +119,8 @@ function addNewPlayer() {
     chooseCharacterWrapper.insertBefore(player, chooseCharacterRadialDarkShadow);
 
     player.addEventListener("ready", () => {
-        chooseCharacterLottiePlayer.play();
+        player.play();
+        player.setSpeed(0.65);
     });
 
     return player;
