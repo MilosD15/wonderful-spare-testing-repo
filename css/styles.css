@@ -1,0 +1,827 @@
+@font-face {
+    font-family: "Lemon Milk";
+    font-weight: bold;
+    src: url("../font/lemonmilk/LEMONMILK-Bold.ttf");
+}
+
+@font-face {
+    font-family: "Lemon Milk";
+    font-weight: 100;
+    src: url("../font/lemonmilk/LEMONMILK-Light.ttf");
+}
+
+@font-face {
+    font-family: "Lemon Milk";
+    font-weight: 500;
+    src: url("../font/lemonmilk/LEMONMILK-Medium.ttf");
+}
+
+@font-face {
+    font-family: "Lemon Milk";
+    font-weight: 400;
+    src: url("../font/lemonmilk/LEMONMILK-Regular.ttf");
+}
+
+body {
+    width: 100%;
+    height: 300vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+:root {
+    --CHOOSE-CHARACTER-SEC-yellow-btn-color: #fbdd53;
+    --CHOOSE-CHARACTER-SEC-yellow-modal-link-color: #e9c151;
+    --CHOOSE-CHARACTER-SEC-blue-modal-link-color: #00cbff;
+    --CHOOSE-CHARACTER-SEC-yellow-btn-color-lighter: #ede8cd;
+    --CHOOSE-CHARACTER-SEC-white-modal-color: #eff0f0;
+    --CHOOSE-CHARACTER-SEC-grayish-blue-modal-color: #5a6169;
+    --CHOOSE-CHARACTER-SEC-character-anim-duration: 600;
+    --CHOOSE-CHARACTER-SEC-character-enlarging-transition-duration: 200;
+    --CHOOSE-CHARACTER-SEC-on-scroll-bg-vertical-enlarging-step: 10%;
+    --CHOOSE-CHARACTER-SEC-on-scroll-bg-horizontal-enlarging-step: 1%;
+    --CHOOSE-CHARACTER-SEC-on-scroll-bg-enlarging-step: 0.03;
+}
+
+/* SECTION STYLING */
+section.choose-your-character {
+    width: 100%;
+    aspect-ratio: 16 / 7;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: relative;
+    font-size: 16px;
+}
+
+section.choose-your-character::before,
+section.choose-your-character::after {
+    position: absolute;
+    content: '';
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    pointer-events: none;
+    box-shadow: inset 0 -50px 28px -16px #000000;
+}
+
+section.choose-your-character::before {
+    top: 0;
+    transform: rotate(180deg);
+}
+
+section.choose-your-character::after {
+    bottom: 0;
+}
+
+section.choose-your-character img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+section.choose-your-character > .wrapper {
+    width: 100%;
+    aspect-ratio: 16 / 8;
+    position: relative;
+}
+
+/* section.choose-your-character > .wrapper::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: transparent url(https://cdn.shopify.com/s/files/1/1715/6045/t/230/assets/noise_1024x1024.png?v=163623814185225560571657613506) 0 0;
+    background-size: 320px 320px;
+    opacity: .1!important;
+    z-index: 4;
+    background-color: #000;
+    pointer-events: none;
+} */
+
+section.choose-your-character .radial-dark-shadow {
+    inset: 0;
+    background-image: radial-gradient(transparent 40%, #000000);
+}
+
+section.choose-your-character > .wrapper > * {
+    position: absolute;
+}
+
+section.choose-your-character .bg {
+    inset: 0;
+    /* background-color: blue; */
+}
+
+section.choose-your-character .bg > * {
+    position: absolute;
+}
+
+section.choose-your-character .bg .very-back {
+    top: 0;
+    right: 5%;
+    left: 5%;
+    bottom: 30%;
+    transform-origin: bottom;
+}
+
+section.choose-your-character .bg .very-back.scroll200 {
+    transform: scale(calc(1 + var(--CHOOSE-CHARACTER-SEC-on-scroll-bg-enlarging-step) * 8));
+    /* top: calc(var(--CHOOSE-CHARACTER-SEC-on-scroll-bg-vertical-enlarging-step) * -1);
+    right: calc(5% + var(--CHOOSE-CHARACTER-SEC-on-scroll-bg-horizontal-enlarging-step) * -1);
+    left: calc(5% + var(--CHOOSE-CHARACTER-SEC-on-scroll-bg-horizontal-enlarging-step) * -1); */
+}
+
+section.choose-your-character .bg .very-back.scroll400 {
+    transform: scale(calc(1 + var(--CHOOSE-CHARACTER-SEC-on-scroll-bg-enlarging-step) * 7));
+    /* top: calc(var(--CHOOSE-CHARACTER-SEC-on-scroll-bg-vertical-enlarging-step) * -2);
+    right: calc(5% + var(--CHOOSE-CHARACTER-SEC-on-scroll-bg-horizontal-enlarging-step) * -2);
+    left: calc(5% + var(--CHOOSE-CHARACTER-SEC-on-scroll-bg-horizontal-enlarging-step) * -2); */
+}
+
+section.choose-your-character .bg .very-back.scroll600 {
+    transform: scale(calc(1 + var(--CHOOSE-CHARACTER-SEC-on-scroll-bg-enlarging-step) * 6));
+    /* top: calc(var(--CHOOSE-CHARACTER-SEC-on-scroll-bg-vertical-enlarging-step) * -3);
+    right: calc(5% + var(--CHOOSE-CHARACTER-SEC-on-scroll-bg-horizontal-enlarging-step) * -3);
+    left: calc(5% + var(--CHOOSE-CHARACTER-SEC-on-scroll-bg-horizontal-enlarging-step) * -3); */
+}
+
+section.choose-your-character .bg .very-back.scroll800 {
+    transform: scale(calc(1 + var(--CHOOSE-CHARACTER-SEC-on-scroll-bg-enlarging-step) * 5));
+    /* top: calc(var(--CHOOSE-CHARACTER-SEC-on-scroll-bg-vertical-enlarging-step) * -4);
+    right: calc(5% + var(--CHOOSE-CHARACTER-SEC-on-scroll-bg-horizontal-enlarging-step) * -4);
+    left: calc(5% + var(--CHOOSE-CHARACTER-SEC-on-scroll-bg-horizontal-enlarging-step) * -4); */
+}
+
+section.choose-your-character .bg .very-back.scroll1000 {
+    transform: scale(calc(1 + var(--CHOOSE-CHARACTER-SEC-on-scroll-bg-enlarging-step) * 4));
+    /* top: calc(var(--CHOOSE-CHARACTER-SEC-on-scroll-bg-vertical-enlarging-step) * -5);
+    right: calc(5% + var(--CHOOSE-CHARACTER-SEC-on-scroll-bg-horizontal-enlarging-step) * -5);
+    left: calc(5% + var(--CHOOSE-CHARACTER-SEC-on-scroll-bg-horizontal-enlarging-step) * -5); */
+}
+
+section.choose-your-character .bg .very-back.scroll1200 {
+    transform: scale(calc(1 + var(--CHOOSE-CHARACTER-SEC-on-scroll-bg-enlarging-step) * 3));
+    /* top: calc(var(--CHOOSE-CHARACTER-SEC-on-scroll-bg-vertical-enlarging-step) * -6);
+    right: calc(5% + var(--CHOOSE-CHARACTER-SEC-on-scroll-bg-horizontal-enlarging-step) * -6);
+    left: calc(5% + var(--CHOOSE-CHARACTER-SEC-on-scroll-bg-horizontal-enlarging-step) * -6); */
+}
+
+section.choose-your-character .bg .very-back.scroll1400 {
+    transform: scale(calc(1 + var(--CHOOSE-CHARACTER-SEC-on-scroll-bg-enlarging-step) * 2));
+    /* top: calc(var(--CHOOSE-CHARACTER-SEC-on-scroll-bg-vertical-enlarging-step) * -7);
+    right: calc(5% + var(--CHOOSE-CHARACTER-SEC-on-scroll-bg-horizontal-enlarging-step) * -7);
+    left: calc(5% + var(--CHOOSE-CHARACTER-SEC-on-scroll-bg-horizontal-enlarging-step) * -7); */
+}
+
+section.choose-your-character .bg .very-back.scroll1600 {
+    transform: scale(calc(1 + var(--CHOOSE-CHARACTER-SEC-on-scroll-bg-enlarging-step) * 1));
+    /* top: calc(var(--CHOOSE-CHARACTER-SEC-on-scroll-bg-vertical-enlarging-step) * -8);
+    right: calc(5% + var(--CHOOSE-CHARACTER-SEC-on-scroll-bg-horizontal-enlarging-step) * -8);
+    left: calc(5% + var(--CHOOSE-CHARACTER-SEC-on-scroll-bg-horizontal-enlarging-step) * -8); */
+}
+
+section.choose-your-character .bg .very-back.scroll1800 {
+    transform: scale(calc(1 + var(--CHOOSE-CHARACTER-SEC-on-scroll-bg-enlarging-step) * 0));
+    /* top: calc(var(--CHOOSE-CHARACTER-SEC-on-scroll-bg-vertical-enlarging-step) * -9);
+    right: calc(5% + var(--CHOOSE-CHARACTER-SEC-on-scroll-bg-horizontal-enlarging-step) * -9);
+    left: calc(5% + var(--CHOOSE-CHARACTER-SEC-on-scroll-bg-horizontal-enlarging-step) * -9); */
+}
+
+section.choose-your-character .bg .stage {
+    bottom: -3%;
+    right: 0;
+    left: 0;
+}
+
+section.choose-your-character .bg .vertical-curtains {
+    width: 104%;
+    left: 50%;
+    margin-left: -52%;
+    top: -8%;
+    right: 0;
+}
+
+section.choose-your-character .bg .pieces-of-horizontal-curtains,
+section.choose-your-character .bg .very-left-and-right-horizontal-curtains,
+section.choose-your-character .bg .left-and-right-horizontal-curtains,
+section.choose-your-character .bg .centered-horizontal-curtains {
+    top: 5%;
+}
+
+section.choose-your-character .bg .left-box {
+    width: 11%;
+    bottom: 25%;
+    left: 5%;
+}
+
+section.choose-your-character .bg .right-boxes {
+    width: 15%;
+    bottom: 23%;
+    right: 4%;
+}
+
+
+/* section.choose-your-character .background {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.3s ease;
+    transform: scale(1.1);
+}
+
+section.choose-your-character .background img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+section.choose-your-character .background::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(transparent 30%, #000000);
+} */
+
+/* section.choose-your-character .lights {
+    inset: 0;
+}
+
+section.choose-your-character .lights .light {
+    position: absolute;
+    width: 48%;
+    opacity: 0.1;
+}
+
+section.choose-your-character .lights .left {
+    left: -2%;
+    top: 0;
+    transform: rotate(-2deg);
+}
+
+section.choose-your-character .lights .right {
+    right: -2%;
+    top: -3%;
+}
+
+section.choose-your-character .lights .center {
+    top: 0;
+    left: 50%;
+    width: 38%;
+    transform: translateX(-50%);
+} */
+
+section.choose-your-character .lottie-container {
+    width: 46%;
+    top: -21.5%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+section.choose-your-character .characters-container {
+    width: 100%;
+    height: 100%;
+    bottom: 2%;
+    left: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4em;
+}
+
+section.choose-your-character .characters-container .character-representation {
+    width: 18%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 2;
+}
+
+section.choose-your-character .characters-container .character-representation:nth-child(2) {
+    width: 20%;
+}
+
+section.choose-your-character .characters-container .light {
+    position: absolute;
+    width: 48%;
+    opacity: 0.08;
+    pointer-events: none;
+    transition: opacity .6s ease;
+}
+
+section.choose-your-character .characters-container .left {
+    left: -2%;
+    top: 0;
+    transform: rotate(-2deg);
+}
+
+section.choose-your-character .characters-container .right {
+    right: -2%;
+    top: -3%;
+}
+
+section.choose-your-character .characters-container .center {
+    top: 0;
+    left: 50%;
+    width: 38%;
+    transform: translateX(-50%);
+}
+
+section.choose-your-character .characters-container .character-representation:nth-child(1):hover .light.left,
+section.choose-your-character .characters-container .character-representation:nth-child(2):hover .light.center,
+section.choose-your-character .characters-container .character-representation:nth-child(3):hover .light.right {
+    opacity: 0.2;
+}
+
+section.choose-your-character .characters-container .character-representation .image {
+    height: 87%;
+    width: 100%;
+    position: relative;
+    /* background-color: red; */
+}
+
+section.choose-your-character .characters-container .character-representation .image .image-wrapper {
+    --translate-x: -50%;
+    --bottom-distance: 0%;
+
+    position: absolute;
+    bottom: var(--bottom-distance);
+    left: 50%;
+    transform: translateX(var(--translate-x)) scale(1);
+    width: 60%;
+    height: auto;
+    transition: 
+        transform calc(var(--CHOOSE-CHARACTER-SEC-character-enlarging-transition-duration) * 1ms) ease,
+        bottom calc(var(--CHOOSE-CHARACTER-SEC-character-enlarging-transition-duration) * 1ms) ease;
+    overflow: hidden;
+}
+
+section.choose-your-character .characters-container .character-representation:nth-child(1) .image .image-wrapper {
+    width: 55%;
+}
+section.choose-your-character .characters-container .character-representation:nth-child(2) .image .image-wrapper {
+    width: 95%;
+    --bottom-distance: -1.5%;
+}
+section.choose-your-character .characters-container .character-representation:nth-child(3) .image .image-wrapper {
+    width: 62%;
+}
+
+section.choose-your-character .characters-container .character-representation .image .image-wrapper img {
+    --translate-y: 0;
+}
+
+section.choose-your-character .characters-container .character-representation .image .image-wrapper img.static-animation {
+    display: inline-block;
+    width: 1200%;
+    animation: animate-character calc(var(--CHOOSE-CHARACTER-SEC-character-anim-duration) * 1ms) steps(12) infinite;
+}
+
+section.choose-your-character .characters-container .character-representation .image .image-wrapper img.on-hover-animation {
+    display: none;
+}
+
+section.choose-your-character .characters-container .character-representation:hover .image .image-wrapper {
+    transform: translateX(var(--translate-x)) scale(1.05);
+    --bottom-distance: 3%;
+}
+
+section.choose-your-character .characters-container .character-representation:hover .image .image-wrapper img.static-animation {
+    display: none;
+}
+
+section.choose-your-character .characters-container .character-representation:hover .image .image-wrapper img.on-hover-animation {
+    display: inline-block;
+    width: 1000%;
+    animation: animate-character calc(var(--CHOOSE-CHARACTER-SEC-character-anim-duration) * 1ms) steps(10) infinite;
+}
+
+section.choose-your-character .characters-container .character-representation .button {
+    height: 13%;
+    width: 100%;
+    position: relative;
+}
+
+section.choose-your-character .characters-container .character-representation .button button {
+    position: absolute;
+    top: 36%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+
+    min-width: 11em;
+    border: 2px solid #000000;
+    color: #000000;
+    background-color: var(--CHOOSE-CHARACTER-SEC-yellow-btn-color);
+    font-family: "Lemon Milk";
+    font-weight: 400;
+    font-size: 0.9em;
+    line-height: 1.6em;
+    padding: 0.7em 0;
+    border-radius: 9999px;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+section.choose-your-character .characters-container .character-representation:hover .button button,
+section.choose-your-character .characters-container .character-representation .button:hover button,
+section.choose-your-character .characters-container .character-representation .button:focus button {
+    background-color: var(--CHOOSE-CHARACTER-SEC-yellow-btn-color-lighter);
+    transform: translate(-50%, -50%) scale(1.15);
+}
+
+/* MODAL STYLING */
+
+section.choose-your-character .modal-container {
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+    background-color: transparent;
+    backdrop-filter: blur(0);
+    transition: all .5s ease;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+    opacity: 0;
+}
+
+/* section.choose-your-character .modal-container::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: transparent url(https://cdn.shopify.com/s/files/1/1715/6045/t/230/assets/noise_1024x1024.png?v=163623814185225560571657613506) 0 0;
+    background-size: 320px 320px;
+    opacity: .1 !important;
+    z-index: 4;
+    background-color: #000;
+    pointer-events: none;
+} */
+
+section.choose-your-character .modal-container[data-active=true] {
+    backdrop-filter: blur(5px);
+    pointer-events: initial;
+    opacity: 1;
+}
+
+section.choose-your-character .modal-container .modal {
+    width: 60%;
+    background-color: var(--CHOOSE-CHARACTER-SEC-white-modal-color);
+    padding: 3em 4em;
+    border-radius: 1.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    transform: scale(0);
+    transition: 
+        transform .5s ease,
+        opacity .5s ease;
+    opacity: 0;
+}
+
+section.choose-your-character .modal-container .modal::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: var(--CHOOSE-CHARACTER-SEC-white-modal-color);
+    border-radius: 1.5em;
+    outline: 5px solid var(--CHOOSE-CHARACTER-SEC-grayish-blue-modal-color);
+    z-index: -1;
+}
+
+section.choose-your-character .modal-container .modal .clipping {
+    position: absolute;
+    top: calc(100% - 0.4em);
+    transform: translateX(-50%);
+    border-width: 4.2em;
+    border-style: solid;
+    border-color: var(--CHOOSE-CHARACTER-SEC-white-modal-color) transparent transparent;
+    transition: opacity .3s ease;
+    opacity: 0;
+}
+
+section.choose-your-character .modal-container .modal .clipping-border {
+    position: absolute;
+    top: 100%;
+    transform: translateX(-50%);
+    border-width: 4.3em;
+    border-style: solid;
+    border-color: var(--CHOOSE-CHARACTER-SEC-grayish-blue-modal-color) transparent transparent;
+    transition: opacity .3s ease;
+    opacity: 0;
+}
+
+section.choose-your-character .modal-container[data-character-position=left] .modal {
+    transform-origin: 15% 115%;
+}
+
+section.choose-your-character .modal-container[data-character-position=center] .modal {
+    transform-origin: 50% 115%;
+}
+
+section.choose-your-character .modal-container[data-character-position=right] .modal {
+    transform-origin: 85% 115%;
+}
+
+section.choose-your-character .modal-container[data-active=true] .modal {
+    transform: scale(1);
+    opacity: 1;
+}
+
+section.choose-your-character .modal-container[data-character-position=left] .modal .clipping,
+section.choose-your-character .modal-container[data-character-position=left] .modal .clipping-border {
+    left: 17.5%;
+}
+
+section.choose-your-character .modal-container[data-character-position=center] .modal .clipping,
+section.choose-your-character .modal-container[data-character-position=center] .modal .clipping-border {
+    left: 50%;
+}
+
+section.choose-your-character .modal-container[data-character-position=right] .modal .clipping,
+section.choose-your-character .modal-container[data-character-position=right] .modal .clipping-border {
+    left: 82.5%;
+}
+
+section.choose-your-character .modal-container[data-active=true] .modal .clipping,
+section.choose-your-character .modal-container[data-active=true] .modal .clipping-border  {
+    opacity: 1;
+}
+
+section.choose-your-character .modal-container .modal .close-btn {
+    position: absolute;
+    top: .3em;
+    right: .3em;
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+    padding: .5em;
+    width: 3.6em;
+    height: 3.6em;
+    transition: all .2s ease;
+    transform: scale(1) rotate(0);
+}
+
+section.choose-your-character .modal-container .modal .close-btn:hover,
+section.choose-your-character .modal-container .modal .close-btn:focus {
+    transform: scale(1.1) rotate(-5deg);
+}
+
+section.choose-your-character .modal-container .modal .close-btn svg {
+    stroke: #000000;
+    width: 100%;
+    min-height: 100%;
+    stroke-width: 2;
+}
+
+section.choose-your-character .modal-container .modal .content {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 2em;
+    gap: 2em;
+    font-size: 1.6em;
+}
+
+section.choose-your-character .modal-container .modal .content .text {
+    width: 75%;
+    font-family: "Lemon Milk";
+    font-weight: 400;
+    
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+}
+
+section.choose-your-character .modal-container .modal .content .text p {
+    line-height: 1.4;
+    margin-block: 0;
+}
+
+section.choose-your-character .modal-container .modal .content .text a:link,
+section.choose-your-character .modal-container .modal .content .text a:visited {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: var(--CHOOSE-CHARACTER-SEC-blue-modal-link-color);
+    transition: all 0.3s ease;
+    transform: scale(1) translateX(0);
+    display: block;
+    width: max-content;
+}
+
+section.choose-your-character .modal-container .modal .content .text a:active,
+section.choose-your-character .modal-container .modal .content .text a:hover,
+section.choose-your-character .modal-container .modal .content .text a:focus {
+    transform: scale(1.05) translateX(2%);
+    text-decoration: underline;
+}
+
+section.choose-your-character .modal-container .modal .content .image {
+    width: 25%;
+    aspect-ratio: 3 / 4;
+    overflow: hidden;
+    position: relative;
+}
+
+section.choose-your-character .modal-container .modal .content .image .wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+}
+
+section.choose-your-character .modal-container .modal:not([data-id="2"]) .content .image .wrapper {
+    width: 100%;
+    height: auto;
+}
+
+section.choose-your-character .modal-container .modal[data-id="2"] .content .image .wrapper {
+    height: 100%;
+    aspect-ratio: 16 / 29;
+}
+
+section.choose-your-character .modal-container .modal .content .image img.static-animation {
+    width: 1100%;
+    animation: animate-character calc(var(--CHOOSE-CHARACTER-SEC-character-anim-duration) * 1ms) steps(11) infinite;
+}
+
+section.choose-your-character .modal-container .modal[data-id="1"] .content .image img.static-animation {
+    width: 1000%;
+    animation: animate-character calc(var(--CHOOSE-CHARACTER-SEC-character-anim-duration) * 1ms) steps(10) infinite;
+}
+
+section.choose-your-character .modal-container .modal .content .image img.on-hover-animation {
+    display: none;
+}
+
+/* CODE RELATED TO WAVING ON HOVER IN MODAL AS WELL */
+/* section.choose-your-character .modal-container .modal[data-id="2"] .content .image:hover .wrapper {
+    width: 100%;
+    aspect-ratio: initial;
+    height: auto;
+}
+
+section.choose-your-character .modal-container .modal .content .image:hover img.static-animation {
+    display: none;
+}
+
+section.choose-your-character .modal-container .modal .content .image:hover img.on-hover-animation {
+    display: inline-block;
+    width: 800%;
+    animation: animate-character calc(var(--CHOOSE-CHARACTER-SEC-character-anim-duration) * 1ms) steps(8) infinite;
+} */
+
+@keyframes animate-character {
+    0% { transform: translateX(0) translateY(var(--translate-y, 0)); }
+    100% { transform: translateX(-100%) translateY(var(--translate-y, 0)); }
+}
+
+/* MEDIA QUERIES */
+@media screen and (max-width: 1600px) { /* 1600px */
+    
+}
+@media screen and (max-width: 1400px) { /* 1400px */
+    section.choose-your-character .characters-container .character-representation .image {
+        height: 85%;
+    }
+    section.choose-your-character .characters-container .character-representation .button {
+        height: 15%;
+    }
+    /* section.choose-your-character .modal-container .modal .content {
+        font-size: 1.6em;
+    } */
+}
+
+@media screen and (max-width: 1300px) { /* 1300px */
+    section.choose-your-character .characters-container {
+        gap: 0;
+    }
+    section.choose-your-character .characters-container .character-representation .button button {
+        padding: .7em 1.4em;
+    }
+    section.choose-your-character .characters-container .character-representation {
+        width: 24%;
+    }
+    section.choose-your-character .characters-container .character-representation:nth-child(1) .image .image-wrapper {
+        width: 42%;
+    }
+    section.choose-your-character .characters-container .character-representation:nth-child(2) .image .image-wrapper {
+        /* width: 70%; */
+        width: 90%;
+    }
+    section.choose-your-character .characters-container .character-representation:nth-child(3) .image .image-wrapper {
+        /* width: 44%; */
+        width: 45%;
+    }
+    section.choose-your-character .modal-container .modal {
+        width: 70%;
+    }
+    section.choose-your-character .modal-container .modal .clipping {
+        border-width: 3em;
+    }
+    section.choose-your-character .modal-container .modal .clipping-border {
+        border-width: 3.05em;
+    }
+    section.choose-your-character .modal-container[data-character-position=left] .modal .clipping,
+    section.choose-your-character .modal-container[data-character-position=left] .modal .clipping-border {
+        left: 20%;
+    }
+
+    section.choose-your-character .modal-container[data-character-position=center] .modal .clipping,
+    section.choose-your-character .modal-container[data-character-position=center] .modal .clipping-border {
+        left: 50%;
+    }
+
+    section.choose-your-character .modal-container[data-character-position=right] .modal .clipping,
+    section.choose-your-character .modal-container[data-character-position=right] .modal .clipping-border {
+        left: 80%;
+    }
+}
+
+@media screen and (max-width: 1000px) { /* 1000px */
+    section.choose-your-character .characters-container .character-representation .button button {
+        font-size: .8em;
+        padding: .5em .8em;
+        min-width: 10em;
+    }
+    section.choose-your-character .modal-container {
+        position: fixed;
+    }
+    section.choose-your-character .modal-container .modal {
+        padding: 3em;
+    }
+    section.choose-your-character .modal-container .modal .content {
+        font-size: 1.3em;
+    }
+    section.choose-your-character .modal-container[data-active=true] .modal .clipping,
+    section.choose-your-character .modal-container[data-active=true] .modal .clipping-border  {
+        opacity: 0;
+    }
+    section.choose-your-character .modal-container .modal .close-btn {
+        width: 3em;
+        height: 3em;
+    }
+}
+
+@media screen and (max-width: 800px) { /* 800px */
+    section.choose-your-character .modal-container .modal {
+        width: 70%;
+    }
+    section.choose-your-character .modal-container .modal .content {
+        flex-direction: column-reverse;
+    }
+    section.choose-your-character .modal-container .modal .content .image {
+        width: 30%;
+    }
+    section.choose-your-character .modal-container .modal .content .text {
+        width: 100%;
+        align-items: center;
+    }
+    section.choose-your-character .modal-container .modal .content .text p {
+        text-align: justify;
+    }
+    section.choose-your-character .modal-container .modal .content .text a:active,
+    section.choose-your-character .modal-container .modal .content .text a:hover,
+    section.choose-your-character .modal-container .modal .content .text a:focus {
+        transform: scale(1.1);
+    }
+    section.choose-your-character .modal-container .modal .close-btn {
+        width: 3.5em;
+        height: 3.5em;
+    }
+}
+
+@media screen and (max-width: 600px) { /* 600px */
+    section.choose-your-character .modal-container .modal .content .image {
+        width: 45%;
+    }
+    section.choose-your-character .modal-container .modal {
+        padding: 2em;
+    }
+    section.choose-your-character .modal-container .modal .content {
+        font-size: 1.1em;
+    }
+    section.choose-your-character .modal-container .modal .close-btn {
+        width: 3em;
+        height: 3em;
+    }
+}

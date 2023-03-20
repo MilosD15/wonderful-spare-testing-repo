@@ -4,43 +4,116 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Made With Love section</title>
-    <link rel="stylesheet" href="./css/graphic-section.css">
+    <title>Choose your character</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/vibrate.css">
     <link rel="stylesheet" href="./css/blur-effect.css">
     <link rel="stylesheet" href="./css/grain-effect.css">
-    <link rel="stylesheet" href="./css/made-with-love.css">
     <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.js"></script>
-    <script src="./js/madeWithLove.js" type="module"></script>
+    <script src="./js/script.js" type="module"></script>
 </head>
 <body>
-    <section class="made-with-love graphic-section" data-made-with-love-section>
-        <div class="made-with-love__wrapper graphic-section__wrapper grain-effect blur-effect">
-            <div class="made-with-love__bg" data-mvl-bg>
-                <div class="made-with-love__bg-trees-outside">
-                    <img src="./images/trees-outside.webp" alt="Trees outside that can be seen through the kitchen window on the right-hand side">
+    <section class="choose-your-character">
+        <div class="wrapper blur-effect grain-effect">
+            <div class="bg">
+                <div class="stage">
+                    <img src="./images/stage.png" alt="Stage piece of the background image(theatre stage)">
                 </div>
-                <div class="made-with-love__bg-character">
-                    <img src="./images/prophy-cups-sheet-wave-with-shadow.png" class="made-with-love__bg-character-image priority" alt="Prophy character waving">
+                <div class="very-back">
+                    <img src="./images/very-background.png" alt="Very background piece of the background image(theatre stage)">
                 </div>
-                <div class="made-with-love__bg-window-glass">
-                    <img src="./images/cook-kitchen-window-glass.webp" alt="Cook kitchen window glass">
+                <div class="left-box vibrate vibrate--version-4">
+                    <img src="./images/left-box.png" alt="Left box on the stage(theatre stage)">
                 </div>
-                <div class="made-with-love__bg-cook-kitchen">
-                    <img src="./images/cook-kitchen.webp" alt="Kitchen of the tooth cook">
+                <div class="right-boxes vibrate vibrate--version-2">
+                    <img src="./images/right-boxes.png" alt="Right boxes on the stage(theatre stage)">
+                </div>
+                <div class="vertical-curtains vibrate vibrate--version-1">
+                    <img src="./images/vertical-curtains.png" alt="Vertical curtains piece of the background image(theatre stage)">
+                </div>
+                <div class="pieces-of-horizontal-curtains vibrate vibrate--version-3">
+                    <img src="./images/pieces-of-horizontal-curtains.png" alt="Pieces of horizontal curtains of the background image(theatre stage)">
+                </div>
+                <div class="very-left-and-right-horizontal-curtains vibrate vibrate--version-2">
+                    <img src="./images/very-left-and-right-horizontal-curtains.png" alt="Very right and left horizontal curtains of the background image(theatre stage)">
+                </div>
+                <div class="left-and-right-horizontal-curtains vibrate vibrate--version-4">
+                    <img src="./images/left-and-right-horizontal-curtains.png" alt="Left and right horizontal curtains of the background image(theatre stage)">
+                </div>
+                <div class="centered-horizontal-curtains vibrate vibrate--version-1">
+                    <img src="./images/centered-horizontal-curtains.png" alt="Centered horizontal curtains of the background image(theatre stage)">
                 </div>
             </div>
-            <dotlottie-player class="made-with-love__lottie" data-mvl-lottie></dotlottie-player>
-            <div class="made-with-love__cook-right-hand" data-mvl-cook-right-hand>
-                <img src="./images/hand-with-cake.webp" alt="Cook right hand with cake">
+            <dotlottie-player class="lottie-container" data-cyc-lottie></dotlottie-player>
+            <div class="radial-dark-shadow"></div>
+            <div class="characters-container">
+                <div class="character-representation" data-id="1" data-position="left">
+                    <div class="left light">
+                        <img src="./images/left-lightb.png" alt="A left ceiling light">
+                    </div>
+                    <div class="image">
+                        <div class="image-wrapper">
+                            <img src="./images/varnish-cups-sheet-with-shadow.png" class="static-animation" alt="A fluoride varnish cup character">
+                            <img src="./images/varnish-cups-sheet-wave-with-shadow.png" class="on-hover-animation" alt="A fluoride varnish cup character">
+                        </div>
+                    </div>
+                    <div class="button">
+                        <button>fluoride <br> varnish cups</button>
+                    </div>
+                </div>
+                <div class="character-representation" data-id="2" data-position="center">
+                    <div class="center light">
+                        <img src="./images/center-lightb2.png" alt="A center ceiling light">
+                    </div>
+                    <div class="image">
+                        <div class="image-wrapper">
+                            <img src="./images/varnish-sheet-with-shadow.png" class="static-animation" alt="A fluoride varnish character">
+                            <img src="./images/varnish-sheet-wave-with-shadow.png" class="on-hover-animation" alt="A fluoride varnish character">
+                        </div>
+                    </div>
+                    <div class="button">
+                        <button>fluoride <br> varnish</button>
+                    </div>
+                </div>
+                <div class="character-representation" data-id="3" data-position="right">
+                    <div class="right light">
+                        <img src="./images/right-lightb2.png" alt="A right ceiling light">
+                    </div>
+                    <div class="image">
+                        <div class="image-wrapper">
+                            <img src="./images/prophy-cups-with-shadow-sprites.png" class="static-animation" alt="A prophy paste character">
+                            <img src="./images/prophy-cups-sheet-wave-with-shadow.png" class="on-hover-animation" alt="A prophy paste character">
+                        </div>
+                    </div>
+                    <div class="button">
+                        <button>prophy <br> paste</button>
+                    </div>
+                </div>
             </div>
-            <div class="made-with-love__tooth-cook-character">
-                <img src="./images/tooth-cook-character.webp" alt="Tooth cook character">
-            </div>
-            <div class="made-with-love__table" data-mvl-table>
-                <img src="./images/cook-table.webp" alt="Tooth cook table">
-            </div>
-            <div class="made-with-love__cook-tool" data-mvl-cook-tool>
-                <img src="./images/cook-tool.webp" alt="Cook tool necessary for making amazing cakes">
+        </div>
+        <div class="modal-container" data-active="" data-character-position="center">
+            <div class="modal">
+                <div class="content">
+                    <div class="text">
+                        <p data-modal-description>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere dolore cum itaque ducimus facilis neque sint tempora quas enim exercitationem maiores quo, nobis dicta eum praesentium accusantium eius repellat, fugit quibusdam omnis! Aut nemo, ipsam tenetur officiis vel incidunt laudantium.</p>
+                        <a href="/" data-modal-link>visit my product page</a>
+                    </div>
+                    <div class="image">
+                        <div class="wrapper">
+                            <img src="./images/varnish-cup-sprite.png" class="static-animation" alt="A fluoride varnish cup character" data-modal-image-static-animation>
+                            <img src="./images/varnish-cup-sprite.png" class="on-hover-animation" alt="A fluoride varnish cup character" data-modal-image-on-hover-animation>
+                        </div>
+                    </div>
+                </div>
+                <button class="close-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <line x1="18" y1="6" x2="6" y2="18" />
+                        <line x1="6" y1="6" x2="18" y2="18" />
+                    </svg>
+                </button>
+                <div class="clipping-border"></div>
+                <div class="clipping"></div>
             </div>
         </div>
     </section>

@@ -5,7 +5,7 @@
   height: 300%;
   top: -100%;
   left: -50%;
-  background: transparent url("../images/grain-image.webp") 0 0;
+  background: transparent url("../images/grain-image.png") 0 0;
   opacity: 0.73 !important;
   mix-blend-mode: soft-light;
   z-index: 4;
