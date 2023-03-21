@@ -1,35 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./css/blur-effect.css">
-  <link rel="stylesheet" href="./css/grain-effect.css">
-  <link rel="stylesheet" href="./css/graphic-section.css">
-  <link rel="stylesheet" href="./css/vibrate.css">
-  <link rel="stylesheet" href="./css/cut-middleman.css">
-  <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.js"></script>
-  <title>Cut out the middleman</title>
-  <script src="./js/cutMiddleman.js" type="module"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Additives Be Gone section</title>
+    <link rel="stylesheet" href="./css/blur-effect.css">
+    <link rel="stylesheet" href="./css/grain-effect.css">
+    <link rel="stylesheet" href="./css/graphic-section.css">
+    <link rel="stylesheet" href="./css/vibrate.css">
+    <link rel="stylesheet" href="./css/additives-be-gone.css">
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.9.6/lottie.min.js" integrity="sha512-yAr4fN9WZH6hESbOwoFZGtSgOP+LSZbs/JeoDr02pOX4yUFfI++qC9YwIQXIGffhnzliykJtdWTV/v3PxSz8aw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+    <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-interactivity@latest/dist/lottie-interactivity.min.js"></script>
+    <!-- <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+    <script src="./js/additivesBeGone.js" type="module"></script>
 </head>
 <body>
-  <section class="cut-middleman graphic-section" data-cut-middleman-section>
-    <div class="cut-middleman__wrapper graphic-section__wrapper grain-effect blur-effect" data-cm-wrapper>
-      <div class="cut-middleman__sky" data-cm-sky>
-        <img src="./images/cm-bg.png" alt="Blue sky with a bunch of clouds">
-      </div>
-      <div class="cut-middleman__bg-hills" data-cm-bg-hills>
-        <img src="./images/cm-bg-hills.png" alt="Hills and mountains in the background">
-      </div>
-      <div class="cut-middleman__trees-fence-house" data-cm-trees-fence-house>
-        <img src="./images/cm-bg-trees-fence-house.png" alt="A couple of trees and bushes, fence, grass, and a part of the house in the background">
-      </div>
-      <!-- <div class="cut-middleman__lottie" data-cm-lottie-container></div> -->
-      <div class="cut-middleman__money-wolf" data-cm-money-wolf>
-        <img src="./images/cm-money-wolf.png" class="vibrate vibrate--version-1" alt="A picture of money character chasing a wolf with scissors">
-      </div>
-    </div>
-  </section>
+    <section class="additives-be-gone graphic-section" data-additives-be-gone-section>
+        <div class="additives-be-gone__wrapper graphic-section__wrapper blur-effect grain-effect">
+            <div class="additives-be-gone__bg" data-abg-bg>
+                <img src="./images/abg-space.webp" alt="A picture of universe">
+            </div>
+            <dotlottie-player autoplay loop mode="normal" class="additives-be-gone__lottie-animation" data-abg-lottie-player></dotlottie-player>
+            <div class="additives-be-gone__rocks" data-abg-rocks>
+                <img src="./images/abg-rocks.webp" alt="A picture of rocks">
+            </div>
+            <div class="additives-be-gone__magician" data-abg-magician>
+                <img src="./images/abg-magician.webp" alt="A picture of a tooth magician character">
+            </div>
+            <div class="additives-be-gone__magic" data-abg-magic>
+                <img src="./images/abg-magic.webp" alt="A picture of magician's magic(sparkles and stars)">
+            </div>
+            <div class="additives-be-gone__additives" data-abg-additives>
+                <img src="./images/abg-additives.webp" alt="A picture of the small balls which represents additives">
+            </div>
+        </div>
+    </section>
 </body>
 </html>
