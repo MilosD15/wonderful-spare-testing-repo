@@ -4,21 +4,62 @@ import { isSectionInViewPort } from "./additional-func.js";
 
 // DOM elements
 const heavenlyFlavorsSection = document.querySelector("[data-heavenly-flavors]");
-const heavenlyFlavorsLottieContainer = heavenlyFlavorsSection.querySelector("[data-heavenly-flavors-lottie-container]");
 const heavenlyFlavorsFurtherPedestal = heavenlyFlavorsSection.querySelector("[data-heavenly-flavors-further-pedestal]");
 const heavenlyFlavorsCloserPedestal = heavenlyFlavorsSection.querySelector("[data-heavenly-flavors-closer-pedestal]");
 const heavenlyFlavorsLottiePlayer = heavenlyFlavorsSection.querySelector("[data-heavenly-flavors-lottie]");
 
-// lottie animation
+// lottie animation (the example of lottie animation that loop specific part of animation with delay between loops)
 let sectionWasAlreadyInViewport = false;
 const lottieAnimationSpeed = 0.9;
+const delayBetweenLoops = 2000;
+const lottieAnimationDuration = 2400;
+const lastFrame = 72;
+const frameFromWhichToStartLoop = 40;
+let currentIteration = 0;
 
-function reloadPlayer(player) {
-  player.load('../../heavenly-flavors.lottie');
+function reloadPlayer(player, thisIteration) {
+  if (currentIteration > thisIteration) return;
+
+  player.load('../heavenly-flavors.lottie');
 
   player.addEventListener('ready', () => {
-    player.play();
-    player.setSpeed(lottieAnimationSpeed);
+    LottieInteractivity.create({
+      player: player.getLottie(),
+      mode: 'chain',
+      actions: [
+        {
+          state: 'autoplay',
+          frames: [0, lastFrame],
+          speed: lottieAnimationSpeed
+        }
+      ],
+    });
+
+    setTimeout(() => {
+      if (currentIteration > thisIteration) return;
+
+      playSecondPartOfLottieAnimation(player);
+
+      setInterval(() => {
+        if (currentIteration > thisIteration) return;
+
+        playSecondPartOfLottieAnimation(player)
+      }, lottieAnimationDuration / 2 + delayBetweenLoops);
+    }, lottieAnimationDuration + delayBetweenLoops);
+  });
+}
+
+function playSecondPartOfLottieAnimation(player) {
+  LottieInteractivity.create({
+    player: player.getLottie(),
+    mode: 'chain',
+    actions: [
+      {
+        state: 'autoplay',
+        frames: [frameFromWhichToStartLoop, lastFrame],
+        speed: lottieAnimationSpeed
+      },
+    ],
   });
 }
 
@@ -28,7 +69,8 @@ window.addEventListener("scroll", handleLottieAnimation);
 function handleLottieAnimation() {
   if (isSectionInViewPort(heavenlyFlavorsSection) && sectionWasAlreadyInViewport === false) {
     sectionWasAlreadyInViewport = true;
-    reloadPlayer(heavenlyFlavorsLottiePlayer);
+    currentIteration++;
+    reloadPlayer(heavenlyFlavorsLottiePlayer, currentIteration);
   }
   if (!isSectionInViewPort(heavenlyFlavorsSection)) {
     sectionWasAlreadyInViewport = false;
