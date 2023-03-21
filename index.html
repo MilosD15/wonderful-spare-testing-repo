@@ -1,42 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Additives Be Gone section</title>
-    <link rel="stylesheet" href="./css/blur-effect.css">
-    <link rel="stylesheet" href="./css/grain-effect.css">
-    <link rel="stylesheet" href="./css/graphic-section.css">
-    <link rel="stylesheet" href="./css/vibrate.css">
-    <link rel="stylesheet" href="./css/additives-be-gone.css">
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.9.6/lottie.min.js" integrity="sha512-yAr4fN9WZH6hESbOwoFZGtSgOP+LSZbs/JeoDr02pOX4yUFfI++qC9YwIQXIGffhnzliykJtdWTV/v3PxSz8aw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
-    <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.js"></script>
-    <script src="https://unpkg.com/@lottiefiles/lottie-interactivity@latest/dist/lottie-interactivity.min.js"></script>
-    <!-- <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script> -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
-    <script src="./js/additivesBeGone.js" type="module"></script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/graphic-section.css">
+  <link rel="stylesheet" href="./css/blur-effect.css">
+  <link rel="stylesheet" href="./css/grain-effect.css">
+  <link rel="stylesheet" href="./css/heavenly-flavors.css">
+  <title>Heavenly flavors</title>
+  <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.js"></script>
+  <script src="https://unpkg.com/@lottiefiles/lottie-interactivity@latest/dist/lottie-interactivity.min.js"></script>
+  <script src="./js/heavenly-flavors.js" type="module"></script>
 </head>
 <body>
-    <section class="additives-be-gone graphic-section" data-additives-be-gone-section>
-        <div class="additives-be-gone__wrapper graphic-section__wrapper blur-effect grain-effect">
-            <div class="additives-be-gone__bg" data-abg-bg>
-                <img src="./images/abg-space.webp" alt="A picture of universe">
+  <section class="heavenly-flavors graphic-section" data-heavenly-flavors>
+    <div class="heavenly-flavors__wrapper graphic-section__wrapper grain-effect blur-effect">
+      <div class="heavenly-flavors__bg">
+        <img src="./images/heavenly-flavors-bg.webp" alt="Blue sky with a bunch of clouds">
+      </div>
+      <dotlottie-player mode="normal" class="heavenly-flavors__lottie-container" data-heavenly-flavors-lottie></dotlottie-player>
+      <div class="heavenly-flavors__pedestal">
+        <div class="heavenly-flavors__pedestal-row heavenly-flavors__pedestal-row--further" data-heavenly-flavors-further-pedestal>
+          <div class="heavenly-flavors__pedestal-column heavenly-flavors__pedestal-column--further">
+            <div class="heavenly-flavors__pedestal-column-character heavenly-flavors__pedestal-column-character--marshmallow">
+              <img src="./images/marshmallow-character.webp" alt="A marshmallow character">
             </div>
-            <dotlottie-player autoplay loop mode="normal" class="additives-be-gone__lottie-animation" data-abg-lottie-player></dotlottie-player>
-            <div class="additives-be-gone__rocks" data-abg-rocks>
-                <img src="./images/abg-rocks.webp" alt="A picture of rocks">
+            <div class="heavenly-flavors__pedestal-column-pillar">
+              <img src="./images/pillar.webp" alt="One of the pillars of the pedestal">
             </div>
-            <div class="additives-be-gone__magician" data-abg-magician>
-                <img src="./images/abg-magician.webp" alt="A picture of a tooth magician character">
+          </div>
+          <div class="heavenly-flavors__pedestal-column heavenly-flavors__pedestal-column--further">
+            <div class="heavenly-flavors__pedestal-column-character heavenly-flavors__pedestal-column-character--strawberry">
+              <img src="./images/strawberry-character.webp" alt="A strawberry character">
             </div>
-            <div class="additives-be-gone__magic" data-abg-magic>
-                <img src="./images/abg-magic.webp" alt="A picture of magician's magic(sparkles and stars)">
+            <div class="heavenly-flavors__pedestal-column-pillar">
+              <img src="./images/pillar.webp" alt="One of the pillars of the pedestal">
             </div>
-            <div class="additives-be-gone__additives" data-abg-additives>
-                <img src="./images/abg-additives.webp" alt="A picture of the small balls which represents additives">
+          </div>
+          <div class="heavenly-flavors__pedestal-column heavenly-flavors__pedestal-column--further">
+            <div class="heavenly-flavors__pedestal-column-character heavenly-flavors__pedestal-column-character--mint">
+              <img src="./images/mint-character.webp" alt="A mint character">
             </div>
+            <div class="heavenly-flavors__pedestal-column-pillar">
+              <img src="./images/pillar.webp" alt="One of the pillars of the pedestal">
+            </div>
+          </div>
+          <div class="heavenly-flavors__pedestal-column heavenly-flavors__pedestal-column--further">
+            <div class="heavenly-flavors__pedestal-column-character heavenly-flavors__pedestal-column-character--chocolate">
+              <img src="./images/chocolate-character.webp" alt="A chocolate character">
+            </div>
+            <div class="heavenly-flavors__pedestal-column-pillar">
+              <img src="./images/pillar.webp" alt="One of the pillars of the pedestal">
+            </div>
+          </div>
         </div>
-    </section>
+        <div class="heavenly-flavors__pedestal-row heavenly-flavors__pedestal-row--closer" data-heavenly-flavors-closer-pedestal>
+          <div class="heavenly-flavors__pedestal-column heavenly-flavors__pedestal-column--closer">
+            <div class="heavenly-flavors__pedestal-column-character heavenly-flavors__pedestal-column-character--bubblegum">
+              <img src="./images/bubblegum-character.webp" alt="A bubblegum character">
+            </div>
+            <div class="heavenly-flavors__pedestal-column-pillar">
+              <img src="./images/pillar.webp" alt="One of the pillars of the pedestal">
+            </div>
+          </div>
+          <div class="heavenly-flavors__pedestal-column heavenly-flavors__pedestal-column--closer">
+            <div class="heavenly-flavors__pedestal-column-character heavenly-flavors__pedestal-column-character--plain">
+              <img src="./images/plain-character.webp" alt="A plain character">
+            </div>
+            <div class="heavenly-flavors__pedestal-column-pillar">
+              <img src="./images/pillar.webp" alt="One of the pillars of the pedestal">
+            </div>
+          </div>
+          <div class="heavenly-flavors__pedestal-column heavenly-flavors__pedestal-column--closer">
+            <div class="heavenly-flavors__pedestal-column-character heavenly-flavors__pedestal-column-character--smores">
+              <img src="./images/smores-character.webp" alt="A smores character">
+            </div>
+            <div class="heavenly-flavors__pedestal-column-pillar">
+              <img src="./images/pillar.webp" alt="One of the pillars of the pedestal">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="heavenly-flavors__clouds-below-pedestal">
+        <img src="./images/heavenly-flavors-clouds.webp" alt="Clouds in front of the pedestal">
+      </div>
+    </div>
+  </section>
 </body>
 </html>
