@@ -1,47 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>How we are different</title>
-  <link rel="stylesheet" href="./css/blur-effect.css">
-  <link rel="stylesheet" href="./css/grain-effect.css">
-  <link rel="stylesheet" href="./css/graphic-section.css">
-  <link rel="stylesheet" href="./css/vibrate.css">
-  <link rel="stylesheet" href="./css/how-we-are-different.css">
-  <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.js"></script>
-  <script src="https://unpkg.com/@lottiefiles/lottie-interactivity@latest/dist/lottie-interactivity.min.js"></script>
-  <script src="./js/howWeAreDifferent.js" type="module"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Save teeth - Save money</title>
+    <link rel="stylesheet" href="./css/blur-effect.css">
+    <link rel="stylesheet" href="./css/grain-effect.css">
+    <link rel="stylesheet" href="./css/graphic-section.css">
+    <link rel="stylesheet" href="./css/save-teeth-money.css">
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.9.6/lottie.min.js" integrity="sha512-yAr4fN9WZH6hESbOwoFZGtSgOP+LSZbs/JeoDr02pOX4yUFfI++qC9YwIQXIGffhnzliykJtdWTV/v3PxSz8aw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+    <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-interactivity@latest/dist/lottie-interactivity.min.js"></script>
+    <!-- <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+    <script src="./js/saveTeethMoney.js" type="module"></script>
 </head>
 <body>
-  <section class="how-we-are-different graphic-section" data-how-we-are-different-section>
-    <div class="how-we-are-different__wrapper graphic-section__wrapper grain-effect blur-effect">
-      <div class="how-we-are-different__bg" data-hwad-bg>
-        <img src="./images/hwad-bg.png" alt="An illustration of an old soaked piece of paper">
-      </div>
-      <div class="how-we-are-different__highlights" data-hwad-highlights-container>
-        <div class="how-we-are-different__highlights-highlight how-we-are-different__highlights-highlight--left">
-          <img src="./images/hwad-highlight.png" class="how-we-are-different__highlights-highlight-image" alt="A highlight that goes around 'honestly priced' illustration">
+    <section class="save-teeth-money graphic-section" data-save-teeth-money-section>
+        <div class="save-teeth-money__wrapper graphic-section__wrapper blur-effect grain-effect">
+            <!-- <div class="save-teeth-money__radial-dark-shadow"></div> -->
+            <div class="save-teeth-money__bg" data-stsm-bg>
+                <img src="./images/stsm-bg.webp" alt="A background of the scene(purplish floor and back wall with two pillars)">
+            </div>
+            <dotlottie-player mode="normal" class="save-teeth-money__save-teeth-lottie" data-save-teeth-lottie></dotlottie-player>
+            <dotlottie-player mode="normal" class="save-teeth-money__save-money-lottie" data-save-money-lottie></dotlottie-player>
+            <div class="save-teeth-money__vault" data-stsm-vault>
+                <img src="./images/stsm-vault.webp" alt="A central vault">
+            </div>
+            <div class="save-teeth-money__vault-left-arm" data-stsm-vault-left-arm>
+                <img src="./images/stsm-vault-arm-left.webp" alt="A central vault's left arm">
+            </div>
+            <div class="save-teeth-money__vault-right-arm" data-stsm-vault-right-arm>
+                <img src="./images/stsm-vault-arm-right.webp" alt="A central vault's right arm">
+            </div>
+            <div class="save-teeth-money__tooth-money" data-stsm-tooth-money>
+                <img src="./images/stsm-tooth-money.webp" alt="Tooth and money characters">
+            </div>
         </div>
-        <div class="how-we-are-different__highlights-highlight how-we-are-different__highlights-highlight--center">
-          <img src="./images/hwad-highlight.png" class="how-we-are-different__highlights-highlight-image" alt="A highlight that goes around 'made with love' illustration">
-        </div>
-        <div class="how-we-are-different__highlights-highlight how-we-are-different__highlights-highlight--right">
-          <img src="./images/hwad-highlight.png" class="how-we-are-different__highlights-highlight-image" alt="A highlight that goes around 'developed by dentist' illustration">
-        </div>
-      </div>
-      <div class="how-we-are-different__drawn-differences" data-hwad-drawn-differences>
-        <img src="./images/hwad-drawn-differences.png" alt="An illustration of our advantages over others(honestly priced, developed by dentist, made with love)">
-      </div>
-      <div class="how-we-are-different__written-differences" data-hwad-written-differences>
-        <img src="./images/hwad-written-differences.png" alt="Honestly priced, developed by dentist, made with love captions">
-      </div>
-      <div class="how-we-are-different__title-flag" data-hwad-title-flag>
-        <img src="./images/hwad-title-flag.png" alt="A flag that is located under the 'how we are different' lottie title of the section">
-      </div>
-      <dotlottie-player mode="normal" class="how-we-are-different__lottie" data-hwad-lottie-player></dotlottie-player>
-    </div>
-  </section>
+    </section>
 </body>
 </html>
