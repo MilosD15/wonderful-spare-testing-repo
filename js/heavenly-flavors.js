@@ -8,6 +8,7 @@ if (document.querySelector("[data-heavenly-flavors]")) {
   const heavenlyFlavorsFurtherPedestal = heavenlyFlavorsSection.querySelector("[data-heavenly-flavors-further-pedestal]");
   const heavenlyFlavorsCloserPedestal = heavenlyFlavorsSection.querySelector("[data-heavenly-flavors-closer-pedestal]");
   const heavenlyFlavorsLottiePlayer = heavenlyFlavorsSection.querySelector("[data-heavenly-flavors-lottie]");
+  const heavenlyFlavorsLevitatingCharacters = heavenlyFlavorsSection.querySelector("[data-heavenly-flavors-levitating-characters]");
 
   // lottie animation (the example of lottie animation that loop specific part of animation with delay between loops)
   let sectionWasAlreadyInViewport = false;
@@ -81,6 +82,7 @@ if (document.querySelector("[data-heavenly-flavors]")) {
   // parallax
   const heavenlyFlavorsFurtherPedestalParallax = new ElementParallax(heavenlyFlavorsSection, heavenlyFlavorsFurtherPedestal, { y: 36 }, 0, { y: -25 }, 2);
   const heavenlyFlavorsCloserPedestalParallax = new ElementParallax(heavenlyFlavorsSection, heavenlyFlavorsCloserPedestal, { y: 25 }, 0, { y: -18 }, 2);
+  const heavenlyFlavorsLevitatingCharactersParallax = new ElementParallax(heavenlyFlavorsSection, heavenlyFlavorsLevitatingCharacters, { y: -8 }, 0, { y: 8 }, 2);
 
   window.addEventListener("load", handleParallax);
   window.addEventListener("scroll", handleParallax);
@@ -90,5 +92,6 @@ if (document.querySelector("[data-heavenly-flavors]")) {
 
     heavenlyFlavorsFurtherPedestalParallax.apply(currentScroll);
     heavenlyFlavorsCloserPedestalParallax.apply(currentScroll);
+    heavenlyFlavorsLevitatingCharactersParallax.apply(currentScroll);
   }
 }
