@@ -1,0 +1,339 @@
+body {
+  width: 100%;
+  height: 300vh;
+  margin: 0;
+  display: grid;
+  place-items: center;
+}
+
+.heavenly-flavors {
+  width: 100%;
+  aspect-ratio: 16/7;
+  overflow: hidden;
+  position: relative;
+}
+@media screen and (max-width: 81.25rem) {
+  .heavenly-flavors { /* 1300px */
+    aspect-ratio: 16/36;
+  }
+}
+@media screen and (max-width: 81.25rem) {
+  .heavenly-flavors__wrapper { /* 1300px */
+    aspect-ratio: 16/36;
+  }
+}
+.heavenly-flavors::after {
+  -webkit-box-shadow: inset 0 -2.9vw 1.3vw -1vw #ffffff;
+          box-shadow: inset 0 -2.9vw 1.3vw -1vw #ffffff;
+}
+.heavenly-flavors__bg {
+  inset: 0;
+}
+@media screen and (max-width: 81.25rem) {
+  .heavenly-flavors__bg { /* 1300px */
+    width: 300%;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+}
+.heavenly-flavors__clouds-below-pedestal {
+  z-index: 10;
+  bottom: 0;
+  width: 100%;
+}
+@media screen and (max-width: 81.25rem) {
+  .heavenly-flavors__clouds-below-pedestal { /* 1300px */
+    width: 300%;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+}
+.heavenly-flavors__lottie-container {
+  top: -28%;
+  width: 50%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+@media screen and (max-width: 81.25rem) {
+  .heavenly-flavors__lottie-container { /* 1300px */
+    top: -39%;
+    width: 106%;
+  }
+}
+.heavenly-flavors__pedestal {
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 70%;
+  height: 60%;
+}
+@media screen and (max-width: 81.25rem) {
+  .heavenly-flavors__pedestal { /* 1300px */
+    display: none;
+  }
+}
+.heavenly-flavors__pedestal-row {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.heavenly-flavors__pedestal-row--further {
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+.heavenly-flavors__pedestal-row--closer {
+  top: 22%;
+  left: 13%;
+  width: 74%;
+}
+.heavenly-flavors__pedestal-column {
+  position: relative;
+}
+.heavenly-flavors__pedestal-column--further {
+  width: 19%;
+}
+.heavenly-flavors__pedestal-column--closer {
+  width: 26%;
+}
+.heavenly-flavors__pedestal-column-character {
+  position: absolute;
+  width: 100%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  bottom: 80.5%;
+  display: none;
+}
+.heavenly-flavors__pedestal-column-character--marshmallow {
+  display: block;
+  width: 92%;
+  left: 68%;
+  -webkit-transform: translateX(-50%) translateY(2%);
+          transform: translateX(-50%) translateY(2%);
+}
+.heavenly-flavors__pedestal-column-character--strawberry {
+  display: block;
+  width: 65%;
+  left: 54%;
+}
+.heavenly-flavors__pedestal-column-character--mint {
+  display: block;
+  width: 94%;
+  left: 50%;
+}
+.heavenly-flavors__pedestal-column-character--chocolate {
+  display: block;
+  width: 84%;
+  left: 36%;
+}
+.heavenly-flavors__pedestal-column-character--bubblegum {
+  display: block;
+  width: 60%;
+  left: 49%;
+  -webkit-transform: translateX(-50%) translateY(-30%);
+          transform: translateX(-50%) translateY(-30%);
+}
+.heavenly-flavors__pedestal-column-character--plain {
+  display: block;
+  width: 100%;
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(6%);
+          transform: translateX(-50%) translateY(6%);
+}
+.heavenly-flavors__pedestal-column-character--smores {
+  display: block;
+  width: 100%;
+  left: 64%;
+  -webkit-transform: translateX(-50%) translateY(2%);
+          transform: translateX(-50%) translateY(2%);
+}
+.heavenly-flavors__pedestal-column-pillar {
+  width: 100%;
+  margin-top: 60%;
+}
+.heavenly-flavors__levitating-characters {
+  display: none;
+  top: 1%;
+  left: 0;
+  width: 100%;
+  aspect-ratio: 16/36;
+}
+@media screen and (max-width: 81.25rem) {
+  .heavenly-flavors__levitating-characters { /* 1300px */
+    display: block;
+  }
+}
+.heavenly-flavors__levitating-character {
+  position: absolute;
+}
+.heavenly-flavors__levitating-character--bubblegum {
+  z-index: 3;
+  width: 24%;
+  aspect-ratio: 1/1;
+  left: 20%;
+  top: 24%;
+}
+.heavenly-flavors__levitating-character--bubblegum-left-wing, .heavenly-flavors__levitating-character--bubblegum-right-wing, .heavenly-flavors__levitating-character--bubblegum-hallo {
+  width: 330%;
+}
+.heavenly-flavors__levitating-character--bubblegum-left-wing, .heavenly-flavors__levitating-character--bubblegum-right-wing {
+  top: -110%;
+}
+.heavenly-flavors__levitating-character--bubblegum-left-wing {
+  left: -86%;
+}
+.heavenly-flavors__levitating-character--bubblegum-right-wing {
+  right: -100%;
+}
+.heavenly-flavors__levitating-character--bubblegum-hallo {
+  left: -108%;
+  top: -70%;
+}
+.heavenly-flavors__levitating-character--marshmallow {
+  z-index: 4;
+  width: 36%;
+  aspect-ratio: 1/1;
+  left: 55%;
+  top: 33%;
+}
+.heavenly-flavors__levitating-character--marshmallow-left-wing, .heavenly-flavors__levitating-character--marshmallow-right-wing, .heavenly-flavors__levitating-character--marshmallow-hallo {
+  width: 210%;
+}
+.heavenly-flavors__levitating-character--marshmallow-left-wing, .heavenly-flavors__levitating-character--marshmallow-right-wing {
+  top: -66%;
+}
+.heavenly-flavors__levitating-character--marshmallow-left-wing {
+  left: -45%;
+}
+.heavenly-flavors__levitating-character--marshmallow-right-wing {
+  top: -60%;
+  right: -32%;
+}
+.heavenly-flavors__levitating-character--marshmallow-hallo {
+  left: -55%;
+  top: -42%;
+}
+.heavenly-flavors__levitating-character--mint {
+  z-index: 5;
+  width: 40%;
+  aspect-ratio: 8/7;
+  left: 10%;
+  top: 46%;
+}
+.heavenly-flavors__levitating-character--mint-uncovered-left-wing, .heavenly-flavors__levitating-character--mint-uncovered-right-wing, .heavenly-flavors__levitating-character--mint-covered-left-wing, .heavenly-flavors__levitating-character--mint-covered-right-wing, .heavenly-flavors__levitating-character--mint-hallo--left, .heavenly-flavors__levitating-character--mint-hallo--right {
+  width: 200%;
+}
+.heavenly-flavors__levitating-character--mint-uncovered-left-wing {
+  top: -68%;
+  left: -43%;
+}
+.heavenly-flavors__levitating-character--mint-covered-left-wing {
+  top: -68%;
+  left: 0%;
+}
+.heavenly-flavors__levitating-character--mint-uncovered-right-wing {
+  top: -66%;
+  right: -57%;
+}
+.heavenly-flavors__levitating-character--mint-covered-right-wing {
+  top: -66%;
+  right: -14%;
+}
+.heavenly-flavors__levitating-character--mint-hallo--left {
+  left: -65%;
+  top: -50%;
+}
+.heavenly-flavors__levitating-character--mint-hallo--right {
+  right: -90%;
+  top: -46%;
+}
+.heavenly-flavors__levitating-character--chocolate {
+  z-index: 6;
+  width: 36%;
+  aspect-ratio: 4/5;
+  left: 46%;
+  top: 57%;
+}
+.heavenly-flavors__levitating-character--chocolate-left-wing, .heavenly-flavors__levitating-character--chocolate-right-wing, .heavenly-flavors__levitating-character--chocolate-hallo {
+  width: 210%;
+}
+.heavenly-flavors__levitating-character--chocolate-left-wing, .heavenly-flavors__levitating-character--chocolate-right-wing {
+  top: -40%;
+}
+.heavenly-flavors__levitating-character--chocolate-left-wing {
+  left: -20%;
+}
+.heavenly-flavors__levitating-character--chocolate-right-wing {
+  right: -56%;
+}
+.heavenly-flavors__levitating-character--chocolate-hallo {
+  left: -30%;
+  top: -38%;
+}
+.heavenly-flavors__levitating-character--strawberry {
+  z-index: 7;
+  width: 24%;
+  aspect-ratio: 8/11;
+  left: 20%;
+  top: 70%;
+}
+.heavenly-flavors__levitating-character--strawberry-left-wing, .heavenly-flavors__levitating-character--strawberry-right-wing, .heavenly-flavors__levitating-character--strawberry-hallo {
+  width: 330%;
+}
+.heavenly-flavors__levitating-character--strawberry-left-wing, .heavenly-flavors__levitating-character--strawberry-right-wing {
+  top: -65%;
+}
+.heavenly-flavors__levitating-character--strawberry-left-wing {
+  left: -86%;
+}
+.heavenly-flavors__levitating-character--strawberry-right-wing {
+  right: -100%;
+}
+.heavenly-flavors__levitating-character--strawberry-hallo {
+  left: -108%;
+  top: -48%;
+}
+.heavenly-flavors__levitating-character--smores {
+  z-index: 8;
+  width: 36%;
+  aspect-ratio: 1/1;
+  left: 52%;
+  top: 84%;
+}
+.heavenly-flavors__levitating-character--smores-left-wing, .heavenly-flavors__levitating-character--smores-right-wing, .heavenly-flavors__levitating-character--smores-hallo {
+  width: 210%;
+}
+.heavenly-flavors__levitating-character--smores-left-wing, .heavenly-flavors__levitating-character--smores-right-wing {
+  top: -76%;
+}
+.heavenly-flavors__levitating-character--smores-left-wing {
+  left: -45%;
+}
+.heavenly-flavors__levitating-character--smores-right-wing {
+  top: -70%;
+  right: -36%;
+}
+.heavenly-flavors__levitating-character--smores-hallo {
+  left: -55%;
+  top: -46%;
+}
+.heavenly-flavors__levitating-character-image {
+  position: absolute;
+  z-index: 2;
+}
+.heavenly-flavors__levitating-character-left-wing, .heavenly-flavors__levitating-character-right-wing, .heavenly-flavors__levitating-character-hallo, .heavenly-flavors__levitating-character-hallo--left, .heavenly-flavors__levitating-character-hallo--right {
+  position: absolute;
+  z-index: 1;
+}
