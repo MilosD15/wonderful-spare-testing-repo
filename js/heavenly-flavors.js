@@ -82,7 +82,7 @@ if (document.querySelector("[data-heavenly-flavors]")) {
   // parallax
   const heavenlyFlavorsFurtherPedestalParallax = new ElementParallax(heavenlyFlavorsSection, heavenlyFlavorsFurtherPedestal, { y: 36 }, 0, { y: -25 }, 2);
   const heavenlyFlavorsCloserPedestalParallax = new ElementParallax(heavenlyFlavorsSection, heavenlyFlavorsCloserPedestal, { y: 25 }, 0, { y: -18 }, 2);
-  const heavenlyFlavorsLevitatingCharactersParallax = new ElementParallax(heavenlyFlavorsSection, heavenlyFlavorsLevitatingCharacters, { y: -8 }, 0, { y: 8 }, 2);
+  const heavenlyFlavorsLevitatingCharactersParallax = new ElementParallax(heavenlyFlavorsSection, heavenlyFlavorsLevitatingCharacters, { y: 8 }, 0, { y: -8 }, 2);
 
   window.addEventListener("load", handleParallax);
   window.addEventListener("scroll", handleParallax);
