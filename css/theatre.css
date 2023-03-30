@@ -37,8 +37,8 @@
   --bottom-distance: calc(var(--static-bottom-distance) - var(--slide-distance));
   width: 42.5%;
   bottom: var(--bottom-distance);
-  -webkit-transition-delay: 700ms;
-          transition-delay: 700ms;
+  -webkit-transition-delay: 0ms;
+          transition-delay: 0ms;
 }
 .theatre__seat-row-8 {
   --slide-distance: 2rem;
@@ -46,8 +46,8 @@
   --bottom-distance: calc(var(--static-bottom-distance) - var(--slide-distance));
   width: 45%;
   bottom: var(--bottom-distance);
-  -webkit-transition-delay: 700ms;
-          transition-delay: 700ms;
+  -webkit-transition-delay: 0ms;
+          transition-delay: 0ms;
 }
 .theatre__people-7 {
   --slide-distance: 3rem;
@@ -55,8 +55,8 @@
   --bottom-distance: calc(var(--static-bottom-distance) - var(--slide-distance));
   width: 49%;
   bottom: var(--bottom-distance);
-  -webkit-transition-delay: 600ms;
-          transition-delay: 600ms;
+  -webkit-transition-delay: 100ms;
+          transition-delay: 100ms;
 }
 .theatre__seat-row-7 {
   --slide-distance: 3rem;
@@ -64,8 +64,8 @@
   --bottom-distance: calc(var(--static-bottom-distance) - var(--slide-distance));
   width: 54%;
   bottom: var(--bottom-distance);
-  -webkit-transition-delay: 600ms;
-          transition-delay: 600ms;
+  -webkit-transition-delay: 100ms;
+          transition-delay: 100ms;
 }
 .theatre__people-6 {
   --slide-distance: 4rem;
@@ -73,8 +73,8 @@
   --bottom-distance: calc(var(--static-bottom-distance) - var(--slide-distance));
   width: 59%;
   bottom: var(--bottom-distance);
-  -webkit-transition-delay: 500ms;
-          transition-delay: 500ms;
+  -webkit-transition-delay: 200ms;
+          transition-delay: 200ms;
 }
 .theatre__seat-row-6 {
   --slide-distance: 4rem;
@@ -82,8 +82,8 @@
   --bottom-distance: calc(var(--static-bottom-distance) - var(--slide-distance));
   width: 64%;
   bottom: var(--bottom-distance);
-  -webkit-transition-delay: 500ms;
-          transition-delay: 500ms;
+  -webkit-transition-delay: 200ms;
+          transition-delay: 200ms;
 }
 .theatre__people-5 {
   --slide-distance: 5rem;
@@ -91,8 +91,8 @@
   --bottom-distance: calc(var(--static-bottom-distance) - var(--slide-distance));
   width: 70%;
   bottom: var(--bottom-distance);
-  -webkit-transition-delay: 400ms;
-          transition-delay: 400ms;
+  -webkit-transition-delay: 300ms;
+          transition-delay: 300ms;
 }
 .theatre__seat-row-5 {
   --slide-distance: 5rem;
@@ -100,8 +100,8 @@
   --bottom-distance: calc(var(--static-bottom-distance) - var(--slide-distance));
   width: 74%;
   bottom: var(--bottom-distance);
-  -webkit-transition-delay: 400ms;
-          transition-delay: 400ms;
+  -webkit-transition-delay: 300ms;
+          transition-delay: 300ms;
 }
 .theatre__people-4 {
   --slide-distance: 6rem;
@@ -109,8 +109,8 @@
   --bottom-distance: calc(var(--static-bottom-distance) - var(--slide-distance));
   width: 42%;
   bottom: var(--bottom-distance);
-  -webkit-transition-delay: 300ms;
-          transition-delay: 300ms;
+  -webkit-transition-delay: 400ms;
+          transition-delay: 400ms;
 }
 .theatre__seat-row-4 {
   --slide-distance: 6rem;
@@ -118,8 +118,8 @@
   --bottom-distance: calc(var(--static-bottom-distance) - var(--slide-distance));
   width: 84%;
   bottom: var(--bottom-distance);
-  -webkit-transition-delay: 300ms;
-          transition-delay: 300ms;
+  -webkit-transition-delay: 400ms;
+          transition-delay: 400ms;
 }
 .theatre__people-3 {
   --slide-distance: 7rem;
@@ -127,8 +127,8 @@
   --bottom-distance: calc(var(--static-bottom-distance) - var(--slide-distance));
   width: 84%;
   bottom: var(--bottom-distance);
-  -webkit-transition-delay: 200ms;
-          transition-delay: 200ms;
+  -webkit-transition-delay: 500ms;
+          transition-delay: 500ms;
 }
 .theatre__seat-row-3 {
   --slide-distance: 7rem;
@@ -136,8 +136,8 @@
   --bottom-distance: calc(var(--static-bottom-distance) - var(--slide-distance));
   width: 92%;
   bottom: var(--bottom-distance);
-  -webkit-transition-delay: 200ms;
-          transition-delay: 200ms;
+  -webkit-transition-delay: 500ms;
+          transition-delay: 500ms;
 }
 .theatre__people-2 {
   --slide-distance: 8rem;
@@ -145,8 +145,8 @@
   --bottom-distance: calc(var(--static-bottom-distance) - var(--slide-distance));
   width: 98%;
   bottom: var(--bottom-distance);
-  -webkit-transition-delay: 100ms;
-          transition-delay: 100ms;
+  -webkit-transition-delay: 600ms;
+          transition-delay: 600ms;
 }
 .theatre__seat-row-2 {
   --slide-distance: 8rem;
@@ -154,8 +154,8 @@
   --bottom-distance: calc(var(--static-bottom-distance) - var(--slide-distance));
   width: 100%;
   bottom: var(--bottom-distance);
-  -webkit-transition-delay: 100ms;
-          transition-delay: 100ms;
+  -webkit-transition-delay: 600ms;
+          transition-delay: 600ms;
 }
 .theatre__people-1 {
   --slide-distance: 9rem;
@@ -163,8 +163,8 @@
   --bottom-distance: calc(var(--static-bottom-distance) - var(--slide-distance));
   width: 92%;
   bottom: var(--bottom-distance);
-  -webkit-transition-delay: 0ms;
-          transition-delay: 0ms;
+  -webkit-transition-delay: 700ms;
+          transition-delay: 700ms;
 }
 .theatre__seat-row-1 {
   --slide-distance: 9rem;
@@ -172,8 +172,8 @@
   --bottom-distance: calc(var(--static-bottom-distance) - var(--slide-distance));
   width: 102%;
   bottom: var(--bottom-distance);
-  -webkit-transition-delay: 0ms;
-          transition-delay: 0ms;
+  -webkit-transition-delay: 700ms;
+          transition-delay: 700ms;
 }
 
 @-webkit-keyframes slide-up-seats-and-people {
