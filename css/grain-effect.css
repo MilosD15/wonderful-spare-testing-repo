@@ -8,7 +8,7 @@
   background: transparent url("../images/grain-image.webp") 0 0;
   opacity: 0.73 !important;
   mix-blend-mode: soft-light;
-  z-index: 4;
+  z-index: 50;
   background-color: #000;
   pointer-events: none;
   -webkit-animation: grain 6s steps(10) infinite;

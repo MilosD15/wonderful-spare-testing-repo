@@ -1,0 +1,86 @@
+.theatre {
+  width: 100%;
+  aspect-ratio: 5/3;
+  overflow: hidden;
+  position: relative;
+}
+.theatre__wrapper {
+  aspect-ratio: 5/3;
+}
+.theatre__bg {
+  inset: 0;
+}
+.theatre__middle-row {
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+.theatre__people-8, .theatre__people-7, .theatre__people-6, .theatre__people-5, .theatre__people-4, .theatre__people-3, .theatre__people-2, .theatre__people-1, .theatre__seat-row-8, .theatre__seat-row-7, .theatre__seat-row-6, .theatre__seat-row-5, .theatre__seat-row-4, .theatre__seat-row-3, .theatre__seat-row-2, .theatre__seat-row-1 {
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+.theatre__people-8 {
+  width: 42.5%;
+  bottom: 40%;
+}
+.theatre__seat-row-8 {
+  width: 45%;
+  bottom: 31.8%;
+}
+.theatre__people-7 {
+  width: 49%;
+  bottom: 40.3%;
+}
+.theatre__seat-row-7 {
+  width: 54%;
+  bottom: 28.5%;
+}
+.theatre__people-6 {
+  width: 59%;
+  bottom: 31.7%;
+}
+.theatre__seat-row-6 {
+  width: 64%;
+  bottom: 24%;
+}
+.theatre__people-5 {
+  width: 70%;
+  bottom: 31%;
+}
+.theatre__seat-row-5 {
+  width: 74%;
+  bottom: 18%;
+}
+.theatre__people-4 {
+  width: 42%;
+  bottom: 27.8%;
+}
+.theatre__seat-row-4 {
+  width: 84%;
+  bottom: 13%;
+}
+.theatre__people-3 {
+  width: 84%;
+  bottom: 25.8%;
+}
+.theatre__seat-row-3 {
+  width: 92%;
+  bottom: 8.5%;
+}
+.theatre__people-2 {
+  width: 98%;
+  bottom: 17%;
+}
+.theatre__seat-row-2 {
+  width: 100%;
+  bottom: 3%;
+}
+.theatre__people-1 {
+  width: 92%;
+  bottom: 9%;
+}
+.theatre__seat-row-1 {
+  width: 102%;
+  bottom: 0.3%;
+}
