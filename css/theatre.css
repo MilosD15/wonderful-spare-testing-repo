@@ -1,3 +1,7 @@
+:root {
+  --THEATRE-SEC-slide-in-anim-duration: 600;
+}
+
 .theatre {
   width: 100%;
   aspect-ratio: 5/3;
@@ -16,71 +20,127 @@
   width: 100%;
 }
 .theatre__people-8, .theatre__people-7, .theatre__people-6, .theatre__people-5, .theatre__people-4, .theatre__people-3, .theatre__people-2, .theatre__people-1, .theatre__seat-row-8, .theatre__seat-row-7, .theatre__seat-row-6, .theatre__seat-row-5, .theatre__seat-row-4, .theatre__seat-row-3, .theatre__seat-row-2, .theatre__seat-row-1 {
+  --slide-distance: 6rem;
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
+  -webkit-transition: bottom calc(var(--THEATRE-SEC-slide-in-anim-duration) * 1ms) ease;
+  transition: bottom calc(var(--THEATRE-SEC-slide-in-anim-duration) * 1ms) ease;
+}
+.theatre__people-8.slide-in, .theatre__people-7.slide-in, .theatre__people-6.slide-in, .theatre__people-5.slide-in, .theatre__people-4.slide-in, .theatre__people-3.slide-in, .theatre__people-2.slide-in, .theatre__people-1.slide-in, .theatre__seat-row-8.slide-in, .theatre__seat-row-7.slide-in, .theatre__seat-row-6.slide-in, .theatre__seat-row-5.slide-in, .theatre__seat-row-4.slide-in, .theatre__seat-row-3.slide-in, .theatre__seat-row-2.slide-in, .theatre__seat-row-1.slide-in {
+  --bottom-distance: var(--static-bottom-distance);
 }
 .theatre__people-8 {
+  --static-bottom-distance: 40%;
+  --bottom-distance: calc(var(--static-bottom-distance) - var(--slide-distance));
   width: 42.5%;
-  bottom: 40%;
+  bottom: var(--bottom-distance);
 }
 .theatre__seat-row-8 {
+  --static-bottom-distance: 31.8%;
+  --bottom-distance: calc(var(--static-bottom-distance) - var(--slide-distance));
   width: 45%;
-  bottom: 31.8%;
+  bottom: var(--bottom-distance);
 }
 .theatre__people-7 {
+  --static-bottom-distance: 40.3%;
+  --bottom-distance: calc(var(--static-bottom-distance) - var(--slide-distance));
   width: 49%;
-  bottom: 40.3%;
+  bottom: var(--bottom-distance);
 }
 .theatre__seat-row-7 {
+  --static-bottom-distance: 28.5%;
+  --bottom-distance: calc(var(--static-bottom-distance) - var(--slide-distance));
   width: 54%;
-  bottom: 28.5%;
+  bottom: var(--bottom-distance);
 }
 .theatre__people-6 {
+  --static-bottom-distance: 31.7%;
+  --bottom-distance: calc(var(--static-bottom-distance) - var(--slide-distance));
   width: 59%;
-  bottom: 31.7%;
+  bottom: var(--bottom-distance);
 }
 .theatre__seat-row-6 {
+  --static-bottom-distance: 24%;
+  --bottom-distance: calc(var(--static-bottom-distance) - var(--slide-distance));
   width: 64%;
-  bottom: 24%;
+  bottom: var(--bottom-distance);
 }
 .theatre__people-5 {
+  --static-bottom-distance: 31%;
+  --bottom-distance: calc(var(--static-bottom-distance) - var(--slide-distance));
   width: 70%;
-  bottom: 31%;
+  bottom: var(--bottom-distance);
 }
 .theatre__seat-row-5 {
+  --static-bottom-distance: 18%;
+  --bottom-distance: calc(var(--static-bottom-distance) - var(--slide-distance));
   width: 74%;
-  bottom: 18%;
+  bottom: var(--bottom-distance);
 }
 .theatre__people-4 {
+  --static-bottom-distance: 27.8%;
+  --bottom-distance: calc(var(--static-bottom-distance) - var(--slide-distance));
   width: 42%;
-  bottom: 27.8%;
+  bottom: var(--bottom-distance);
 }
 .theatre__seat-row-4 {
+  --static-bottom-distance: 13%;
+  --bottom-distance: calc(var(--static-bottom-distance) - var(--slide-distance));
   width: 84%;
-  bottom: 13%;
+  bottom: var(--bottom-distance);
 }
 .theatre__people-3 {
+  --static-bottom-distance: 25.8%;
+  --bottom-distance: calc(var(--static-bottom-distance) - var(--slide-distance));
   width: 84%;
-  bottom: 25.8%;
+  bottom: var(--bottom-distance);
 }
 .theatre__seat-row-3 {
+  --static-bottom-distance: 8.5%;
+  --bottom-distance: calc(var(--static-bottom-distance) - var(--slide-distance));
   width: 92%;
-  bottom: 8.5%;
+  bottom: var(--bottom-distance);
 }
 .theatre__people-2 {
+  --static-bottom-distance: 17%;
+  --bottom-distance: calc(var(--static-bottom-distance) - var(--slide-distance));
   width: 98%;
-  bottom: 17%;
+  bottom: var(--bottom-distance);
 }
 .theatre__seat-row-2 {
+  --static-bottom-distance: 3%;
+  --bottom-distance: calc(var(--static-bottom-distance) - var(--slide-distance));
   width: 100%;
-  bottom: 3%;
+  bottom: var(--bottom-distance);
 }
 .theatre__people-1 {
+  --static-bottom-distance: 9%;
+  --bottom-distance: calc(var(--static-bottom-distance) - var(--slide-distance));
   width: 92%;
-  bottom: 9%;
+  bottom: var(--bottom-distance);
 }
 .theatre__seat-row-1 {
+  --static-bottom-distance: 0.3%;
+  --bottom-distance: calc(var(--static-bottom-distance) - var(--slide-distance));
   width: 102%;
-  bottom: 0.3%;
+  bottom: var(--bottom-distance);
+}
+
+@-webkit-keyframes slide-up-seats-and-people {
+  from {
+    --bottom-distance: calc(var(--static-bottom-distance) - var(--slide-distance));
+  }
+  to {
+    --bottom-distance: var(--static-bottom-distance);
+  }
+}
+
+@keyframes slide-up-seats-and-people {
+  from {
+    --bottom-distance: calc(var(--static-bottom-distance) - var(--slide-distance));
+  }
+  to {
+    --bottom-distance: var(--static-bottom-distance);
+  }
 }
