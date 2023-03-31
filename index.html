@@ -1,76 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Theatre page - Wonderful</title>
-  <link rel="stylesheet" href="./css/grain-effect.css">
-  <link rel="stylesheet" href="./css/blur-effect.css">
-  <link rel="stylesheet" href="./css/graphic-section.css">
-  <link rel="stylesheet" href="./css/vibrate.css">
-  <link rel="stylesheet" href="./css/boilerplate.css">
-  <link rel="stylesheet" href="./css/theatre.css">
-  <script src="./js/theatre.js" type="module"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose your character</title>
+    <link rel="stylesheet" href="./font/lemonmilk/addLemonmilk.css">
+    <link rel="stylesheet" href="./css/blur-effect.css">
+    <link rel="stylesheet" href="./css/grain-effect.css">
+    <link rel="stylesheet" href="./css/graphic-section.css">
+    <link rel="stylesheet" href="./css/vibrate.css">
+    <link rel="stylesheet" href="./css/boilerplate.css">
+    <link rel="stylesheet" href="./css/choose-character.css">
+    <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.js"></script>
+    <script src="./js/chooseCharacter.js" type="module"></script>
 </head>
 <body>
-  <section class="theatre graphic-section" data-theatre-section>
-    <div class="theatre__wrapper graphic-section__wrapper">
-      <div class="theatre__bg">
-        <img src="./images/theatre-bg.png" width="1600" height="960" alt="A 1920's art deco theatre">
-      </div>
-      <div class="theatre__people-8" data-theatre-people-8>
-        <img src="./images/theatre-people-8.png" class="vibrate vibrate--version-1" width="1400" height="137" alt="People sitting in the 1. row in the theatre">
-      </div>
-      <div class="theatre__seat-row-8" data-theatre-seats-8>
-        <img src="./images/theatre-seatrow-8.png" width="1400" height="248" alt="The 1. seat row">
-      </div>
-      <div class="theatre__people-7" data-theatre-people-7>
-        <img src="./images/theatre-people-7.png" class="vibrate vibrate--version-2" width="1400" height="115" alt="People sitting in the 2. row in the theatre">
-      </div>
-      <div class="theatre__seat-row-7" data-theatre-seats-7>
-        <img src="./images/theatre-seatrow-7.png" width="1400" height="242" alt="The 2. seat row">
-      </div>
-      <div class="theatre__people-6" data-theatre-people-6>
-        <img src="./images/theatre-people-6.png" class="vibrate vibrate--version-3" width="1500" height="241" alt="People sitting in the 3. row in the theatre">
-      </div>
-      <div class="theatre__seat-row-6" data-theatre-seats-6>
-        <img src="./images/theatre-seatrow-6.png" width="1500" height="262" alt="The 3. seat row">
-      </div>
-      <div class="theatre__people-5" data-theatre-people-5>
-        <img src="./images/theatre-people-5.png" class="vibrate vibrate--version-4" width="1500" height="134" alt="People sitting in the 4. row in the theatre">
-      </div>
-      <div class="theatre__seat-row-5" data-theatre-seats-5>
-        <img src="./images/theatre-seatrow-5.png" width="1500" height="275" alt="The 4. seat row">
-      </div>
-      <div class="theatre__people-4" data-theatre-people-4>
-        <img src="./images/theatre-people-4.png" class="vibrate vibrate--version-2" width="1500" height="275" alt="People sitting in the 5. row in the theatre">
-      </div>
-      <div class="theatre__seat-row-4" data-theatre-seats-4>
-        <img src="./images/theatre-seatrow-4.png" width="1500" height="269" alt="The 5. seat row">
-      </div>
-      <div class="theatre__people-3" data-theatre-people-3>
-        <img src="./images/theatre-people-3.png" class="vibrate vibrate--version-3" width="1500" height="250" alt="People sitting in the 6. row in the theatre">
-      </div>
-      <div class="theatre__seat-row-3" data-theatre-seats-3>
-        <img src="./images/theatre-seatrow-3.png" width="1500" height="260" alt="The 6. seat row">
-      </div>
-      <div class="theatre__people-2" data-theatre-people-2>
-        <img src="./images/theatre-people-2.png" class="vibrate vibrate--version-4" width="1600" height="299" alt="People sitting in the 7. row in the theatre">
-      </div>
-      <div class="theatre__seat-row-2" data-theatre-seats-2>
-        <img src="./images/theatre-seatrow-2.png" width="1600" height="285" alt="The 7. seat row">
-      </div>
-      <div class="theatre__people-1" data-theatre-people-1>
-        <img src="./images/theatre-people-1.png" class="vibrate vibrate--version-1" width="1600" height="285" alt="People sitting in the 8. row in the theatre">
-      </div>
-      <div class="theatre__seat-row-1" data-theatre-seats-1>
-        <img src="./images/theatre-seatrow-1.png" width="1600" height="228" alt="The 8. seat row">
-      </div>
-      <div class="theatre__middle-row">
-        <img src="./images/theatre-row.png" width="1600" height="410" alt="The theatre's middle row over which people can get to their seats">
-      </div>
-    </div>
-  </section>
+    <section class="choose-character graphic-section" data-choose-character-section>
+        <div class="choose-character__wrapper graphic-section__wrapper blur-effect grain-effect">
+            <div class="choose-character__bg">
+                <div class="choose-character__bg-stage">
+                    <img src="./images/cyc-stage.webp" alt="Stage piece of the background image(theatre stage)">
+                </div>
+                <div class="choose-character__bg-very-back" data-cyc-very-back-bg>
+                    <img src="./images/cyc-very-background.webp" alt="Very background piece of the background image(theatre stage)">
+                </div>
+                <div class="choose-character__bg-left-box vibrate vibrate--version-4">
+                    <img src="./images/cyc-left-box.webp" alt="Left box on the stage(theatre stage)">
+                </div>
+                <div class="choose-character__bg-right-boxes vibrate vibrate--version-2">
+                    <img src="./images/cyc-right-boxes.webp" alt="Right boxes on the stage(theatre stage)">
+                </div>
+                <div class="choose-character__bg-vertical-curtains vibrate vibrate--version-1">
+                    <img src="./images/cyc-vertical-curtains.webp" alt="Vertical curtains piece of the background image(theatre stage)">
+                </div>
+                <div class="choose-character__bg-pieces-of-horizontal-curtains vibrate vibrate--version-3">
+                    <img src="./images/cyc-pieces-of-horizontal-curtains.webp" alt="Pieces of horizontal curtains of the background image(theatre stage)">
+                </div>
+                <div class="choose-character__bg-very-left-and-right-horizontal-curtains vibrate vibrate--version-2">
+                    <img src="./images/cyc-very-left-and-right-horizontal-curtains.webp" alt="Very right and left horizontal curtains of the background image(theatre stage)">
+                </div>
+                <div class="choose-character__bg-left-and-right-horizontal-curtains vibrate vibrate--version-4">
+                    <img src="./images/cyc-left-and-right-horizontal-curtains.webp" alt="Left and right horizontal curtains of the background image(theatre stage)">
+                </div>
+                <div class="choose-character__bg-centered-horizontal-curtains vibrate vibrate--version-1">
+                    <img src="./images/cyc-centered-horizontal-curtains.webp" alt="Centered horizontal curtains of the background image(theatre stage)">
+                </div>
+            </div>
+            <div class="choose-character__bg-mobile">
+                <img src="./images/cyc-bg-mobile.webp" alt="Radial Gradient Background that matches with colors of the theatre scene on desktops">
+            </div>
+            <dotlottie-player mode="normal" class="choose-character__lottie" data-cyc-lottie-player></dotlottie-player>
+            <div class="choose-character__radial-dark-shadow"></div>
+            <div class="choose-character__characters-container">
+                <div class="character-representation character-representation--left"> <!-- data-id="1" data-position="left" --> <!-- necessary for modal to work -->
+                    <div class="character-representation__light character-representation__light--left">
+                        <img src="./images/cyc-left-light.webp" alt="A ceiling light for left(top) character">
+                    </div>
+                    <div class="character-representation__image-container">
+                        <div class="character-representation__image-wrapper">
+                            <img src="./images/varnish-cups-sheet-with-shadow.webp" class="character-representation__image character-representation__image--static-anim" alt="A fluoride varnish cup character">
+                            <img src="./images/varnish-cups-sheet-wave-with-shadow.webp" class="character-representation__image character-representation__image--on-hover-anim" alt="A fluoride varnish cup character">
+                        </div>
+                    </div>
+                    <div class="character-representation__link-wrapper">
+                        <a href="/" class="character-representation__link">fluoride <br> varnish cups</a>
+                    </div>
+                </div>
+                <div class="character-representation character-representation--center priority"> <!-- data-id="2" data-position="center" --> <!-- necessary for modal to work -->
+                    <div class="character-representation__light character-representation__light--center">
+                        <img src="./images/cyc-center-light.webp" class="character-representation__light-image-desktop" alt="A ceiling light for center character">
+                        <img src="./images/cyc-right-light.webp" class="character-representation__light-image-mobile" alt="A ceiling light for middle character on mobile">
+                    </div>
+                    <div class="character-representation__image-container">
+                        <div class="character-representation__image-wrapper">
+                            <img src="./images/varnish-sheet-with-shadow.webp" class="character-representation__image character-representation__image--static-anim" alt="A fluoride varnish character">
+                            <img src="./images/varnish-sheet-wave-with-shadow.webp" class="character-representation__image character-representation__image--on-hover-anim" alt="A fluoride varnish character">
+                        </div>
+                    </div>
+                    <div class="character-representation__link-wrapper">
+                        <a href="/" class="character-representation__link">fluoride <br> varnish</a>
+                    </div>
+                </div>
+                <div class="character-representation character-representation--right"> <!-- data-id="3" data-position="right" --> <!-- necessary for modal to work -->
+                    <div class="character-representation__light character-representation__light--right">
+                        <img src="./images/cyc-right-light.webp" class="character-representation__light-image-desktop" alt="A ceiling light for right character">
+                        <img src="./images/cyc-left-light.webp" class="character-representation__light-image-mobile" alt="A ceiling light for bottom character">
+                    </div>
+                    <div class="character-representation__image-container">
+                        <div class="character-representation__image-wrapper">
+                            <img src="./images/prophy-cups-with-shadow-sprites.webp" class="character-representation__image character-representation__image--static-anim" alt="A prophy paste character">
+                            <img src="./images/prophy-cups-sheet-wave-with-shadow.webp" class="character-representation__image character-representation__image--on-hover-anim" alt="A prophy paste character">
+                        </div>
+                    </div>
+                    <div class="character-representation__link-wrapper">
+                        <a href="/" class="character-representation__link">prophy <br> paste</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="modal-container" data-active="" data-character-position="center">
+            <div class="modal">
+                <div class="content">
+                    <div class="text">
+                        <p data-modal-description>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere dolore cum itaque ducimus facilis neque sint tempora quas enim exercitationem maiores quo, nobis dicta eum praesentium accusantium eius repellat, fugit quibusdam omnis! Aut nemo, ipsam tenetur officiis vel incidunt laudantium.</p>
+                        <a href="/" data-modal-link>visit my product page</a>
+                    </div>
+                    <div class="image">
+                        <div class="wrapper">
+                            <img src="./images/varnish-cup-sprite.webp" class="static-animation" alt="A fluoride varnish cup character" data-modal-image-static-animation>
+                            <img src="./images/varnish-cup-sprite.webp" class="on-hover-animation" alt="A fluoride varnish cup character" data-modal-image-on-hover-animation>
+                        </div>
+                    </div>
+                </div>
+                <button class="close-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <line x1="18" y1="6" x2="6" y2="18" />
+                        <line x1="6" y1="6" x2="18" y2="18" />
+                    </svg>
+                </button>
+                <div class="clipping-border"></div>
+                <div class="clipping"></div>
+            </div>
+        </div> -->
+    </section>
 </body>
 </html>
