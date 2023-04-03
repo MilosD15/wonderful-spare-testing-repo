@@ -227,7 +227,6 @@
 @media screen and (max-width: 81.25rem) {
   .choose-character .character-representation:hover .character-representation__image-wrapper, .choose-character .character-representation.highlight .character-representation__image-wrapper { /* 1300px */
     --bottom-distance: -15%;
-    --translate-y: -5%;
   }
 }
 .choose-character .character-representation:hover .character-representation__image-wrapper .character-representation__image--static-anim, .choose-character .character-representation.highlight .character-representation__image-wrapper .character-representation__image--static-anim {
