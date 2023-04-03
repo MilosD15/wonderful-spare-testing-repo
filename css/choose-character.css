@@ -322,6 +322,7 @@
 }
 .choose-character .character-representation__image-wrapper {
   --translate-x: -50%;
+  --translate-y: 0;
   --bottom-distance: 0%;
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
@@ -329,8 +330,8 @@
   position: absolute;
   bottom: var(--bottom-distance);
   left: 50%;
-  -webkit-transform: translateX(var(--translate-x)) scale(1);
-          transform: translateX(var(--translate-x)) scale(1);
+  -webkit-transform: translate(var(--translate-x), var(--translate-y)) scale(1);
+          transform: translate(var(--translate-x), var(--translate-y)) scale(1);
   width: 60%;
   height: auto;
   overflow: hidden;
@@ -338,6 +339,14 @@
   transition: bottom calc(var(--CHOOSE-CHARACTER-SEC-character-enlarging-transition-duration) * 1ms) ease, -webkit-transform calc(var(--CHOOSE-CHARACTER-SEC-character-enlarging-transition-duration) * 1ms) ease;
   transition: transform calc(var(--CHOOSE-CHARACTER-SEC-character-enlarging-transition-duration) * 1ms) ease, bottom calc(var(--CHOOSE-CHARACTER-SEC-character-enlarging-transition-duration) * 1ms) ease;
   transition: transform calc(var(--CHOOSE-CHARACTER-SEC-character-enlarging-transition-duration) * 1ms) ease, bottom calc(var(--CHOOSE-CHARACTER-SEC-character-enlarging-transition-duration) * 1ms) ease, -webkit-transform calc(var(--CHOOSE-CHARACTER-SEC-character-enlarging-transition-duration) * 1ms) ease;
+}
+@media screen and (max-width: 81.25rem) {
+  .choose-character .character-representation__image-wrapper { /* 1300px */
+    -webkit-transition: -webkit-transform calc(var(--CHOOSE-CHARACTER-SEC-character-enlarging-transition-duration) * 1ms) ease;
+    transition: -webkit-transform calc(var(--CHOOSE-CHARACTER-SEC-character-enlarging-transition-duration) * 1ms) ease;
+    transition: transform calc(var(--CHOOSE-CHARACTER-SEC-character-enlarging-transition-duration) * 1ms) ease;
+    transition: transform calc(var(--CHOOSE-CHARACTER-SEC-character-enlarging-transition-duration) * 1ms) ease, -webkit-transform calc(var(--CHOOSE-CHARACTER-SEC-character-enlarging-transition-duration) * 1ms) ease;
+  }
 }
 .choose-character .character-representation__image {
   --translate-y: 0;
