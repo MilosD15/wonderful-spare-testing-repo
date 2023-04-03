@@ -145,6 +145,7 @@
 @media screen and (max-width: 81.25rem) {
   .choose-character .character-representation { /* 1300px */
     width: 100%;
+    overflow: initial;
   }
 }
 @media screen and (max-width: 81.25rem) {
