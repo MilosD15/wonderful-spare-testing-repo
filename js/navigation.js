@@ -46,6 +46,6 @@ if (document.querySelector("[data-navigation-menu]")) {
 
     setTimeout(() => {
       navigationMenu.classList.remove("show");
-    }, slideInBiggestDuration);
+    }, slideInBiggestDuration / 4 + fadeInDuration);
   }
 }

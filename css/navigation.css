@@ -1,6 +1,6 @@
 :root {
   --NAVBAR-fade-in-transition-duration: 300;
-  --NAVBAR-slide-in-biggest-transition-duration: 1300;
+  --NAVBAR-slide-in-biggest-transition-duration: 2100;
 }
 
 .navigation-menu {
@@ -84,16 +84,16 @@
           transform: translateX(0);
 }
 .navigation-menu__bg-cloud-1 {
-  -webkit-transition-duration: 1300ms;
-          transition-duration: 1300ms;
+  -webkit-transition-duration: 2100ms;
+          transition-duration: 2100ms;
 }
 .navigation-menu__bg-cloud-2, .navigation-menu__bg-cloud-3, .navigation-menu__bg-cloud-5 {
-  -webkit-transition-duration: 1050ms;
-          transition-duration: 1050ms;
+  -webkit-transition-duration: 1800ms;
+          transition-duration: 1800ms;
 }
 .navigation-menu__bg-cloud-4, .navigation-menu__bg-cloud-6 {
-  -webkit-transition-duration: 800ms;
-          transition-duration: 800ms;
+  -webkit-transition-duration: 1500ms;
+          transition-duration: 1500ms;
 }
 .navigation-menu__navbar {
   position: absolute;
@@ -116,7 +116,7 @@
   padding: 0;
 }
 .navigation-menu__item {
-  font-size: 9vmin;
+  font-size: 8vmin;
 }
 .navigation-menu__link {
   font-family: "LEMON MILK";
@@ -164,5 +164,8 @@
     width: 90%;
     top: -5%;
     left: 8%;
+  }
+  .navigation-menu__item {
+    font-size: 9vmin;
   }
 }
