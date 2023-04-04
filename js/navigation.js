@@ -42,7 +42,7 @@ if (document.querySelector("[data-navigation-menu]")) {
 
     setTimeout(() => {
       navigationMenu.classList.remove("fade-in");
-    }, slideInBiggestDuration / 2);
+    }, slideInBiggestDuration / 4);
 
     setTimeout(() => {
       navigationMenu.classList.remove("show");
