@@ -15,33 +15,34 @@
   <script src="./js/navigation.js" defer></script>
 </head>
 <body>
+  <button class="open-menu-btn" style="font-size: 1.4rem;">Open menu</button>
   <section class="navigation-menu graphic-section" data-navigation-menu>
     <div class="navigation-menu__wrapper graphic-section__wrapper grain-effect blur-effect" data-navigation-menu-wrapper>
       <div class="navigation-menu__bg">
         <div class="navigation-menu__bg-sheet">
           <img src="./images/nav-very-bg.webp" alt="A big sky blue sheet in the background">
         </div>
-        <div class="navigation-menu__bg-cloud-1">
+        <div class="navigation-menu__bg-cloud navigation-menu__bg-cloud-1" data-navigation-cloud>
           <img src="./images/nav-cloud-1.webp" alt="A cloud in the sky">
         </div>
-        <div class="navigation-menu__bg-cloud-2">
+        <div class="navigation-menu__bg-cloud navigation-menu__bg-cloud-2" data-navigation-cloud>
           <img src="./images/nav-cloud-2.webp" alt="A part of the cloud in the sky">
         </div>
-        <div class="navigation-menu__bg-cloud-3">
+        <div class="navigation-menu__bg-cloud navigation-menu__bg-cloud-3" data-navigation-cloud>
           <img src="./images/nav-cloud-3.webp" alt="A part of the cloud in the sky">
         </div>
-        <div class="navigation-menu__bg-cloud-4">
+        <div class="navigation-menu__bg-cloud navigation-menu__bg-cloud-4" data-navigation-cloud>
           <img src="./images/nav-cloud-4.webp" alt="A part of the cloud in the sky">
         </div>
-        <div class="navigation-menu__bg-cloud-5">
+        <div class="navigation-menu__bg-cloud navigation-menu__bg-cloud-5" data-navigation-cloud>
           <img src="./images/nav-cloud-5.webp" alt="A part of the cloud in the sky">
         </div>
-        <div class="navigation-menu__bg-cloud-6">
+        <div class="navigation-menu__bg-cloud navigation-menu__bg-cloud-6" data-navigation-cloud>
           <img src="./images/nav-cloud-6.webp" alt="A part of the cloud in the sky">
         </div>
       </div>
     </div>
-    <nav class="navigation-menu__navbar">
+    <nav class="navigation-menu__navbar" data-navigation-navbar>
       <ul class="navigation-menu__list">
         <li class="navigation-menu__item">
           <a href="#" class="navigation-menu__link">Home</a>
@@ -63,6 +64,12 @@
         </li>
       </ul>
     </nav>
+    <button class="close-menu-btn">
+      <svg class="navigation-menu__close-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
   </section>
 </body>
 </html>
