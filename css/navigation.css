@@ -1,0 +1,166 @@
+:root {
+  --NAVBAR-fade-in-transition-duration: 300;
+  --NAVBAR-slide-in-biggest-transition-duration: 2100;
+}
+
+.navigation-menu {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: absolute;
+  display: none;
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transition: opacity calc(var(--NAVBAR-fade-in-transition-duration) * 1ms) ease;
+  transition: opacity calc(var(--NAVBAR-fade-in-transition-duration) * 1ms) ease;
+}
+.navigation-menu.show {
+  display: block;
+}
+.navigation-menu.fade-in {
+  opacity: 1;
+  pointer-events: initial;
+}
+.navigation-menu::after, .navigation-menu::before {
+  display: none;
+}
+.navigation-menu__wrapper {
+  height: 100%;
+  width: 100%;
+}
+.navigation-menu__bg {
+  inset: 0;
+}
+.navigation-menu__bg-sheet, .navigation-menu__bg-cloud {
+  position: absolute;
+}
+.navigation-menu__bg-sheet {
+  inset: 0;
+}
+.navigation-menu__bg-cloud-center {
+  width: 110%;
+  top: -10%;
+  left: 5%;
+}
+.navigation-menu__bg-cloud-top-left {
+  width: 100%;
+  top: -36%;
+  left: -30%;
+}
+.navigation-menu__bg-cloud-top-right {
+  top: -36%;
+  width: 100%;
+  left: 26%;
+}
+.navigation-menu__bg-cloud-bottom-left {
+  width: 100%;
+  left: -36%;
+  bottom: -26%;
+}
+.navigation-menu__bg-cloud-bottom-right {
+  width: 100%;
+  left: 30%;
+  bottom: -20%;
+}
+.navigation-menu__bg-cloud {
+  -webkit-transition-property: -webkit-transform;
+  transition-property: -webkit-transform;
+  transition-property: transform;
+  transition-property: transform, -webkit-transform;
+  -webkit-transition-timing-function: ease;
+          transition-timing-function: ease;
+  -webkit-transform: translateX(-140%);
+          transform: translateX(-140%);
+}
+.navigation-menu__bg-cloud.slide-in {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+.navigation-menu__bg-cloud-center {
+  -webkit-transition-duration: 2100ms;
+          transition-duration: 2100ms;
+}
+.navigation-menu__bg-cloud-top-left, .navigation-menu__bg-cloud-top-right, .navigation-menu__bg-cloud-bottom-left {
+  -webkit-transition-duration: 1800ms;
+          transition-duration: 1800ms;
+}
+.navigation-menu__bg-cloud-bottom-right {
+  -webkit-transition-duration: 1500ms;
+          transition-duration: 1500ms;
+}
+.navigation-menu__navbar {
+  position: absolute;
+  left: 5%;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transition: opacity calc(var(--NAVBAR-fade-in-transition-duration) * 1ms) ease;
+  transition: opacity calc(var(--NAVBAR-fade-in-transition-duration) * 1ms) ease;
+}
+.navigation-menu__navbar.fade-in {
+  opacity: 1;
+  pointer-events: initial;
+}
+.navigation-menu__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.navigation-menu__item {
+  font-size: 8vmin;
+}
+.navigation-menu__link {
+  font-family: "LEMON MILK";
+  font-weight: 300;
+  text-decoration: none;
+  color: #ffffff;
+  opacity: 0.9;
+  -webkit-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
+}
+.navigation-menu__link:hover, .navigation-menu__link:focus {
+  opacity: 1;
+  text-decoration: underline;
+}
+.navigation-menu .close-menu-btn {
+  position: absolute;
+  top: 2%;
+  right: 2%;
+  width: 4rem;
+  height: 4rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+}
+.navigation-menu .close-menu-btn:hover, .navigation-menu .close-menu-btn:focus {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+/* ANIMATIONS */
+/* MEDIA QUERIES */
+@media screen and (max-width: 81.25rem) { /* 1300px */
+  .navigation-menu__wrapper {
+    width: auto;
+    aspect-ratio: 16/7;
+  }
+  .navigation-menu__bg-cloud-3 {
+    left: 28%;
+  }
+  .navigation-menu__bg-cloud-1 {
+    width: 90%;
+    top: -5%;
+    left: 8%;
+  }
+  .navigation-menu__item {
+    font-size: 9vmin;
+  }
+}
