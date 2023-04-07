@@ -41,16 +41,16 @@
 }
 .navigation-menu__bg-cloud-center {
   width: 110%;
-  top: -10%;
-  left: 5%;
+  top: -2.5%;
+  left: 10%;
 }
 .navigation-menu__bg-cloud-top-left {
   width: 100%;
-  top: -36%;
+  top: -34%;
   left: -30%;
 }
 .navigation-menu__bg-cloud-top-right {
-  top: -36%;
+  top: -30%;
   width: 100%;
   left: 26%;
 }
@@ -62,7 +62,7 @@
 .navigation-menu__bg-cloud-bottom-right {
   width: 100%;
   left: 30%;
-  bottom: -20%;
+  bottom: -18%;
 }
 .navigation-menu__bg-cloud {
   -webkit-transition-property: -webkit-transform;
