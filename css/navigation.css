@@ -1,6 +1,6 @@
 :root {
   --NAVBAR-fade-in-transition-duration: 300;
-  --NAVBAR-slide-in-biggest-transition-duration: 2100;
+  --NAVBAR-slide-in-biggest-transition-duration: 1800;
 }
 
 .navigation-menu {
@@ -39,30 +39,45 @@
 .navigation-menu__bg-sheet {
   inset: 0;
 }
-.navigation-menu__bg-cloud-center {
-  width: 110%;
-  top: -2.5%;
+.navigation-menu__bg-cloud-center-left {
+  width: 1500px;
+  bottom: 15%;
   left: 10%;
 }
+.navigation-menu__bg-cloud-center-right {
+  width: 1500px;
+  top: 25%;
+  right: -100px;
+}
 .navigation-menu__bg-cloud-top-left {
-  width: 100%;
-  top: -34%;
-  left: -30%;
+  width: 1500px;
+  top: -200px;
+  right: 38%;
 }
 .navigation-menu__bg-cloud-top-right {
-  top: -30%;
-  width: 100%;
-  left: 26%;
+  width: 1300px;
+  top: -90px;
+  left: 34%;
 }
 .navigation-menu__bg-cloud-bottom-left {
-  width: 100%;
-  left: -36%;
-  bottom: -26%;
+  width: 1300px;
+  right: 46%;
+  bottom: -100px;
 }
 .navigation-menu__bg-cloud-bottom-right {
-  width: 100%;
-  left: 30%;
-  bottom: -18%;
+  width: 1300px;
+  left: 36%;
+  bottom: -80px;
+}
+.navigation-menu__bg-cloud-bottom-left.blur-effect, .navigation-menu__bg-cloud-bottom-right.blur-effect {
+  --blur-extent: 2px;
+  -webkit-filter: blur(var(--blur-extent));
+          filter: blur(var(--blur-extent));
+}
+@media screen and (max-width: 81.25rem) {
+  .navigation-menu__bg-cloud-bottom-left.blur-effect, .navigation-menu__bg-cloud-bottom-right.blur-effect { /* 1300px */
+    --blur-extent: 2px;
+  }
 }
 .navigation-menu__bg-cloud {
   -webkit-transition-property: -webkit-transform;
@@ -78,17 +93,17 @@
   -webkit-transform: translateX(0);
           transform: translateX(0);
 }
-.navigation-menu__bg-cloud-center {
-  -webkit-transition-duration: 2100ms;
-          transition-duration: 2100ms;
-}
-.navigation-menu__bg-cloud-top-left, .navigation-menu__bg-cloud-top-right, .navigation-menu__bg-cloud-bottom-left {
+.navigation-menu__bg-cloud-center-left {
   -webkit-transition-duration: 1800ms;
           transition-duration: 1800ms;
 }
-.navigation-menu__bg-cloud-bottom-right {
+.navigation-menu__bg-cloud-center-right, .navigation-menu__bg-cloud-top-left, .navigation-menu__bg-cloud-top-right, .navigation-menu__bg-cloud-bottom-left {
   -webkit-transition-duration: 1500ms;
           transition-duration: 1500ms;
+}
+.navigation-menu__bg-cloud-bottom-right {
+  -webkit-transition-duration: 1200ms;
+          transition-duration: 1200ms;
 }
 .navigation-menu__navbar {
   position: absolute;
@@ -152,25 +167,35 @@
     width: auto;
     aspect-ratio: 16/7;
   }
-  .navigation-menu__bg-cloud-center {
+  .navigation-menu__bg-cloud-center-left {
     width: 90%;
     left: 0%;
+    bottom: 10%;
+  }
+  .navigation-menu__bg-cloud-center-right {
+    width: 90%;
+    right: 0%;
+    top: 20%;
   }
   .navigation-menu__bg-cloud-top-left {
     width: 90%;
+    top: -36%;
+    left: -36%;
   }
   .navigation-menu__bg-cloud-top-right {
     width: 90%;
     left: 20%;
+    top: -30%;
   }
   .navigation-menu__bg-cloud-bottom-left {
     width: 90%;
     left: -40%;
+    bottom: -26%;
   }
   .navigation-menu__bg-cloud-bottom-right {
     width: 90%;
     left: 10%;
-    bottom: -18%;
+    bottom: -28%;
   }
   .navigation-menu__item {
     font-size: 9vmin;
