@@ -152,13 +152,25 @@
     width: auto;
     aspect-ratio: 16/7;
   }
-  .navigation-menu__bg-cloud-3 {
-    left: 28%;
-  }
-  .navigation-menu__bg-cloud-1 {
+  .navigation-menu__bg-cloud-center {
     width: 90%;
-    top: -5%;
-    left: 8%;
+    left: 0%;
+  }
+  .navigation-menu__bg-cloud-top-left {
+    width: 90%;
+  }
+  .navigation-menu__bg-cloud-top-right {
+    width: 90%;
+    left: 20%;
+  }
+  .navigation-menu__bg-cloud-bottom-left {
+    width: 90%;
+    left: -40%;
+  }
+  .navigation-menu__bg-cloud-bottom-right {
+    width: 90%;
+    left: 10%;
+    bottom: -18%;
   }
   .navigation-menu__item {
     font-size: 9vmin;
