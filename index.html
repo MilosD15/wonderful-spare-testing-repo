@@ -22,26 +22,23 @@
         <div class="navigation-menu__bg-sheet">
           <img src="./images/nav-very-bg.webp" alt="A big sky blue sheet in the background">
         </div>
-        <div class="navigation-menu__bg-cloud navigation-menu__bg-cloud-center-left" data-navigation-cloud>
-          <img src="./images/nav-cloud-center.webp" alt="A cloud in the sky">
-        </div>
-        <div class="navigation-menu__bg-cloud navigation-menu__bg-cloud-center-right" data-navigation-cloud>
-          <img src="./images/nav-cloud-top-left.webp" alt="A cloud in the sky">
-        </div>
-        <div class="navigation-menu__bg-cloud navigation-menu__bg-cloud-top-left" data-navigation-cloud>
-          <img src="./images/nav-cloud-top-left.webp" alt="A cloud in the sky">
-        </div>
-        <div class="navigation-menu__bg-cloud navigation-menu__bg-cloud-top-right" data-navigation-cloud>
-          <img src="./images/nav-cloud-top-right.webp" alt="A cloud in the sky">
-        </div>
-        <!-- <div class="navigation-menu__bg-cloud navigation-menu__bg-cloud-4" data-navigation-cloud>
-          <img src="./images/nav-cloud-4.webp" alt="A part of the cloud in the sky">
-        </div> -->
-        <div class="navigation-menu__bg-cloud navigation-menu__bg-cloud-bottom-left blur-effect" data-navigation-cloud>
-          <img src="./images/nav-cloud-bottom-left.webp" alt="A cloud in the sky">
-        </div>
-        <div class="navigation-menu__bg-cloud navigation-menu__bg-cloud-bottom-right blur-effect" data-navigation-cloud>
-          <img src="./images/nav-cloud-bottom-right.webp" alt="A cloud in the sky">
+        <div class="navigation-menu__bg-clouds-container" data-navigation-clouds-container>
+
+          <!-- <div class="navigation-menu__bg-cloud navigation-menu__bg-cloud--center" data-navigation-cloud>
+            <img src="./images/nav-cloud-center.webp" alt="A cloud in the sky">
+          </div>
+          <div class="navigation-menu__bg-cloud navigation-menu__bg-cloud--top-left" data-navigation-cloud>
+            <img src="./images/nav-cloud-top-left.webp" alt="A cloud in the sky">
+          </div>
+          <div class="navigation-menu__bg-cloud navigation-menu__bg-cloud--top-right" data-navigation-cloud>
+            <img src="./images/nav-cloud-top-right.webp" alt="A cloud in the sky">
+          </div>
+          <div class="navigation-menu__bg-cloud navigation-menu__bg-cloud--bottom-left blur-effect" data-navigation-cloud>
+            <img src="./images/nav-cloud-bottom-left.webp" alt="A cloud in the sky">
+          </div>
+          <div class="navigation-menu__bg-cloud navigation-menu__bg-cloud--bottom-right blur-effect" data-navigation-cloud>
+            <img src="./images/nav-cloud-bottom-right.webp" alt="A cloud in the sky">
+          </div> -->
         </div>
       </div>
     </div>
@@ -73,6 +70,11 @@
         <line x1="6" y1="6" x2="18" y2="18"></line>
       </svg>
     </button>
+    <template data-navigation-cloud-template>
+      <div class="navigation-menu__bg-cloud" data-navigation-cloud>
+        <img src="" alt="A cloud in the sky" class="navigation-menu__bg-cloud-image" data-navigation-cloud-image>
+      </div>
+    </template>
   </section>
 </body>
 </html>
