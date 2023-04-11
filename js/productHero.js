@@ -24,9 +24,9 @@ if (document.querySelector("[data-product-hero-container]")) {
   }
 
   function makeGraphicPartRelativeToScroll() {
-    if (window.innerWidth < 1300) {
-      productHeroGraphicPart.style.top = "0px"; return;
-    }
+    removePositioningClasses(productHeroGraphicPart);
+
+    if (window.innerWidth < 1300) return;
     if (productHeroGraphicPart.clientHeight >= productHeroContentPart.clientHeight) return;
 
     const currentScroll = document.documentElement.scrollTop;
@@ -36,15 +36,23 @@ if (document.querySelector("[data-product-hero-container]")) {
 
     if (!isSectionInViewPort(productHeroContainer)) return;
     if (scrollInsideSection <= windowHeight) {
-      productHeroGraphicPart.style.top = "0px";
-      return;
+      productHeroGraphicPart.classList.add("absolute-top-0"); return;
     }
     
     const difference = scrollInsideSection - windowHeight;
     // const topExtentToBeCentered = (windowHeight - productHeroGraphicPart.clientHeight) / 2;
 
-    if (difference + productHeroGraphicPart.clientHeight > productHeroContainer.clientHeight) return;
+    if (difference + productHeroGraphicPart.clientHeight > productHeroContainer.clientHeight) {
+      productHeroGraphicPart.classList.add("absolute-bottom-0"); return;
+    }
 
-    productHeroGraphicPart.style.top = `${difference}px`;
+    productHeroGraphicPart.classList.add("fixed-top-0");
+    // productHeroGraphicPart.style.top = `${difference}px`;
+  }
+
+  function removePositioningClasses(productHeroGraphicPart) {
+    productHeroGraphicPart.classList.remove("absolute-top-0");
+    productHeroGraphicPart.classList.remove("absolute-bottom-0");
+    productHeroGraphicPart.classList.remove("fixed-top-0");
   }
 }

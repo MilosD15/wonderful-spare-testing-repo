@@ -36,6 +36,18 @@ body {
 .product-hero::before {
   display: none;
 }
+.product-hero.absolute-top-0 {
+  position: absolute;
+  top: 0;
+}
+.product-hero.fixed-top-0 {
+  position: fixed;
+  top: 0;
+}
+.product-hero.absolute-bottom-0 {
+  position: absolute;
+  bottom: 0;
+}
 .product-hero-container {
   position: relative;
   width: 100%;
