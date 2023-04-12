@@ -160,10 +160,10 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
-.faq__question-title-text:hover::after {
+.faq__question-title-text.on-hover::after {
   left: 0;
 }
-.faq__question-title-text:hover ~ .faq__question-title-left-dot::after, .faq__question-title-text:hover ~ .faq__question-title-right-dot::after {
+.faq__question-title-text.on-hover ~ .faq__question-title-left-dot::after, .faq__question-title-text.on-hover ~ .faq__question-title-right-dot::after {
   background-color: var(--theme-circle-color-hover);
 }
 .faq__question-title-left-dot {
