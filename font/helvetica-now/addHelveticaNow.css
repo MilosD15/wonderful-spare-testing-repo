@@ -1,0 +1,103 @@
+@font-face {
+  font-family: 'Helvetica Now';
+  src: url('./HelveticaNowText-Thin.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Helvetica Now';
+  src: url('./HelveticaNowText-ThinItalic.ttf') format('truetype');
+  font-weight: 100;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Helvetica Now';
+  src: url('./HelveticaNowText-ExtraLight.ttf') format('truetype');
+  font-weight: 200;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Helvetica Now';
+  src: url('./HelveticaNowText-ExtLtIta.ttf') format('truetype');
+  font-weight: 200;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Helvetica Now';
+  src: url('./HelveticaNowText-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Helvetica Now';
+  src: url('./HelveticaNowText-LightItalic.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Helvetica Now';
+  src: url('./HelveticaNowText-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Helvetica Now';
+  src: url('./HelveticaNowText-RegIta.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Helvetica Now';
+  src: url('./HelveticaNowText-Medium.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Helvetica Now';
+  src: url('./HelveticaNowText-MediumItalic.ttf') format('truetype');
+  font-weight: 600;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Helvetica Now';
+  src: url('./HelveticaNowText-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Helvetica Now';
+  src: url('./HelveticaNowText-BoldItalic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Helvetica Now';
+  src: url('./HelveticaNowText-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Helvetica Now';
+  src: url('./HelveticaNowText-ExtBdIta.ttf') format('truetype');
+  font-weight: 800;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Helvetica Now';
+  src: url('./HelveticaNowText-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Helvetica Now';
+  src: url('./HelveticaNowText-BlackItalic.ttf') format('truetype');
+  font-weight: 900;
+  font-style: italic;
+}

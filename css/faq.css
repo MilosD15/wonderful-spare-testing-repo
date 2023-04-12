@@ -210,13 +210,14 @@
       -ms-flex-align: stretch;
           align-items: stretch;
   padding: 1em 0;
+  font-family: "Helvetica Now";
 }
 .faq__question-answer-box {
   width: 74%;
   background-color: #ffffff;
   text-align: center;
   line-height: 1.5;
-  font-size: 1rem;
+  font-size: 1.1rem;
   letter-spacing: 0.16em;
   border: 0.188em solid #333333;
   -webkit-box-shadow: -0.3em 0.3em 0 #333333;
@@ -321,7 +322,7 @@
   }
   .faq__question-answer-box {
     width: 100%;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
   }
   .faq__question-answer-text {
     position: relative;
@@ -338,7 +339,7 @@
     position: absolute;
     z-index: 1;
     bottom: -4px;
-    right: -0.7rem;
+    right: -1rem;
     width: 4rem;
   }
   .faq__question-answer-pointer {
