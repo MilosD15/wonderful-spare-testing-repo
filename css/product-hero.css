@@ -24,7 +24,7 @@ body {
 
 .product-hero {
   width: 100%;
-  aspect-ratio: 16/7;
+  aspect-ratio: 2.0512820513;
   overflow: hidden;
   position: absolute;
   background-color: #ffffff;
@@ -68,11 +68,11 @@ body {
   display: none;
 }
 .product-hero-container.adjust-height-for-bigger-screens {
-  aspect-ratio: 16/7;
+  aspect-ratio: 2.0512820513;
 }
 .product-hero__wrapper {
   width: 100%;
-  aspect-ratio: 16/7;
+  aspect-ratio: 2.0512820513;
 }
 .product-hero__content {
   z-index: 2;
@@ -95,14 +95,14 @@ body {
   height: auto;
 }
 .product-hero__product {
-  top: 26%;
-  left: 15%;
+  top: 28%;
+  left: 14.6%;
   width: 20%;
   height: auto;
 }
 .product-hero__clouds-piece-character-feet-cover {
-  -webkit-transform: translate(-51%, -60%);
-          transform: translate(-51%, -60%);
+  -webkit-transform: translate(-51%, -55.6%);
+          transform: translate(-51%, -55.6%);
 }
 .product-hero__product-character {
   left: 32%;
@@ -334,7 +334,7 @@ body {
 @media screen and (max-width: 81.25rem) { /* 1300px */
   .product-hero {
     position: relative;
-    aspect-ratio: 4/3.2;
+    aspect-ratio: 4/3.5;
   }
   .product-hero-container {
     -webkit-box-orient: vertical;
@@ -343,6 +343,6 @@ body {
             flex-direction: column;
   }
   .product-hero__wrapper {
-    width: 180%;
+    width: 182%;
   }
 }
