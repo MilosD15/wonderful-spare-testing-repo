@@ -4,60 +4,77 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FAQ | Wonderful</title>
+  <title>Navigation menu | Wonderful</title>
   <link rel="stylesheet" href="./font/lemonmilk/addLemonmilk.css">
-  <link rel="stylesheet" href="./font/helvetica-now/addHelveticaNow.css">
   <link rel="stylesheet" href="./css/blur-effect.css">
   <link rel="stylesheet" href="./css/grain-effect.css">
   <link rel="stylesheet" href="./css/graphic-section.css">
   <link rel="stylesheet" href="./css/vibrate.css">
   <link rel="stylesheet" href="./css/boilerplate.css">
-  <link rel="stylesheet" href="./css/faq.css">
-  <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.js"></script>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="./js/loadQuestions.js" type="module"></script>
-  <script src="./js/faq.js" type="module"></script>
+  <link rel="stylesheet" href="./css/navigation.css">
+  <script src="./js/navigation.js" type="module"></script>
 </head>
 <body>
-  <section class="faq" data-faq-section>
-    <div class="faq__wrapper">
-      <div class="faq__lottie-container">
-        <dotlottie-player mode="normal" class="faq__lottie-player" data-faq-lottie-player></dotlottie-player>
-      </div>
-      <div class="faq__questions" data-faq-questions></div>
-    </div>
-  </section>
+  <button class="open-menu-btn" style="font-size: 1.4rem;">Open menu</button>
+  <section class="navigation-menu graphic-section" data-navigation-menu>
+    <div class="navigation-menu__wrapper graphic-section__wrapper grain-effect blur-effect" data-navigation-menu-wrapper>
+      <div class="navigation-menu__bg">
+        <div class="navigation-menu__bg-sheet">
+          <img src="./images/nav-very-bg.webp" alt="A big sky blue sheet in the background">
+        </div>
+        <div class="navigation-menu__bg-clouds-container" data-navigation-clouds-container>
 
-  <template data-faq-question-template>
-    <div class="faq__question" data-faq-question>
-      <div class="faq__question-title">
-        <button class="faq__question-title-text" data-faq-question-btn data-question-hover-text="Reveal answer"></button>
-        <div class="faq__question-title-left-dot"></div>
-        <div class="faq__question-title-right-dot"></div>
-      </div>
-      <div class="faq__question-answer-wrapper" data-faq-answer>
-        <div class="faq__question-answer">
-          <div class="faq__question-answer-box">
-            <p class="faq__question-answer-text" data-faq-answer-text></p>
-            <div class="faq__question-answer-pointer">
-              <div class="faq__question-answer-pointer-extra-bottom-stroke">
-                <svg viewBox="0 0 79 72">
-                  <path d="M77.5 1C53 16 16 13.5 1 8V71C35 59.4 74.5 20.5 77.5 1Z"/>
-                </svg>
-              </div>
-              <div class="faq__question-answer-pointer-white-part">
-                <svg viewBox="0 0 79 72">
-                  <path d="M77.5 1C53 16 16 13.5 1 8V71C35 59.4 74.5 20.5 77.5 1Z"/>
-                </svg>
-              </div>
-            </div>
+          <!-- <div class="navigation-menu__bg-cloud navigation-menu__bg-cloud--center" data-navigation-cloud>
+            <img src="./images/nav-cloud-center.webp" alt="A cloud in the sky">
           </div>
-          <div class="faq__question-answer-character">
-            <img class="faq__question-answer-character-image" data-faq-answer-img>
+          <div class="navigation-menu__bg-cloud navigation-menu__bg-cloud--top-left" data-navigation-cloud>
+            <img src="./images/nav-cloud-top-left.webp" alt="A cloud in the sky">
           </div>
+          <div class="navigation-menu__bg-cloud navigation-menu__bg-cloud--top-right" data-navigation-cloud>
+            <img src="./images/nav-cloud-top-right.webp" alt="A cloud in the sky">
+          </div>
+          <div class="navigation-menu__bg-cloud navigation-menu__bg-cloud--bottom-left blur-effect" data-navigation-cloud>
+            <img src="./images/nav-cloud-bottom-left.webp" alt="A cloud in the sky">
+          </div>
+          <div class="navigation-menu__bg-cloud navigation-menu__bg-cloud--bottom-right blur-effect" data-navigation-cloud>
+            <img src="./images/nav-cloud-bottom-right.webp" alt="A cloud in the sky">
+          </div> -->
         </div>
       </div>
     </div>
-  </template>
+    <nav class="navigation-menu__navbar" data-navigation-navbar>
+      <ul class="navigation-menu__list">
+        <li class="navigation-menu__item">
+          <a href="#" class="navigation-menu__link">Home</a>
+        </li>
+        <li class="navigation-menu__item">
+          <a href="#" class="navigation-menu__link">About Us</a>
+        </li>
+        <li class="navigation-menu__item">
+          <a href="#" class="navigation-menu__link">Products</a>
+        </li>
+        <li class="navigation-menu__item">
+          <a href="#" class="navigation-menu__link">FAQ</a>
+        </li>
+        <li class="navigation-menu__item">
+          <a href="#" class="navigation-menu__link">Free Samples</a>
+        </li>
+        <li class="navigation-menu__item">
+          <a href="#" class="navigation-menu__link">Order Now</a>
+        </li>
+      </ul>
+    </nav>
+    <button class="close-menu-btn">
+      <svg class="navigation-menu__close-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+    <template data-navigation-cloud-template>
+      <div class="navigation-menu__bg-cloud" data-navigation-cloud>
+        <img src="" alt="A cloud in the sky" class="navigation-menu__bg-cloud-image" data-navigation-cloud-image>
+      </div>
+    </template>
+  </section>
 </body>
 </html>
