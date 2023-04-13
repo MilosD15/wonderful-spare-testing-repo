@@ -132,6 +132,11 @@
 /* ANIMATIONS */
 /* MEDIA QUERIES */
 @media screen and (max-width: 81.25rem) { /* 1300px */
+  .navigation-menu__bg-sheet {
+    height: 100%;
+    width: auto;
+    aspect-ratio: 16/8;
+  }
   .navigation-menu__item {
     font-size: 9vmin;
   }

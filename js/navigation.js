@@ -11,8 +11,8 @@ if (document.querySelector("[data-navigation-menu]")) {
   const cloudTemplate = navigationMenu.querySelector("[data-navigation-cloud-template]");
 
   // positioning clouds
-  const targetCoveragePercentage = 0.7;
-  const maxOverlapRatio = 0.3;
+  const targetCoveragePercentage = 1.8;
+  const maxOverlapRatio = 0.1;
 
   const CLOUD_IMAGES = [
     {
@@ -47,50 +47,137 @@ if (document.querySelector("[data-navigation-menu]")) {
     },
   ];
 
-  function randomizeClouds(targetCoveragePercentage) {
+  function randomizeClouds() {
     let currentCoverage = 0;
     const skyArea = navigationCloudsContainer.clientWidth * navigationCloudsContainer.clientHeight;
     const targetCoverage = skyArea * targetCoveragePercentage;
-
+  
     navigationCloudsContainer.innerHTML = '';
-
+  
     while (currentCoverage < targetCoverage) {
-      // console.log("randomizing clouds");
-      // console.log("targetCoverage: ", targetCoverage);
-      // console.log("currentCoverage: ", currentCoverage);
       const cloudFragment = cloudTemplate.content.cloneNode(true);
-
+  
       const randomImageObj = CLOUD_IMAGES[Math.floor(Math.random() * CLOUD_IMAGES.length)];
-      
+  
       const cloudWrapper = cloudFragment.querySelector("[data-navigation-cloud]");
       cloudWrapper.classList.add(randomImageObj.className);
       cloudWrapper.style.width = `${randomImageObj.width}px`;
       cloudWrapper.style.height = `${randomImageObj.width / randomImageObj.aspectRatio}px`;
-
+  
       const cloudImg = cloudFragment.querySelector("[data-navigation-cloud-image]");
       cloudImg.src = randomImageObj.imgURL;
       cloudImg.style.transform = `translateX(calc(-140% - ${navigationCloudsContainer.clientWidth}px))`;
-      
+  
       const cloudWidth = randomImageObj.width;
       const cloudHeight = randomImageObj.width / randomImageObj.aspectRatio;
+  
+      let xPos, yPos, validPosition;
+  
+      do {
+        xPos = (Math.random() * (navigationCloudsContainer.clientWidth + cloudWidth)) - (cloudWidth / 2);
+        yPos = (Math.random() * (navigationCloudsContainer.clientHeight + cloudHeight)) - (cloudHeight / 2);
+  
+        validPosition = true;
+        const clouds = document.querySelectorAll("[data-navigation-cloud]");
+  
+        for (const existingCloud of clouds) {
+          const cloudRect = {
+            left: xPos,
+            top: yPos,
+            right: xPos + cloudWidth,
+            bottom: yPos + cloudHeight,
+            width: cloudWidth,
+            height: cloudHeight
+          };
+          const existingCloudRect = existingCloud.getBoundingClientRect();
+          const maxOverlapArea = maxOverlapRatio * cloudWidth * cloudHeight;
 
-      const xPos = (Math.random() * (navigationCloudsContainer.clientWidth + cloudWidth)) - (cloudWidth / 2);
-      const yPos = (Math.random() * (navigationCloudsContainer.clientHeight + cloudHeight)) - (cloudHeight / 2);
-
+          const overlapArea = calculateOverlapPercentage(cloudRect, existingCloudRect);
+  
+          if (overlapArea > maxOverlapArea) {
+            validPosition = false;
+            break;
+          }
+        }
+      } while (!validPosition);
+  
       cloudWrapper.style.left = `${xPos}px`;
       cloudWrapper.style.top = `${yPos}px`;
-
+  
       navigationCloudsContainer.appendChild(cloudFragment);
-
+  
       // Calculate coverage
       const cloudRect = cloudWrapper.getBoundingClientRect();
       const visibleWidth = Math.max(0, Math.min(cloudRect.right, navigationCloudsContainer.clientWidth) - Math.max(cloudRect.left, 0));
       const visibleHeight = Math.max(0, Math.min(cloudRect.bottom, navigationCloudsContainer.clientHeight) - Math.max(cloudRect.top, 0));
       const visibleArea = visibleWidth * visibleHeight;
-
+  
       currentCoverage += visibleArea;
+      // console.log(currentCoverage);
     }
   }
+  
+
+  function calculateOverlapPercentage(rect1, rect2) {
+    // Calculate the overlapping area
+    const overlapWidth = Math.min(rect1.right, rect2.right) - Math.max(rect1.left, rect2.left);
+    const overlapHeight = Math.min(rect1.bottom, rect2.bottom) - Math.max(rect1.top, rect2.top);
+    const overlapArea = Math.max(0, overlapWidth) * Math.max(0, overlapHeight);
+  
+    // Calculate the total area of both elements
+    const totalArea = rect1.width * rect1.height + rect2.width * rect2.height;
+  
+    // Calculate the overlap percentage
+    const overlapPercentage = overlapArea / totalArea * 100;
+
+    return overlapPercentage;
+  }
+  
+  
+  // function randomizeClouds() {
+  //   let currentCoverage = 0;
+  //   const skyArea = navigationCloudsContainer.clientWidth * navigationCloudsContainer.clientHeight;
+  //   const targetCoverage = skyArea * targetCoveragePercentage;
+
+  //   navigationCloudsContainer.innerHTML = '';
+
+  //   while (currentCoverage < targetCoverage) {
+  //     // console.log("randomizing clouds");
+  //     // console.log("targetCoverage: ", targetCoverage);
+  //     // console.log("currentCoverage: ", currentCoverage);
+  //     const cloudFragment = cloudTemplate.content.cloneNode(true);
+
+  //     const randomImageObj = CLOUD_IMAGES[Math.floor(Math.random() * CLOUD_IMAGES.length)];
+      
+  //     const cloudWrapper = cloudFragment.querySelector("[data-navigation-cloud]");
+  //     cloudWrapper.classList.add(randomImageObj.className);
+  //     cloudWrapper.style.width = `${randomImageObj.width}px`;
+  //     cloudWrapper.style.height = `${randomImageObj.width / randomImageObj.aspectRatio}px`;
+
+  //     const cloudImg = cloudFragment.querySelector("[data-navigation-cloud-image]");
+  //     cloudImg.src = randomImageObj.imgURL;
+  //     cloudImg.style.transform = `translateX(calc(-140% - ${navigationCloudsContainer.clientWidth}px))`;
+      
+  //     const cloudWidth = randomImageObj.width;
+  //     const cloudHeight = randomImageObj.width / randomImageObj.aspectRatio;
+
+  //     const xPos = (Math.random() * (navigationCloudsContainer.clientWidth + cloudWidth)) - (cloudWidth / 2);
+  //     const yPos = (Math.random() * (navigationCloudsContainer.clientHeight + cloudHeight)) - (cloudHeight / 2);
+
+  //     cloudWrapper.style.left = `${xPos}px`;
+  //     cloudWrapper.style.top = `${yPos}px`;
+
+  //     navigationCloudsContainer.appendChild(cloudFragment);
+
+  //     // Calculate coverage
+  //     const cloudRect = cloudWrapper.getBoundingClientRect();
+  //     const visibleWidth = Math.max(0, Math.min(cloudRect.right, navigationCloudsContainer.clientWidth) - Math.max(cloudRect.left, 0));
+  //     const visibleHeight = Math.max(0, Math.min(cloudRect.bottom, navigationCloudsContainer.clientHeight) - Math.max(cloudRect.top, 0));
+  //     const visibleArea = visibleWidth * visibleHeight;
+
+  //     currentCoverage += visibleArea;
+  //   }
+  // }
 
   // animating clouds
   const fadeInDuration = parseInt(getCSSPropertyValueFromRoot("--NAVBAR-fade-in-transition-duration"));
@@ -106,7 +193,7 @@ if (document.querySelector("[data-navigation-menu]")) {
 
   function openMenuPanel() {
     navigationMenu.classList.add("show");
-    randomizeClouds(targetCoveragePercentage, maxOverlapRatio);
+    randomizeClouds();
     navigationBgClouds = navigationMenu.querySelectorAll("[data-navigation-cloud]");
 
     setTimeout(() => {
