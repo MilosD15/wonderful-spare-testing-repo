@@ -11,36 +11,37 @@ if (document.querySelector("[data-navigation-menu]")) {
   const cloudTemplate = navigationMenu.querySelector("[data-navigation-cloud-template]");
 
   // positioning clouds
-  const targetCoveragePercentage = 2;
+  const targetCoveragePercentage = 0.7;
+  const maxOverlapRatio = 0.3;
 
   const CLOUD_IMAGES = [
     {
       className: "navigation-menu__bg-cloud--center",
-      width: 400,
+      width: 600,
       aspectRatio: 1.98,
       imgURL: "./images/nav-cloud-center.webp"
     },
     {
       className: "navigation-menu__bg-cloud--top-left",
-      width: 600,
+      width: 850,
       aspectRatio: 2.32,
       imgURL: "./images/nav-cloud-top-left.webp"
     },
     {
       className: "navigation-menu__bg-cloud--top-right",
-      width: 800,
+      width: 1100,
       aspectRatio: 2.45,
       imgURL: "./images/nav-cloud-top-right.webp"
     },
     {
       className: "navigation-menu__bg-cloud--bottom-left",
-      width: 700,
+      width: 900,
       aspectRatio: 2.1,
       imgURL: "./images/nav-cloud-bottom-left.webp"
     },
     {
       className: "navigation-menu__bg-cloud--bottom-right",
-      width: 740,
+      width: 950,
       aspectRatio: 1.98,
       imgURL: "./images/nav-cloud-bottom-right.webp"
     },
@@ -105,7 +106,7 @@ if (document.querySelector("[data-navigation-menu]")) {
 
   function openMenuPanel() {
     navigationMenu.classList.add("show");
-    randomizeClouds(targetCoveragePercentage);
+    randomizeClouds(targetCoveragePercentage, maxOverlapRatio);
     navigationBgClouds = navigationMenu.querySelectorAll("[data-navigation-cloud]");
 
     setTimeout(() => {
