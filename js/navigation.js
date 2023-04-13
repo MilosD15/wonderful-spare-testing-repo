@@ -103,7 +103,7 @@ if (document.querySelector("[data-navigation-menu]")) {
   
       cloudWrapper.style.left = `${xPos}px`;
       cloudWrapper.style.top = `${yPos}px`;
-  
+
       navigationCloudsContainer.appendChild(cloudFragment);
   
       // Calculate coverage
@@ -116,7 +116,57 @@ if (document.querySelector("[data-navigation-menu]")) {
       // console.log(currentCoverage);
     }
   }
-  
+
+  function applyBlurEffect() {
+    const clouds = [...navigationCloudsContainer.querySelectorAll("[data-navigation-cloud]")];
+    const topBoundary = navigationCloudsContainer.clientHeight * 0.15;
+    const bottomBoundary = navigationCloudsContainer.clientHeight * 0.85;
+
+    clouds.forEach((cloud, index) => {
+      const cloudRect = cloud.getBoundingClientRect();
+
+      if (cloudRect.top <= topBoundary || cloudRect.bottom >= bottomBoundary) {
+        if (checkCloudIsOverlappedAndIsFront(cloud, index)) {
+          console.log("blurred");
+          cloud.classList.add('blurred');
+        }
+      }
+    });
+  }
+
+  function checkCloudIsOverlappedAndIsFront(cloud, index) {
+    const clouds = [...navigationCloudsContainer.querySelectorAll("[data-navigation-cloud]")];
+    const otherClouds = clouds.filter(c => c !== cloud);
+
+    let cloudOverlap = false;
+
+    otherClouds.forEach((otherCloud, otherCloudIndex) => {
+      if (checkElementsOverlap(cloud, otherCloud)) {
+        if (otherCloudIndex > index) {
+          cloudOverlap = true;
+        }
+      }
+    });
+
+    if (!cloudOverlap) {
+      return true;
+    }
+
+    return false;
+  }
+
+  function checkElementsOverlap(elem1, elem2) {
+    const rect1 = elem1.getBoundingClientRect();
+    const rect2 = elem2.getBoundingClientRect();
+
+    // Check if the two rectangles overlap
+    const overlap = !(rect1.right < rect2.left ||
+      rect1.left > rect2.right ||
+      rect1.bottom < rect2.top ||
+      rect1.top > rect2.bottom);
+
+    return overlap;
+  }
 
   function calculateOverlapPercentage(rect1, rect2) {
     // Calculate the overlapping area
@@ -194,6 +244,7 @@ if (document.querySelector("[data-navigation-menu]")) {
   function openMenuPanel() {
     navigationMenu.classList.add("show");
     randomizeClouds();
+    applyBlurEffect();
     navigationBgClouds = navigationMenu.querySelectorAll("[data-navigation-cloud]");
 
     setTimeout(() => {
