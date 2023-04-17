@@ -1,0 +1,113 @@
+body {
+  width: 100%;
+  min-height: 300vh;
+  margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.how-we-are-different {
+  width: 100%;
+  aspect-ratio: 16/7;
+  overflow: hidden;
+  position: relative;
+}
+.how-we-are-different::before, .how-we-are-different::after {
+  -webkit-box-shadow: inset 0 -2.9vw 1.3vw -1vw #ffffff;
+          box-shadow: inset 0 -2.9vw 1.3vw -1vw #ffffff;
+}
+.how-we-are-different__bg {
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 100%;
+  height: auto;
+}
+.how-we-are-different__drawn-differences, .how-we-are-different__written-differences, .how-we-are-different__highlights, .how-we-are-different__title-flag {
+  top: 50%;
+  left: 49%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 65.6%;
+  height: auto;
+}
+.how-we-are-different__highlights {
+  aspect-ratio: 16/8;
+}
+.how-we-are-different__highlights-highlight {
+  position: absolute;
+  width: 36%;
+}
+.how-we-are-different__highlights-highlight--left {
+  top: 26.5%;
+  left: 5%;
+}
+.how-we-are-different__highlights-highlight--center {
+  top: 26.5%;
+  left: 32%;
+}
+.how-we-are-different__highlights-highlight--right {
+  top: 26.5%;
+  left: 59%;
+}
+.how-we-are-different__lottie {
+  top: -23.5%;
+  left: 48.7%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 48%;
+}
+
+@-webkit-keyframes rotate-hwad-highlights {
+  from {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate-hwad-highlights {
+  from {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+/* MEDIA QUERIES */
+@media screen and (max-width: 81.25rem) { /* 1300px */
+  .how-we-are-different {
+    aspect-ratio: 16/12;
+  }
+  .how-we-are-different__wrapper {
+    aspect-ratio: 16/12;
+  }
+  .how-we-are-different__bg {
+    width: 160%;
+  }
+  .how-we-are-different__drawn-differences, .how-we-are-different__written-differences, .how-we-are-different__highlights {
+    top: 56%;
+    width: 100%;
+  }
+  .how-we-are-different__title-flag {
+    top: 50%;
+    width: 100%;
+  }
+  .how-we-are-different__lottie {
+    top: -21%;
+    width: 70%;
+  }
+}

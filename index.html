@@ -4,63 +4,44 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FAQ | Wonderful</title>
-  <link rel="stylesheet" href="./font/lemonmilk/addLemonmilk.css">
-  <link rel="stylesheet" href="./font/helvetica-now/addHelveticaNow.css">
+  <title>How we are different</title>
   <link rel="stylesheet" href="./css/blur-effect.css">
   <link rel="stylesheet" href="./css/grain-effect.css">
   <link rel="stylesheet" href="./css/graphic-section.css">
   <link rel="stylesheet" href="./css/vibrate.css">
-  <link rel="stylesheet" href="./css/boilerplate.css">
-  <link rel="stylesheet" href="./css/faq.css">
+  <link rel="stylesheet" href="./css/how-we-are-different.css">
   <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.js"></script>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="./js/loadQuestions.js" type="module"></script>
-  <script src="./js/faq.js" type="module"></script>
+  <script src="https://unpkg.com/@lottiefiles/lottie-interactivity@latest/dist/lottie-interactivity.min.js"></script>
+  <script src="./js/howWeAreDifferent.js" type="module"></script>
 </head>
 <body>
-  <section class="faq" data-faq-section>
-    <div class="faq__wrapper">
-      <div class="faq__lottie-container">
-        <dotlottie-player mode="normal" class="faq__lottie-player" data-faq-lottie-player></dotlottie-player>
+  <section class="how-we-are-different graphic-section" data-how-we-are-different-section>
+    <div class="how-we-are-different__wrapper graphic-section__wrapper grain-effect blur-effect">
+      <div class="how-we-are-different__bg" data-hwad-bg>
+        <img src="./images/hwad-bg.webp" alt="An illustration of an old soaked piece of paper">
       </div>
-      <div class="faq__questions" data-faq-questions></div>
-    </div>
-  </section>
-
-  <a href=""></a>
-
-  <template data-faq-question-template>
-    <div class="faq__question" data-faq-question>
-      <div class="faq__question-title">
-        <button class="faq__question-title-text" data-faq-question-btn data-question-hover-text="Reveal answer"></button>
-        <div class="faq__question-title-left-dot"></div>
-        <div class="faq__question-title-right-dot"></div>
-      </div>
-      <div class="faq__question-answer-wrapper" data-faq-answer>
-        <div class="faq__question-answer">
-          <div class="faq__question-answer-box">
-            <div class="faq__question-answer-box-bg-blanket"></div>
-            <p class="faq__question-answer-text" data-faq-answer-text></p>
-            <div class="faq__question-answer-pointer">
-              <div class="faq__question-answer-pointer-extra-bottom-stroke">
-                <svg viewBox="0 0 79 72">
-                  <path d="M77.5 1C53 16 16 13.5 1 8V71C35 59.4 74.5 20.5 77.5 1Z"/>
-                </svg>
-              </div>
-              <div class="faq__question-answer-pointer-white-part">
-                <svg viewBox="0 0 79 72">
-                  <path d="M77.5 1C53 16 16 13.5 1 8V71C35 59.4 74.5 20.5 77.5 1Z"/>
-                </svg>
-              </div>
-            </div>
-          </div>
-          <div class="faq__question-answer-character">
-            <img class="faq__question-answer-character-image" data-faq-answer-img>
-          </div>
+      <div class="how-we-are-different__highlights" data-hwad-highlights-container>
+        <div class="how-we-are-different__highlights-highlight how-we-are-different__highlights-highlight--left">
+          <img src="./images/hwad-highlight.webp" class="how-we-are-different__highlights-highlight-image" alt="A highlight that goes around 'honestly priced' illustration">
+        </div>
+        <div class="how-we-are-different__highlights-highlight how-we-are-different__highlights-highlight--center">
+          <img src="./images/hwad-highlight.webp" class="how-we-are-different__highlights-highlight-image" alt="A highlight that goes around 'made with love' illustration">
+        </div>
+        <div class="how-we-are-different__highlights-highlight how-we-are-different__highlights-highlight--right">
+          <img src="./images/hwad-highlight.webp" class="how-we-are-different__highlights-highlight-image" alt="A highlight that goes around 'developed by dentist' illustration">
         </div>
       </div>
+      <div class="how-we-are-different__drawn-differences" data-hwad-drawn-differences>
+        <img src="./images/hwad-drawn-differences.webp" alt="An illustration of our advantages over others(honestly priced, developed by dentist, made with love)">
+      </div>
+      <div class="how-we-are-different__written-differences" data-hwad-written-differences>
+        <img src="./images/hwad-written-differences.webp" alt="Honestly priced, developed by dentist, made with love captions">
+      </div>
+      <div class="how-we-are-different__title-flag" data-hwad-title-flag>
+        <img src="./images/hwad-title-flag.webp" alt="A flag that is located under the 'how we are different' lottie title of the section">
+      </div>
+      <dotlottie-player mode="normal" class="how-we-are-different__lottie" data-hwad-lottie-player></dotlottie-player>
     </div>
-  </template>
+  </section>
 </body>
 </html>
