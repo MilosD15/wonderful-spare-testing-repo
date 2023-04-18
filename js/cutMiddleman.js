@@ -19,10 +19,10 @@ if (document.querySelector("[data-cut-middleman-section]")) {
     cutMiddlemanTreesFenceHouseParallax = new ElementParallax(cutMiddlemanSection, cutMiddlemanTreesFenceHouseElement, { y: -5 }, 0, { y: 0 }, 1);
     cutMiddlemanMoneyWolfParallax = new ElementParallax(cutMiddlemanSection, cutMiddlemanMoneyWolfElement, { y: 12 }, 0, { y: -12 }, 2);
   } else {
-    cutMiddlemanSkyParallax = new ElementParallax(cutMiddlemanSection, cutMiddlemanSkyElement, { x: -22 }, 0, { x: 0 }, 2);
-    cutMiddlemanBgHillsParallax = new ElementParallax(cutMiddlemanSection, cutMiddlemanBgHillsElement, { y: 0 }, 0.4, { y: -5 }, 2);
-    cutMiddlemanTreesFenceHouseParallax = new ElementParallax(cutMiddlemanSection, cutMiddlemanTreesFenceHouseElement, { x: 0 }, 0.4, { x: -28.5 }, 2);
-    cutMiddlemanMoneyWolfParallax = new ElementParallax(cutMiddlemanSection, cutMiddlemanMoneyWolfElement, { y: 0 }, 0.4, { y: -6 }, 2);
+    cutMiddlemanSkyParallax = new ElementParallax(cutMiddlemanSection, cutMiddlemanSkyElement, { x: -22 }, 0, { x: 0 }, 4);
+    cutMiddlemanBgHillsParallax = new ElementParallax(cutMiddlemanSection, cutMiddlemanBgHillsElement, { y: 0 }, 0, { y: -5 }, 4);
+    cutMiddlemanTreesFenceHouseParallax = new ElementParallax(cutMiddlemanSection, cutMiddlemanTreesFenceHouseElement, { x: 0 }, 0, { x: -28.5 }, 4);
+    cutMiddlemanMoneyWolfParallax = new ElementParallax(cutMiddlemanSection, cutMiddlemanMoneyWolfElement, { y: 0 }, 0, { y: -6 }, 4);
   }
 
   window.addEventListener("load", handleParallax);
