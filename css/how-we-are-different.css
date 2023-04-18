@@ -65,6 +65,44 @@ body {
           transform: translateX(-50%);
   width: 48%;
 }
+.how-we-are-different__character-circles {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 20%;
+  display: none;
+}
+.how-we-are-different__character-circle {
+  --title-translate-x: 0%;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 30%;
+  height: auto;
+}
+.how-we-are-different__character-circle-title {
+  -webkit-transform: translate(var(--title-translate-x), -46%);
+          transform: translate(var(--title-translate-x), -46%);
+}
+.how-we-are-different__character-circle--top {
+  top: 0;
+  --title-translate-x: -2%;
+}
+.how-we-are-different__character-circle--middle {
+  top: 31.5%;
+}
+.how-we-are-different__character-circle--bottom {
+  width: 32%;
+  top: 62%;
+  -webkit-transform: translateX(-51%);
+          transform: translateX(-51%);
+}
+.how-we-are-different__character-circle--bottom .how-we-are-different__character-circle-title {
+  width: 110%;
+  -webkit-transform: translate(-4.5%, -58%);
+          transform: translate(-4.5%, -58%);
+}
 
 @-webkit-keyframes rotate-hwad-highlights {
   from {
@@ -90,24 +128,30 @@ body {
 /* MEDIA QUERIES */
 @media screen and (max-width: 81.25rem) { /* 1300px */
   .how-we-are-different {
-    aspect-ratio: 16/12;
+    aspect-ratio: 16/28;
   }
   .how-we-are-different__wrapper {
-    aspect-ratio: 16/12;
+    aspect-ratio: inherit;
   }
   .how-we-are-different__bg {
-    width: 160%;
+    height: 100%;
+    width: auto;
+    aspect-ratio: inherit;
   }
   .how-we-are-different__drawn-differences, .how-we-are-different__written-differences, .how-we-are-different__highlights {
-    top: 56%;
-    width: 100%;
+    display: none;
   }
   .how-we-are-different__title-flag {
-    top: 50%;
-    width: 100%;
+    top: 34%;
+    top: 22%;
+    width: 130%;
   }
   .how-we-are-different__lottie {
-    top: -21%;
-    width: 70%;
+    top: -22.5%;
+    top: -40%;
+    width: 94%;
+  }
+  .how-we-are-different__character-circles {
+    display: block;
   }
 }

@@ -10,6 +10,7 @@ if (document.querySelector("[data-how-we-are-different-section]")) {
   const howWeAreDifferentWrittenDifferencesElement = howWeAreDifferentSection.querySelector("[data-hwad-written-differences]");
   const howWeAreDifferentTitleFlagElement = howWeAreDifferentSection.querySelector("[data-hwad-title-flag]");
   const howWeAreDifferentHighlightsContainer = howWeAreDifferentSection.querySelector("[data-hwad-highlights-container]");
+  const howWeAreDifferentCharacterCircles = howWeAreDifferentSection.querySelector("[data-hwad-character-circles]");
   const howWeAreDifferentLottiePlayer = howWeAreDifferentSection.querySelector("[data-hwad-lottie-player]");
 
   // parallax
@@ -19,8 +20,16 @@ if (document.querySelector("[data-how-we-are-different-section]")) {
     howWeAreDifferentTitleFlagElement, howWeAreDifferentHighlightsContainer].map(element => {
     return new ElementParallax(howWeAreDifferentSection, element, { x: -50, y: -30 }, 0, { x: -50, y: -66 }, 2);
   });
-  const howWeAreDifferentLottieContainerParallax = new ElementParallax(howWeAreDifferentSection, howWeAreDifferentLottiePlayer, 
-    { x: -50, y: 15 }, 0, { x: -50, y: -12 }, 2);
+  let howWeAreDifferentLottieContainerParallax;
+  if (window.innerWidth > 1300) {
+    howWeAreDifferentLottieContainerParallax = new ElementParallax(howWeAreDifferentSection, howWeAreDifferentLottiePlayer, 
+      { x: -50, y: 15 }, 0, { x: -50, y: -12 }, 2);
+  } else {
+    howWeAreDifferentLottieContainerParallax = new ElementParallax(howWeAreDifferentSection, howWeAreDifferentLottiePlayer, 
+      { x: -50, y: 8 }, 0, { x: -50, y: -6 }, 2);
+  }
+  const howWeAreDifferentCharacterCirclesParallax = new ElementParallax(howWeAreDifferentSection, howWeAreDifferentCharacterCircles,
+    { y: 10 }, 0.4, { y: -6 }, 1.5);
 
   window.addEventListener("load", handleParallax);
   window.addEventListener("scroll", handleParallax);
@@ -31,6 +40,7 @@ if (document.querySelector("[data-how-we-are-different-section]")) {
     howWeAreDifferentBgParallax.apply(currentScroll);
     centeredContentElementsParallax.forEach(element => element.apply(currentScroll));
     howWeAreDifferentLottieContainerParallax.apply(currentScroll);
+    howWeAreDifferentCharacterCirclesParallax.apply(currentScroll);
   }
 
   // lottie

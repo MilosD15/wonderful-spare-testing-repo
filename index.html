@@ -18,7 +18,10 @@
   <section class="how-we-are-different graphic-section" data-how-we-are-different-section>
     <div class="how-we-are-different__wrapper graphic-section__wrapper grain-effect blur-effect">
       <div class="how-we-are-different__bg" data-hwad-bg>
-        <img src="./images/hwad-bg.webp" alt="An illustration of an old soaked piece of paper">
+        <picture>
+          <source media="(max-width: 1300px)" srcset="./images/hwad-bg-mobile.webp" type="image/webp">
+          <img src="./images/hwad-bg.webp" alt="An illustration of an old soaked piece of paper(blue sky color)">
+        </picture>
       </div>
       <div class="how-we-are-different__highlights" data-hwad-highlights-container>
         <div class="how-we-are-different__highlights-highlight how-we-are-different__highlights-highlight--left">
@@ -29,6 +32,32 @@
         </div>
         <div class="how-we-are-different__highlights-highlight how-we-are-different__highlights-highlight--right">
           <img src="./images/hwad-highlight.webp" class="how-we-are-different__highlights-highlight-image" alt="A highlight that goes around 'developed by dentist' illustration">
+        </div>
+      </div>
+      <div class="how-we-are-different__character-circles" data-hwad-character-circles>
+        <div class="how-we-are-different__character-circle how-we-are-different__character-circle--top">
+          <div class="how-we-are-different__character-circle-character">
+            <img src="./images/hwad-dollar-circle.webp" alt="A dollar character">
+          </div>
+          <div class="how-we-are-different__character-circle-title">
+            <img src="./images/hwad-dollar-words.webp" alt="Honestly Priced title">
+          </div>
+        </div>
+        <div class="how-we-are-different__character-circle how-we-are-different__character-circle--middle">
+          <div class="how-we-are-different__character-circle-character">
+            <img src="./images/hwad-heart-circle.webp" alt="A heart character">
+          </div>
+          <div class="how-we-are-different__character-circle-title">
+            <img src="./images/hwad-heart-words.webp" alt="Made with Love title">
+          </div>
+        </div>
+        <div class="how-we-are-different__character-circle how-we-are-different__character-circle--bottom">
+          <div class="how-we-are-different__character-circle-character">
+            <img src="./images/hwad-doc-circle.webp" alt="A dentist character">
+          </div>
+          <div class="how-we-are-different__character-circle-title">
+            <img src="./images/hwad-doc-words.webp" alt="Developed by Dr. Epstein title">
+          </div>
         </div>
       </div>
       <div class="how-we-are-different__drawn-differences" data-hwad-drawn-differences>
