@@ -78,7 +78,7 @@ body {
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
-  width: 30%;
+  width: 36%;
   height: auto;
 }
 .how-we-are-different__character-circle-title {
@@ -90,11 +90,11 @@ body {
   --title-translate-x: -2%;
 }
 .how-we-are-different__character-circle--middle {
-  top: 31.5%;
+  top: 33%;
 }
 .how-we-are-different__character-circle--bottom {
-  width: 32%;
-  top: 62%;
+  width: 38%;
+  top: 65%;
   -webkit-transform: translateX(-51%);
           transform: translateX(-51%);
 }
@@ -128,15 +128,15 @@ body {
 /* MEDIA QUERIES */
 @media screen and (max-width: 81.25rem) { /* 1300px */
   .how-we-are-different {
-    aspect-ratio: 16/28;
+    aspect-ratio: 16/32;
   }
   .how-we-are-different__wrapper {
-    aspect-ratio: 16/28;
+    aspect-ratio: 16/32;
   }
   .how-we-are-different__bg {
     height: 100%;
     width: auto;
-    aspect-ratio: 16/28;
+    aspect-ratio: 16/32;
   }
   .how-we-are-different__drawn-differences, .how-we-are-different__written-differences, .how-we-are-different__highlights {
     display: none;
@@ -148,7 +148,7 @@ body {
   }
   .how-we-are-different__lottie {
     top: -22.5%;
-    top: -40%;
+    top: -38.3%;
     width: 94%;
   }
   .how-we-are-different__character-circles {
