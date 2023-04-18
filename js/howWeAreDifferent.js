@@ -20,11 +20,13 @@ if (document.querySelector("[data-how-we-are-different-section]")) {
     howWeAreDifferentTitleFlagElement, howWeAreDifferentHighlightsContainer].map(element => {
     return new ElementParallax(howWeAreDifferentSection, element, { x: -50, y: -30 }, 0, { x: -50, y: -66 }, 2);
   });
-  let howWeAreDifferentLottieContainerParallax;
+  let howWeAreDifferentLottieContainerParallax, howWeAreDifferentTitleFlagElementParallax;
   if (window.innerWidth > 1300) {
+    howWeAreDifferentTitleFlagElementParallax = new ElementParallax(howWeAreDifferentSection, howWeAreDifferentTitleFlagElement, { x: -50, y: -30 }, 0, { x: -50, y: -66 }, 2);
     howWeAreDifferentLottieContainerParallax = new ElementParallax(howWeAreDifferentSection, howWeAreDifferentLottiePlayer, 
       { x: -50, y: 15 }, 0, { x: -50, y: -12 }, 2);
   } else {
+    howWeAreDifferentTitleFlagElementParallax = new ElementParallax(howWeAreDifferentSection, howWeAreDifferentTitleFlagElement, { x: -50, y: -18 }, 0, { x: -50, y: -80 }, 2);
     howWeAreDifferentLottieContainerParallax = new ElementParallax(howWeAreDifferentSection, howWeAreDifferentLottiePlayer, 
       { x: -50, y: 8 }, 0, { x: -50, y: -6 }, 2);
   }
@@ -41,6 +43,7 @@ if (document.querySelector("[data-how-we-are-different-section]")) {
     centeredContentElementsParallax.forEach(element => element.apply(currentScroll));
     howWeAreDifferentLottieContainerParallax.apply(currentScroll);
     howWeAreDifferentCharacterCirclesParallax.apply(currentScroll);
+    howWeAreDifferentTitleFlagElementParallax.apply(currentScroll);
   }
 
   // lottie
