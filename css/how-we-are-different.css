@@ -131,12 +131,12 @@ body {
     aspect-ratio: 16/28;
   }
   .how-we-are-different__wrapper {
-    aspect-ratio: inherit;
+    aspect-ratio: 16/28;
   }
   .how-we-are-different__bg {
     height: 100%;
     width: auto;
-    aspect-ratio: inherit;
+    aspect-ratio: 16/28;
   }
   .how-we-are-different__drawn-differences, .how-we-are-different__written-differences, .how-we-are-different__highlights {
     display: none;
