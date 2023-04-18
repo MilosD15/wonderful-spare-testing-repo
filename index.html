@@ -4,72 +4,31 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>How we are different</title>
   <link rel="stylesheet" href="./css/blur-effect.css">
   <link rel="stylesheet" href="./css/grain-effect.css">
   <link rel="stylesheet" href="./css/graphic-section.css">
   <link rel="stylesheet" href="./css/vibrate.css">
-  <link rel="stylesheet" href="./css/how-we-are-different.css">
+  <link rel="stylesheet" href="./css/cut-middleman.css">
   <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.js"></script>
-  <script src="https://unpkg.com/@lottiefiles/lottie-interactivity@latest/dist/lottie-interactivity.min.js"></script>
-  <script src="./js/howWeAreDifferent.js" type="module"></script>
+  <title>Cut out the middleman</title>
+  <script src="./js/cutMiddleman.js" type="module"></script>
 </head>
 <body>
-  <section class="how-we-are-different graphic-section" data-how-we-are-different-section>
-    <div class="how-we-are-different__wrapper graphic-section__wrapper grain-effect blur-effect">
-      <div class="how-we-are-different__bg" data-hwad-bg>
-        <picture>
-          <source media="(max-width: 1300px)" srcset="./images/hwad-bg-mobile.webp" type="image/webp">
-          <img src="./images/hwad-bg.webp" alt="An illustration of an old soaked piece of paper(blue sky color)">
-        </picture>
+  <section class="cut-middleman graphic-section" data-cut-middleman-section>
+    <div class="cut-middleman__wrapper graphic-section__wrapper grain-effect blur-effect" data-cm-wrapper>
+      <div class="cut-middleman__sky" data-cm-sky>
+        <img src="./images/cm-bg.webp" alt="Blue sky with a bunch of clouds">
       </div>
-      <div class="how-we-are-different__highlights" data-hwad-highlights-container>
-        <div class="how-we-are-different__highlights-highlight how-we-are-different__highlights-highlight--left">
-          <img src="./images/hwad-highlight.webp" class="how-we-are-different__highlights-highlight-image" alt="A highlight that goes around 'honestly priced' illustration">
-        </div>
-        <div class="how-we-are-different__highlights-highlight how-we-are-different__highlights-highlight--center">
-          <img src="./images/hwad-highlight.webp" class="how-we-are-different__highlights-highlight-image" alt="A highlight that goes around 'made with love' illustration">
-        </div>
-        <div class="how-we-are-different__highlights-highlight how-we-are-different__highlights-highlight--right">
-          <img src="./images/hwad-highlight.webp" class="how-we-are-different__highlights-highlight-image" alt="A highlight that goes around 'developed by dentist' illustration">
-        </div>
+      <div class="cut-middleman__bg-hills" data-cm-bg-hills>
+        <img src="./images/cm-bg-hills.webp" alt="Hills and mountains in the background">
       </div>
-      <div class="how-we-are-different__character-circles" data-hwad-character-circles>
-        <div class="how-we-are-different__character-circle how-we-are-different__character-circle--top">
-          <div class="how-we-are-different__character-circle-character">
-            <img src="./images/hwad-dollar-circle.webp" alt="A dollar character">
-          </div>
-          <div class="how-we-are-different__character-circle-title">
-            <img src="./images/hwad-dollar-words.webp" alt="Honestly Priced title">
-          </div>
-        </div>
-        <div class="how-we-are-different__character-circle how-we-are-different__character-circle--middle">
-          <div class="how-we-are-different__character-circle-character">
-            <img src="./images/hwad-heart-circle.webp" alt="A heart character">
-          </div>
-          <div class="how-we-are-different__character-circle-title">
-            <img src="./images/hwad-heart-words.webp" alt="Made with Love title">
-          </div>
-        </div>
-        <div class="how-we-are-different__character-circle how-we-are-different__character-circle--bottom">
-          <div class="how-we-are-different__character-circle-character">
-            <img src="./images/hwad-doc-circle.webp" alt="A dentist character">
-          </div>
-          <div class="how-we-are-different__character-circle-title">
-            <img src="./images/hwad-doc-words.webp" alt="Developed by Dr. Epstein title">
-          </div>
-        </div>
+      <div class="cut-middleman__trees-fence-house" data-cm-trees-fence-house>
+        <img src="./images/cm-bg-trees-fence-house.webp" alt="A couple of trees and bushes, fence, grass, and a part of the house in the background">
       </div>
-      <div class="how-we-are-different__drawn-differences" data-hwad-drawn-differences>
-        <img src="./images/hwad-drawn-differences.webp" alt="An illustration of our advantages over others(honestly priced, developed by dentist, made with love)">
+      <dotlottie-player mode="normal" class="cut-middleman__lottie" data-cm-lottie-player></dotlottie-player>
+      <div class="cut-middleman__money-wolf" data-cm-money-wolf>
+        <img src="./images/cm-money-wolf.webp" class="vibrate vibrate--version-1" alt="A picture of money character chasing a wolf with scissors">
       </div>
-      <div class="how-we-are-different__written-differences" data-hwad-written-differences>
-        <img src="./images/hwad-written-differences.webp" alt="Honestly priced, developed by dentist, made with love captions">
-      </div>
-      <div class="how-we-are-different__title-flag" data-hwad-title-flag>
-        <img src="./images/hwad-title-flag.webp" alt="A flag that is located under the 'how we are different' lottie title of the section">
-      </div>
-      <dotlottie-player mode="normal" class="how-we-are-different__lottie" data-hwad-lottie-player></dotlottie-player>
     </div>
   </section>
 </body>
