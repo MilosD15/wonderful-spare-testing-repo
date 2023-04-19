@@ -4,32 +4,81 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navigation menu | Wonderful</title>
+  <link rel="stylesheet" href="./font/lemonmilk/addLemonmilk.css">
   <link rel="stylesheet" href="./css/blur-effect.css">
   <link rel="stylesheet" href="./css/grain-effect.css">
   <link rel="stylesheet" href="./css/graphic-section.css">
   <link rel="stylesheet" href="./css/vibrate.css">
-  <link rel="stylesheet" href="./css/cut-middleman.css">
-  <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.js"></script>
-  <title>Cut out the middleman</title>
-  <script src="./js/cutMiddleman.js" type="module"></script>
+  <link rel="stylesheet" href="./css/boilerplate.css">
+  <link rel="stylesheet" href="./css/navigation.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="./js/navigation.js" type="module"></script>
 </head>
 <body>
-  <section class="cut-middleman graphic-section" data-cut-middleman-section>
-    <div class="cut-middleman__wrapper graphic-section__wrapper grain-effect blur-effect" data-cm-wrapper>
-      <div class="cut-middleman__sky" data-cm-sky>
-        <img src="./images/cm-bg.webp" alt="Blue sky with a bunch of clouds">
-      </div>
-      <div class="cut-middleman__bg-hills" data-cm-bg-hills>
-        <img src="./images/cm-bg-hills.webp" alt="Hills and mountains in the background">
-      </div>
-      <div class="cut-middleman__trees-fence-house" data-cm-trees-fence-house>
-        <img src="./images/cm-bg-trees-fence-house.webp" alt="A couple of trees and bushes, fence, grass, and a part of the house in the background">
-      </div>
-      <dotlottie-player mode="normal" class="cut-middleman__lottie" data-cm-lottie-player></dotlottie-player>
-      <div class="cut-middleman__money-wolf" data-cm-money-wolf>
-        <img src="./images/cm-money-wolf.webp" class="vibrate vibrate--version-1" alt="A picture of money character chasing a wolf with scissors">
+  <div class="preload-images">
+    <img src="./images/nav-cloud-bottom-left.webp" alt="A cloud in the sky">
+    <img src="./images/nav-cloud-bottom-right.webp" alt="A cloud in the sky">
+    <img src="./images/nav-cloud-center.webp" alt="A cloud in the sky">
+    <img src="./images/nav-cloud-top-left.webp" alt="A cloud in the sky">
+    <img src="./images/nav-cloud-top-right.webp" alt="A cloud in the sky">
+    <img src="./images/nav-very-bg.webp" alt="A big sky blue sheet in the background">
+  </div>
+
+  <button class="open-menu-btn" style="font-size: 1.4rem;">Open menu</button>
+  <section class="navigation-menu graphic-section" data-navigation-menu>
+    <div class="navigation-menu__wrapper graphic-section__wrapper grain-effect blur-effect" data-navigation-menu-wrapper>
+      <div class="navigation-menu__bg">
+        <div class="navigation-menu__bg-sheet">
+          <img src="./images/nav-very-bg.webp" alt="A big sky blue sheet in the background">
+        </div>
+        <div class="navigation-menu__bg-clouds-container" data-navigation-clouds-container></div>
       </div>
     </div>
+    <nav class="navigation-menu__navbar" data-navigation-navbar>
+      <ul class="navigation-menu__list">
+        <li class="navigation-menu__item">
+          <a href="#" class="navigation-menu__link">Home</a>
+        </li>
+        <li class="navigation-menu__item">
+          <a href="#" class="navigation-menu__link">About Us</a>
+        </li>
+        <li class="navigation-menu__item">
+          <a href="#" class="navigation-menu__link" data-navigation-products-menu-button>Products</a>
+          <div class="navigation-menu__products-menu products-menu" data-navigation-products-menu>
+            <ul class="products-menu__list">
+              <li class="products-menu__item"><a href="#" class="products-menu__link">Fluoride Varnish Sticks</a></li>
+              <li class="products-menu__item"><a href="#" class="products-menu__link">Fluoride Varnish Cups</a></li>
+              <li class="products-menu__item"><a href="#" class="products-menu__link">Prophy Paste</a></li>
+              <li class="products-menu__item"><a href="#" class="products-menu__link">Prophy Angles</a></li>
+              <li class="products-menu__item"><a href="#" class="products-menu__link">Brushes</a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="navigation-menu__item">
+          <a href="#" class="navigation-menu__link">FAQ</a>
+        </li>
+        <li class="navigation-menu__item">
+          <a href="#" class="navigation-menu__link">Free Samples</a>
+        </li>
+        <li class="navigation-menu__item">
+          <a href="#" class="navigation-menu__link">Order Now</a>
+        </li>
+      </ul>
+    </nav>
+    <button class="close-menu-btn">
+      <svg class="navigation-menu__close-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+
+    <template data-navigation-cloud-template>
+      <div class="navigation-menu__bg-cloud" data-navigation-cloud>
+        <img src="" alt="A cloud in the sky" class="navigation-menu__bg-cloud-image" data-navigation-cloud-image>
+      </div>
+    </template>
+    
   </section>
 </body>
 </html>
