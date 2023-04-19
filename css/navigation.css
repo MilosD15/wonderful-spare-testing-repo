@@ -5,7 +5,7 @@
   margin-bottom: 25%;
 }
 .products-menu__item {
-  font-size: min(2.4rem, 6vmin);
+  font-size: min(2.2rem, 6vmin);
 }
 .products-menu__link {
   font-family: "LEMON MILK";
@@ -137,7 +137,7 @@
 }
 .navigation-menu__navbar {
   position: absolute;
-  left: 5%;
+  left: 10%;
   top: 34%;
   margin-top: 6rem;
   -webkit-transform: translateY(-50%);
