@@ -2,9 +2,10 @@
   list-style: none;
   margin: 0;
   padding: 0;
+  margin-bottom: 25%;
 }
 .products-menu__item {
-  font-size: min(2.8rem, 6vmin);
+  font-size: min(2.4rem, 6vmin);
 }
 .products-menu__link {
   font-family: "LEMON MILK";
@@ -21,7 +22,14 @@
   text-decoration: underline;
 }
 
-@media screen and (max-width: 81.25rem) { /* 1300px */ }
+@media screen and (max-width: 81.25rem) { /* 1300px */
+  .products-menu__item {
+    font-size: min(2.8rem, 5.5vmin);
+  }
+  .products-menu__list {
+    margin-bottom: 0;
+  }
+}
 :root {
   --NAVBAR-fade-in-transition-duration-main-menu: 300;
   --NAVBAR-fade-in-transition-duration-products-menu: 800;
@@ -130,7 +138,8 @@
 .navigation-menu__navbar {
   position: absolute;
   left: 5%;
-  top: 50%;
+  top: 34%;
+  margin-top: 6rem;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   opacity: 0;
@@ -218,6 +227,7 @@
   width: 0.3rem;
   height: 0%;
   background: #ffffff;
+  opacity: 0.9;
   -webkit-transition: height calc(var(--NAVBAR-fade-in-transition-duration-products-menu) * 1ms) ease;
   transition: height calc(var(--NAVBAR-fade-in-transition-duration-products-menu) * 1ms) ease;
 }
@@ -232,13 +242,15 @@
   }
   .navigation-menu__navbar {
     width: 90%;
+    top: 40%;
+    margin-top: 5rem;
   }
   .navigation-menu__item {
     width: 100%;
   }
   .navigation-menu__products-menu {
     position: relative;
-    left: 2rem;
+    left: 6%;
     width: 90%;
     height: auto;
     display: -webkit-box;
@@ -249,5 +261,12 @@
   }
   .navigation-menu__products-menu::before {
     display: none;
+  }
+}
+@media screen and (max-width: 31.25rem) { /* 500px */
+  .navigation-menu__navbar {
+    width: 90%;
+    top: 30%;
+    margin-top: 5rem;
   }
 }
