@@ -4,84 +4,40 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Navigation menu | Wonderful</title>
-  <link rel="stylesheet" href="./font/lemonmilk/addLemonmilk.css">
+  <title>Kids Love The Taste | Wonderful</title>
   <link rel="stylesheet" href="./css/blur-effect.css">
   <link rel="stylesheet" href="./css/grain-effect.css">
   <link rel="stylesheet" href="./css/graphic-section.css">
   <link rel="stylesheet" href="./css/vibrate.css">
   <link rel="stylesheet" href="./css/boilerplate.css">
-  <link rel="stylesheet" href="./css/navigation.css">
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="./js/navigation.js" type="module"></script>
+  <link rel="stylesheet" href="./css/kids-love-taste.css">
+  <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.js"></script>
+  <script src="./js/kidsLoveTaste.js" type="module"></script>
 </head>
 <body>
-  <div class="preload-images">
-    <img src="./images/nav-cloud-bottom-left.webp" alt="A cloud in the sky">
-    <img src="./images/nav-cloud-bottom-right.webp" alt="A cloud in the sky">
-    <img src="./images/nav-cloud-center.webp" alt="A cloud in the sky">
-    <img src="./images/nav-cloud-top-left.webp" alt="A cloud in the sky">
-    <img src="./images/nav-cloud-top-right.webp" alt="A cloud in the sky">
-    <img src="./images/nav-very-bg.webp" alt="A big sky blue sheet in the background">
-  </div>
-
-  <button class="open-menu-btn" style="font-size: 1.4rem;">Open menu</button>
-  <section class="navigation-menu graphic-section" data-navigation-menu>
-    <div class="navigation-menu__wrapper graphic-section__wrapper grain-effect blur-effect" data-navigation-menu-wrapper>
-      <div class="navigation-menu__bg">
-        <div class="navigation-menu__bg-sheet">
-          <img src="./images/nav-very-bg.webp" alt="A big sky blue sheet in the background">
-        </div>
-        <div class="navigation-menu__bg-clouds-container" data-navigation-clouds-container></div>
+  <section class="kids-love-taste graphic-section" data-kids-love-taste-section>
+    <div class="kids-love-taste__wrapper graphic-section__wrapper blur-effect grain-effect">
+      <div class="kids-love-taste__bg">
+        <img src="./images/klt-bg.webp" alt="Greenish-blue sky">
+      </div>
+      <div class="kids-love-taste__clouds">
+        <img src="./images/klt-clouds.webp" alt="Clouds in the sky">
+      </div>
+      <div class="kids-love-taste__beach">
+        <img src="./images/klt-beach-with-characters-palms-sun.webp" alt="A beautiful beach with palms and a lot of characters playing below the shiny sun">
+      </div>
+      <dotlottie-player mode="normal" class="kids-love-taste__lottie" data-klt-lottie-player></dotlottie-player>
+      <div class="kids-love-taste__girl">
+        <img src="./images/klt-girl-character.webp" alt="A girl character">
+      </div>
+      <div class="kids-love-taste__boy">
+        <img src="./images/klt-boy-character.webp" alt="A boy character">
+      </div>
+      <div class="kids-love-taste__female-dentist">
+        <img src="./images/klt-female-dentist-character.webp" alt="Female dentist character">
       </div>
     </div>
-    <nav class="navigation-menu__navbar" data-navigation-navbar>
-      <ul class="navigation-menu__list">
-        <li class="navigation-menu__item">
-          <a href="#" class="navigation-menu__link">Home</a>
-        </li>
-        <li class="navigation-menu__item">
-          <a href="#" class="navigation-menu__link">About Us</a>
-        </li>
-        <li class="navigation-menu__item">
-          <a href="#" class="navigation-menu__link" data-navigation-products-menu-button>Products</a>
-          <div class="navigation-menu__products-menu products-menu" data-navigation-products-menu>
-            <ul class="products-menu__list">
-              <li class="products-menu__item"><a href="#" class="products-menu__link">Fluoride Varnish Sticks</a></li>
-              <li class="products-menu__item"><a href="#" class="products-menu__link">Fluoride Varnish Cups</a></li>
-              <li class="products-menu__item"><a href="#" class="products-menu__link">Prophy Paste</a></li>
-              <li class="products-menu__item"><a href="#" class="products-menu__link">Prophy Angles</a></li>
-              <li class="products-menu__item"><a href="#" class="products-menu__link">Brushes</a></li>
-            </ul>
-          </div>
-        </li>
-        <li class="navigation-menu__item">
-          <a href="#" class="navigation-menu__link">FAQ</a>
-        </li>
-        <li class="navigation-menu__item">
-          <a href="#" class="navigation-menu__link">Loyalty Rewards</a>
-        </li>
-        <li class="navigation-menu__item">
-          <a href="#" class="navigation-menu__link">Free Samples</a>
-        </li>
-        <li class="navigation-menu__item">
-          <a href="#" class="navigation-menu__link">Order Now</a>
-        </li>
-      </ul>
-    </nav>
-    <button class="close-menu-btn">
-      <svg class="navigation-menu__close-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <line x1="18" y1="6" x2="6" y2="18"></line>
-        <line x1="6" y1="6" x2="18" y2="18"></line>
-      </svg>
-    </button>
-
-    <template data-navigation-cloud-template>
-      <div class="navigation-menu__bg-cloud" data-navigation-cloud>
-        <img src="" alt="A cloud in the sky" class="navigation-menu__bg-cloud-image" data-navigation-cloud-image>
-      </div>
-    </template>
-    
+    <div class="kids-love-taste__inner-box-shadow"></div>
   </section>
 </body>
 </html>
