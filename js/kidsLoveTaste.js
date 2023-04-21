@@ -10,10 +10,10 @@ if (document.querySelector("[data-kids-love-taste-section]")) {
 
   // parallax
   const kidsLoveTasteCharactersParallax = kidsLoveTasteCharacters.map(characterParallax => {
-    return new ElementParallax(kidsLoveTasteSection, characterParallax, { y: -5 }, 0, { y: 15 }, 2);
+    return new ElementParallax(kidsLoveTasteSection, characterParallax, { y: 15 }, 0, { y: 0 }, 1.5);
   });
-  const kidsLoveTasteAnglesBlueCharacterParallax = new ElementParallax(kidsLoveTasteSection, kidsLoveTasteAnglesBlueCharacter, { y: 15 }, 0, { y: -5 }, 2);
-  const kidsLoveTasteSeaParallax = new ElementParallax(kidsLoveTasteSection, kidsLoveTasteSea, { y: 15 }, 0, { y: -3 }, 2);
+  const kidsLoveTasteAnglesBlueCharacterParallax = new ElementParallax(kidsLoveTasteSection, kidsLoveTasteAnglesBlueCharacter, { y: -8 }, 0, { y: 13 }, 2);
+  const kidsLoveTasteSeaParallax = new ElementParallax(kidsLoveTasteSection, kidsLoveTasteSea, { y: -8 }, 0, { y: 13 }, 2);
 
   window.addEventListener("load", handleParallax);
   window.addEventListener("scroll", handleParallax);
