@@ -41,7 +41,7 @@ if (document.querySelector("[data-kids-love-taste-section]")) {
   
     player.addEventListener('ready', () => {
       player.play();
-      player.setSpeed(0.8);
+      player.setSpeed(0.7);
     });
   }
 
