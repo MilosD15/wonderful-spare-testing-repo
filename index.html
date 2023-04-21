@@ -1,181 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meet the family</title>
-    <link rel="stylesheet" href="./css/graphic-section.css">
-    <link rel="stylesheet" href="./css/blur-effect.css">
-    <link rel="stylesheet" href="./css/grain-effect.css">
-    <link rel="stylesheet" href="./css/vibrate.css">
-    <link rel="stylesheet" href="./css/meet-family.css">
-    <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.js"></script>
-    <script src="https://unpkg.com/@lottiefiles/lottie-interactivity@latest/dist/lottie-interactivity.min.js"></script>
-    <script src="./js/meetFamily.js" type="module"></script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kids Love The Taste | Wonderful</title>
+  <link rel="stylesheet" href="./css/blur-effect.css">
+  <link rel="stylesheet" href="./css/grain-effect.css">
+  <link rel="stylesheet" href="./css/graphic-section.css">
+  <link rel="stylesheet" href="./css/vibrate.css">
+  <link rel="stylesheet" href="./css/boilerplate.css">
+  <link rel="stylesheet" href="./css/kids-love-taste.css">
+  <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.js"></script>
+  <script src="./js/kidsLoveTaste.js" type="module"></script>
 </head>
 <body>
-    <section class="meet-family graphic-section" data-meet-family-section>
-        <div class="meet-family__wrapper graphic-section__wrapper blur-effect grain-effect">
-            <div class="meet-family__load-characters-beforehand">
-                <img src="./images/mint-leaves-character-1.webp" alt="Mint character" class="meet-family__load-characters-beforehand-character">
-                <img src="./images/mint-leaves-character-2.webp" alt="Mint character" class="meet-family__load-characters-beforehand-character">
-                <img src="./images/mint-leaves-character-3.webp" alt="Mint character" class="meet-family__load-characters-beforehand-character">
-                <img src="./images/ice-cream-character-1.webp" alt="Cone character" class="meet-family__load-characters-beforehand-character">
-                <img src="./images/ice-cream-character-2.webp" alt="Cone character" class="meet-family__load-characters-beforehand-character">
-                <img src="./images/ice-cream-character-3.webp" alt="Cone character" class="meet-family__load-characters-beforehand-character">
-                <img src="./images/chocolate-character-1.webp" alt="Chocolate character" class="meet-family__load-characters-beforehand-character">
-                <img src="./images/chocolate-character-2.webp" alt="Chocolate character" class="meet-family__load-characters-beforehand-character">
-                <img src="./images/chocolate-character-3.webp" alt="Chocolate character" class="meet-family__load-characters-beforehand-character">
-                <img src="./images/heart-character-1.webp" alt="Heart character" class="meet-family__load-characters-beforehand-character">
-                <img src="./images/heart-character-2.webp" alt="Heart character" class="meet-family__load-characters-beforehand-character">
-                <img src="./images/heart-character-3.webp" alt="Heart character" class="meet-family__load-characters-beforehand-character">
-                <img src="./images/strawberry-character-1.webp" alt="Strawberry character" class="meet-family__load-characters-beforehand-character">
-                <img src="./images/strawberry-character-2.webp" alt="Strawberry character" class="meet-family__load-characters-beforehand-character">
-                <img src="./images/strawberry-character-3.webp" alt="Strawberry character" class="meet-family__load-characters-beforehand-character">
-                <img src="./images/marshmallow-character-1.webp" alt="Marshmallow character" class="meet-family__load-characters-beforehand-character">
-                <img src="./images/marshmallow-character-2.webp" alt="Marshmallow character" class="meet-family__load-characters-beforehand-character">
-                <img src="./images/marshmallow-character-3.webp" alt="Marshmallow character" class="meet-family__load-characters-beforehand-character">
-                <img src="./images/bubblegum-character-1.webp" alt="Bubblegum character" class="meet-family__load-characters-beforehand-character">
-                <img src="./images/bubblegum-character-2.webp" alt="Bubblegum character" class="meet-family__load-characters-beforehand-character">
-                <img src="./images/bubblegum-character-3.webp" alt="Bubblegum character" class="meet-family__load-characters-beforehand-character">
-                <img src="./images/cherry-character-1.webp" alt="Cherry character" class="meet-family__load-characters-beforehand-character">
-                <img src="./images/cherry-character-2.webp" alt="Cherry character" class="meet-family__load-characters-beforehand-character">
-                <img src="./images/cherry-character-3.webp" alt="Cherry character" class="meet-family__load-characters-beforehand-character">
-                <img src="./images/little-boy-character-1.webp" alt="Boy character" class="meet-family__load-characters-beforehand-character">
-                <img src="./images/little-boy-character-2.webp" alt="Boy character" class="meet-family__load-characters-beforehand-character">
-                <img src="./images/little-boy-character-3.webp" alt="Boy character" class="meet-family__load-characters-beforehand-character">
-                <img src="./images/little-girl-character-1.webp" alt="Girl character" class="meet-family__load-characters-beforehand-character">
-                <img src="./images/little-girl-character-2.webp" alt="Girl character" class="meet-family__load-characters-beforehand-character">
-                <img src="./images/little-girl-character-3.webp" alt="Girl character" class="meet-family__load-characters-beforehand-character">
-                <img src="./images/dentist-male-character-1.webp" alt="Male dentist character" class="meet-family__load-characters-beforehand-character">
-                <img src="./images/dentist-male-character-2.webp" alt="Male dentist character" class="meet-family__load-characters-beforehand-character">
-                <img src="./images/dentist-male-character-3.webp" alt="Male dentist character" class="meet-family__load-characters-beforehand-character">
-                <img src="./images/dentist-female-character-1.webp" alt="Female dentist character" class="meet-family__load-characters-beforehand-character">
-                <img src="./images/dentist-female-character-2.webp" alt="Female dentist character" class="meet-family__load-characters-beforehand-character">
-                <img src="./images/dentist-female-character-3.webp" alt="Female dentist character" class="meet-family__load-characters-beforehand-character">
-                <img src="./images/hygienist-character-1.webp" alt="Hygienist character" class="meet-family__load-characters-beforehand-character">
-                <img src="./images/hygienist-character-2.webp" alt="Hygienist character" class="meet-family__load-characters-beforehand-character">
-                <img src="./images/hygienist-character-3.webp" alt="Hygienist character" class="meet-family__load-characters-beforehand-character">
-                <img src="./images/smore-character-1.webp" alt="Smore character" class="meet-family__load-characters-beforehand-character">
-                <img src="./images/smore-character-2.webp" alt="Smore character" class="meet-family__load-characters-beforehand-character">
-                <img src="./images/smore-character-3.webp" alt="Smore character" class="meet-family__load-characters-beforehand-character">
-                <img src="./images/plain-character-1.webp" alt="Plain character" class="meet-family__load-characters-beforehand-character">
-                <img src="./images/plain-character-2.webp" alt="Plain character" class="meet-family__load-characters-beforehand-character">
-                <img src="./images/plain-character-3.webp" alt="Plain character" class="meet-family__load-characters-beforehand-character">
-            </div>
-            <div class="meet-family__sky">
-                <img src="./images/mf-sky.webp" alt="Rain blue sky in the background">
-            </div>
-            <div class="meet-family__bg-foggy-mountains" data-mf-foggy-mountains>
-                <img src="./images/mf-foggy-mountains-bg.webp" alt="A bunch of foggy mountains in the background">
-            </div>
-            <div class="meet-family__clouds" data-mf-clouds>
-                <div class="meet-family__clouds-piece-1">
-                    <img src="./images/mf-clouds-1.webp" alt="A few clouds in the sky - piece 1">
-                </div>
-                <div class="meet-family__clouds-piece-2">
-                    <img src="./images/mf-clouds-2.webp" alt="A few clouds in the sky - piece 2">
-                </div>
-            </div>
-            <dotlottie-player mode="normal" class="meet-family__lottie-animation" data-mf-lottie-player></dotlottie-player>
-            <div class="meet-family__sun" data-mf-sun>
-                <img src="./images/mf-sun.webp" alt="A pretty sun with the smile on its face" class="meet-family__sun-image override-standard-image-stylings">
-            </div>
-            <div class="meet-family__greenery-addition">
-                <div class="meet-family__greenery-addition-piece meet-family__greenery-addition-piece--middle" data-mf-greenery-addition-piece data-position="middle">
-                    <img src="./images/mf-greenery-addition-middle-piece.webp" alt="Addition to the beautiful greenery(middle green hill in the background)">
-                </div>
-                <div class="meet-family__greenery-addition-piece meet-family__greenery-addition-piece--left" data-mf-greenery-addition-piece data-position="left">
-                    <img src="./images/mf-greenery-addition-left-piece.webp" alt="Addition to the beautiful greenery(left green hill in the background)">
-                </div>
-                <div class="meet-family__greenery-addition-piece meet-family__greenery-addition-piece--right" data-mf-greenery-addition-piece data-position="right">
-                    <img src="./images/mf-greenery-addition-right-piece.webp" alt="Addition to the beautiful greenery(right green hill in the background)">
-                </div>
-            </div>
-            <div class="meet-family__greenery" data-mf-greenery>
-                <img src="./images/mf-greenery-and-lane.webp" alt="Beautiful greenery with forest path at the bottom of the section">
-            </div>
-            <div class="meet-family__characters-scene" data-mf-characters-scene>
-                <div data-mf-character class="meet-family__character meet-family__character--male-dentist" data-vibrate-version="1" data-position="very-very-left-further">
-                    <div class="meet-family__character-wrapper">
-                        <img src="./images/dentist-male-character-1.webp" alt="Male dentist character" class="vibrate vibrate--version-1">
-                    </div>
-                </div>
-                <div data-mf-character class="meet-family__character meet-family__character--girl" data-vibrate-version="4" data-position="very-left-further">
-                    <div class="meet-family__character-wrapper">
-                        <img src="./images/little-girl-character-1.webp" alt="Girl character" class="vibrate vibrate--version-4">
-                    </div>
-                </div>
-                <div data-mf-character class="meet-family__character meet-family__character--mint" data-vibrate-version="3" data-position="left-further">
-                    <div class="meet-family__character-wrapper">
-                        <img src="./images/mint-leaves-character-1.webp" alt="Mint character" class="vibrate vibrate--version-3">
-                    </div>
-                </div>
-                <div data-mf-character class="meet-family__character meet-family__character--cone" data-vibrate-version="2" data-position="right-further">
-                    <div class="meet-family__character-wrapper">
-                        <img src="./images/ice-cream-character-1.webp" alt="Cone character" class="vibrate vibrate--version-2">
-                    </div>
-                </div>
-                <div data-mf-character class="meet-family__character meet-family__character--boy" data-vibrate-version="1" data-position="very-right-further">
-                    <div class="meet-family__character-wrapper">
-                        <img src="./images/little-boy-character-1.webp" alt="Boy character" class="vibrate vibrate--version-1">
-                    </div>
-                </div>
-                <div data-mf-character class="meet-family__character meet-family__character--female-dentist" data-vibrate-version="4" data-position="very-very-right-further">
-                    <div class="meet-family__character-wrapper">
-                        <img src="./images/dentist-female-character-1.webp" alt="Female dentist character" class="vibrate vibrate--version-4">
-                    </div>
-                </div>
-                <div data-mf-character class="meet-family__character meet-family__character--chocolate" data-vibrate-version="3" data-position="center">
-                    <div class="meet-family__character-wrapper">
-                        <img src="./images/chocolate-character-1.webp" alt="Chocolate character" class="vibrate vibrate--version-3">
-                    </div>
-                </div>
-                <div data-mf-character class="meet-family__character meet-family__character--hygienist" data-vibrate-version="2" data-position="very-very-left-closer">
-                    <div class="meet-family__character-wrapper">
-                        <img src="./images/hygienist-character-1.webp" alt="Hygienist character" class="vibrate vibrate--version-2">
-                    </div>
-                </div>
-                <div data-mf-character class="meet-family__character meet-family__character--strawberry" data-vibrate-version="1" data-position="very-very-right-closer">
-                    <div class="meet-family__character-wrapper">
-                        <img src="./images/strawberry-character-1.webp" alt="Strawberry character" class="vibrate vibrate--version-1">
-                    </div>
-                </div>
-                <div data-mf-character class="meet-family__character meet-family__character--heart" data-vibrate-version="4" data-position="very-left-closer">
-                    <div class="meet-family__character-wrapper">
-                        <img src="./images/heart-character-1.webp" alt="Heart character" class="vibrate vibrate--version-4">
-                    </div>
-                </div>
-                <div data-mf-character class="meet-family__character meet-family__character--smore" data-vibrate-version="3" data-position="very-right-closer">
-                    <div class="meet-family__character-wrapper">
-                        <img src="./images/smore-character-1.webp" alt="Smore character" class="vibrate vibrate--version-3">
-                    </div>
-                </div>
-                <div data-mf-character class="meet-family__character meet-family__character--plain" data-vibrate-version="1" data-position="left-closer">
-                    <div class="meet-family__character-wrapper">
-                        <img src="./images/plain-character-1.webp" alt="Plain character" class="vibrate vibrate--version-1">
-                    </div>
-                </div>
-                <div data-mf-character class="meet-family__character meet-family__character--cherry" data-vibrate-version="2" data-position="right-closer">
-                    <div class="meet-family__character-wrapper">
-                        <img src="./images/cherry-character-1.webp" alt="Cherry character" class="vibrate vibrate--version-2">
-                    </div>
-                </div>
-            </div>
-            <div class="meet-family__flash-bg" data-mf-flash-bg></div>
-            <div class="meet-family__hand" data-mf-hand>
-                <div class="meet-family__hand-wrapper" data-mf-hand-wrapper>
-                    <img src="./images/mf-hand-ball.webp" class="vibrate vibrate--version-4" alt="A hand that holds a trigger of the camera">
-                </div>
-            </div>
-            <div class="meet-family__camera" data-mf-camera>
-                <div class="meet-family__camera-flash" data-mf-camera-flash>
-                    <img src="./images/mf-flash.webp" alt="A camera flash effect">
-                </div>
-                <img src="./images/mf-camera.webp" alt="A camera that is supposed to take a photo of characters that are in front of it">
-            </div>
-        </div>
-    </section>
+  <section class="kids-love-taste graphic-section" data-kids-love-taste-section>
+    <div class="kids-love-taste__wrapper graphic-section__wrapper blur-effect grain-effect">
+      <div class="kids-love-taste__bg">
+        <img src="./images/klt-bg.webp" alt="Greenish-blue sky">
+      </div>
+      <div class="kids-love-taste__clouds">
+        <img src="./images/klt-clouds.webp" alt="Clouds in the sky">
+      </div>
+      <div class="kids-love-taste__sun">
+        <img src="./images/klt-sun.webp" alt="Sun in the sky">
+      </div>
+      <div class="kids-love-taste__stick" data-klt-character>
+        <img src="./images/klt-stick-character.webp" alt="A stick character">
+      </div>
+      <div class="kids-love-taste__sea" data-klt-sea>
+        <img src="./images/klt-sea.webp" alt="A sea with waves">
+      </div>
+      <div class="kids-love-taste__angles-blue" data-klt-angle-blue-character>
+        <img src="./images/klt-angles-blue.webp" alt="An angles blue character">
+      </div>
+      <div class="kids-love-taste__beach">
+        <img src="./images/klt-beach-with-palms.webp" alt="A beautiful beach with palms">
+      </div>
+      <dotlottie-player mode="normal" class="kids-love-taste__lottie" data-klt-lottie-player></dotlottie-player>
+      <div class="kids-love-taste__mint" data-klt-character>
+        <img src="./images/klt-mint-character.webp" alt="A mint character">
+      </div>
+      <div class="kids-love-taste__prophy" data-klt-character>
+        <img src="./images/klt-prophy-paste-with-glasses.webp" alt="A prophy paste character with beach glasses">
+      </div>
+      <div class="kids-love-taste__girl" data-klt-character>
+        <img src="./images/klt-girl-character.webp" alt="A girl character">
+      </div>
+      <div class="kids-love-taste__boy" data-klt-character>
+        <img src="./images/klt-boy-character.webp" alt="A boy character">
+      </div>
+      <div class="kids-love-taste__female-dentist" data-klt-character>
+        <img src="./images/klt-female-dentist-character.webp" alt="Female dentist character">
+      </div>
+    </div>
+    <div class="kids-love-taste__inner-box-shadow"></div>
+  </section>
 </body>
 </html>
