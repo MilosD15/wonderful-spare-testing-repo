@@ -64,6 +64,12 @@
   right: 0;
   width: 90%;
 }
+.kids-love-taste__stick, .kids-love-taste__boy, .kids-love-taste__girl, .kids-love-taste__female-dentist, .kids-love-taste__mint, .kids-love-taste__prophy {
+  -webkit-transition: -webkit-transform 50ms linear;
+  transition: -webkit-transform 50ms linear;
+  transition: transform 50ms linear;
+  transition: transform 50ms linear, -webkit-transform 50ms linear;
+}
 .kids-love-taste__bg, .kids-love-taste__clouds {
   position: absolute;
   top: 14%;
