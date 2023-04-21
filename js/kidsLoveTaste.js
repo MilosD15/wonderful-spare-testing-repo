@@ -12,14 +12,14 @@ if (document.querySelector("[data-kids-love-taste-section]")) {
   // parallax
   const kidsLoveTasteCharactersParallax = kidsLoveTasteCharacters.map(character => {
     if (character.dataset.kltCharacter === "stick") {
-      return new ElementParallax(kidsLoveTasteSection, character, { y: 15 }, 0, { y: 5 }, 1.5);
+      return new ElementParallax(kidsLoveTasteSection, character, { y: 15 }, 0, { y: 5 }, 2.5);
     }
 
-    return new ElementParallax(kidsLoveTasteSection, character, { y: 15 }, 0, { y: 0 }, 1.5);
+    return new ElementParallax(kidsLoveTasteSection, character, { y: 15 }, 0, { y: 1 }, 2.5);
   });
-  const kidsLoveTasteAnglesBlueCharacterParallax = new ElementParallax(kidsLoveTasteSection, kidsLoveTasteAnglesBlueCharacter, { y: -5 }, 0, { y: 7 }, 2);
-  const kidsLoveTasteSeaParallax = new ElementParallax(kidsLoveTasteSection, kidsLoveTasteSea, { y: -5 }, 0, { y: 7 }, 2);
-  const kidsLoveTasteBeachParallax = new ElementParallax(kidsLoveTasteSection, kidsLoveTasteBeach, { y: -5 }, 0, { y: 7 }, 2);
+  const kidsLoveTasteAnglesBlueCharacterParallax = new ElementParallax(kidsLoveTasteSection, kidsLoveTasteAnglesBlueCharacter, { y: -5 }, 0, { y: 7 }, 2.5);
+  const kidsLoveTasteSeaParallax = new ElementParallax(kidsLoveTasteSection, kidsLoveTasteSea, { y: -5 }, 0, { y: 7 }, 2.5);
+  const kidsLoveTasteBeachParallax = new ElementParallax(kidsLoveTasteSection, kidsLoveTasteBeach, { y: -5 }, 0, { y: 7 }, 2.5);
 
   window.addEventListener("load", handleParallax);
   window.addEventListener("scroll", handleParallax);
