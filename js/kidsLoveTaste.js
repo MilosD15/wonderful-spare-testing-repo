@@ -23,8 +23,8 @@ if (document.querySelector("[data-kids-love-taste-section]")) {
     kidsLoveTasteAnglesBlueCharacterParallax = new ElementParallax(kidsLoveTasteSection, kidsLoveTasteAnglesBlueCharacter, { y: -5 }, 0, { y: 7 }, 2.5);
     kidsLoveTasteSeaParallax = new ElementParallax(kidsLoveTasteSection, kidsLoveTasteSea, { y: -5 }, 0, { y: 7 }, 2.5);
   } else {
-    kidsLoveTasteAnglesBlueCharacterParallax = new ElementParallax(kidsLoveTasteSection, kidsLoveTasteAnglesBlueCharacter, { x: -26, y: 0 }, 0, { x: 6, y: -6 }, 2);
-    kidsLoveTasteSeaParallax = new ElementParallax(kidsLoveTasteSection, kidsLoveTasteSea, { x: -16 }, 0, { x: 0 }, 2);
+    kidsLoveTasteAnglesBlueCharacterParallax = new ElementParallax(kidsLoveTasteSection, kidsLoveTasteAnglesBlueCharacter, { x: 0, y: 0 }, 0, { x: 50, y: -10 }, 4);
+    kidsLoveTasteSeaParallax = new ElementParallax(kidsLoveTasteSection, kidsLoveTasteSea, { x: 0 }, 0, { x: 24 }, 4);
   }
   if (window.innerWidth > 1300) {
     kidsLoveTasteBeachParallax = new ElementParallax(kidsLoveTasteSection, kidsLoveTasteBeach, { y: -5 }, 0, { y: 7 }, 4);
