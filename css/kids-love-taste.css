@@ -25,7 +25,7 @@
           transform: translate(-50%, 0);
   width: 40%;
 }
-.kids-love-taste__bg, .kids-love-taste__clouds, .kids-love-taste__sea, .kids-love-taste__beach {
+.kids-love-taste__sea, .kids-love-taste__beach {
   inset: 0;
 }
 .kids-love-taste__birds {
@@ -45,9 +45,9 @@
 }
 .kids-love-taste__stick--front {
   display: none;
-  width: 110%;
+  width: 100%;
   right: 15%;
-  top: -9%;
+  top: -3%;
 }
 .kids-love-taste__stick--back {
   width: 90%;
@@ -113,6 +113,17 @@
     -webkit-transform: translateX(-50%);
             transform: translateX(-50%);
   }
+  .kids-love-taste__bg, .kids-love-taste__clouds {
+    top: 16%;
+    width: 140%;
+    aspect-ratio: 16/8;
+  }
+  .kids-love-taste__clouds {
+    top: 6%;
+    right: 16%;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
   .kids-love-taste__sun, .kids-love-taste__prophy {
     display: none;
   }
@@ -122,14 +133,19 @@
     margin-left: 10%;
   }
   .kids-love-taste__sea {
-    width: 86%;
-    right: 0;
-    left: auto;
+    width: 120%;
+    left: 12%;
+    right: auto;
+    bottom: -10%;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
   }
   .kids-love-taste__angles-blue {
     width: 80%;
-    left: 14%;
-    top: 10%;
+    left: 13%;
+    top: 18%;
+    -webkit-transform: translateX(0) translateY(0);
+            transform: translateX(0) translateY(0);
   }
   .kids-love-taste__stick--back {
     display: none;
