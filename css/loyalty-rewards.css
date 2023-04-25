@@ -1,0 +1,60 @@
+.loyalty-rewards {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16/59;
+  overflow: hidden;
+  background-color: #FF3518;
+}
+.loyalty-rewards::before, .loyalty-rewards::after {
+  display: none;
+}
+.loyalty-rewards__wrapper {
+  width: 100%;
+  height: 100%;
+}
+.loyalty-rewards__wrapper > * {
+  position: static;
+}
+
+.lr-hero {
+  position: relative;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16/7;
+  overflow: hidden;
+  margin-bottom: 2%;
+}
+.lr-hero__wrapper {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16/9;
+  top: 56%;
+  left: 0;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+.lr-hero__sup-title, .lr-hero__main-title, .lr-hero__subtitle, .lr-hero__shiny-diamond {
+  position: absolute;
+  width: 100%;
+  left: 0;
+}
+
+.lr-main {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16/51;
+  overflow: hidden;
+  background-image: url("../images/lr-main-bg-wallpaper.webp");
+  background-size: cover;
+  padding-inline: 10%;
+  padding-top: 4%;
+  padding-bottom: 9%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.lr-main__wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
