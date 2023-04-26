@@ -12,9 +12,6 @@
   height: 100%;
   margin: 0 auto;
 }
-.loyalty-rewards__wrapper > * {
-  position: static;
-}
 .loyalty-rewards .visually-hidden {
   position: absolute;
   width: 1px;
