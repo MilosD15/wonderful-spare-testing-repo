@@ -264,28 +264,28 @@
   top: 26%;
 }
 
-.lr-create-account {
+.lr-take-actions {
   width: 100%;
   height: auto;
   position: relative;
 }
-.lr-create-account__title {
+.lr-take-actions__title {
   width: 100%;
   height: auto;
   aspect-ratio: 16/4.4;
   position: relative;
   margin-top: 2%;
 }
-.lr-create-account__title-wrapper {
+.lr-take-actions__title-wrapper {
   position: absolute;
   width: 124%;
   margin-left: -12%;
   height: auto;
   top: -46%;
 }
-.lr-create-account__form {
+.lr-take-actions__actions {
   position: relative;
-  font-family: "Helvetica Now", sans-serif;
+  font-family: "Coffee Time", cursive;
   color: #4e1e17;
   width: 100%;
   height: auto;
@@ -305,39 +305,32 @@
           align-items: center;
   font-size: min(1.58125rem, 2.3vw);
 }
-.lr-create-account__form-group {
-  padding: 0.5em;
-}
-.lr-create-account__form-input {
+.lr-take-actions__actions-link {
   font-family: inherit;
   color: inherit;
   font-size: inherit;
   padding: 0.4em;
+  margin: 0.5em;
   background-color: transparent;
   border: 0.2em solid currentColor;
+  text-decoration: none;
+  text-align: center;
+  width: 30%;
+  -webkit-transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
-.lr-create-account__form-input::-webkit-input-placeholder {
-  color: currentColor;
+.lr-take-actions__actions-link:hover, .lr-take-actions__actions-link:focus {
+  background-color: #4e1e17;
+  color: #ffc28a;
+  border-color: #4e1e17;
 }
-.lr-create-account__form-input::-moz-placeholder {
-  color: currentColor;
-}
-.lr-create-account__form-input:-ms-input-placeholder {
-  color: currentColor;
-}
-.lr-create-account__form-input::-ms-input-placeholder {
-  color: currentColor;
-}
-.lr-create-account__form-input::placeholder {
-  color: currentColor;
-}
-.lr-create-account__steps-to-success {
+.lr-take-actions__steps-to-success {
   position: absolute;
   width: 130%;
   left: -13%;
   top: 29%;
 }
-.lr-create-account__made-in-usa {
+.lr-take-actions__made-in-usa {
   position: absolute;
   width: 130%;
   left: -15%;
@@ -353,5 +346,5 @@
 .lr-footer__wonderful-caption {
   position: absolute;
   top: -20%;
-  left: -3%;
+  left: -2%;
 }
