@@ -309,15 +309,20 @@
   font-family: inherit;
   color: inherit;
   font-size: inherit;
-  padding: 0.4em;
+  padding-block: 0.6em;
   margin: 0.5em;
   background-color: transparent;
   border: 0.2em solid currentColor;
   text-decoration: none;
   text-align: center;
-  width: 30%;
+  width: 36%;
   -webkit-transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
   transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+@media screen and (max-width: 68.75rem) {
+  .lr-take-actions__actions-link {
+    padding-block: 0.8em;
+  }
 }
 .lr-take-actions__actions-link:hover, .lr-take-actions__actions-link:focus {
   background-color: #4e1e17;
