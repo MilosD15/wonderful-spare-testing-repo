@@ -5,15 +5,77 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Chat bot | Wonderful</title>
+  <link rel="stylesheet" href="./chatBot.css">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-    body {
+    body, html {
       font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
     }
+    /* make hover state of the btn and other customizations on the chat bot btn */
   </style>
 </head>
 <body>
   
 </body>
-<script type="text/javascript">(function(){d=document;s=d.createElement("script");s.src="https://sitegpt.ai/widget/363249979331969617.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
+<script type="text/javascript">
+  function initChatBot() {
+    d = document;
+    s = d.createElement("script");
+    s.src = "https://sitegpt.ai/widget/363249979331969617.js";
+    s.async = 1;
+
+    // Add an event listener for the 'load' event
+    s.addEventListener('load', function() {
+      observeForElement('sitegpt-bot-ui');
+    });
+
+    // Add an event listener for the 'error' event
+    s.addEventListener('error', function() {
+      console.error('Error occurred while loading the script.');
+    });
+
+    d.getElementsByTagName("head")[0].appendChild(s);
+  }
+
+  initChatBot();
+
+  function observeForElement(elementId) {
+    let chatBotLoaded = false;
+    const observer = new MutationObserver(function(mutations) {
+      mutations.forEach(function(mutation) {
+        if (chatBotLoaded) return;
+
+        if (mutation.addedNodes.length) {
+          let element = document.getElementById(elementId);
+
+          if (element) {
+            customizeChatbotToggleBtn();
+            chatBotLoaded = true;
+
+            // Disconnect the observer once the element is found
+            observer.disconnect();
+          }
+        }
+      });
+    });
+
+    observer.observe(document.body, { childList: true, subtree: true });
+  }
+
+  function customizeChatbotToggleBtn() {
+    const chatBotIcon = document.querySelector('#sitegpt-chat-icon');
+    chatBotIcon.classList.add("chatbot-toggle-btn");
+
+    const chatBotIconStandardImg = chatBotIcon.querySelector('img');
+    chatBotIconStandardImg.classList.add("chatbot-toggle-btn__standard-image");
+
+    const chatBotIconHoverImg = document.createElement('img');
+    chatBotIconHoverImg.src = './images/chat-bot-hover.webp';
+    chatBotIconHoverImg.alt = 'Chatbot icon with one hand raised up';
+    chatBotIconHoverImg.classList.add("chatbot-toggle-btn__hover-image");
+    chatBotIcon.appendChild(chatBotIconHoverImg);
+  }
+</script>
 </html>
