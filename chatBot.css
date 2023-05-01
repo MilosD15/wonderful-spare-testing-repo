@@ -1,14 +1,24 @@
-.chatbot-toggle-btn {
-  --chatbot-toggle-btn-width: 192px;
-  --chatbot-toggle-btn-height: 192px;
+.chatbot-toggle-btn[data-chat="closed"] {
+  --chatbot-toggle-btn-width: 140px;
+  --chatbot-toggle-btn-height: 140px;
 
-  background-color: transparent !important;
   width: var(--chatbot-toggle-btn-width) !important;
   height: var(--chatbot-toggle-btn-height) !important;
   bottom: 0 !important;
   right: 0 !important;
+  border-radius: 0 !important;
+  transform: translateY(8%) translateX(-4%) !important;
 }
 
+.chatbot-toggle-btn[data-chat="closed"] {
+  background-color: transparent !important;
+}
+
+.chatbot-toggle-btn[data-chat="opened"] {
+  background-color: #88cbff !important;
+}
+
+/* .chatbot-toggle-btn__x-image, */
 .chatbot-toggle-btn__standard-image,
 .chatbot-toggle-btn__hover-image {
   position: absolute !important;
@@ -24,14 +34,18 @@
   pointer-events: none !important;
 }
 
-.chatbot-toggle-btn:hover .chatbot-toggle-btn__standard-image,
-.chatbot-toggle-btn:focus .chatbot-toggle-btn__standard-image {
+/* .chatbot-toggle-btn[data-chat="closed"]:focus .chatbot-toggle-btn__standard-image, */
+.chatbot-toggle-btn[data-chat="closed"]:hover .chatbot-toggle-btn__standard-image {
   opacity: 0 !important;
   pointer-events: none !important;
 }
 
-.chatbot-toggle-btn:hover .chatbot-toggle-btn__hover-image,
-.chatbot-toggle-btn:focus .chatbot-toggle-btn__hover-image {
+/* .chatbot-toggle-btn[data-chat="closed"]:focus .chatbot-toggle-btn__hover-image, */
+.chatbot-toggle-btn[data-chat="closed"]:hover .chatbot-toggle-btn__hover-image {
   opacity: 1 !important;
   pointer-events: initial !important;
 }
+
+/* .chatbot-panel {
+  bottom: var(--chatbot-toggle-btn-height) !important;
+} */

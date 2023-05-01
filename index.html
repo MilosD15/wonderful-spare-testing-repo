@@ -13,7 +13,6 @@
       margin: 0;
       padding: 0;
     }
-    /* make hover state of the btn and other customizations on the chat bot btn */
   </style>
 </head>
 <body>
@@ -65,17 +64,48 @@
   }
 
   function customizeChatbotToggleBtn() {
-    const chatBotIcon = document.querySelector('#sitegpt-chat-icon');
-    chatBotIcon.classList.add("chatbot-toggle-btn");
+    const chatbotBtn = document.querySelector('#sitegpt-chat-icon');
+    chatbotBtn.classList.add("chatbot-toggle-btn");
+    const chatPanel = document.querySelector('#sitegpt-bot-ui');
+    chatPanel.classList.add("chatbot-panel");
 
-    const chatBotIconStandardImg = chatBotIcon.querySelector('img');
-    chatBotIconStandardImg.classList.add("chatbot-toggle-btn__standard-image");
+    closeChat();
 
-    const chatBotIconHoverImg = document.createElement('img');
-    chatBotIconHoverImg.src = './images/chat-bot-hover.webp';
-    chatBotIconHoverImg.alt = 'Chatbot icon with one hand raised up';
-    chatBotIconHoverImg.classList.add("chatbot-toggle-btn__hover-image");
-    chatBotIcon.appendChild(chatBotIconHoverImg);
+    chatbotBtn.addEventListener("click", () => {
+      if (chatPanel.style.display === 'none') {
+        closeChat();
+      } else {
+        openChat();
+      }
+    });
+
+    window.addEventListener('message', event => {
+      if (event.data.isOpen) {
+        openChat();
+      } else {
+        closeChat();
+      }
+    });
+  }
+
+  function closeChat() {
+    const chatbotBtn = document.querySelector('.chatbot-toggle-btn');
+    chatbotBtn.dataset.chat = "closed";
+    const chatbotBtnStandardImg = chatbotBtn.querySelector('img');
+    chatbotBtnStandardImg.classList.add("chatbot-toggle-btn__standard-image");
+
+    const chatbotBtnHoverImg = document.createElement('img');
+    chatbotBtnHoverImg.src = './images/chat-bot-hover.webp';
+    chatbotBtnHoverImg.alt = 'Chatbot icon with one hand raised up';
+    chatbotBtnHoverImg.classList.add("chatbot-toggle-btn__hover-image");
+    chatbotBtn.appendChild(chatbotBtnHoverImg);
+  }
+
+  function openChat() {
+    const chatbotBtn = document.querySelector('.chatbot-toggle-btn');
+    chatbotBtn.dataset.chat = "opened";
+    const chatbotBtnXImg = chatbotBtn.querySelector('img');
+    chatbotBtnXImg.classList.add("chatbot-toggle-btn__x-image");
   }
 </script>
 </html>
