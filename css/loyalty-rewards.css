@@ -23,6 +23,10 @@
           clip-path: polygon(0 0, 0 0, 0 0, 0 0);
   border: 0;
 }
+.loyalty-rewards .animate-in {
+  -webkit-transform: translate(0, 0) scale(1);
+          transform: translate(0, 0) scale(1);
+}
 
 .lr-hero {
   position: relative;
@@ -46,6 +50,24 @@
   position: absolute;
   width: 100%;
   left: 0;
+  -webkit-transform: translate(0, 0) scale(0);
+          transform: translate(0, 0) scale(0);
+  -webkit-transition: -webkit-transform 400ms ease-in-out;
+  transition: -webkit-transform 400ms ease-in-out;
+  transition: transform 400ms ease-in-out;
+  transition: transform 400ms ease-in-out, -webkit-transform 400ms ease-in-out;
+}
+.lr-hero__sup-title {
+  -webkit-transition-delay: 200ms;
+          transition-delay: 200ms;
+}
+.lr-hero__subtitle {
+  -webkit-transition-delay: 400ms;
+          transition-delay: 400ms;
+}
+.lr-hero__shiny-diamond {
+  -webkit-transition-delay: 600ms;
+          transition-delay: 600ms;
 }
 .lr-hero__sup-title, .lr-hero__main-title, .lr-hero__subtitle {
   margin-top: 1rem;
@@ -140,6 +162,14 @@
   width: 130%;
   margin-left: -15%;
   margin-top: 3%;
+  -webkit-transform: translate(-150%, 0) scale(1);
+          transform: translate(-150%, 0) scale(1);
+  -webkit-transition: -webkit-transform 600ms ease-in-out;
+  transition: -webkit-transform 600ms ease-in-out;
+  transition: transform 600ms ease-in-out;
+  transition: transform 600ms ease-in-out, -webkit-transform 600ms ease-in-out;
+  -webkit-transition-delay: 800ms;
+          transition-delay: 800ms;
 }
 .lr-earn-loyalty-rewards__subtitle {
   position: absolute;
@@ -147,6 +177,14 @@
   width: 129%;
   margin-left: -15%;
   margin-top: 3%;
+  -webkit-transform: translate(150%, 0) scale(1);
+          transform: translate(150%, 0) scale(1);
+  -webkit-transition: -webkit-transform 600ms ease-in-out;
+  transition: -webkit-transform 600ms ease-in-out;
+  transition: transform 600ms ease-in-out;
+  transition: transform 600ms ease-in-out, -webkit-transform 600ms ease-in-out;
+  -webkit-transition-delay: 1000ms;
+          transition-delay: 1000ms;
 }
 .lr-earn-loyalty-rewards__main {
   position: relative;
@@ -158,6 +196,14 @@
           box-sizing: border-box;
   z-index: 1;
   padding-block: 5%;
+  -webkit-transform: translate(0, 0) scale(0);
+          transform: translate(0, 0) scale(0);
+  -webkit-transition: -webkit-transform 400ms ease-in-out;
+  transition: -webkit-transform 400ms ease-in-out;
+  transition: transform 400ms ease-in-out;
+  transition: transform 400ms ease-in-out, -webkit-transform 400ms ease-in-out;
+  -webkit-transition-delay: 1400ms;
+          transition-delay: 1400ms;
 }
 .lr-earn-loyalty-rewards__main-wrapper {
   width: 100%;
@@ -168,6 +214,14 @@
   height: auto;
   aspect-ratio: 16/3;
   position: relative;
+  -webkit-transform: translate(0, 0) scale(0);
+          transform: translate(0, 0) scale(0);
+  -webkit-transition: -webkit-transform 400ms ease-in-out;
+  transition: -webkit-transform 400ms ease-in-out;
+  transition: transform 400ms ease-in-out;
+  transition: transform 400ms ease-in-out, -webkit-transform 400ms ease-in-out;
+  -webkit-transition-delay: 1600ms;
+          transition-delay: 1600ms;
 }
 .lr-earn-loyalty-rewards__footer-candy, .lr-earn-loyalty-rewards__footer-candy-caption {
   position: absolute;
@@ -296,7 +350,7 @@
   color: #4e1e17;
   width: 100%;
   height: auto;
-  aspect-ratio: 16/7;
+  aspect-ratio: 16/12;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -310,19 +364,19 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-size: min(2.0625rem, 3vw);
+  font-size: min(3.4375rem, 5vw);
 }
 .lr-take-actions__actions-link {
   font-family: inherit;
   color: inherit;
   font-size: inherit;
-  padding-block: 0.8em;
+  padding-block: 1em;
   margin: 0.5em;
   background-color: transparent;
   border: 0.2em solid currentColor;
   text-decoration: none;
   text-align: center;
-  width: 48%;
+  width: 86%;
   -webkit-transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
   transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }

@@ -13,25 +13,26 @@
   <link rel="stylesheet" href="./css/vibrate.css">
   <link rel="stylesheet" href="./css/boilerplate.css">
   <link rel="stylesheet" href="./css/loyalty-rewards.css">
+  <script src="./js/loyaltyRewards.js" defer></script>
 </head>
 <body>
   <section class="loyalty-rewards graphic-section" data-loyalty-rewards-section>
     <div class="loyalty-rewards__wrapper">
       <section class="lr-hero" aria-labelledby="loyalty-rewards-hero-section-id">
         <div class="lr-hero__wrapper">
-          <div class="lr-hero__sup-title">
+          <div class="lr-hero__sup-title" data-lr-hero-sup-title>
             <img src="./images/lr-hero-sup-title.webp" alt="The text above the main title">
             <h4 id="loyalty-rewards-hero-section-id" class="visually-hidden">Wonderful presents...</h4>
           </div>
-          <div class="lr-hero__main-title">
+          <div class="lr-hero__main-title" data-lr-hero-main-title>
             <img src="./images/lr-hero-main-title.webp" alt="The main title">
             <h1 id="loyalty-rewards-hero-section-id" class="visually-hidden">EARN SMILE POINTS!</h1>
           </div>
-          <div class="lr-hero__subtitle">
+          <div class="lr-hero__subtitle" data-lr-hero-subtitle>
             <img src="./images/lr-hero-subtitle.webp" alt="The text below the main title">
             <h2 id="loyalty-rewards-hero-section-id" class="visually-hidden">Loyalty Rewards</h2>
           </div>
-          <div class="lr-hero__shiny-diamond">
+          <div class="lr-hero__shiny-diamond" data-lr-hero-shiny-diamond>
             <img src="./images/lr-hero-shiny-diamond.webp" alt="The shiny diamond on the right-hand side of the hero section">
           </div>
         </div>
@@ -40,16 +41,16 @@
         <div class="lr-main__wrapper">
           <section class="lr-earn-loyalty-rewards" aria-labelledby="loyalty-rewards-earn-loyalty-rewards-id">
             <div class="lr-earn-loyalty-rewards__header">
-              <div class="lr-earn-loyalty-rewards__main-title">
+              <div class="lr-earn-loyalty-rewards__main-title" data-lr-elr-main-title>
                 <img src="./images/lr-earn-loyalty-rewards-main-title.webp" alt="The main title of the Earn Loyalty Rewards section">
                 <h2 id="loyalty-rewards-earn-loyalty-rewards-id" class="visually-hidden">EARN LOYALTY REWARDS</h2>
               </div>
-              <div class="lr-earn-loyalty-rewards__subtitle">
+              <div class="lr-earn-loyalty-rewards__subtitle" data-lr-elr-subtitle>
                 <img src="./images/lr-earn-loyalty-rewards-subtitle.webp" alt="A subtitle of the Earn Loyalty Rewards section">
                 <h3 id="loyalty-rewards-earn-loyalty-rewards-id" class="visually-hidden">GREAT TASTE. LESS FILLINGS</h3>
               </div>
             </div>
-            <div class="lr-earn-loyalty-rewards__main">
+            <div class="lr-earn-loyalty-rewards__main" data-lr-elr-main-content>
               <div class="lr-earn-loyalty-rewards__main-wrapper">
                 <div class="lr-earn-loyalty-rewards__points-rewards-list lr-side-by-side-list">
                   <div class="lr-side-by-side-list__row lr-side-by-side-list__row--header">
@@ -84,7 +85,7 @@
                 </div>
               </div>
             </div>
-            <div class="lr-earn-loyalty-rewards__footer">
+            <div class="lr-earn-loyalty-rewards__footer" data-lr-elr-footer>
               <div class="lr-earn-loyalty-rewards__footer-candy">
                 <img src="./images/lr-earn-loyalty-rewards-candy.webp" alt="A candy at the center of the footer of the Earn Loyalty Rewards section">
               </div>
@@ -234,12 +235,12 @@
             </div>
           </section>
           <section class="lr-take-actions" aria-labelledby="loyalty-rewards-take-actions-id">
-            <div class="lr-take-actions__title">
+            <!-- <div class="lr-take-actions__title">
               <div class="lr-take-actions__title-wrapper">
                 <img src="./images/lr-create-acc-banner.webp" alt="The 'CREATE AN ACCOUNT' banner in the Take Actions section">
                 <h2 id="loyalty-rewards-create-account-id" class="visually-hidden">CREATE AN ACCOUNT AND START EARNING REWARDS TODAY!</h2>
               </div>
-            </div>
+            </div> -->
             <!-- <div class="lr-take-actions__steps-to-success">
               <img src="./images/lr-steps-to-success.webp" alt="The four steps of success(1. FORMULATE, 2. WAREHOUSE, 3. SHIP, 4. SUCCESS) banner in the Take Actions section">
             </div>
