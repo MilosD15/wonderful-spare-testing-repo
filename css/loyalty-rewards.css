@@ -52,10 +52,10 @@
   left: 0;
   -webkit-transform: translate(0, 0) scale(0);
           transform: translate(0, 0) scale(0);
-  -webkit-transition: -webkit-transform 400ms ease-in-out;
-  transition: -webkit-transform 400ms ease-in-out;
-  transition: transform 400ms ease-in-out;
-  transition: transform 400ms ease-in-out, -webkit-transform 400ms ease-in-out;
+  -webkit-transition: -webkit-transform 300ms ease;
+  transition: -webkit-transform 300ms ease;
+  transition: transform 300ms ease;
+  transition: transform 300ms ease, -webkit-transform 300ms ease;
 }
 .lr-hero__sup-title {
   -webkit-transition-delay: 200ms;
@@ -123,6 +123,12 @@
   display: flex;
   gap: 0.6em;
   padding-bottom: 0.5em;
+  -webkit-transform: translate(0, 0) scale(0);
+          transform: translate(0, 0) scale(0);
+  -webkit-transition: -webkit-transform 300ms ease;
+  transition: -webkit-transform 300ms ease;
+  transition: transform 300ms ease;
+  transition: transform 300ms ease, -webkit-transform 300ms ease;
 }
 .lr-side-by-side-list__row:last-child {
   padding-bottom: 0;
@@ -164,12 +170,12 @@
   margin-top: 3%;
   -webkit-transform: translate(-150%, 0) scale(1);
           transform: translate(-150%, 0) scale(1);
-  -webkit-transition: -webkit-transform 600ms ease-in-out;
-  transition: -webkit-transform 600ms ease-in-out;
-  transition: transform 600ms ease-in-out;
-  transition: transform 600ms ease-in-out, -webkit-transform 600ms ease-in-out;
-  -webkit-transition-delay: 800ms;
-          transition-delay: 800ms;
+  -webkit-transition: -webkit-transform 500ms ease;
+  transition: -webkit-transform 500ms ease;
+  transition: transform 500ms ease;
+  transition: transform 500ms ease, -webkit-transform 500ms ease;
+  -webkit-transition-delay: 200ms;
+          transition-delay: 200ms;
 }
 .lr-earn-loyalty-rewards__subtitle {
   position: absolute;
@@ -179,12 +185,12 @@
   margin-top: 3%;
   -webkit-transform: translate(150%, 0) scale(1);
           transform: translate(150%, 0) scale(1);
-  -webkit-transition: -webkit-transform 600ms ease-in-out;
-  transition: -webkit-transform 600ms ease-in-out;
-  transition: transform 600ms ease-in-out;
-  transition: transform 600ms ease-in-out, -webkit-transform 600ms ease-in-out;
-  -webkit-transition-delay: 1000ms;
-          transition-delay: 1000ms;
+  -webkit-transition: -webkit-transform 500ms ease;
+  transition: -webkit-transform 500ms ease;
+  transition: transform 500ms ease;
+  transition: transform 500ms ease, -webkit-transform 500ms ease;
+  -webkit-transition-delay: 400ms;
+          transition-delay: 400ms;
 }
 .lr-earn-loyalty-rewards__main {
   position: relative;
@@ -196,14 +202,6 @@
           box-sizing: border-box;
   z-index: 1;
   padding-block: 5%;
-  -webkit-transform: translate(0, 0) scale(0);
-          transform: translate(0, 0) scale(0);
-  -webkit-transition: -webkit-transform 400ms ease-in-out;
-  transition: -webkit-transform 400ms ease-in-out;
-  transition: transform 400ms ease-in-out;
-  transition: transform 400ms ease-in-out, -webkit-transform 400ms ease-in-out;
-  -webkit-transition-delay: 1400ms;
-          transition-delay: 1400ms;
 }
 .lr-earn-loyalty-rewards__main-wrapper {
   width: 100%;
@@ -216,12 +214,10 @@
   position: relative;
   -webkit-transform: translate(0, 0) scale(0);
           transform: translate(0, 0) scale(0);
-  -webkit-transition: -webkit-transform 400ms ease-in-out;
-  transition: -webkit-transform 400ms ease-in-out;
-  transition: transform 400ms ease-in-out;
-  transition: transform 400ms ease-in-out, -webkit-transform 400ms ease-in-out;
-  -webkit-transition-delay: 1600ms;
-          transition-delay: 1600ms;
+  -webkit-transition: -webkit-transform 300ms ease-in-out;
+  transition: -webkit-transform 300ms ease-in-out;
+  transition: transform 300ms ease-in-out;
+  transition: transform 300ms ease-in-out, -webkit-transform 300ms ease-in-out;
 }
 .lr-earn-loyalty-rewards__footer-candy, .lr-earn-loyalty-rewards__footer-candy-caption {
   position: absolute;
@@ -243,12 +239,22 @@
   position: absolute;
   width: 94%;
   margin-left: 3%;
+  -webkit-transform: translate(0, 0) scale(0);
+          transform: translate(0, 0) scale(0);
+  -webkit-transition: -webkit-transform 300ms ease;
+  transition: -webkit-transform 300ms ease;
+  transition: transform 300ms ease;
+  transition: transform 300ms ease, -webkit-transform 300ms ease;
 }
 .lr-direct-selling-only__title {
   top: -13%;
+  -webkit-transition-delay: 200ms;
+          transition-delay: 200ms;
 }
 .lr-direct-selling-only__drawing-of-shipping {
   top: 11%;
+  -webkit-transition-delay: 400ms;
+          transition-delay: 400ms;
 }
 
 .lr-skip-supply-house {
@@ -262,6 +268,40 @@
   position: absolute;
   width: 126%;
   left: -13%;
+  -webkit-transform: translate(0, 0) scale(0);
+          transform: translate(0, 0) scale(0);
+  -webkit-transition: -webkit-transform 300ms ease;
+  transition: -webkit-transform 300ms ease;
+  transition: transform 300ms ease;
+  transition: transform 300ms ease, -webkit-transform 300ms ease;
+}
+.lr-skip-supply-house__bpbi-border {
+  -webkit-transform: translate(-150%, 0) scale(1);
+          transform: translate(-150%, 0) scale(1);
+  -webkit-transition-delay: 200ms;
+          transition-delay: 200ms;
+}
+.lr-skip-supply-house__bpbi {
+  -webkit-transition-delay: 400ms;
+          transition-delay: 400ms;
+}
+.lr-skip-supply-house__tsh-caption {
+  -webkit-transform: translate(150%, 0) scale(1);
+          transform: translate(150%, 0) scale(1);
+  -webkit-transition-delay: 600ms;
+          transition-delay: 600ms;
+}
+.lr-skip-supply-house__skip-caption {
+  -webkit-transition-delay: 800ms;
+          transition-delay: 800ms;
+}
+.lr-skip-supply-house__super-tasty-caption {
+  -webkit-transition-delay: 1000ms;
+          transition-delay: 1000ms;
+}
+.lr-skip-supply-house__smile {
+  -webkit-transition-delay: 1200ms;
+          transition-delay: 1200ms;
 }
 
 .lr-earning-points {
@@ -280,6 +320,14 @@
   width: 130%;
   margin-left: -15%;
   margin-top: 3%;
+  -webkit-transform: translate(-150%, 0) scale(1);
+          transform: translate(-150%, 0) scale(1);
+  -webkit-transition: -webkit-transform 300ms ease;
+  transition: -webkit-transform 300ms ease;
+  transition: transform 300ms ease;
+  transition: transform 300ms ease, -webkit-transform 300ms ease;
+  -webkit-transition-delay: 200ms;
+          transition-delay: 200ms;
 }
 .lr-earning-points__subtitle {
   position: absolute;
@@ -287,6 +335,14 @@
   width: 129%;
   margin-left: -15%;
   margin-top: 3%;
+  -webkit-transform: translate(150%, 0) scale(1);
+          transform: translate(150%, 0) scale(1);
+  -webkit-transition: -webkit-transform 300ms ease;
+  transition: -webkit-transform 300ms ease;
+  transition: transform 300ms ease;
+  transition: transform 300ms ease, -webkit-transform 300ms ease;
+  -webkit-transition-delay: 400ms;
+          transition-delay: 400ms;
 }
 .lr-earning-points__main {
   position: relative;
@@ -313,35 +369,33 @@
   position: absolute;
   width: 130%;
   margin-left: -15%;
+  -webkit-transform: translate(0, 0) scale(0);
+          transform: translate(0, 0) scale(0);
+  -webkit-transition: -webkit-transform 500ms ease-in-out;
+  transition: -webkit-transform 500ms ease-in-out;
+  transition: transform 500ms ease-in-out;
+  transition: transform 500ms ease-in-out, -webkit-transform 500ms ease-in-out;
 }
 .lr-earning-points__footer-other-ways-to-earn-points {
   top: -20%;
+  -webkit-transition-delay: 200ms;
+          transition-delay: 200ms;
 }
 .lr-earning-points__footer-smile-points-caption {
   top: -18%;
+  -webkit-transition-delay: 400ms;
+          transition-delay: 400ms;
 }
 .lr-earning-points__footer-arrow-down, .lr-earning-points__footer-arrow-additions {
   top: 26%;
+  -webkit-transition-delay: 600ms;
+          transition-delay: 600ms;
 }
 
 .lr-take-actions {
   width: 100%;
   height: auto;
   position: relative;
-}
-.lr-take-actions__title {
-  width: 100%;
-  height: auto;
-  aspect-ratio: 16/4.4;
-  position: relative;
-  margin-top: 2%;
-}
-.lr-take-actions__title-wrapper {
-  position: absolute;
-  width: 124%;
-  margin-left: -12%;
-  height: auto;
-  top: -46%;
 }
 .lr-take-actions__actions {
   z-index: 1;
@@ -377,25 +431,38 @@
   text-decoration: none;
   text-align: center;
   width: 86%;
-  -webkit-transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
-  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  -webkit-transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border 0.3s ease-in-out, -webkit-transform 300ms ease;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border 0.3s ease-in-out, -webkit-transform 300ms ease;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border 0.3s ease-in-out, transform 300ms ease;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border 0.3s ease-in-out, transform 300ms ease, -webkit-transform 300ms ease;
+}
+.lr-take-actions__actions-link--login {
+  -webkit-transform: translate(-150%, 0) scale(1);
+          transform: translate(-150%, 0) scale(1);
+  opacity: 0;
+  -webkit-transition-delay: 200ms;
+          transition-delay: 200ms;
+}
+.lr-take-actions__actions-link--signup {
+  -webkit-transform: translate(150%, 0) scale(1);
+          transform: translate(150%, 0) scale(1);
+  opacity: 0;
+  -webkit-transition-delay: 400ms;
+          transition-delay: 400ms;
+}
+.lr-take-actions__actions-link.animate-in {
+  -webkit-transform: translate(0, 0) scale(1);
+          transform: translate(0, 0) scale(1);
+  opacity: 1;
+}
+.lr-take-actions__actions-link.transition-delay-0 {
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s;
 }
 .lr-take-actions__actions-link:hover, .lr-take-actions__actions-link:focus {
   background-color: #4e1e17;
   color: #ffc28a;
   border-color: #4e1e17;
-}
-.lr-take-actions__steps-to-success {
-  position: absolute;
-  width: 130%;
-  left: -13%;
-  top: 29%;
-}
-.lr-take-actions__made-in-usa {
-  position: absolute;
-  width: 130%;
-  left: -15%;
-  top: 52%;
 }
 
 .lr-footer {
