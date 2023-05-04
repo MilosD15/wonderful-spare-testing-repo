@@ -3,12 +3,19 @@ if (document.querySelector("[data-loyalty-rewards-section]")) {
   // DOM elements
   const loyaltyRewardsSection = document.querySelector("[data-loyalty-rewards-section]");
 
-  // hero section
-  const loyaltyRewardsHeroSection = loyaltyRewardsSection.querySelector("[data-lr-hero-section]");
-  const loyaltyRewardsHeroSupTitle = loyaltyRewardsHeroSection.querySelector("[data-lr-hero-sup-title]");
-  const loyaltyRewardsHeroMainTitle = loyaltyRewardsHeroSection.querySelector("[data-lr-hero-main-title]");
-  const loyaltyRewardsHeroSubtitle = loyaltyRewardsHeroSection.querySelector("[data-lr-hero-subtitle]");
-  const loyaltyRewardsHeroShinyDiamond = loyaltyRewardsHeroSection.querySelector("[data-lr-hero-shiny-diamond]");
+  // logged-in hero section
+  const loyaltyRewardsLoggedInHeroSection = loyaltyRewardsSection.querySelector("[data-lr-logged-in-hero-section]");
+  const loyaltyRewardsLoggedInHeroBg = loyaltyRewardsLoggedInHeroSection?.querySelector("[data-lr-logged-in-hero-bg]");
+  const loyaltyRewardsLoggedInHeroMainTitle = loyaltyRewardsLoggedInHeroSection?.querySelector("[data-lr-logged-in-hero-main-title]");
+  const loyaltyRewardsLoggedInHeroPointsCount = loyaltyRewardsLoggedInHeroSection?.querySelector("[data-lr-logged-in-hero-points-count]");
+  const loyaltyRewardsLoggedInHeroRedeemBtn = loyaltyRewardsLoggedInHeroSection?.querySelector("[data-lr-logged-in-hero-redeem-btn]");
+
+  // not-logged-in hero section
+  const loyaltyRewardsNotLoggedInHeroSection = loyaltyRewardsSection.querySelector("[data-lr-not-logged-in-hero-section]");
+  const loyaltyRewardsNotLoggedInHeroSupTitle = loyaltyRewardsNotLoggedInHeroSection.querySelector("[data-lr-not-logged-in-hero-sup-title]");
+  const loyaltyRewardsNotLoggedInHeroMainTitle = loyaltyRewardsNotLoggedInHeroSection.querySelector("[data-lr-not-logged-in-hero-main-title]");
+  const loyaltyRewardsNotLoggedInHeroSubtitle = loyaltyRewardsNotLoggedInHeroSection.querySelector("[data-lr-not-logged-in-hero-subtitle]");
+  const loyaltyRewardsNotLoggedInHeroShinyDiamond = loyaltyRewardsNotLoggedInHeroSection.querySelector("[data-lr-not-logged-in-hero-shiny-diamond]");
   
   // earn loyalty rewards section
   const earnLoyaltyRewardsSection = loyaltyRewardsSection.querySelector("[data-lr-earn-loyalty-rewards]");
@@ -58,20 +65,37 @@ if (document.querySelector("[data-loyalty-rewards-section]")) {
   earnLoyaltyRewardsFooter.style.transitionDelay = `${elrLastIndexNotApplied * onloadTransitionDelayStepShorter + onloadTransitionDelayStepLarger}ms`;
   assignTransitionDelays(earningPointsMainContent, 3, onloadTransitionDelayStepShorter);
 
-  // hero section loading animation
-  const heroLoadingAnimIO = new IntersectionObserver(entries => {
+  // logged-in hero section loading animation
+  if (loyaltyRewardsLoggedInHeroSection) {
+    const loggedInHeroLoadingAnimIO = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          loyaltyRewardsLoggedInHeroBg.classList.add("animate-in");
+          loyaltyRewardsLoggedInHeroMainTitle.classList.add("animate-in");
+          loyaltyRewardsLoggedInHeroPointsCount.classList.add("animate-in");
+          loyaltyRewardsLoggedInHeroRedeemBtn.classList.add("animate-in");
+  
+          loggedInHeroLoadingAnimIO.unobserve(loyaltyRewardsLoggedInHeroSection);
+        }
+      });
+    }, { threshold: 0.3 });
+    loggedInHeroLoadingAnimIO.observe(loyaltyRewardsLoggedInHeroSection);
+  }
+
+  // not-logged-in hero section loading animation
+  const notLoggedInHeroLoadingAnimIO = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        loyaltyRewardsHeroSupTitle.classList.add("animate-in");
-        loyaltyRewardsHeroMainTitle.classList.add("animate-in");
-        loyaltyRewardsHeroSubtitle.classList.add("animate-in");
-        loyaltyRewardsHeroShinyDiamond.classList.add("animate-in");
+        loyaltyRewardsNotLoggedInHeroSupTitle.classList.add("animate-in");
+        loyaltyRewardsNotLoggedInHeroMainTitle.classList.add("animate-in");
+        loyaltyRewardsNotLoggedInHeroSubtitle.classList.add("animate-in");
+        loyaltyRewardsNotLoggedInHeroShinyDiamond.classList.add("animate-in");
 
-        heroLoadingAnimIO.unobserve(loyaltyRewardsHeroSection);
+        notLoggedInHeroLoadingAnimIO.unobserve(loyaltyRewardsNotLoggedInHeroSection);
       }
     });
   }, { threshold: 0.3 });
-  heroLoadingAnimIO.observe(loyaltyRewardsHeroSection);
+  notLoggedInHeroLoadingAnimIO.observe(loyaltyRewardsNotLoggedInHeroSection);
 
   // earn loyalty rewards section loading animation
   const earnLoyRewLoadingAnimIO = new IntersectionObserver(entries => {
@@ -151,14 +175,18 @@ if (document.querySelector("[data-loyalty-rewards-section]")) {
   const takeActionsSectionLoadingAnimIO = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        takeActionsLoginBtn.classList.add("animate-in");
-        takeActionsSignupBtn.classList.add("animate-in");
+        if (loyaltyRewardsSection.dataset.darkMode === "true") {
 
-        setTimeout(() => {
-          console.log("remove transition delay");
-          removeTransitionDelay(takeActionsLoginBtn);
-          removeTransitionDelay(takeActionsSignupBtn);
-        }, 700);
+        } else {
+          takeActionsLoginBtn.classList.add("animate-in");
+          takeActionsSignupBtn.classList.add("animate-in");
+
+          setTimeout(() => {
+            console.log("remove transition delay");
+            removeTransitionDelay(takeActionsLoginBtn);
+            removeTransitionDelay(takeActionsSignupBtn);
+          }, 700);
+        }
 
         takeActionsSectionLoadingAnimIO.unobserve(takeActionsSection);
       }

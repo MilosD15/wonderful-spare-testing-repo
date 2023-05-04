@@ -1,0 +1,5 @@
+red - #f6452a
+skin color - #f6be91
+brown - #4c241e
+dark red - #971b0c
+dark brown - #110606
