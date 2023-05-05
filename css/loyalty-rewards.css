@@ -80,8 +80,15 @@
   width: 100%;
   height: auto;
   position: relative;
+  aspect-ratio: 16/9;
+  overflow: hidden;
 }
 .lr-logged-in-hero__bg {
+  position: absolute;
+  height: 100%;
+  aspect-ratio: 16/9;
+  top: 0;
+  right: 0;
   -webkit-transform: translate(0, 0) scale(0);
           transform: translate(0, 0) scale(0);
   -webkit-transition: -webkit-transform 300ms ease;
@@ -203,6 +210,17 @@
   background-color: #daa173;
 }
 
+@media screen and (max-width: 81.25rem) { /* 1300px */
+  .lr-logged-in-hero {
+    aspect-ratio: 16/12;
+  }
+  .lr-logged-in-hero__bg {
+    aspect-ratio: 16/12;
+  }
+  .lr-logged-in-hero__main-title {
+    top: 4%;
+  }
+}
 .lr-main {
   width: 100%;
   height: auto;
