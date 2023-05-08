@@ -1,6 +1,7 @@
 if (document.querySelector("[data-loyalty-rewards-section]")) {
   // DOM elements
   var loyaltyRewardsSection = document.querySelector("[data-loyalty-rewards-section]");
+  var loggedInHeroRedeemBtn = document.querySelector("[data-lr-logged-in-hero-redeem-btn]");
   var earnLoyaltyRewardsMainContent = loyaltyRewardsSection.querySelector("[data-lr-elr-main-content]");
   var earnLoyaltyRewardsFooter = loyaltyRewardsSection.querySelector("[data-lr-elr-footer]");
   var earningPointsMainContent = loyaltyRewardsSection.querySelector("[data-lr-ep-main-content]");
@@ -20,7 +21,9 @@ if (document.querySelector("[data-loyalty-rewards-section]")) {
   if (loyaltyRewardsSection.dataset.darkMode === "true") {
     playLoadingAnimationsBySection("[data-lr-logged-in-hero-section]",
     ["[data-lr-logged-in-hero-bg]", "[data-lr-logged-in-hero-main-title]", 
-    "[data-lr-logged-in-hero-points-count]", "[data-lr-logged-in-hero-redeem-btn]"], 0.3);
+    "[data-lr-logged-in-hero-points-count]", "[data-lr-logged-in-hero-redeem-btn]"], 0.3, 700, () => {
+      removeTransitionDelay(loggedInHeroRedeemBtn);
+    });
   }
 
   // not-logged-in hero section loading animation

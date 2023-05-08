@@ -121,7 +121,7 @@
   text-align: left;
   height: auto;
   font-family: "LEMON MILK", sans-serif;
-  color: #f8f8f8;
+  color: #f6be91;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -146,16 +146,16 @@
 .lr-logged-in-hero__number-of-points .golden-letters {
   color: #f6be91;
 }
-.lr-logged-in-hero__number-of-points .blue-letters {
-  color: #00cbff;
+.lr-logged-in-hero__number-of-points-number {
+  color: #f8f8f8;
 }
 .lr-logged-in-hero__redeem-link {
   position: relative;
   font-size: 2vw;
   text-decoration: none;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#f6be91), to(#daa173));
-  background-image: linear-gradient(180deg, #f6be91, #daa173);
-  color: #110606;
+  background-color: #971b0c;
+  color: #f6be91;
+  border: 0.146em solid #f6be91;
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
@@ -163,43 +163,43 @@
   border-radius: 9999px;
   -webkit-transform: translate(-200%, 0) scale(1);
           transform: translate(-200%, 0) scale(1);
-  -webkit-transition: -webkit-transform 500ms ease;
-  transition: -webkit-transform 500ms ease;
-  transition: transform 500ms ease;
-  transition: transform 500ms ease, -webkit-transform 500ms ease;
+  -webkit-transition: background-color 500ms ease, color 500ms ease, -webkit-transform 500ms ease;
+  transition: background-color 500ms ease, color 500ms ease, -webkit-transform 500ms ease;
+  transition: transform 500ms ease, background-color 500ms ease, color 500ms ease;
+  transition: transform 500ms ease, background-color 500ms ease, color 500ms ease, -webkit-transform 500ms ease;
   -webkit-transition-delay: 390ms;
           transition-delay: 390ms;
 }
-.lr-logged-in-hero__redeem-link-bg-transitioning-elem {
-  position: absolute;
-  inset: 0;
-  background-color: transparent;
-  border-radius: 9999px;
-  -webkit-transition: background-color 500ms ease;
-  transition: background-color 500ms ease;
+.lr-logged-in-hero__redeem-link.transition-delay-0 {
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s;
 }
 .lr-logged-in-hero__redeem-link-text {
   position: relative;
   z-index: 1;
 }
-.lr-logged-in-hero__redeem-link:hover .lr-logged-in-hero__redeem-link-bg-transitioning-elem {
-  background-color: #daa173;
+.lr-logged-in-hero__redeem-link:hover {
+  background-color: #f6be91;
+  color: #971b0c;
 }
 
 @media screen and (max-width: 81.25rem) { /* 1300px */
   .lr-logged-in-hero {
-    aspect-ratio: 16/14;
+    aspect-ratio: 16/16;
   }
   .lr-logged-in-hero__bg {
-    height: auto;
-    width: 100%;
+    height: 80%;
+    width: auto;
     aspect-ratio: 16/9;
+    right: -20%;
   }
   .lr-logged-in-hero__main-title {
-    top: 4%;
+    top: -2%;
+    left: -2%;
+    width: 120%;
   }
   .lr-logged-in-hero__points-count-and-redeem-btn {
-    bottom: 5%;
+    bottom: 3%;
     left: 0;
     width: 100%;
     text-align: center;
