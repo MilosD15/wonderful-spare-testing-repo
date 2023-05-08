@@ -1,18 +1,18 @@
 if (document.querySelector("[data-loyalty-rewards-section]")) {
   // DOM elements
-  const loyaltyRewardsSection = document.querySelector("[data-loyalty-rewards-section]");
-  const earnLoyaltyRewardsMainContent = loyaltyRewardsSection.querySelector("[data-lr-elr-main-content]");
-  const earnLoyaltyRewardsFooter = loyaltyRewardsSection.querySelector("[data-lr-elr-footer]");
-  const earningPointsMainContent = loyaltyRewardsSection.querySelector("[data-lr-ep-main-content]");
-  const takeActionsLoginBtn = loyaltyRewardsSection.querySelector("[data-lr-ta-login-btn]");
-  const takeActionsSignupBtn = loyaltyRewardsSection.querySelector("[data-lr-ta-signup-btn]");
+  var loyaltyRewardsSection = document.querySelector("[data-loyalty-rewards-section]");
+  var earnLoyaltyRewardsMainContent = loyaltyRewardsSection.querySelector("[data-lr-elr-main-content]");
+  var earnLoyaltyRewardsFooter = loyaltyRewardsSection.querySelector("[data-lr-elr-footer]");
+  var earningPointsMainContent = loyaltyRewardsSection.querySelector("[data-lr-ep-main-content]");
+  var takeActionsLoginBtn = loyaltyRewardsSection.querySelector("[data-lr-ta-login-btn]");
+  var takeActionsSignupBtn = loyaltyRewardsSection.querySelector("[data-lr-ta-signup-btn]");
 
   // variables
-  const onloadTransitionDelayStepShorter = 130;
-  const onloadTransitionDelayStepLarger = 200;
+  var onloadTransitionDelayStepShorter = 130;
+  var onloadTransitionDelayStepLarger = 200;
 
   // assign transition delays to the each row of specific side-by-side list
-  const elrLastIndexNotApplied = assignTransitionDelays(earnLoyaltyRewardsMainContent, 3, onloadTransitionDelayStepShorter);
+  var elrLastIndexNotApplied = assignTransitionDelays(earnLoyaltyRewardsMainContent, 3, onloadTransitionDelayStepShorter);
   earnLoyaltyRewardsFooter.style.transitionDelay = `${elrLastIndexNotApplied * onloadTransitionDelayStepShorter + onloadTransitionDelayStepLarger}ms`;
   assignTransitionDelays(earningPointsMainContent, 3, onloadTransitionDelayStepShorter);
 
