@@ -81,7 +81,6 @@
   height: auto;
   position: relative;
   aspect-ratio: 16/9;
-  overflow: hidden;
 }
 .lr-logged-in-hero__bg {
   position: absolute;
@@ -150,7 +149,9 @@
   color: #f8f8f8;
 }
 .lr-logged-in-hero__redeem-link {
+  display: block;
   position: relative;
+  z-index: 1;
   font-size: 2vw;
   text-decoration: none;
   background-color: #971b0c;
@@ -174,15 +175,61 @@
   -webkit-transition-delay: 0s;
           transition-delay: 0s;
 }
-.lr-logged-in-hero__redeem-link-text {
+.lr-logged-in-hero__redeem-link.animate-in {
+  -webkit-transform: translate(0, 0) scale(1);
+          transform: translate(0, 0) scale(1);
+}
+.lr-logged-in-hero__redeem-link.animate-in ~ .lr-logged-in-hero__redeem-link-backlight {
+  opacity: 0.4;
+}
+.lr-logged-in-hero__redeem-link-container {
   position: relative;
-  z-index: 1;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+.lr-logged-in-hero__redeem-link-backlight {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 140%;
+  opacity: 0;
+  -webkit-animation: rotate360 5s linear infinite forwards;
+          animation: rotate360 5s linear infinite forwards;
+  -webkit-transition: opacity 300ms ease;
+  transition: opacity 300ms ease;
+  -webkit-transition-delay: 520ms;
+          transition-delay: 520ms;
 }
 .lr-logged-in-hero__redeem-link:hover {
   background-color: #f6be91;
   color: #971b0c;
 }
 
+/* ANIMATIONS */
+@-webkit-keyframes rotate360 {
+  from {
+    -webkit-transform: translate(-50%, -50%) rotate(0);
+            transform: translate(-50%, -50%) rotate(0);
+  }
+  to {
+    -webkit-transform: translate(-50%, -50%) rotate(360deg);
+            transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+@keyframes rotate360 {
+  from {
+    -webkit-transform: translate(-50%, -50%) rotate(0);
+            transform: translate(-50%, -50%) rotate(0);
+  }
+  to {
+    -webkit-transform: translate(-50%, -50%) rotate(360deg);
+            transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+/* MEDIA QUERIES */
 @media screen and (max-width: 81.25rem) { /* 1300px */
   .lr-logged-in-hero {
     aspect-ratio: 16/16;
@@ -210,11 +257,11 @@
   }
   .lr-logged-in-hero__redeem-link {
     font-size: 5.5vw;
-    left: 50%;
   }
-  .lr-logged-in-hero__redeem-link.animate-in {
-    -webkit-transform: translate(-50%, 0) scale(1);
-            transform: translate(-50%, 0) scale(1);
+  .lr-logged-in-hero__redeem-link-container {
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
   }
 }
 .lr-main {
