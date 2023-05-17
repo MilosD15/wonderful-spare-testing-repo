@@ -1,0 +1,212 @@
+@charset "UTF-8";
+.leave-review__rating-stars-wrapper {
+  font-size: 0;
+  unicode-bidi: bidi-override;
+  direction: rtl;
+}
+.leave-review__rating-stars-wrapper * {
+  font-size: 2rem;
+}
+.leave-review__rating-stars-wrapper > input {
+  display: none;
+}
+.leave-review__rating-stars-wrapper > input + label {
+  display: inline-block;
+  overflow: hidden;
+  text-indent: 9999px;
+  width: 1em;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.leave-review__rating-stars-wrapper > input + label:before {
+  display: inline-block;
+  text-indent: -9999px;
+  content: "☆";
+  color: #888;
+}
+.leave-review__rating-stars-wrapper > input:checked ~ label:before, .leave-review__rating-stars-wrapper > input + label:hover ~ label:before, .leave-review__rating-stars-wrapper > input + label:hover:before {
+  content: "★";
+  color: #f1bf33;
+  text-shadow: 0 0 1px #333;
+}
+.leave-review__rating-stars-wrapper:hover > input + label:before {
+  content: "☆";
+  color: #888;
+  text-shadow: none;
+}
+.leave-review__rating-stars-wrapper:hover > input + label:hover ~ label:before, .leave-review__rating-stars-wrapper:hover > input + label:hover:before {
+  content: "★";
+  color: #f1bf33;
+  text-shadow: 0 0 1px #333;
+}
+
+.leave-review {
+  width: min(100%, 1000px);
+  margin: 0 auto;
+  font-family: "Helvetica Now", sans-serif;
+}
+.leave-review * {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.leave-review__title {
+  font-family: "LEMON MILK", sans-serif;
+  font-weight: 400;
+  text-align: center;
+  font-size: 2.4em;
+  margin-block: 0.7em 0.4em;
+}
+@media screen and (max-width: 768px) {
+  .leave-review__title {
+    font-size: 1.8em;
+  }
+}
+.leave-review__form {
+  font-size: 16px;
+}
+.leave-review__form-group {
+  padding: 0.5em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border: 0;
+}
+.leave-review__form-group--row {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+.leave-review__form-group--column {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.leave-review__label {
+  font-size: 0.85em;
+  line-height: 2.5;
+  margin-bottom: 0.3em;
+  letter-spacing: 1.2px;
+}
+.leave-review__input {
+  font-size: 1em;
+  padding: 0.3em;
+  border-radius: 0.3em;
+  font-family: "Helvetica Now", sans-serif;
+  border: 1px solid #000;
+  letter-spacing: 1.2px;
+  width: 100%;
+  max-width: 100%;
+}
+.leave-review__input--textarea {
+  resize: vertical;
+  min-height: 140px;
+}
+.leave-review__rating-stars-wrapper {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+.leave-review__submit-btn {
+  background-color: #000;
+  font-size: 0.95em;
+  font-weight: 600;
+  color: #fff;
+  border: 0;
+  width: 100%;
+  padding: 0.8em;
+  border-radius: 0.4em;
+  cursor: pointer;
+  margin-block: 1em;
+  letter-spacing: 1.2px;
+}
+
+.how-can-we-improve {
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-size: 16px;
+  padding: 1em;
+  border: 0;
+  border-radius: 0.4em;
+  -webkit-box-shadow: 0 0 0.7em #888;
+          box-shadow: 0 0 0.7em #888;
+}
+.how-can-we-improve::-webkit-backdrop {
+  background: rgba(0, 0, 0, 0.2);
+}
+.how-can-we-improve::backdrop {
+  background: rgba(0, 0, 0, 0.2);
+}
+.how-can-we-improve__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.how-can-we-improve__form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 1em;
+}
+.how-can-we-improve__label {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  font-size: 1.1em;
+  line-height: 2;
+}
+@media screen and (max-width: 768px) {
+  .how-can-we-improve__label {
+    font-size: 1em;
+  }
+}
+.how-can-we-improve__textarea {
+  width: max(100%, 600px);
+  font-size: 1.3em;
+}
+@media screen and (max-width: 768px) {
+  .how-can-we-improve__textarea {
+    font-size: 1em;
+  }
+}
+@media screen and (max-width: 768px) {
+  .how-can-we-improve__submit {
+    font-size: 0.9em;
+  }
+}
+.how-can-we-improve__close-btn {
+  width: 3rem;
+  height: 3rem;
+  padding: 0.6em 0 0.6em 1.2em;
+  cursor: pointer;
+  color: #000;
+  border: 0;
+  background-color: transparent;
+}
+@media screen and (max-width: 768px) {
+  .how-can-we-improve__close-btn {
+    width: 2rem;
+    height: 2rem;
+    padding: 0.3em 0 0.3em 0.6em;
+  }
+}
+.how-can-we-improve__close-btn-svg {
+  fill: none;
+  stroke: #000;
+  stroke-width: 2;
+}

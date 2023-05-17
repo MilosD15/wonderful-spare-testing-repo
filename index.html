@@ -4,11 +4,78 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chat bot | Wonderful</title>
-  <link rel="stylesheet" href="./chatbot.css">
-  <script src="./chatbot.js"></script>
+  <title>Reviews form</title>
+  <link rel="stylesheet" href="./font/helvetica-now/addHelveticaNow.css">
+  <link rel="stylesheet" href="./font/lemonmilk/addLemonmilk.css">
+  <link rel="stylesheet" href="./css/boilerplate.css">
+  <link rel="stylesheet" href="./css/leave-review-form.css">
+  <script src="./js/leave-review.js" defer></script>
 </head>
 <body>
-  
+  <section class="leave-review" data-leave-review-section>
+    <h1 class="leave-review__title">Product Review</h1>
+    <form method="post" action="" class="leave-review__form">
+      <fieldset class="leave-review__form-group leave-review__form-group--column">
+        <label for="leave-review-product-type-field" class="leave-review__label">Choose product: </label>
+        <select class="leave-review__input leave-review__input--select" name="product-type-field" id="leave-review-product-type-field">
+          <option value="not-selected">--------------</option>
+          <option value="fluoride-varnish-cups">Fluoride Varnish Cups</option>
+          <option value="fluoride-varnish-sticks">Fluoride Varnish Sticks</option>
+          <option value="prophy-paste">Prophy Paste</option>
+        </select>
+      </fieldset>
+      <fieldset class="leave-review__form-group leave-review__form-group--column">
+        <label for="leave-review-review-title-field" class="leave-review__label">Review title: </label>
+        <input type="text" id="leave-review-review-title-field" name="review-title-field" class="leave-review__input">
+      </fieldset>
+      <fieldset class="leave-review__form-group leave-review__form-group--column">
+        <label for="leave-review-review-body-field" class="leave-review__label">Review body: </label>
+        <textarea id="leave-review-review-body-field" name="review-body-field" class="leave-review__input leave-review__input--textarea"></textarea>
+      </fieldset>
+      <fieldset class="leave-review__form-group leave-review__form-group--column">
+        <label for="leave-review-review-rating-field" class="leave-review__label">Rating: </label>
+        <span class="star-cb-group leave-review__rating-stars-wrapper">
+          <input type="radio" id="leave-review-review-rating-5" class="leave-review__input leave-review__input--radio" name="rating" data-star-radio-btn value="5">
+          <label for="leave-review-review-rating-5">5</label>
+          <input type="radio" id="leave-review-review-rating-4" class="leave-review__input leave-review__input--radio" name="rating" data-star-radio-btn value="4" checked="checked">
+          <label for="leave-review-review-rating-4">4</label>
+          <input type="radio" id="leave-review-review-rating-3" class="leave-review__input leave-review__input--radio" name="rating" data-star-radio-btn value="3">
+          <label for="leave-review-review-rating-3">3</label>
+          <input type="radio" id="leave-review-review-rating-2" class="leave-review__input leave-review__input--radio" name="rating" data-star-radio-btn value="2">
+          <label for="leave-review-review-rating-2">2</label>
+          <input type="radio" id="leave-review-review-rating-1" class="leave-review__input leave-review__input--radio" name="rating" data-star-radio-btn value="1">
+          <label for="leave-review-review-rating-1">1</label>
+          <!-- <input type="radio" id="leave-review-review-rating-0" name="rating" value="0" class="star-cb-clear"><label for="leave-review-review-rating-0">0</label> -->
+        </span>
+      </fieldset>
+      <fieldset class="leave-review__form-group leave-review__form-group--column">
+        <label for="leave-review-review-summary-field" class="leave-review__label">Review summary: </label>
+        <input type="text" id="leave-review-review-summary-field" name="review-summary-field" class="leave-review__input">
+      </fieldset>
+      <fieldset class="leave-review__form-group leave-review__form-group--row">
+        <input type="submit" value="Submit" class="leave-review__submit-btn">
+      </fieldset>
+    </form>
+    <dialog class="leave-review__how-can-we-improve how-can-we-improve" data-how-can-we-improve-dialog>
+      <form method="post" action="" class="how-can-we-improve__form" data-how-can-we-improve-dialog-form>
+        <div class="how-can-we-improve__header">
+          <label for="how-can-we-improve-field" class="leave-review__label how-can-we-improve__label">How can we improve?</label>
+          <button class="how-can-we-improve__close-btn" data-how-can-we-improve-dialog-close-btn>
+            <svg class="how-can-we-improve__close-btn-svg" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+              <path d="M18 6l-12 12" />
+              <path d="M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+        <textarea 
+        name="how-can-we-improve-field" 
+        id="how-can-we-improve-field" 
+        class="leave-review__input leave-review__input--textarea how-can-we-improve__textarea"
+        data-how-can-we-improve-dialog-textarea></textarea>
+        <input type="submit" value="Submit" class="leave-review__submit-btn how-can-we-improve__submit-btn">
+      </form>
+    </dialog>
+  </section>
 </body>
 </html>
