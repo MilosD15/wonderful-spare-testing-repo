@@ -183,7 +183,8 @@
   }
 }
 .how-can-we-improve__textarea {
-  width: max(100%, 600px);
+  width: 100%;
+  min-width: 600px;
   font-size: 1.3em;
 }
 @media screen and (max-width: 768px) {
