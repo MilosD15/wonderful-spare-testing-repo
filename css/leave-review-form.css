@@ -101,6 +101,8 @@
   letter-spacing: 1.2px;
   width: 100%;
   max-width: 100%;
+  background-color: #fff;
+  color: #000;
 }
 .leave-review__input--textarea {
   resize: vertical;
@@ -186,6 +188,8 @@
   width: 100%;
   min-width: 600px;
   font-size: 1.3em;
+  background-color: #fff;
+  color: #000;
 }
 @media screen and (max-width: 768px) {
   .how-can-we-improve__textarea {
