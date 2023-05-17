@@ -17,6 +17,7 @@
   width: 1em;
   white-space: nowrap;
   cursor: pointer;
+  margin-left: 0.1em;
 }
 .leave-review__rating-stars-wrapper > input + label:before {
   display: inline-block;
@@ -104,6 +105,12 @@
 .leave-review__input--textarea {
   resize: vertical;
   min-height: 140px;
+}
+.leave-review__input--select {
+  background-color: #fff;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
 }
 .leave-review__rating-stars-wrapper {
   width: -webkit-max-content;
