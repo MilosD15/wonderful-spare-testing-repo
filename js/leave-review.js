@@ -34,7 +34,7 @@ if (document.querySelector("[data-leave-review-section]")) {
     player.load('../offices-love-wonderful.lottie');
   
     player.addEventListener('ready', () => {
-      player.setSpeed(0.25);
+      player.setSpeed(0.4);
       player.play();
     });
   }
@@ -49,7 +49,7 @@ if (document.querySelector("[data-leave-review-section]")) {
 
       setTimeout(() => {
         reloadPlayer(leaveReviewLottiePlayer);
-      }, 6000);
+      }, 4000);
     }
     if (!isSectionInViewPort(leaveReviewSection)) {
       sectionWasAlreadyInViewport = false;
