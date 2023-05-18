@@ -9,57 +9,88 @@
   <link rel="stylesheet" href="./font/lemonmilk/addLemonmilk.css">
   <link rel="stylesheet" href="./css/boilerplate.css">
   <link rel="stylesheet" href="./css/leave-review-form.css">
-  <script src="./js/leave-review.js" defer></script>
+  <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.js"></script>
+  <script src="./js/leave-review.js" type="module"></script>
 </head>
 <body>
   <section class="leave-review" data-leave-review-section>
-    <h1 class="leave-review__title">Product Review</h1>
-    <form method="post" action="" class="leave-review__form">
-      <fieldset class="leave-review__form-group leave-review__form-group--column">
-        <label for="leave-review-product-type-field" class="leave-review__label">Choose product: </label>
-        <select class="leave-review__input leave-review__input--select" name="product-type-field" id="leave-review-product-type-field">
-          <option value="not-selected">--------------</option>
-          <option value="fluoride-varnish-cups">Fluoride Varnish Cups</option>
-          <option value="fluoride-varnish-sticks">Fluoride Varnish Sticks</option>
-          <option value="prophy-paste">Prophy Paste</option>
-        </select>
-      </fieldset>
-      <fieldset class="leave-review__form-group leave-review__form-group--column">
-        <label for="leave-review-review-title-field" class="leave-review__label">Review title: </label>
-        <input type="text" id="leave-review-review-title-field" name="review-title-field" class="leave-review__input">
-      </fieldset>
-      <fieldset class="leave-review__form-group leave-review__form-group--column">
-        <label for="leave-review-review-body-field" class="leave-review__label">Review body: </label>
-        <textarea id="leave-review-review-body-field" name="review-body-field" class="leave-review__input leave-review__input--textarea"></textarea>
-      </fieldset>
-      <fieldset class="leave-review__form-group leave-review__form-group--column">
-        <label for="leave-review-review-rating-field" class="leave-review__label">Rating: </label>
-        <span class="star-cb-group leave-review__rating-stars-wrapper">
-          <input type="radio" id="leave-review-review-rating-5" class="leave-review__input leave-review__input--radio" name="rating" data-star-radio-btn value="5">
-          <label for="leave-review-review-rating-5">5</label>
-          <input type="radio" id="leave-review-review-rating-4" class="leave-review__input leave-review__input--radio" name="rating" data-star-radio-btn value="4" checked="checked">
-          <label for="leave-review-review-rating-4">4</label>
-          <input type="radio" id="leave-review-review-rating-3" class="leave-review__input leave-review__input--radio" name="rating" data-star-radio-btn value="3">
-          <label for="leave-review-review-rating-3">3</label>
-          <input type="radio" id="leave-review-review-rating-2" class="leave-review__input leave-review__input--radio" name="rating" data-star-radio-btn value="2">
-          <label for="leave-review-review-rating-2">2</label>
-          <input type="radio" id="leave-review-review-rating-1" class="leave-review__input leave-review__input--radio" name="rating" data-star-radio-btn value="1">
-          <label for="leave-review-review-rating-1">1</label>
-          <!-- <input type="radio" id="leave-review-review-rating-0" name="rating" value="0" class="star-cb-clear"><label for="leave-review-review-rating-0">0</label> -->
-        </span>
-      </fieldset>
-      <fieldset class="leave-review__form-group leave-review__form-group--column">
-        <label for="leave-review-review-summary-field" class="leave-review__label">Review summary: </label>
-        <input type="text" id="leave-review-review-summary-field" name="review-summary-field" class="leave-review__input">
-      </fieldset>
-      <fieldset class="leave-review__form-group leave-review__form-group--row">
-        <input type="submit" value="Submit" class="leave-review__submit-btn">
-      </fieldset>
-    </form>
+    <aside class="leave-review__left-block">
+      <div class="leave-review__left-block-image-container">
+        <img src="./images/prophy-paste-presents.webp" alt="Prophy Paste character" class="leave-review__left-block-image">
+      </div>
+    </aside>
+    <div class="leave-review__main">
+      <div class="leave-review__header">
+        <dotlottie-player mode="normal" class="leave-review__lottie" data-leave-review-lottie></dotlottie-player>
+        <h1 class="visually-hidden">Product Review</h1>
+      </div>
+      <form method="post" action="" class="leave-review__form">
+        <fieldset class="leave-review__form-group leave-review__form-group--column">
+          <label for="leave-review-product-type-field" class="leave-review__label">Choose product: </label>
+          <select class="leave-review__input leave-review__input--select" name="product-type-field" id="leave-review-product-type-field">
+            <option value="not-selected">--------------</option>
+            <option value="fluoride-varnish-cups">Fluoride Varnish Cups</option>
+            <option value="fluoride-varnish-sticks">Fluoride Varnish Sticks</option>
+            <option value="prophy-paste">Prophy Paste</option>
+          </select>
+        </fieldset>
+        <fieldset class="leave-review__form-group leave-review__form-group--column">
+          <label for="leave-review-review-rating-field" class="leave-review__label">Rating: </label>
+          <span class="star-cb-group leave-review__rating-stars-wrapper">
+            <input type="radio" id="leave-review-review-rating-5" class="leave-review__input leave-review__input--radio" name="rating" data-star-radio-btn value="5" checked="checked">
+            <label for="leave-review-review-rating-5">5</label>
+            <input type="radio" id="leave-review-review-rating-4" class="leave-review__input leave-review__input--radio" name="rating" data-star-radio-btn value="4">
+            <label for="leave-review-review-rating-4">4</label>
+            <input type="radio" id="leave-review-review-rating-3" class="leave-review__input leave-review__input--radio" name="rating" data-star-radio-btn value="3">
+            <label for="leave-review-review-rating-3">3</label>
+            <input type="radio" id="leave-review-review-rating-2" class="leave-review__input leave-review__input--radio" name="rating" data-star-radio-btn value="2">
+            <label for="leave-review-review-rating-2">2</label>
+            <input type="radio" id="leave-review-review-rating-1" class="leave-review__input leave-review__input--radio" name="rating" data-star-radio-btn value="1">
+            <label for="leave-review-review-rating-1">1</label>
+            <!-- <input type="radio" id="leave-review-review-rating-0" name="rating" value="0" class="star-cb-clear"><label for="leave-review-review-rating-0">0</label> -->
+          </span>
+        </fieldset>
+        <fieldset class="leave-review__form-group leave-review__form-group--column">
+          <label for="leave-review-review-title-field" class="leave-review__label">Review title: </label>
+          <input type="text" id="leave-review-review-title-field" name="review-title-field" class="leave-review__input">
+        </fieldset>
+        <fieldset class="leave-review__form-group leave-review__form-group--column">
+          <label for="leave-review-review-body-field" class="leave-review__label">Review body: </label>
+          <textarea id="leave-review-review-body-field" name="review-body-field" class="leave-review__input leave-review__input--textarea"></textarea>
+        </fieldset>
+        <!-- <fieldset class="leave-review__form-group leave-review__form-group--column">
+          <label for="leave-review-review-summary-field" class="leave-review__label">Review summary: </label>
+          <input type="text" id="leave-review-review-summary-field" name="review-summary-field" class="leave-review__input">
+        </fieldset> -->
+        <fieldset class="leave-review__form-group leave-review__form-group--row">
+          <input type="submit" value="Submit" class="leave-review__submit-btn">
+        </fieldset>
+      </form>
+      <div class="leave-review__thank-you-note">
+        <p>Thank you for using Wonderful!</p>
+        <p>Please post a review to share!</p>
+      </div>
+    </div>
+    <aside class="leave-review__right-block">
+      <div class="leave-review__right-block-top-limiter">
+        <svg class="leave-review__right-block-top-limiter-svg" version="1.1" viewBox="0 500 1200 140" xmlns="http://www.w3.org/2000/svg">
+          <path d="m1100.4 570-364.8-7.1992c-2.3984-22.801-15.602-27.602-27.602-27.602-10.801 0-22.801 3.6016-33.602 9.6016l-36-36-27.602 27.602-27.602-27.602-27.602 27.602-27.59-27.602-36 36c-12-4.8008-24-9.6016-33.602-9.6016-12 0-25.199 4.8008-27.602 27.602l-366 7.1992 364.8 7.1992c2.3984 22.801 15.602 27.602 27.602 27.602 10.801 0 22.801-3.6016 33.602-9.6016l36 36 27.602-27.602 27.602 27.602 27.602-27.602 27.602 27.602 36-36c10.801 4.8008 22.801 9.6016 33.602 9.6016 12 0 25.199-4.8008 27.602-27.602zm-393.6-27.602c8.3984 0 18 2.3984 20.398 20.398l-37.199-1.1992-12-12c10.801-3.5977 20.398-7.1992 28.801-7.1992zm-62.402 27.602c4.8008-3.6016 14.398-9.6016 25.199-15.602l13.199 13.199v4.8008l-13.199 13.199c-10.797-4.7969-20.398-10.797-25.199-15.598zm-7.1992-48 26.398 26.398c-10.801 6-20.398 12-25.199 15.602l-21.602-21.602zm-6 48-20.398 20.398-20.398-20.398 20.398-20.398zm-48-48 20.398 20.398-20.398 21.602-20.398-20.398zm-7.1992 48-20.398 20.398-20.398-20.398 20.398-20.398zm-48-48 20.398 20.398-21.602 21.602c-4.8008-3.6016-14.398-9.6016-25.199-15.602zm-7.1992 49.199c-4.8008 3.6016-14.398 9.6016-25.199 15.602l-13.199-13.199v-4.8008l13.199-13.199c10.797 4.7969 20.398 10.797 25.199 15.598zm-62.402-28.801c8.3984 0 18 3.6016 27.602 7.1992l-12 12-37.199 1.1992c3.5977-17.996 13.199-20.398 21.598-20.398zm0 56.402c-8.3984 0-18-2.3984-20.398-20.398l37.199 1.1992 12 12c-10.801 3.5977-20.398 7.1992-28.801 7.1992zm69.602 19.199-26.398-26.398c10.801-6 20.398-12 25.199-15.602l21.602 21.602zm55.199 0-20.398-20.398 20.398-20.398 20.398 20.398zm54 0-20.398-20.398 21.602-21.602c4.8008 3.6016 14.398 9.6016 25.199 15.602zm69.602-19.199c-8.3984 0-18-3.6016-27.602-7.1992l12-12 37.199-1.1992c-2.3984 17.996-13.199 20.398-21.598 20.398z" fill="#202020"></path>
+        </svg>
+      </div>
+      <figure class="leave-review__right-block-content">
+        <blockquote class="leave-review__right-block-content-quote">"My patients say this is the best tasting fluoride we have ever had here. My hygienists say it’s the best flowing fluoride they have ever applied. It flows naturally and easily and doesn’t get gunky. 10 thumbs up."</blockquote>
+        <figcaption> - Amy Fitzgerald</figcaption>
+      </figure>
+      <div class="leave-review__right-block-bottom-limiter">
+        <svg class="leave-review__right-block-bottom-limiter-svg" version="1.1" viewBox="0 500 1200 140" xmlns="http://www.w3.org/2000/svg">
+          <path d="m1100.4 570-364.8-7.1992c-2.3984-22.801-15.602-27.602-27.602-27.602-10.801 0-22.801 3.6016-33.602 9.6016l-36-36-27.602 27.602-27.602-27.602-27.602 27.602-27.59-27.602-36 36c-12-4.8008-24-9.6016-33.602-9.6016-12 0-25.199 4.8008-27.602 27.602l-366 7.1992 364.8 7.1992c2.3984 22.801 15.602 27.602 27.602 27.602 10.801 0 22.801-3.6016 33.602-9.6016l36 36 27.602-27.602 27.602 27.602 27.602-27.602 27.602 27.602 36-36c10.801 4.8008 22.801 9.6016 33.602 9.6016 12 0 25.199-4.8008 27.602-27.602zm-393.6-27.602c8.3984 0 18 2.3984 20.398 20.398l-37.199-1.1992-12-12c10.801-3.5977 20.398-7.1992 28.801-7.1992zm-62.402 27.602c4.8008-3.6016 14.398-9.6016 25.199-15.602l13.199 13.199v4.8008l-13.199 13.199c-10.797-4.7969-20.398-10.797-25.199-15.598zm-7.1992-48 26.398 26.398c-10.801 6-20.398 12-25.199 15.602l-21.602-21.602zm-6 48-20.398 20.398-20.398-20.398 20.398-20.398zm-48-48 20.398 20.398-20.398 21.602-20.398-20.398zm-7.1992 48-20.398 20.398-20.398-20.398 20.398-20.398zm-48-48 20.398 20.398-21.602 21.602c-4.8008-3.6016-14.398-9.6016-25.199-15.602zm-7.1992 49.199c-4.8008 3.6016-14.398 9.6016-25.199 15.602l-13.199-13.199v-4.8008l13.199-13.199c10.797 4.7969 20.398 10.797 25.199 15.598zm-62.402-28.801c8.3984 0 18 3.6016 27.602 7.1992l-12 12-37.199 1.1992c3.5977-17.996 13.199-20.398 21.598-20.398zm0 56.402c-8.3984 0-18-2.3984-20.398-20.398l37.199 1.1992 12 12c-10.801 3.5977-20.398 7.1992-28.801 7.1992zm69.602 19.199-26.398-26.398c10.801-6 20.398-12 25.199-15.602l21.602 21.602zm55.199 0-20.398-20.398 20.398-20.398 20.398 20.398zm54 0-20.398-20.398 21.602-21.602c4.8008 3.6016 14.398 9.6016 25.199 15.602zm69.602-19.199c-8.3984 0-18-3.6016-27.602-7.1992l12-12 37.199-1.1992c-2.3984 17.996-13.199 20.398-21.598 20.398z" fill="#202020"></path>
+        </svg>
+      </div>
+    </aside>
     <dialog class="leave-review__how-can-we-improve how-can-we-improve" data-how-can-we-improve-dialog>
       <form method="post" action="" class="how-can-we-improve__form" data-how-can-we-improve-dialog-form>
         <div class="how-can-we-improve__header">
-          <label for="how-can-we-improve-field" class="leave-review__label how-can-we-improve__label">How can we improve?</label>
+          <h2 class="how-can-we-improve__title">Let us help! Please send us a message.</h2>
           <button class="how-can-we-improve__close-btn" data-how-can-we-improve-dialog-close-btn>
             <svg class="how-can-we-improve__close-btn-svg" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
               <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
@@ -68,12 +99,19 @@
             </svg>
           </button>
         </div>
-        <textarea 
-        name="how-can-we-improve-field" 
-        id="how-can-we-improve-field" 
-        class="leave-review__input leave-review__input--textarea how-can-we-improve__textarea"
-        data-how-can-we-improve-dialog-textarea></textarea>
-        <input type="submit" value="Submit" class="leave-review__submit-btn how-can-we-improve__submit-btn">
+        <fieldset class="leave-review__form-group leave-review__form-group--column">
+          <label for="how-can-we-improve-email-field" class="leave-review__label">Email: </label>
+          <input type="text" id="how-can-we-improve-email-field" name="how-can-we-improve-email-field" 
+          class="leave-review__input" data-how-can-we-improve-email-field>
+        </fieldset>
+        <fieldset class="leave-review__form-group leave-review__form-group--column">
+          <label for="how-can-we-improve-message-field" class="leave-review__label how-can-we-improve__label">Message: </label>
+          <textarea name="how-can-we-improve-message-field" id="how-can-we-improve-message-field" 
+          class="leave-review__input leave-review__input--textarea how-can-we-improve__textarea"></textarea>
+        </fieldset>
+        <fieldset class="leave-review__form-group leave-review__form-group--row">
+          <input type="submit" value="Submit" class="leave-review__submit-btn how-can-we-improve__submit-btn">
+        </fieldset>
       </form>
     </dialog>
   </section>

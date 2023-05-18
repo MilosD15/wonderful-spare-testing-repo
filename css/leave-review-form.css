@@ -42,15 +42,44 @@
 }
 
 .leave-review {
-  width: min(100%, 1000px);
-  margin: 0 auto;
+  width: 100%;
   font-family: "Helvetica Now", sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  position: relative;
 }
 .leave-review * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+.leave-review .visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  -webkit-clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+          clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+  border: 0;
+}
+.leave-review__main {
+  width: 50%;
+  margin: 0 auto;
+}
+@media screen and (max-width: 1300px) {
+  .leave-review__main {
+    width: min(100%, 1000px);
+  }
+}
+.leave-review__lottie {
+  margin-block: 1rem;
 }
 .leave-review__title {
   font-family: "LEMON MILK", sans-serif;
@@ -120,17 +149,89 @@
   width: max-content;
 }
 .leave-review__submit-btn {
-  background-color: #000;
+  background-color: #000000;
   font-size: 0.95em;
   font-weight: 600;
   color: #fff;
   border: 0;
-  width: 100%;
+  width: 80%;
+  margin-inline: auto;
   padding: 0.8em;
-  border-radius: 0.4em;
+  border-radius: 9999px;
   cursor: pointer;
   margin-block: 1em;
   letter-spacing: 1.2px;
+  -webkit-transition: -webkit-transform 300ms ease;
+  transition: -webkit-transform 300ms ease;
+  transition: transform 300ms ease;
+  transition: transform 300ms ease, -webkit-transform 300ms ease;
+}
+.leave-review__submit-btn:hover, .leave-review__submit-btn:focus-visible {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+.leave-review__thank-you-note {
+  font-family: "LEMON MILK", sans-serif;
+  line-height: 1.5;
+  text-align: center;
+  font-size: 1.3em;
+  padding-block: 4em 5em;
+  padding-inline: 1em;
+}
+@media screen and (max-width: 768px) {
+  .leave-review__thank-you-note {
+    font-size: 1.1em;
+  }
+}
+.leave-review__left-block {
+  width: 25%;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  padding-inline: 5%;
+  margin-bottom: 5%;
+}
+@media screen and (max-width: 1300px) {
+  .leave-review__left-block {
+    display: none;
+  }
+}
+.leave-review__left-block-image {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.leave-review__left-block-image-container {
+  width: 100%;
+  aspect-ratio: 1/1;
+}
+.leave-review__right-block {
+  width: 25%;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  padding-inline: 2%;
+}
+@media screen and (max-width: 1300px) {
+  .leave-review__right-block {
+    display: none;
+  }
+}
+.leave-review__right-block-top-limiter, .leave-review__right-block-bottom-limiter {
+  width: 100%;
+}
+.leave-review__right-block-content {
+  padding: 1.4rem;
+  font-family: "Helvetica Now", sans-serif;
+  line-height: 1.3;
+  letter-spacing: 1px;
+}
+.leave-review__right-block-content-quote {
+  margin-bottom: 1.4rem;
 }
 
 .how-can-we-improve {
@@ -144,6 +245,7 @@
   border-radius: 0.4em;
   -webkit-box-shadow: 0 0 0.7em #888;
           box-shadow: 0 0 0.7em #888;
+  width: min(100%, 700px);
 }
 .how-can-we-improve::-webkit-backdrop {
   background: rgba(0, 0, 0, 0.2);
@@ -161,6 +263,11 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding: 0.5em;
+}
+.how-can-we-improve__title {
+  font-family: "LEMON MILK", sans-serif;
+  font-weight: 400;
 }
 .how-can-we-improve__form {
   display: -webkit-box;
@@ -170,36 +277,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  gap: 1em;
-}
-.how-can-we-improve__label {
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
-  font-size: 1.1em;
-  line-height: 2;
-}
-@media screen and (max-width: 768px) {
-  .how-can-we-improve__label {
-    font-size: 1em;
-  }
-}
-.how-can-we-improve__textarea {
-  width: 100%;
-  min-width: 600px;
-  font-size: 1.3em;
-  background-color: #fff;
-  color: #000;
-}
-@media screen and (max-width: 768px) {
-  .how-can-we-improve__textarea {
-    font-size: 1em;
-  }
-}
-@media screen and (max-width: 768px) {
-  .how-can-we-improve__submit {
-    font-size: 0.9em;
-  }
+  gap: 0em;
 }
 .how-can-we-improve__close-btn {
   width: 3rem;
