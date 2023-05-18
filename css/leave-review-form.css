@@ -22,23 +22,22 @@
 .leave-review__rating-stars-wrapper > input + label:before {
   display: inline-block;
   text-indent: -9999px;
-  content: "☆";
-  color: #888;
+  content: "★";
+  color: #ddd;
 }
 .leave-review__rating-stars-wrapper > input:checked ~ label:before, .leave-review__rating-stars-wrapper > input + label:hover ~ label:before, .leave-review__rating-stars-wrapper > input + label:hover:before {
   content: "★";
   color: #f1bf33;
-  text-shadow: 0 0 1px #333;
+  background-color: #f1bf33;
 }
 .leave-review__rating-stars-wrapper:hover > input + label:before {
-  content: "☆";
-  color: #888;
+  content: "★";
+  color: #ddd;
   text-shadow: none;
 }
 .leave-review__rating-stars-wrapper:hover > input + label:hover ~ label:before, .leave-review__rating-stars-wrapper:hover > input + label:hover:before {
   content: "★";
   color: #f1bf33;
-  text-shadow: 0 0 1px #333;
 }
 
 .leave-review {
@@ -137,7 +136,7 @@
 }
 .leave-review__input--textarea {
   resize: vertical;
-  min-height: 140px;
+  min-height: 200px;
 }
 .leave-review__input--select {
   background-color: #fff;
@@ -180,7 +179,7 @@
   line-height: 1.5;
   text-align: center;
   font-size: 1.3em;
-  padding-block: 4em 5em;
+  padding-block: 2.4em 3em;
   padding-inline: 1em;
 }
 @media screen and (max-width: 768px) {
@@ -211,7 +210,7 @@
           animation: animate-character 600ms steps(10) infinite;
 }
 .leave-review__left-block-image-container {
-  width: 100%;
+  width: 85%;
   aspect-ratio: 1/1;
   overflow: hidden;
 }

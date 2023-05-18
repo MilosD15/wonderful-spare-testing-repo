@@ -34,7 +34,7 @@ if (document.querySelector("[data-leave-review-section]")) {
     player.load('../offices-love-wonderful.lottie');
   
     player.addEventListener('ready', () => {
-      player.setSpeed(0.7);
+      player.setSpeed(0.5);
       player.play();
     });
   }
