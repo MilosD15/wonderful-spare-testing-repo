@@ -79,7 +79,9 @@
   }
 }
 .leave-review__lottie {
-  margin-block: 1rem;
+  width: 75%;
+  margin: 0 auto;
+  margin-block: 2rem 1rem;
 }
 .leave-review__title {
   font-family: "LEMON MILK", sans-serif;
@@ -159,7 +161,7 @@
   padding: 0.8em;
   border-radius: 9999px;
   cursor: pointer;
-  margin-block: 1em;
+  margin-block: 2em 1em;
   letter-spacing: 1.2px;
   -webkit-transition: background-color 700ms ease, -webkit-box-shadow 700ms ease;
   transition: background-color 700ms ease, -webkit-box-shadow 700ms ease;
@@ -272,13 +274,15 @@
   border-radius: 0.4em;
   -webkit-box-shadow: 0 0 0.7em #888;
           box-shadow: 0 0 0.7em #888;
-  width: min(100%, 700px);
+  width: min(100%, 660px);
 }
 .how-can-we-improve::-webkit-backdrop {
-  background: rgba(0, 0, 0, 0.2);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
 }
 .how-can-we-improve::backdrop {
-  background: rgba(0, 0, 0, 0.2);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
 }
 .how-can-we-improve__header {
   display: -webkit-box;
@@ -311,6 +315,9 @@
       -ms-flex-direction: column;
           flex-direction: column;
   gap: 0em;
+}
+.how-can-we-improve__submit-btn {
+  margin-block: 1em;
 }
 .how-can-we-improve__close-btn {
   -ms-flex-item-align: start;
