@@ -1,0 +1,703 @@
+.playbill-panel__playbill-book {
+  width: 100%;
+  margin-bottom: -2%;
+}
+.playbill-panel__playbill-caption {
+  position: absolute;
+  width: 17%;
+  top: 10%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+.playbill-panel__video-links-container {
+  position: absolute;
+  width: 35%;
+  top: 22%;
+  bottom: 4%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  padding-block: 1% 2%;
+}
+
+.video-modal {
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  max-width: 100%;
+  max-height: 100vh;
+  left: 0;
+  background-color: transparent;
+  border: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  padding: 0;
+  margin: 0;
+  z-index: 100;
+  overflow-x: hidden;
+}
+.video-modal[open] {
+  -webkit-animation: dialog-fade-in calc(var(--CINEMA-PAGE-sidebar-animation-duration) * 1ms) ease forwards;
+          animation: dialog-fade-in calc(var(--CINEMA-PAGE-sidebar-animation-duration) * 1ms) ease forwards;
+}
+.video-modal[data-state=close] {
+  -webkit-animation: dialog-fade-out calc(var(--CINEMA-PAGE-sidebar-animation-duration) * 1ms) ease forwards;
+          animation: dialog-fade-out calc(var(--CINEMA-PAGE-sidebar-animation-duration) * 1ms) ease forwards;
+}
+.video-modal[data-up-next-sidebar-state=open] .video-modal__video-frame {
+  width: 70%;
+}
+.video-modal--4-3-vid-ratio .video-modal__video {
+  width: 65vmin;
+  aspect-ratio: 16/12.4;
+}
+.video-modal--4-3-vid-ratio .video-modal__frame {
+  width: 98vmin;
+}
+.video-modal--4-3-vid-ratio .video-modal__video-frame-wrapper {
+  width: 98vmin;
+  aspect-ratio: 16/13.4;
+}
+.video-modal--16-9-vid-ratio .video-modal__video {
+  width: 71vmin;
+  aspect-ratio: 16/9.4;
+}
+.video-modal--16-9-vid-ratio .video-modal__frame {
+  width: 98vmin;
+}
+.video-modal--16-9-vid-ratio .video-modal__video-frame-wrapper {
+  width: 98vmin;
+  aspect-ratio: 16/11;
+}
+.video-modal--9-16-vid-ratio .video-modal__video {
+  width: 44vmin;
+  aspect-ratio: 10.5/16;
+}
+.video-modal--9-16-vid-ratio .video-modal__frame {
+  width: 72vmin;
+}
+.video-modal--9-16-vid-ratio .video-modal__video-frame-wrapper {
+  width: 72vmin;
+  aspect-ratio: 11/15;
+}
+@media screen and (max-width: 500px) {
+  .video-modal--9-16-vid-ratio .video-modal__video {
+    width: 65vmin;
+  }
+  .video-modal--9-16-vid-ratio .video-modal__frame {
+    width: 98vmin;
+  }
+  .video-modal--9-16-vid-ratio .video-modal__video-frame-wrapper {
+    width: 98vmin;
+  }
+}
+.video-modal .visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  -webkit-clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+          clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+  border: 0;
+}
+.video-modal__video-frame {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-transition: width calc(var(--CINEMA-PAGE-sidebar-animation-duration) * 1ms) ease;
+  transition: width calc(var(--CINEMA-PAGE-sidebar-animation-duration) * 1ms) ease;
+}
+.video-modal__video-frame-wrapper {
+  position: absolute;
+  width: 98vmin;
+  aspect-ratio: 16/13;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+.video-modal__video {
+  position: absolute;
+  width: 65vmin;
+  aspect-ratio: 16/12.4;
+  height: auto;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.video-modal__frame {
+  position: absolute;
+  width: 98vmin;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+.video-modal__frame-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -webkit-filter: blur(0.6px);
+          filter: blur(0.6px);
+}
+
+@-webkit-keyframes dialog-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes dialog-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes dialog-fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes dialog-fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+:root {
+  --CINEMA-PAGE-sidebar-animation-duration: 500;
+}
+
+.up-next-sidebar {
+  position: fixed;
+  height: 100vh;
+  width: 30%;
+  max-width: 100%;
+  max-height: 100vh;
+  left: 100%;
+  top: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  z-index: 100;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  border-left: 0.2rem solid #421a03;
+  -webkit-box-shadow: 0.3rem 0 2rem #421a03;
+          box-shadow: 0.3rem 0 2rem #421a03;
+}
+.up-next-sidebar[open] {
+  -webkit-animation: sidebar-slide-in calc(var(--CINEMA-PAGE-sidebar-animation-duration) * 1ms) ease forwards;
+          animation: sidebar-slide-in calc(var(--CINEMA-PAGE-sidebar-animation-duration) * 1ms) ease forwards;
+}
+.up-next-sidebar[data-state=close] {
+  -webkit-animation: sidebar-slide-out calc(var(--CINEMA-PAGE-sidebar-animation-duration) * 1ms) ease forwards;
+          animation: sidebar-slide-out calc(var(--CINEMA-PAGE-sidebar-animation-duration) * 1ms) ease forwards;
+}
+.up-next-sidebar__wrapper {
+  position: absolute;
+  inset: 0;
+  background-color: #fcecb7;
+  padding: 1rem 1.5rem 1.5rem 1.5rem;
+}
+.up-next-sidebar__title-and-close-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 1rem;
+}
+.up-next-sidebar__title {
+  font-family: "Market Deco";
+  font-size: 2.1vw;
+  font-weight: 400;
+  line-height: 1.8;
+  margin: 0;
+}
+.up-next-sidebar__close-btn {
+  border: 0;
+  background-color: transparent;
+  font-size: 1.6vw;
+  font-weight: 300;
+  padding: 0.3em;
+  padding-right: 0;
+  cursor: pointer;
+  color: #fcecb7;
+  font-family: "Market Deco";
+  font-size: 1.6vw;
+  font-weight: 300;
+  border-radius: 0.2em;
+}
+.up-next-sidebar__close-btn-svg {
+  width: 1.6em;
+  height: 1.6em;
+  fill: #421a03;
+  stroke-width: 2;
+}
+.up-next-sidebar__video-links-container {
+  width: 100%;
+  height: calc(100% - 2rem - 2.5rem + 1rem);
+}
+
+@-webkit-keyframes sidebar-slide-in {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+}
+
+@keyframes sidebar-slide-in {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+}
+@-webkit-keyframes sidebar-slide-out {
+  0% {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+@keyframes sidebar-slide-out {
+  0% {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+.video-links-container {
+  overflow-y: auto;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  scrollbar-width: thin;
+  scrollbar-color: #421a03 #421a03;
+}
+.video-links-container[data-container-type=sidebar] {
+  --title-font-size: 1.6vw;
+  --description-font-size: 1vw;
+  gap: 1rem;
+}
+.video-links-container[data-container-type=sidebar] .video-link-title,
+.video-links-container[data-container-type=sidebar] .video-link-description {
+  text-align: left;
+}
+.video-links-container[data-container-type=sidebar] .video-link--with-thumbnail {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0.6rem;
+}
+.video-links-container[data-container-type=sidebar] .video-link--with-thumbnail .video-link-title,
+.video-links-container[data-container-type=sidebar] .video-link--with-thumbnail .video-link-description {
+  grid-column: 2/span 3;
+}
+.video-links-container[data-container-type=sidebar] .video-link--with-thumbnail .video-link-thumbnail {
+  grid-row: 1/span 2;
+  width: 100%;
+  aspect-ratio: 1/1;
+}
+.video-links-container[data-container-type=sidebar] .video-link--with-thumbnail .video-link-thumbnail .video-link-thumbnail-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.video-links-container[data-container-type=playbill] {
+  --title-font-size: 2.1vw;
+  --description-font-size: 1.3vw;
+  gap: 8%;
+}
+.video-links-container::-webkit-scrollbar {
+  width: 0.6rem;
+}
+.video-links-container::-webkit-scrollbar-track {
+  background: transparent;
+  border: 1px solid #421a03;
+}
+.video-links-container::-webkit-scrollbar-thumb {
+  background: #421a03;
+}
+
+.video-link {
+  cursor: pointer;
+  color: #222222;
+  border: 0;
+  background-color: transparent;
+}
+.video-link-title {
+  margin: 0;
+  font-family: "Great Day";
+  font-size: var(--title-font-size);
+  font-weight: 100;
+  line-height: 1.8;
+}
+.video-link-description {
+  margin: 0;
+  font-family: "Copasetic NF";
+  letter-spacing: 1px;
+  font-size: var(--description-font-size);
+  font-weight: 300;
+}
+
+:root {
+  --THEATRE-PAGE-slide-in-playbill-panel-duration: 600;
+  --THEATRE-PAGE-character-anim-duration: 900;
+}
+
+.theatre {
+  width: 100%;
+  aspect-ratio: 5/2.5;
+  overflow: hidden;
+  position: relative;
+}
+.theatre__wrapper {
+  position: absolute;
+  aspect-ratio: 5/3;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+.theatre__bg {
+  inset: 0;
+}
+.theatre__middle-row {
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+.theatre__people-8, .theatre__people-7, .theatre__people-6, .theatre__people-5, .theatre__people-4, .theatre__people-3, .theatre__people-2, .theatre__people-1, .theatre__seat-row-8, .theatre__seat-row-7, .theatre__seat-row-6, .theatre__seat-row-5, .theatre__seat-row-4, .theatre__seat-row-3, .theatre__seat-row-2, .theatre__seat-row-1 {
+  --slide-in-anim-duration: 600;
+  --slide-distance: 6rem;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  -webkit-transition-property: bottom;
+  transition-property: bottom;
+  -webkit-transition-duration: calc(var(--slide-in-anim-duration) * 1ms);
+          transition-duration: calc(var(--slide-in-anim-duration) * 1ms);
+  -webkit-transition-timing-function: ease;
+          transition-timing-function: ease;
+}
+.theatre__people-8.slide-in, .theatre__people-7.slide-in, .theatre__people-6.slide-in, .theatre__people-5.slide-in, .theatre__people-4.slide-in, .theatre__people-3.slide-in, .theatre__people-2.slide-in, .theatre__people-1.slide-in, .theatre__seat-row-8.slide-in, .theatre__seat-row-7.slide-in, .theatre__seat-row-6.slide-in, .theatre__seat-row-5.slide-in, .theatre__seat-row-4.slide-in, .theatre__seat-row-3.slide-in, .theatre__seat-row-2.slide-in, .theatre__seat-row-1.slide-in {
+  --bottom-distance: var(--static-bottom-distance);
+}
+.theatre__people-8 {
+  --slide-distance: 2rem;
+  --static-bottom-distance: 40%;
+  --bottom-distance: calc(var(--static-bottom-distance) - var(--slide-distance));
+  width: 42.5%;
+  bottom: var(--bottom-distance);
+  -webkit-transition-delay: 0ms;
+          transition-delay: 0ms;
+}
+.theatre__seat-row-8 {
+  --slide-distance: 2rem;
+  --static-bottom-distance: 31.8%;
+  --bottom-distance: calc(var(--static-bottom-distance) - var(--slide-distance));
+  width: 45%;
+  bottom: var(--bottom-distance);
+  -webkit-transition-delay: 0ms;
+          transition-delay: 0ms;
+}
+.theatre__people-7 {
+  --slide-distance: 3rem;
+  --static-bottom-distance: 40.3%;
+  --bottom-distance: calc(var(--static-bottom-distance) - var(--slide-distance));
+  width: 49%;
+  bottom: var(--bottom-distance);
+  -webkit-transition-delay: 100ms;
+          transition-delay: 100ms;
+}
+.theatre__seat-row-7 {
+  --slide-distance: 3rem;
+  --static-bottom-distance: 28.5%;
+  --bottom-distance: calc(var(--static-bottom-distance) - var(--slide-distance));
+  width: 54%;
+  bottom: var(--bottom-distance);
+  -webkit-transition-delay: 100ms;
+          transition-delay: 100ms;
+}
+.theatre__people-6 {
+  --slide-distance: 4rem;
+  --static-bottom-distance: 31.7%;
+  --bottom-distance: calc(var(--static-bottom-distance) - var(--slide-distance));
+  width: 59%;
+  bottom: var(--bottom-distance);
+  -webkit-transition-delay: 200ms;
+          transition-delay: 200ms;
+}
+.theatre__seat-row-6 {
+  --slide-distance: 4rem;
+  --static-bottom-distance: 24%;
+  --bottom-distance: calc(var(--static-bottom-distance) - var(--slide-distance));
+  width: 64%;
+  bottom: var(--bottom-distance);
+  -webkit-transition-delay: 200ms;
+          transition-delay: 200ms;
+}
+.theatre__people-5 {
+  --slide-distance: 5rem;
+  --static-bottom-distance: 31%;
+  --bottom-distance: calc(var(--static-bottom-distance) - var(--slide-distance));
+  width: 70%;
+  bottom: var(--bottom-distance);
+  -webkit-transition-delay: 300ms;
+          transition-delay: 300ms;
+}
+.theatre__seat-row-5 {
+  --slide-distance: 5rem;
+  --static-bottom-distance: 18%;
+  --bottom-distance: calc(var(--static-bottom-distance) - var(--slide-distance));
+  width: 74%;
+  bottom: var(--bottom-distance);
+  -webkit-transition-delay: 300ms;
+          transition-delay: 300ms;
+}
+.theatre__people-4 {
+  --slide-distance: 6rem;
+  --static-bottom-distance: 27.8%;
+  --bottom-distance: calc(var(--static-bottom-distance) - var(--slide-distance));
+  width: 42%;
+  bottom: var(--bottom-distance);
+  -webkit-transition-delay: 400ms;
+          transition-delay: 400ms;
+}
+.theatre__seat-row-4 {
+  --slide-distance: 6rem;
+  --static-bottom-distance: 13%;
+  --bottom-distance: calc(var(--static-bottom-distance) - var(--slide-distance));
+  width: 84%;
+  bottom: var(--bottom-distance);
+  -webkit-transition-delay: 400ms;
+          transition-delay: 400ms;
+}
+.theatre__people-3 {
+  --slide-distance: 7rem;
+  --static-bottom-distance: 25.8%;
+  --bottom-distance: calc(var(--static-bottom-distance) - var(--slide-distance));
+  width: 84%;
+  bottom: var(--bottom-distance);
+  -webkit-transition-delay: 500ms;
+          transition-delay: 500ms;
+}
+.theatre__seat-row-3 {
+  --slide-distance: 7rem;
+  --static-bottom-distance: 8.5%;
+  --bottom-distance: calc(var(--static-bottom-distance) - var(--slide-distance));
+  width: 92%;
+  bottom: var(--bottom-distance);
+  -webkit-transition-delay: 500ms;
+          transition-delay: 500ms;
+}
+.theatre__people-2 {
+  --slide-distance: 8rem;
+  --static-bottom-distance: 17%;
+  --bottom-distance: calc(var(--static-bottom-distance) - var(--slide-distance));
+  width: 98%;
+  bottom: var(--bottom-distance);
+  -webkit-transition-delay: 600ms;
+          transition-delay: 600ms;
+}
+.theatre__seat-row-2 {
+  --slide-distance: 8rem;
+  --static-bottom-distance: 3%;
+  --bottom-distance: calc(var(--static-bottom-distance) - var(--slide-distance));
+  width: 100%;
+  bottom: var(--bottom-distance);
+  -webkit-transition-delay: 600ms;
+          transition-delay: 600ms;
+}
+.theatre__people-1 {
+  --slide-distance: 9rem;
+  --static-bottom-distance: 9%;
+  --bottom-distance: calc(var(--static-bottom-distance) - var(--slide-distance));
+  width: 92%;
+  bottom: var(--bottom-distance);
+  -webkit-transition-delay: 700ms;
+          transition-delay: 700ms;
+}
+.theatre__seat-row-1 {
+  --slide-distance: 9rem;
+  --static-bottom-distance: 0.3%;
+  --bottom-distance: calc(var(--static-bottom-distance) - var(--slide-distance));
+  width: 102%;
+  bottom: var(--bottom-distance);
+  -webkit-transition-delay: 700ms;
+          transition-delay: 700ms;
+}
+.theatre .visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  -webkit-clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+          clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+  border: 0;
+}
+.theatre__up-next-open-btn {
+  position: absolute;
+  z-index: 2;
+  top: 4%;
+  right: -1.5%;
+  border: 0;
+  background-color: transparent;
+  width: 14%;
+  cursor: pointer;
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+  -webkit-transition-property: -webkit-transform;
+  transition-property: -webkit-transform;
+  transition-property: transform;
+  transition-property: transform, -webkit-transform;
+  -webkit-transition-duration: calc(var(--THEATRE-PAGE-slide-in-playbill-panel-duration) * 1ms);
+          transition-duration: calc(var(--THEATRE-PAGE-slide-in-playbill-panel-duration) * 1ms);
+  -webkit-transition-timing-function: ease;
+          transition-timing-function: ease;
+  -webkit-transition-delay: 900ms;
+          transition-delay: 900ms;
+}
+.theatre__up-next-open-btn.slide-in {
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
+}
+.theatre__up-next-open-btn-caption {
+  position: relative;
+  z-index: 2;
+}
+.theatre__up-next-open-btn:hover .theatre__up-next-open-btn-rope-image.priority, .theatre__up-next-open-btn:focus-visible .theatre__up-next-open-btn-rope-image.priority {
+  -webkit-animation: animate-character calc(var(--THEATRE-PAGE-character-anim-duration) * 1ms) steps(8) forwards;
+          animation: animate-character calc(var(--THEATRE-PAGE-character-anim-duration) * 1ms) steps(8) forwards;
+}
+.theatre__up-next-open-btn-rope {
+  width: 80%;
+  overflow: hidden;
+  -webkit-transform: translateX(-20%) translateY(-34%);
+          transform: translateX(-20%) translateY(-34%);
+}
+.theatre__up-next-open-btn-rope-image.priority {
+  width: 900%;
+  -webkit-transform: translateX(-88.889%);
+          transform: translateX(-88.889%);
+}
+.theatre__playbill-panel {
+  position: absolute;
+  bottom: 0;
+  width: 80%;
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(100%);
+          transform: translateX(-50%) translateY(100%);
+  -webkit-transition-property: -webkit-transform;
+  transition-property: -webkit-transform;
+  transition-property: transform;
+  transition-property: transform, -webkit-transform;
+  -webkit-transition-duration: calc(var(--THEATRE-PAGE-slide-in-playbill-panel-duration) * 1ms);
+          transition-duration: calc(var(--THEATRE-PAGE-slide-in-playbill-panel-duration) * 1ms);
+  -webkit-transition-timing-function: ease;
+          transition-timing-function: ease;
+  -webkit-transition-delay: 800ms;
+          transition-delay: 800ms;
+}
+.theatre__playbill-panel.active {
+  -webkit-transform: translateX(-50%) translateY(0);
+          transform: translateX(-50%) translateY(0);
+}
+.theatre__playbill-panel.transition-delay-0 {
+  -webkit-transition-delay: 0ms;
+          transition-delay: 0ms;
+}
+.theatre__playbill-panel.inactive {
+  -webkit-transform: translateX(-50%) translateY(100%);
+          transform: translateX(-50%) translateY(100%);
+}
+
+@-webkit-keyframes slide-up-seats-and-people {
+  from {
+    --bottom-distance: calc(var(--static-bottom-distance) - var(--slide-distance));
+  }
+  to {
+    --bottom-distance: var(--static-bottom-distance);
+  }
+}
+
+@keyframes slide-up-seats-and-people {
+  from {
+    --bottom-distance: calc(var(--static-bottom-distance) - var(--slide-distance));
+  }
+  to {
+    --bottom-distance: var(--static-bottom-distance);
+  }
+}
+@-webkit-keyframes animate-character {
+  0% {
+    -webkit-transform: translateX(0) translateY(var(--translate-y, 0));
+            transform: translateX(0) translateY(var(--translate-y, 0));
+  }
+  100% {
+    -webkit-transform: translateX(-88.889%) translateY(var(--translate-y, 0));
+            transform: translateX(-88.889%) translateY(var(--translate-y, 0));
+  }
+}
+@keyframes animate-character {
+  0% {
+    -webkit-transform: translateX(0) translateY(var(--translate-y, 0));
+            transform: translateX(0) translateY(var(--translate-y, 0));
+  }
+  100% {
+    -webkit-transform: translateX(-88.889%) translateY(var(--translate-y, 0));
+            transform: translateX(-88.889%) translateY(var(--translate-y, 0));
+  }
+}

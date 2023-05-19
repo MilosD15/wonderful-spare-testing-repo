@@ -4,119 +4,152 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Reviews form</title>
-  <link rel="stylesheet" href="./font/helvetica-now/addHelveticaNow.css">
+  <title>Theatre page - Wonderful</title>
+  <link rel="stylesheet" href="./font/great-day/addGreatDay.css">
   <link rel="stylesheet" href="./font/lemonmilk/addLemonmilk.css">
+  <link rel="stylesheet" href="./font/copasetic-nf/addCopaseticNF.css">
+  <link rel="stylesheet" href="./font/market-deco/addMarketDeco.css">
+  <link rel="stylesheet" href="./css/grain-effect.css">
+  <link rel="stylesheet" href="./css/blur-effect.css">
+  <link rel="stylesheet" href="./css/graphic-section.css">
+  <link rel="stylesheet" href="./css/vibrate.css">
   <link rel="stylesheet" href="./css/boilerplate.css">
-  <link rel="stylesheet" href="./css/leave-review-form.css">
-  <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.js"></script>
-  <script src="./js/leave-review.js" type="module"></script>
+  <link rel="stylesheet" href="./css/theatre.css">
+  <link rel="stylesheet" href="./css/offices-love.css">
+  <script src="./js/theatre.js" type="module"></script>
 </head>
 <body>
-  <section class="leave-review" data-leave-review-section>
-    <aside class="leave-review__left-block">
-      <div class="leave-review__left-block-image-container">
-        <img src="./images/prophy-presents.webp" alt="Prophy Paste character" class="leave-review__left-block-image">
+  <section class="theatre graphic-section" data-theatre-section>
+    <div class="visually-hidden">
+      <img src="./images/video-frame-105-160-ratio.webp">
+      <img src="./images/video-frame-160-124-ratio.webp">
+      <img src="./images/video-frame-160-94-ratio.webp">
+    </div>
+    <div class="theatre__wrapper graphic-section__wrapper blur-effect grain-effect">
+      <div class="theatre__bg">
+        <img src="./images/theatre-bg.webp" width="1600" height="960" alt="A 1920's art deco theatre">
       </div>
-    </aside>
-    <div class="leave-review__main">
-      <div class="leave-review__header">
-        <dotlottie-player mode="normal" class="leave-review__lottie" data-leave-review-lottie></dotlottie-player>
-        <h1 class="visually-hidden">Product Review</h1>
+      <div class="theatre__people-8" data-theatre-people-8>
+        <img src="./images/theatre-people-8.webp" class="vibrate vibrate--version-1" width="1400" height="137" alt="People sitting in the 1. row in the theatre">
       </div>
-      <form method="post" action="" class="leave-review__form">
-        <fieldset class="leave-review__form-group leave-review__form-group--column">
-          <label for="leave-review-product-type-field" class="leave-review__label">Choose product: </label>
-          <select class="leave-review__input leave-review__input--select" name="product-type-field" id="leave-review-product-type-field">
-            <option value="not-selected">--------------</option>
-            <option value="fluoride-varnish-cups">Fluoride Varnish Cups</option>
-            <option value="fluoride-varnish-sticks">Fluoride Varnish Sticks</option>
-            <option value="prophy-paste">Prophy Paste</option>
-          </select>
-        </fieldset>
-        <fieldset class="leave-review__form-group leave-review__form-group--column">
-          <label for="leave-review-review-rating-field" class="leave-review__label">Rating: </label>
-          <span class="star-cb-group leave-review__rating-stars-wrapper">
-            <input type="radio" id="leave-review-review-rating-5" class="leave-review__input leave-review__input--radio" name="rating" data-star-radio-btn value="5" checked="checked">
-            <label for="leave-review-review-rating-5">5</label>
-            <input type="radio" id="leave-review-review-rating-4" class="leave-review__input leave-review__input--radio" name="rating" data-star-radio-btn value="4">
-            <label for="leave-review-review-rating-4">4</label>
-            <input type="radio" id="leave-review-review-rating-3" class="leave-review__input leave-review__input--radio" name="rating" data-star-radio-btn value="3">
-            <label for="leave-review-review-rating-3">3</label>
-            <input type="radio" id="leave-review-review-rating-2" class="leave-review__input leave-review__input--radio" name="rating" data-star-radio-btn value="2">
-            <label for="leave-review-review-rating-2">2</label>
-            <input type="radio" id="leave-review-review-rating-1" class="leave-review__input leave-review__input--radio" name="rating" data-star-radio-btn value="1">
-            <label for="leave-review-review-rating-1">1</label>
-            <!-- <input type="radio" id="leave-review-review-rating-0" name="rating" value="0" class="star-cb-clear"><label for="leave-review-review-rating-0">0</label> -->
-          </span>
-        </fieldset>
-        <fieldset class="leave-review__form-group leave-review__form-group--column">
-          <label for="leave-review-review-title-field" class="leave-review__label">Review title: </label>
-          <input type="text" id="leave-review-review-title-field" name="review-title-field" class="leave-review__input">
-        </fieldset>
-        <fieldset class="leave-review__form-group leave-review__form-group--column">
-          <label for="leave-review-review-body-field" class="leave-review__label">Review: </label>
-          <textarea id="leave-review-review-body-field" name="review-body-field" class="leave-review__input leave-review__input--textarea"></textarea>
-        </fieldset>
-        <!-- <fieldset class="leave-review__form-group leave-review__form-group--column">
-          <label for="leave-review-review-summary-field" class="leave-review__label">Review summary: </label>
-          <input type="text" id="leave-review-review-summary-field" name="review-summary-field" class="leave-review__input">
-        </fieldset> -->
-        <fieldset class="leave-review__form-group leave-review__form-group--row">
-          <input type="submit" value="Submit" class="leave-review__submit-btn">
-        </fieldset>
-      </form>
-      <div class="leave-review__thank-you-note">
-        <p>Thank you for using Wonderful!</p>
-        <p>Please post a review to share!</p>
+      <div class="theatre__seat-row-8" data-theatre-seats-8>
+        <img src="./images/theatre-seatrow-8.webp" width="1400" height="248" alt="The 1. seat row">
+      </div>
+      <div class="theatre__people-7" data-theatre-people-7>
+        <img src="./images/theatre-people-7.webp" class="vibrate vibrate--version-2" width="1400" height="115" alt="People sitting in the 2. row in the theatre">
+      </div>
+      <div class="theatre__seat-row-7" data-theatre-seats-7>
+        <img src="./images/theatre-seatrow-7.webp" width="1400" height="242" alt="The 2. seat row">
+      </div>
+      <div class="theatre__people-6" data-theatre-people-6>
+        <img src="./images/theatre-people-6.webp" class="vibrate vibrate--version-3" width="1500" height="241" alt="People sitting in the 3. row in the theatre">
+      </div>
+      <div class="theatre__seat-row-6" data-theatre-seats-6>
+        <img src="./images/theatre-seatrow-6.webp" width="1500" height="262" alt="The 3. seat row">
+      </div>
+      <div class="theatre__people-5" data-theatre-people-5>
+        <img src="./images/theatre-people-5.webp" class="vibrate vibrate--version-4" width="1500" height="134" alt="People sitting in the 4. row in the theatre">
+      </div>
+      <div class="theatre__seat-row-5" data-theatre-seats-5>
+        <img src="./images/theatre-seatrow-5.webp" width="1500" height="275" alt="The 4. seat row">
+      </div>
+      <div class="theatre__people-4" data-theatre-people-4>
+        <img src="./images/theatre-people-4.webp" class="vibrate vibrate--version-2" width="1500" height="275" alt="People sitting in the 5. row in the theatre">
+      </div>
+      <div class="theatre__seat-row-4" data-theatre-seats-4>
+        <img src="./images/theatre-seatrow-4.webp" width="1500" height="269" alt="The 5. seat row">
+      </div>
+      <div class="theatre__people-3" data-theatre-people-3>
+        <img src="./images/theatre-people-3.webp" class="vibrate vibrate--version-3" width="1500" height="250" alt="People sitting in the 6. row in the theatre">
+      </div>
+      <div class="theatre__seat-row-3" data-theatre-seats-3>
+        <img src="./images/theatre-seatrow-3.webp" width="1500" height="260" alt="The 6. seat row">
+      </div>
+      <div class="theatre__people-2" data-theatre-people-2>
+        <img src="./images/theatre-people-2.webp" class="vibrate vibrate--version-4" width="1600" height="299" alt="People sitting in the 7. row in the theatre">
+      </div>
+      <div class="theatre__seat-row-2" data-theatre-seats-2>
+        <img src="./images/theatre-seatrow-2.webp" width="1600" height="285" alt="The 7. seat row">
+      </div>
+      <div class="theatre__people-1" data-theatre-people-1>
+        <img src="./images/theatre-people-1.webp" class="vibrate vibrate--version-1" width="1600" height="285" alt="People sitting in the 8. row in the theatre">
+      </div>
+      <div class="theatre__seat-row-1" data-theatre-seats-1>
+        <img src="./images/theatre-seatrow-1.webp" width="1600" height="228" alt="The 8. seat row">
+      </div>
+      <div class="theatre__middle-row">
+        <img src="./images/theatre-row.webp" width="1600" height="410" alt="The theatre's middle row over which people can get to their seats">
       </div>
     </div>
-    <aside class="leave-review__right-block">
-      <div class="leave-review__right-block-top-limiter">
-        <svg class="leave-review__right-block-top-limiter-svg" version="1.1" viewBox="0 500 1200 140" xmlns="http://www.w3.org/2000/svg">
-          <path d="m1100.4 570-364.8-7.1992c-2.3984-22.801-15.602-27.602-27.602-27.602-10.801 0-22.801 3.6016-33.602 9.6016l-36-36-27.602 27.602-27.602-27.602-27.602 27.602-27.59-27.602-36 36c-12-4.8008-24-9.6016-33.602-9.6016-12 0-25.199 4.8008-27.602 27.602l-366 7.1992 364.8 7.1992c2.3984 22.801 15.602 27.602 27.602 27.602 10.801 0 22.801-3.6016 33.602-9.6016l36 36 27.602-27.602 27.602 27.602 27.602-27.602 27.602 27.602 36-36c10.801 4.8008 22.801 9.6016 33.602 9.6016 12 0 25.199-4.8008 27.602-27.602zm-393.6-27.602c8.3984 0 18 2.3984 20.398 20.398l-37.199-1.1992-12-12c10.801-3.5977 20.398-7.1992 28.801-7.1992zm-62.402 27.602c4.8008-3.6016 14.398-9.6016 25.199-15.602l13.199 13.199v4.8008l-13.199 13.199c-10.797-4.7969-20.398-10.797-25.199-15.598zm-7.1992-48 26.398 26.398c-10.801 6-20.398 12-25.199 15.602l-21.602-21.602zm-6 48-20.398 20.398-20.398-20.398 20.398-20.398zm-48-48 20.398 20.398-20.398 21.602-20.398-20.398zm-7.1992 48-20.398 20.398-20.398-20.398 20.398-20.398zm-48-48 20.398 20.398-21.602 21.602c-4.8008-3.6016-14.398-9.6016-25.199-15.602zm-7.1992 49.199c-4.8008 3.6016-14.398 9.6016-25.199 15.602l-13.199-13.199v-4.8008l13.199-13.199c10.797 4.7969 20.398 10.797 25.199 15.598zm-62.402-28.801c8.3984 0 18 3.6016 27.602 7.1992l-12 12-37.199 1.1992c3.5977-17.996 13.199-20.398 21.598-20.398zm0 56.402c-8.3984 0-18-2.3984-20.398-20.398l37.199 1.1992 12 12c-10.801 3.5977-20.398 7.1992-28.801 7.1992zm69.602 19.199-26.398-26.398c10.801-6 20.398-12 25.199-15.602l21.602 21.602zm55.199 0-20.398-20.398 20.398-20.398 20.398 20.398zm54 0-20.398-20.398 21.602-21.602c4.8008 3.6016 14.398 9.6016 25.199 15.602zm69.602-19.199c-8.3984 0-18-3.6016-27.602-7.1992l12-12 37.199-1.1992c-2.3984 17.996-13.199 20.398-21.598 20.398z" fill="#202020"></path>
-        </svg>
+    <article class="theatre__playbill-panel playbill-panel" data-theatre-playbill-panel>
+      <div class="playbill-panel__playbill-book">
+        <img src="./images/theatre-book.webp" alt="Playbill book">
       </div>
-      <figure class="leave-review__right-block-content">
-        <blockquote class="leave-review__right-block-content-quote">"My patients say this is the best tasting fluoride we have ever had here. My hygienists say it’s the best flowing fluoride they have ever applied. It flows naturally and easily and doesn’t get gunky. 10 thumbs up."</blockquote>
-        <figcaption> - Amy Fitzgerald</figcaption>
-      </figure>
-      <div class="leave-review__right-block-bottom-limiter">
-        <svg class="leave-review__right-block-bottom-limiter-svg" version="1.1" viewBox="0 500 1200 140" xmlns="http://www.w3.org/2000/svg">
-          <path d="m1100.4 570-364.8-7.1992c-2.3984-22.801-15.602-27.602-27.602-27.602-10.801 0-22.801 3.6016-33.602 9.6016l-36-36-27.602 27.602-27.602-27.602-27.602 27.602-27.59-27.602-36 36c-12-4.8008-24-9.6016-33.602-9.6016-12 0-25.199 4.8008-27.602 27.602l-366 7.1992 364.8 7.1992c2.3984 22.801 15.602 27.602 27.602 27.602 10.801 0 22.801-3.6016 33.602-9.6016l36 36 27.602-27.602 27.602 27.602 27.602-27.602 27.602 27.602 36-36c10.801 4.8008 22.801 9.6016 33.602 9.6016 12 0 25.199-4.8008 27.602-27.602zm-393.6-27.602c8.3984 0 18 2.3984 20.398 20.398l-37.199-1.1992-12-12c10.801-3.5977 20.398-7.1992 28.801-7.1992zm-62.402 27.602c4.8008-3.6016 14.398-9.6016 25.199-15.602l13.199 13.199v4.8008l-13.199 13.199c-10.797-4.7969-20.398-10.797-25.199-15.598zm-7.1992-48 26.398 26.398c-10.801 6-20.398 12-25.199 15.602l-21.602-21.602zm-6 48-20.398 20.398-20.398-20.398 20.398-20.398zm-48-48 20.398 20.398-20.398 21.602-20.398-20.398zm-7.1992 48-20.398 20.398-20.398-20.398 20.398-20.398zm-48-48 20.398 20.398-21.602 21.602c-4.8008-3.6016-14.398-9.6016-25.199-15.602zm-7.1992 49.199c-4.8008 3.6016-14.398 9.6016-25.199 15.602l-13.199-13.199v-4.8008l13.199-13.199c10.797 4.7969 20.398 10.797 25.199 15.598zm-62.402-28.801c8.3984 0 18 3.6016 27.602 7.1992l-12 12-37.199 1.1992c3.5977-17.996 13.199-20.398 21.598-20.398zm0 56.402c-8.3984 0-18-2.3984-20.398-20.398l37.199 1.1992 12 12c-10.801 3.5977-20.398 7.1992-28.801 7.1992zm69.602 19.199-26.398-26.398c10.801-6 20.398-12 25.199-15.602l21.602 21.602zm55.199 0-20.398-20.398 20.398-20.398 20.398 20.398zm54 0-20.398-20.398 21.602-21.602c4.8008 3.6016 14.398 9.6016 25.199 15.602zm69.602-19.199c-8.3984 0-18-3.6016-27.602-7.1992l12-12 37.199-1.1992c-2.3984 17.996-13.199 20.398-21.598 20.398z" fill="#202020"></path>
-        </svg>
+      <div class="playbill-panel__playbill-caption">
+        <img src="./images/theatre-playbill-caption.webp" alt="Playbill caption">
       </div>
-    </aside>
-    <dialog class="leave-review__how-can-we-improve how-can-we-improve" data-how-can-we-improve-dialog>
-      <form method="post" action="" class="how-can-we-improve__form" data-how-can-we-improve-dialog-form>
-        <div class="how-can-we-improve__header">
-          <h2 class="how-can-we-improve__title">
-            Let us help! <br>
-            Please send us a message.
-          </h2>
-          <button class="how-can-we-improve__close-btn" data-how-can-we-improve-dialog-close-btn>
-            <svg class="how-can-we-improve__close-btn-svg" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+      <div class="playbill-panel__video-links-container video-links-container" data-playbill-video-links-container data-container-type="playbill"></div>
+    </article>
+    <button class="theatre__up-next-open-btn" data-up-next-sidebar-open-btn>
+      <div class="theatre__up-next-open-btn-caption">
+        <img src="./images/up-next-caption.webp" alt="A small board with Up Next caption" class="theatre__up-next-open-btn-caption-image">
+      </div>
+      <div class="theatre__up-next-open-btn-rope">
+        <img src="./images/theatre-rope-sprite.webp" alt="Piece of rope below the board with Up Next caption" class="theatre__up-next-open-btn-rope-image priority">
+      </div>
+    </button>
+  </section>
+  <section class="offices-love graphic-section" data-offices-love-section>
+    <div class="offices-love__wrapper graphic-section__wrapper blur-effect grain-effect">
+      <h2 class="offices-love__title">Offices Love</h2>
+      <div class="offices-love__videos-grid" data-offices-love-videos-grid></div>
+    </div>
+  </section>
+  <dialog class="theatre__video-modal video-modal" data-video-modal data-video-modal-state="" data-up-next-sidebar-state="">
+    <div class="visually-hidden">
+      <video src="https://cdn.shopify.com/videos/c/o/v/ab2f556852454b1d9eaba36ecaa45587.mp4" data-video-placeholder></video>
+    </div>
+    <div class="video-modal__video-frame" data-video-frame-container>
+      <div class="video-modal__video-frame-wrapper" data-video-frame-wrapper>
+        <video 
+          src="https://cdn.shopify.com/videos/c/o/v/ab2f556852454b1d9eaba36ecaa45587.mp4" 
+          class="video-modal__video" 
+          data-video-modal-video 
+          controls="controls" 
+        >Your browser does not support the video tag.</video>
+        <div class="video-modal__frame">
+          <img src="./images/video-frame-160-124-ratio.webp" alt="Video Frame in Royal Style" class="video-modal__frame-image" data-video-modal-frame-image>
+        </div>
+      </div>
+    </div>
+  </dialog>
+  <dialog class="theatre__up-next-sidebar up-next-sidebar" data-state="" data-up-next-sidebar>
+    <aside>
+      <div class="up-next-sidebar__wrapper">
+        <div class="up-next-sidebar__title-and-close-btn">
+          <h2 class="up-next-sidebar__title">WATCH NEXT</h2>
+          <button class="up-next-sidebar__close-btn" data-up-next-sidebar-close-btn>
+            <svg class="up-next-sidebar__close-btn-svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" stroke-linecap="round" stroke-linejoin="round">
               <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
               <path d="M18 6l-12 12" />
               <path d="M6 6l12 12" />
             </svg>
           </button>
         </div>
-        <fieldset class="leave-review__form-group leave-review__form-group--column">
-          <label for="how-can-we-improve-email-field" class="leave-review__label">Email: </label>
-          <input type="email" id="how-can-we-improve-email-field" name="how-can-we-improve-email-field" 
-          class="leave-review__input" data-how-can-we-improve-email-field>
-        </fieldset>
-        <fieldset class="leave-review__form-group leave-review__form-group--column">
-          <label for="how-can-we-improve-message-field" class="leave-review__label how-can-we-improve__label">Message: </label>
-          <textarea name="how-can-we-improve-message-field" id="how-can-we-improve-message-field" 
-          class="leave-review__input leave-review__input--textarea how-can-we-improve__textarea"></textarea>
-        </fieldset>
-        <fieldset class="leave-review__form-group leave-review__form-group--row">
-          <input type="submit" value="Submit" class="leave-review__submit-btn how-can-we-improve__submit-btn">
-        </fieldset>
-      </form>
-    </dialog>
-  </section>
+        <!-- <div class="up-next-sidebar__divider">
+          <img src="./images/theatre-sidemenu-divider.webp" alt="Stylish divider used to separate header of the videos sidebar of its content" class="up-next-sidebar__divider-image">
+        </div> -->
+        <div class="up-next-sidebar__video-links-container video-links-container" data-sidebar-video-links-container data-container-type="sidebar">
+          <!-- <button class="video-link video-link--with-thumbnail">
+            <div class="video-link-thumbnail">
+              <img src="https://wonderfuldental.com/cdn/shop/files/UGCP_Covington_x350.jpg?v=1676065805" alt="Video Link Thumbnail" class="video-link-thumbnail-image">
+            </div>
+            <h3 class="video-link-title">UGCP Covington</h3>
+            <p class="video-link-description">Our happy customers from Covington</p>
+          </button> -->
+        </div>
+      </div>
+    </aside>
+  </dialog>
 </body>
 </html>

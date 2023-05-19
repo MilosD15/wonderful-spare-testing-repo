@@ -1,0 +1,51 @@
+[
+  {
+    "video_id": "1",
+    "video_title": "UGCP Covington",
+    "video_description": "Our happy customers from Covington",
+    "video_url": "https://cdn.shopify.com/videos/c/o/v/ebf2307492f94b82a434d8c20f56503c.mp4",
+    "video_thumbnail": "https://wonderfuldental.com/cdn/shop/files/UGCP_Covington_x350.jpg?v=1676065805"
+  },
+  {
+    "video_id": "2",
+    "video_title": "UGCP The Tooth Booth",
+    "video_description": "Our little happy customers are the most important!",
+    "video_url": "https://cdn.shopify.com/videos/c/o/v/8ac5b5a285c14500b988b87eaf0cbde1.mov",
+    "video_thumbnail": "https://wonderfuldental.com/cdn/shop/files/UGCP_The_Tooth_Booth_x350.jpg?v=1676066942"
+  },
+  {
+    "video_id": "3",
+    "video_title": "UGCP The Doc",
+    "video_description": "The doc is happy too",
+    "video_url": "https://cdn.shopify.com/videos/c/o/v/201ec9d02d164d92ba7baf6afe8a7e16.mov",
+    "video_thumbnail": "https://wonderfuldental.com/cdn/shop/files/thedoc2_1_x350.png?v=1676652152"
+  },
+  {
+    "video_id": "4",
+    "video_title": "Lorem ipsum dolor",
+    "video_description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit.",
+    "video_url": "https://cdn.shopify.com/videos/c/o/v/c4d0d062b724493ca4ffce65dab7e935.mov",
+    "video_thumbnail": "https://wonderfuldental.com/cdn/shop/files/UGCP_Afton_Kay_RDH_x350.jpg?v=1676066942"
+  },
+  {
+    "video_id": "5",
+    "video_title": "Lorem ipsum dolor",
+    "video_description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit.",
+    "video_url": "https://cdn.shopify.com/videos/c/o/v/71fdb88298744637a555a4b20d24be48.mov",
+    "video_thumbnail": "https://wonderfuldental.com/cdn/shop/files/UGCP_University_Pediatric_Dentistry_x350.jpg?v=1676066942"
+  },
+  {
+    "video_id": "6",
+    "video_title": "Lorem ipsum dolor",
+    "video_description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit.",
+    "video_url": "https://cdn.shopify.com/videos/c/o/v/c3d347eddd474ce786225f3e33f9d223.mov",
+    "video_thumbnail": "https://wonderfuldental.com/cdn/shop/files/UGCP_River_Dental_Clinic_x350.jpg?v=1676066942"
+  },
+  {
+    "video_id": "7",
+    "video_title": "Lorem ipsum dolor",
+    "video_description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit.",
+    "video_url": "https://cdn.shopify.com/videos/c/o/v/667ffe576b9b43b08192da6f6e571e78.mp4",
+    "video_thumbnail": "https://wonderfuldental.com/cdn/shop/files/UGCP_Carmel_Distinctive_Dental_x350.jpg?v=1676065805"
+  }
+]
