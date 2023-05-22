@@ -1,6 +1,6 @@
 .playbill-panel__playbill-book {
   width: 100%;
-  margin-bottom: -2%;
+  margin-bottom: -5%;
 }
 .playbill-panel__playbill-caption {
   position: absolute;
@@ -40,12 +40,12 @@
   overflow-x: hidden;
 }
 .video-modal[open] {
-  -webkit-animation: dialog-fade-in calc(var(--CINEMA-PAGE-sidebar-animation-duration) * 1ms) ease forwards;
-          animation: dialog-fade-in calc(var(--CINEMA-PAGE-sidebar-animation-duration) * 1ms) ease forwards;
+  -webkit-animation: dialog-fade-in calc(var(--THEATRE-PAGE-sidebar-animation-duration) * 1ms) ease forwards;
+          animation: dialog-fade-in calc(var(--THEATRE-PAGE-sidebar-animation-duration) * 1ms) ease forwards;
 }
 .video-modal[data-state=close] {
-  -webkit-animation: dialog-fade-out calc(var(--CINEMA-PAGE-sidebar-animation-duration) * 1ms) ease forwards;
-          animation: dialog-fade-out calc(var(--CINEMA-PAGE-sidebar-animation-duration) * 1ms) ease forwards;
+  -webkit-animation: dialog-fade-out calc(var(--THEATRE-PAGE-sidebar-animation-duration) * 1ms) ease forwards;
+          animation: dialog-fade-out calc(var(--THEATRE-PAGE-sidebar-animation-duration) * 1ms) ease forwards;
 }
 .video-modal[data-up-next-sidebar-state=open] .video-modal__video-frame {
   width: 70%;
@@ -111,8 +111,8 @@
   position: relative;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  -webkit-transition: width calc(var(--CINEMA-PAGE-sidebar-animation-duration) * 1ms) ease;
-  transition: width calc(var(--CINEMA-PAGE-sidebar-animation-duration) * 1ms) ease;
+  -webkit-transition: width calc(var(--THEATRE-PAGE-sidebar-animation-duration) * 1ms) ease;
+  transition: width calc(var(--THEATRE-PAGE-sidebar-animation-duration) * 1ms) ease;
 }
 .video-modal__video-frame-wrapper {
   position: absolute;
@@ -186,7 +186,7 @@
   }
 }
 :root {
-  --CINEMA-PAGE-sidebar-animation-duration: 500;
+  --THEATRE-PAGE-sidebar-animation-duration: 500;
 }
 
 .up-next-sidebar {
@@ -208,12 +208,12 @@
           box-shadow: 0.3rem 0 2rem #421a03;
 }
 .up-next-sidebar[open] {
-  -webkit-animation: sidebar-slide-in calc(var(--CINEMA-PAGE-sidebar-animation-duration) * 1ms) ease forwards;
-          animation: sidebar-slide-in calc(var(--CINEMA-PAGE-sidebar-animation-duration) * 1ms) ease forwards;
+  -webkit-animation: sidebar-slide-in calc(var(--THEATRE-PAGE-sidebar-animation-duration) * 1ms) ease forwards;
+          animation: sidebar-slide-in calc(var(--THEATRE-PAGE-sidebar-animation-duration) * 1ms) ease forwards;
 }
 .up-next-sidebar[data-state=close] {
-  -webkit-animation: sidebar-slide-out calc(var(--CINEMA-PAGE-sidebar-animation-duration) * 1ms) ease forwards;
-          animation: sidebar-slide-out calc(var(--CINEMA-PAGE-sidebar-animation-duration) * 1ms) ease forwards;
+  -webkit-animation: sidebar-slide-out calc(var(--THEATRE-PAGE-sidebar-animation-duration) * 1ms) ease forwards;
+          animation: sidebar-slide-out calc(var(--THEATRE-PAGE-sidebar-animation-duration) * 1ms) ease forwards;
 }
 .up-next-sidebar__wrapper {
   position: absolute;
@@ -236,10 +236,11 @@
 }
 .up-next-sidebar__title {
   font-family: "Market Deco";
-  font-size: 2.1vw;
+  font-size: clamp(1.2rem, 2.2vw, 2rem);
   font-weight: 400;
   line-height: 1.8;
   margin: 0;
+  color: #522316;
 }
 .up-next-sidebar__close-btn {
   border: 0;
@@ -256,8 +257,8 @@
   border-radius: 0.2em;
 }
 .up-next-sidebar__close-btn-svg {
-  width: 1.6em;
-  height: 1.6em;
+  width: 1.2em;
+  height: 1.2em;
   fill: #421a03;
   stroke-width: 2;
 }
@@ -321,13 +322,13 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  padding-bottom: 1rem;
   scrollbar-width: thin;
-  scrollbar-color: #421a03 #421a03;
 }
 .video-links-container[data-container-type=sidebar] {
-  --title-font-size: 1.6vw;
-  --description-font-size: 1vw;
-  gap: 1rem;
+  --title-font-size: clamp(1rem, 1.2vw, 1.4rem);
+  --description-font-size: 0.8vw;
+  gap: 0.5rem;
 }
 .video-links-container[data-container-type=sidebar] .video-link-title,
 .video-links-container[data-container-type=sidebar] .video-link-description {
@@ -359,12 +360,12 @@
      object-fit: cover;
 }
 .video-links-container[data-container-type=playbill] {
-  --title-font-size: 2.1vw;
-  --description-font-size: 1.3vw;
-  gap: 8%;
+  --title-font-size: clamp(1rem, 1.4vw, 1.5rem);
+  --description-font-size: 1vw;
+  gap: 4%;
 }
 .video-links-container::-webkit-scrollbar {
-  width: 0.6rem;
+  width: 0.6vw;
 }
 .video-links-container::-webkit-scrollbar-track {
   background: transparent;
@@ -376,21 +377,20 @@
 
 .video-link {
   cursor: pointer;
-  color: #222222;
+  color: #333333;
   border: 0;
   background-color: transparent;
 }
 .video-link-title {
   margin: 0;
-  font-family: "Great Day";
+  font-family: "Aafia";
   font-size: var(--title-font-size);
   font-weight: 100;
-  line-height: 1.8;
+  line-height: 1.4;
 }
 .video-link-description {
   margin: 0;
-  font-family: "Copasetic NF";
-  letter-spacing: 1px;
+  font-family: "LEMON MILK";
   font-size: var(--description-font-size);
   font-weight: 300;
 }
@@ -599,7 +599,8 @@
   right: -1.5%;
   border: 0;
   background-color: transparent;
-  width: 14%;
+  width: 12%;
+  aspect-ratio: 16/12.6;
   cursor: pointer;
   -webkit-transform: translateX(100%);
           transform: translateX(100%);
@@ -619,28 +620,30 @@
           transform: translateX(0%);
 }
 .theatre__up-next-open-btn-caption {
-  position: relative;
+  position: absolute;
   z-index: 2;
-}
-.theatre__up-next-open-btn:hover .theatre__up-next-open-btn-rope-image.priority, .theatre__up-next-open-btn:focus-visible .theatre__up-next-open-btn-rope-image.priority {
-  -webkit-animation: animate-character calc(var(--THEATRE-PAGE-character-anim-duration) * 1ms) steps(8) forwards;
-          animation: animate-character calc(var(--THEATRE-PAGE-character-anim-duration) * 1ms) steps(8) forwards;
+  top: 0;
 }
 .theatre__up-next-open-btn-rope {
+  position: absolute;
+  top: 30%;
+  left: -14%;
   width: 80%;
   overflow: hidden;
-  -webkit-transform: translateX(-20%) translateY(-34%);
-          transform: translateX(-20%) translateY(-34%);
 }
 .theatre__up-next-open-btn-rope-image.priority {
   width: 900%;
   -webkit-transform: translateX(-88.889%);
           transform: translateX(-88.889%);
 }
+.theatre__up-next-open-btn-rope-image.priority.wave {
+  -webkit-animation: animate-character calc(var(--THEATRE-PAGE-character-anim-duration) * 1ms) steps(8) forwards;
+          animation: animate-character calc(var(--THEATRE-PAGE-character-anim-duration) * 1ms) steps(8) forwards;
+}
 .theatre__playbill-panel {
   position: absolute;
   bottom: 0;
-  width: 80%;
+  width: 70%;
   left: 50%;
   -webkit-transform: translateX(-50%) translateY(100%);
           transform: translateX(-50%) translateY(100%);

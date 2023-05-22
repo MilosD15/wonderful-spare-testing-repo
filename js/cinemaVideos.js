@@ -14,10 +14,16 @@ if (document.querySelector("[data-theatre-section]")) {
   const officesLoveSection = document.querySelector("[data-offices-love-section]");
   const officesLoveVideosGrid = officesLoveSection.querySelector("[data-offices-love-videos-grid]");
 
-  const sidebarAnimationDuration = parseInt(getCSSPropertyValueFromRoot("--CINEMA-PAGE-sidebar-animation-duration"));
+  const sidebarAnimationDuration = parseInt(getCSSPropertyValueFromRoot("--THEATRE-PAGE-sidebar-animation-duration"));
+  const ropeAnimationDuration = parseInt(getCSSPropertyValueFromRoot("--THEATRE-PAGE-character-anim-duration"));
+  let ropeAnimationFinished = true;
+  let videoLoadingFinished = true;
+  let videosInQueue = [];
+  let currentVideoIdInQueue = null;
   
   fetchVideoLinksInfo("../cinema-videos.json").then(videoLinksInfo => {
     videoLinksInfo.forEach(videoLinkInfo => {
+      videosInQueue.push(videoLinkInfo);
       renderVideoLink(videoLinkInfo, videoLinksPlayBillContainer);
       renderVideoLink(videoLinkInfo, videoLinksSidebarContainer);
     });
@@ -25,8 +31,25 @@ if (document.querySelector("[data-theatre-section]")) {
 
   fetchVideoLinksInfo("../offices-love-videos.json").then(videoLinksInfo => {
     videoLinksInfo.forEach(videoLinkInfo => {
+      videosInQueue.push(videoLinkInfo);
       renderVideoLink(videoLinkInfo, videoLinksSidebarContainer);
-      renderVideosGridItem(videoLinkInfo, officesLoveVideosGrid, officesLoveSection);
+      renderVideosGridItem(videoLinkInfo, officesLoveVideosGrid);
+    });
+  });
+
+  window.addEventListener("load", () => {
+    // handle rope animation of the open button of the up next sidebar
+    upNextSidebarOpenBtn.addEventListener("mouseenter", () => {
+      if (!ropeAnimationFinished) return;
+
+      const upNextOpenBtnRopeImage = upNextSidebarOpenBtn.querySelector("[data-up-next-open-btn-rope-image]");
+      upNextOpenBtnRopeImage.classList.add("wave");
+      ropeAnimationFinished = false;
+  
+      setTimeout(() => {
+        upNextOpenBtnRopeImage.classList.remove("wave");
+        ropeAnimationFinished = true;
+      }, ropeAnimationDuration);
     });
   });
 
@@ -41,12 +64,14 @@ if (document.querySelector("[data-theatre-section]")) {
 
     const videoUrl = videoLink.dataset.videoLink;
     videoModal.dataset.state = "";
-    openVideoModal(videoUrl);
+    openVideoModal(videoUrl, videoLoadingFinished);
+    const videoId = parseInt(videoLink.dataset.videoId);
+    currentVideoIdInQueue = videoId;
   });
 
   document.addEventListener("click", e => {
     if (e.target.closest("[data-video-frame-container]") || e.target.closest("[data-up-next-sidebar]") 
-    || e.target.closest("[data-up-next-sidebar-open-btn]")) return;
+    || e.target.closest("[data-up-next-sidebar-open-btn]") || e.target.closest("[data-video-link]")) return;
 
     
     if (videoModal.dataset.upNextSidebarState === "open") {
@@ -54,10 +79,23 @@ if (document.querySelector("[data-theatre-section]")) {
     }
   });
 
+  videoModalVideo.addEventListener("ended", () => {
+    console.log(currentVideoIdInQueue);
+
+    if (currentVideoIdInQueue === null) return;
+
+    
+    const nextVideoObj = videosInQueue.find(videoObj => parseInt(videoObj.video_id) === currentVideoIdInQueue + 1);
+    console.log(nextVideoObj);
+    openVideoModal(nextVideoObj.video_url, videoLoadingFinished);
+    currentVideoIdInQueue = parseInt(nextVideoObj.video_id);
+  });
+
   videoModal.addEventListener("click", e => {
     if (e.target.closest("[data-video-frame-wrapper]") || e.target.closest("[data-video-modal-video]")) return;
 
     videoModalVideo.pause();
+    currentVideoIdInQueue = null;
     videoModal.dataset.state = "close";
 
     setTimeout(() => {
@@ -88,7 +126,9 @@ function handleClosingSidebar(upNextSidebar, videoModal, theatrePlaybillPanel, s
   }, sidebarAnimationDuration);
 }
 
-function openVideoModal(videoUrl) {
+function openVideoModal(videoUrl, videoLoadingFinished) {
+  if (!videoLoadingFinished) return;
+
   const aspectRatiosObjects = [
     { value: 16 / 12.4, correspondingFrameImageUrl: "./images/video-frame-160-124-ratio.webp", class: "video-modal--4-3-vid-ratio" },
     { value: 16 / 9.4, correspondingFrameImageUrl: "./images/video-frame-160-94-ratio.webp", class: "video-modal--16-9-vid-ratio" },
@@ -101,9 +141,10 @@ function openVideoModal(videoUrl) {
   const videoModalFrameImage = videoModal.querySelector("[data-video-modal-frame-image]");
 
   videoPlaceholder.src = videoUrl;
+  videoLoadingFinished = false;
   videoPlaceholder.addEventListener("loadedmetadata", () => {
     const videoAspectRatioValue = videoPlaceholder.videoWidth / videoPlaceholder.videoHeight;
-    const closestAspectRatioObj = determineClosestAspectRatioObj(aspectRatiosObjects, videoAspectRatioValue);
+    const closestAspectRatioObj = determineClosestAspectRatioObj(aspectRatiosObjects, videoAspectRatioValue) ?? aspectRatiosObjects[0];
 
     videoModalFrameImage.src = closestAspectRatioObj.correspondingFrameImageUrl;
     videoModalVideo.src = videoUrl;
@@ -111,13 +152,15 @@ function openVideoModal(videoUrl) {
     removeAspectRatioClasses(videoModal);
     videoModal.classList.add(closestAspectRatioObj.class);
     videoModal.show();
+    videoLoadingFinished = true;
   }, { once: true });
 }
 
-function renderVideosGridItem(videoLinkInfo, gridContainer, parentSection) {
+function renderVideosGridItem(videoLinkInfo, gridContainer) {
   const gridItem = document.createElement("button");
   gridItem.classList.add("offices-love__videos-grid-item");
   gridItem.dataset.videoLink = videoLinkInfo.video_url;
+  gridItem.dataset.videoId = videoLinkInfo.video_id;
 
   const aspectRatiosObjects = [
     { value: 16 / 16, class: "ar-1-1" },
@@ -180,6 +223,7 @@ function renderVideoLink(videoLinkInfo, videoLinksContainer) {
   const videoLinkElement = document.createElement("button");
   videoLinkElement.classList.add("video-link");
   videoLinkElement.dataset.videoLink = videoLinkInfo.video_url;
+  videoLinkElement.dataset.videoId = videoLinkInfo.video_id;
 
   if (videoLinkInfo.video_thumbnail !== "") {
     videoLinkElement.classList.add("video-link--with-thumbnail");
