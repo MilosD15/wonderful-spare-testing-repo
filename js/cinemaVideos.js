@@ -84,9 +84,9 @@ if (document.querySelector("[data-theatre-section]")) {
 
     if (currentVideoIdInQueue === null) return;
 
+    // console.log(nextVideoObj);
     
     const nextVideoObj = videosInQueue.find(videoObj => parseInt(videoObj.video_id) === currentVideoIdInQueue + 1);
-    console.log(nextVideoObj);
     openVideoModal(nextVideoObj.video_url, videoLoadingFinished);
     currentVideoIdInQueue = parseInt(nextVideoObj.video_id);
   });

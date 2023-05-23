@@ -5,7 +5,6 @@
 }
 .offices-love__wrapper {
   aspect-ratio: unset;
-  min-height: 20rem;
   background-color: #101010;
   padding-block: 2rem;
 }
