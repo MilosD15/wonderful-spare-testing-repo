@@ -1,3 +1,4 @@
+
 function isSectionInViewPort(sectionElement) {
     const currentScroll = document.documentElement.scrollTop;
     const sectionScrollTop = getElementsScrollTop(sectionElement);
