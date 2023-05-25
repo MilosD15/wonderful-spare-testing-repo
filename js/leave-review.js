@@ -24,12 +24,11 @@ if (document.querySelector("[data-leave-review-section]")) {
   leaveReviewForm.addEventListener("submit", e => {
     e.preventDefault();
 
-    const chooseProductField = leaveReviewForm.querySelector("#leave-review-product-type-field");
-    const selectedProduct = chooseProductField.options[chooseProductField.selectedIndex].value;
-    const reviewTitle = leaveReviewForm.querySelector("#leave-review-review-title-field").value;
-    const reviewBody = leaveReviewForm.querySelector("#leave-review-review-body-field").value;
+    const chooseProductSelect = leaveReviewForm.querySelector("#leave-review-product-type-field");
+    const emailInputElement = leaveReviewForm.querySelector("#leave-review-email-field");
 
-    if (validateLeaveReviewForm(selectedProduct, reviewTitle, reviewBody)) {
+    if (validateLeaveReviewForm(chooseProductSelect, emailInputElement)) {
+      leaveReviewForm.submit();
       // post a review to Judge.me
     }
   });
@@ -37,6 +36,7 @@ if (document.querySelector("[data-leave-review-section]")) {
     e.preventDefault();
 
     if (validateHowWeCanImproveForm(howCanWeImproveDialogEmailField, howCanWeImproveDialogForm)) {
+      howCanWeImproveDialogForm.submit();
       // send a message to us
       // redirect to home page
     }
@@ -78,18 +78,18 @@ if (document.querySelector("[data-leave-review-section]")) {
   }
 }
 
-function validateHowWeCanImproveForm(emailInput, howCanWeImproveForm) {
+function validateHowWeCanImproveForm(emailInputElement, howCanWeImproveForm) {
   const messageTextarea = howCanWeImproveForm.querySelector("#how-can-we-improve-message-field");
-  const emailValue = emailInput.value;
+  const emailValue = emailInputElement.value;
   const messageValue = messageTextarea.value;
 
   let isFormValid = true;
 
   if (!validateEmail(emailValue)) {
-    emailInput.classList.add("invalid");
+    emailInputElement.classList.add("invalid");
     isFormValid = false;
   } else {
-    emailInput.classList.remove("invalid");
+    emailInputElement.classList.remove("invalid");
   }
 
   if (messageValue === "") {
@@ -110,14 +110,25 @@ function validateEmail(email) {
 }
 
 
-function validateLeaveReviewForm(selectedProductValue) {
-  const chooseProductSelect = document.querySelector("#leave-review-product-type-field");
+function validateLeaveReviewForm(chooseProductSelect, emailInputElement) {
+  const selectedProductValue = chooseProductSelect.options[chooseProductSelect.selectedIndex].value;
+  const emailValue = emailInputElement.value;
+
+  let isFormValid = true;
 
   if (selectedProductValue === "not-selected") {
     chooseProductSelect.classList.add("invalid");
-    return false;
+    isFormValid = false;
+  } else {
+    chooseProductSelect.classList.remove("invalid");
   }
 
-  chooseProductSelect.classList.remove("invalid");
-  return true;
+  if (!validateEmail(emailValue)) {
+    emailInputElement.classList.add("invalid");
+    isFormValid = false;
+  } else {
+    emailInputElement.classList.remove("invalid");
+  }
+
+  return isFormValid;
 }

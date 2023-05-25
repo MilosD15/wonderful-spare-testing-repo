@@ -97,6 +97,10 @@
 .leave-review__form {
   font-size: 16px;
 }
+.leave-review__required-fields-message {
+  color: #ff0000;
+  font-size: 0.9em;
+}
 .leave-review__form-group {
   padding: 0.5em;
   display: -webkit-box;
@@ -125,9 +129,9 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -135,7 +139,7 @@
 .leave-review__label--required::after {
   content: "*";
   font-size: 1em;
-  color: red;
+  color: #ff0000;
 }
 .leave-review__input {
   font-size: 1em;
@@ -152,7 +156,7 @@
   transition: border-color 300ms ease;
 }
 .leave-review__input.invalid {
-  border-color: red;
+  border-color: #ff0000;
 }
 .leave-review__input--textarea {
   resize: vertical;
