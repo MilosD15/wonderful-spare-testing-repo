@@ -100,6 +100,7 @@
 .leave-review__required-fields-message {
   color: #ff0000;
   font-size: 0.9em;
+  padding-inline: 0.5em;
 }
 .leave-review__form-group {
   padding: 0.5em;
@@ -117,6 +118,9 @@
 .leave-review__form-group.invalid .leave-review__input {
   border-color: #ff0000;
 }
+.leave-review__form-group.invalid .leave-review__input:required ~ .leave-review__label::after {
+  color: #ff0000;
+}
 .leave-review__form-group--row {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
@@ -125,9 +129,9 @@
 }
 .leave-review__form-group--column {
   -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
 }
 .leave-review__label {
   font-size: 0.85em;
@@ -150,7 +154,9 @@
 .leave-review__label--required::after {
   content: "*";
   font-size: 1em;
-  color: #ff0000;
+  color: #000000;
+  -webkit-transition: color 200ms ease;
+  transition: color 200ms ease;
 }
 .leave-review__input {
   font-size: 1em;
@@ -165,6 +171,13 @@
   color: #000;
   -webkit-transition: border-color 200ms ease;
   transition: border-color 200ms ease;
+}
+.leave-review__input:required ~ .leave-review__label::after {
+  content: "*";
+  font-size: 1em;
+  color: #000000;
+  -webkit-transition: color 200ms ease;
+  transition: color 200ms ease;
 }
 .leave-review__input--textarea {
   resize: vertical;
