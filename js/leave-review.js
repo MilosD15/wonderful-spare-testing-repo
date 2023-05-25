@@ -15,6 +15,7 @@ if (document.querySelector("[data-leave-review-section]")) {
       const checkedRadioButtonValue = parseInt(checkedRadioButton.value);
 
       if (checkedRadioButtonValue < 4) {
+        resetHowWeCanImproveFormValidation(howCanWeImproveDialogEmailField, howCanWeImproveDialogForm.querySelector("#how-can-we-improve-message-field"));
         howCanWeImproveDialog.showModal();
         howCanWeImproveDialogEmailField.focus();
       }
@@ -35,7 +36,7 @@ if (document.querySelector("[data-leave-review-section]")) {
   howCanWeImproveDialogForm.addEventListener("submit", e => {
     e.preventDefault();
 
-    if (validateHowWeCanImproveForm(howCanWeImproveDialogEmailField, howCanWeImproveDialogForm)) {
+    if (validateHowWeCanImproveForm(howCanWeImproveDialogEmailField, howCanWeImproveDialogForm.querySelector("#how-can-we-improve-message-field"))) {
       howCanWeImproveDialogForm.submit();
       // send a message to us
       // redirect to home page
@@ -78,28 +79,37 @@ if (document.querySelector("[data-leave-review-section]")) {
   }
 }
 
-function validateHowWeCanImproveForm(emailInputElement, howCanWeImproveForm) {
-  const messageTextarea = howCanWeImproveForm.querySelector("#how-can-we-improve-message-field");
+function validateHowWeCanImproveForm(emailInputElement, messageTextarea) {
   const emailValue = emailInputElement.value;
   const messageValue = messageTextarea.value;
+  const emailFormGroup = emailInputElement.closest("[data-form-group]");
+  const messageFormGroup = messageTextarea.closest("[data-form-group]");
 
   let isFormValid = true;
 
   if (!validateEmail(emailValue)) {
-    emailInputElement.classList.add("invalid");
+    emailFormGroup.classList.add("invalid");
     isFormValid = false;
   } else {
-    emailInputElement.classList.remove("invalid");
+    emailFormGroup.classList.remove("invalid");
   }
 
   if (messageValue === "") {
-    messageTextarea.classList.add("invalid");
+    messageFormGroup.classList.add("invalid");
     isFormValid = false;
   } else {
-    messageTextarea.classList.remove("invalid");
+    messageFormGroup.classList.remove("invalid");
   }
 
   return isFormValid;
+}
+
+function resetHowWeCanImproveFormValidation(emailInputElement, messageTextarea) {
+  const emailFormGroup = emailInputElement.closest("[data-form-group]");
+  const messageFormGroup = messageTextarea.closest("[data-form-group]");
+
+  emailFormGroup.classList.remove("invalid");
+  messageFormGroup.classList.remove("invalid");
 }
 
 function validateEmail(email) {
@@ -113,21 +123,23 @@ function validateEmail(email) {
 function validateLeaveReviewForm(chooseProductSelect, emailInputElement) {
   const selectedProductValue = chooseProductSelect.options[chooseProductSelect.selectedIndex].value;
   const emailValue = emailInputElement.value;
+  const selectedProductFormGroup = chooseProductSelect.closest("[data-form-group]");
+  const emailFormGroup = emailInputElement.closest("[data-form-group]");
 
   let isFormValid = true;
 
   if (selectedProductValue === "not-selected") {
-    chooseProductSelect.classList.add("invalid");
+    selectedProductFormGroup.classList.add("invalid");
     isFormValid = false;
   } else {
-    chooseProductSelect.classList.remove("invalid");
+    selectedProductFormGroup.classList.remove("invalid");
   }
 
   if (!validateEmail(emailValue)) {
-    emailInputElement.classList.add("invalid");
+    emailFormGroup.classList.add("invalid");
     isFormValid = false;
   } else {
-    emailInputElement.classList.remove("invalid");
+    emailFormGroup.classList.remove("invalid");
   }
 
   return isFormValid;
