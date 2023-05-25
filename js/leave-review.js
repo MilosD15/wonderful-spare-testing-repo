@@ -28,7 +28,7 @@ if (document.querySelector("[data-leave-review-section]")) {
     const chooseProductSelect = leaveReviewForm.querySelector("#leave-review-product-type-field");
     const emailInputElement = leaveReviewForm.querySelector("#leave-review-email-field");
 
-    if (validateLeaveReviewForm(chooseProductSelect, emailInputElement)) {
+    if (validateLeaveReviewForm(chooseProductSelect, emailInputElement, leaveReviewForm)) {
       leaveReviewForm.submit();
       // post a review to Judge.me
     }
@@ -36,7 +36,9 @@ if (document.querySelector("[data-leave-review-section]")) {
   howCanWeImproveDialogForm.addEventListener("submit", e => {
     e.preventDefault();
 
-    if (validateHowWeCanImproveForm(howCanWeImproveDialogEmailField, howCanWeImproveDialogForm.querySelector("#how-can-we-improve-message-field"))) {
+    const messageTextarea = howCanWeImproveDialogForm.querySelector("#how-can-we-improve-message-field");
+
+    if (validateHowWeCanImproveForm(howCanWeImproveDialogEmailField, messageTextarea, howCanWeImproveDialogForm)) {
       howCanWeImproveDialogForm.submit();
       // send a message to us
       // redirect to home page
@@ -79,16 +81,19 @@ if (document.querySelector("[data-leave-review-section]")) {
   }
 }
 
-function validateHowWeCanImproveForm(emailInputElement, messageTextarea) {
+function validateHowWeCanImproveForm(emailInputElement, messageTextarea, howCanWeImproveDialogForm) {
   const emailValue = emailInputElement.value;
   const messageValue = messageTextarea.value;
   const emailFormGroup = emailInputElement.closest("[data-form-group]");
   const messageFormGroup = messageTextarea.closest("[data-form-group]");
+  const requiredFieldsErrorsMessages = howCanWeImproveDialogForm.querySelector("[data-required-fields-error-message]");
 
+  requiredFieldsErrorsMessages.innerHTML = "";
   let isFormValid = true;
 
   if (!validateEmail(emailValue)) {
     emailFormGroup.classList.add("invalid");
+    addErrorMessage(requiredFieldsErrorsMessages, "* Please enter a valid email address.");
     isFormValid = false;
   } else {
     emailFormGroup.classList.remove("invalid");
@@ -96,9 +101,16 @@ function validateHowWeCanImproveForm(emailInputElement, messageTextarea) {
 
   if (messageValue === "") {
     messageFormGroup.classList.add("invalid");
+    addErrorMessage(requiredFieldsErrorsMessages, "* Please fill out required fields.");
     isFormValid = false;
   } else {
     messageFormGroup.classList.remove("invalid");
+  }
+
+  if (!isFormValid) {
+    $(requiredFieldsErrorsMessages).slideDown(200);
+  } else {
+    $(requiredFieldsErrorsMessages).slideUp(200);
   }
 
   return isFormValid;
@@ -120,16 +132,19 @@ function validateEmail(email) {
 }
 
 
-function validateLeaveReviewForm(chooseProductSelect, emailInputElement) {
+function validateLeaveReviewForm(chooseProductSelect, emailInputElement, leaveReviewForm) {
   const selectedProductValue = chooseProductSelect.options[chooseProductSelect.selectedIndex].value;
   const emailValue = emailInputElement.value;
   const selectedProductFormGroup = chooseProductSelect.closest("[data-form-group]");
   const emailFormGroup = emailInputElement.closest("[data-form-group]");
+  const requiredFieldsErrorsMessages = leaveReviewForm.querySelector("[data-required-fields-error-message]");
 
+  requiredFieldsErrorsMessages.innerHTML = "";
   let isFormValid = true;
 
   if (selectedProductValue === "not-selected") {
     selectedProductFormGroup.classList.add("invalid");
+    addErrorMessage(requiredFieldsErrorsMessages, "* Please select a product.");
     isFormValid = false;
   } else {
     selectedProductFormGroup.classList.remove("invalid");
@@ -137,10 +152,23 @@ function validateLeaveReviewForm(chooseProductSelect, emailInputElement) {
 
   if (!validateEmail(emailValue)) {
     emailFormGroup.classList.add("invalid");
+    addErrorMessage(requiredFieldsErrorsMessages, "* Please enter a valid email address.");
     isFormValid = false;
   } else {
     emailFormGroup.classList.remove("invalid");
   }
 
+  if (!isFormValid) {
+    $(requiredFieldsErrorsMessages).slideDown(200);
+  } else {
+    $(requiredFieldsErrorsMessages).slideUp(200);
+  }
+
   return isFormValid;
+}
+
+function addErrorMessage(container, message) {
+  const errorMessage = document.createElement("p");
+  errorMessage.textContent = message;
+  container.appendChild(errorMessage);
 }

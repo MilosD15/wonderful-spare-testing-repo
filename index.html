@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="./font/lemonmilk/addLemonmilk.css">
   <link rel="stylesheet" href="./css/boilerplate.css">
   <link rel="stylesheet" href="./css/leave-review-form.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.js"></script>
   <script src="./js/leave-review.js" type="module"></script>
 </head>
@@ -25,7 +26,9 @@
         <h1 class="visually-hidden">Product Review</h1>
       </div>
       <form method="post" action="" class="leave-review__form" data-leave-review-form>
-        <div class="leave-review__required-fields-message">* Please fill out required fields.</div>
+        <div class="leave-review__required-fields-message" data-required-fields-error-message>
+          <!-- <p>* Please fill out required fields.</p> -->
+        </div>
         <fieldset class="leave-review__form-group leave-review__form-group--column" data-form-group>
           <select class="leave-review__input leave-review__input--select" name="product-type-field" id="leave-review-product-type-field" required>
             <option value="not-selected">--------------</option>
@@ -105,7 +108,7 @@
             Let us help! <br>
             Please send us a message.
           </h2>
-          <button class="how-can-we-improve__close-btn" data-how-can-we-improve-dialog-close-btn>
+          <button type="button" class="how-can-we-improve__close-btn" data-how-can-we-improve-dialog-close-btn>
             <svg class="how-can-we-improve__close-btn-svg" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
               <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
               <path d="M18 6l-12 12" />
@@ -113,6 +116,7 @@
             </svg>
           </button>
         </div>
+        <div class="how-can-we-improve__required-fields-message" data-required-fields-error-message></div>
         <fieldset class="leave-review__form-group leave-review__form-group--column" data-form-group>
           <input type="email" id="how-can-we-improve-email-field" name="how-can-we-improve-email-field" 
           class="leave-review__input" data-how-can-we-improve-email-field placeholder="yourname@dental.com" required>

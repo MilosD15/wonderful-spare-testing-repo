@@ -101,6 +101,7 @@
   color: #ff0000;
   font-size: 0.9em;
   padding-inline: 0.5em;
+  display: none;
 }
 .leave-review__form-group {
   padding: 0.5em;
@@ -359,6 +360,12 @@
       -ms-flex-direction: column;
           flex-direction: column;
   gap: 0em;
+}
+.how-can-we-improve__required-fields-message {
+  color: #ff0000;
+  font-size: 0.9em;
+  padding: 0.5em 0.5em 0 0.5em;
+  display: none;
 }
 .how-can-we-improve__submit-btn {
   margin-block: 1em;
