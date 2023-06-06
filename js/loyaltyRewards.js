@@ -11,8 +11,12 @@ if (document.querySelector("[data-loyalty-rewards-section]")) {
   var takeActionsSignupBtn = loyaltyRewardsSection.querySelector("[data-lr-ta-signup-btn]");
   var loggedInHeroSection = loyaltyRewardsSection.querySelector("[data-lr-logged-in-hero-section]");
   var loyaltyRewardsLottiePlayer = loggedInHeroSection?.querySelector("[data-lr-lottie]");
+  var lrLoggedInUserPointsCount = loggedInHeroSection?.querySelector("[data-lr-logged-in-hero-points-count]");
+  var lrLoggedInUserRedeemNowBtn = loggedInHeroSection?.querySelector("[data-lr-logged-in-hero-redeem-btn]");
 
   // variables
+  var onloadTransitionDurationLonger = 500;
+  var onloadTransitionDurationShorter = 300;
   var onloadTransitionDelayStepShorter = 130;
   var onloadTransitionDelayStepLarger = 200;
 
@@ -22,12 +26,8 @@ if (document.querySelector("[data-loyalty-rewards-section]")) {
   assignTransitionDelays(earningPointsMainContent, 3, onloadTransitionDelayStepShorter);
 
   // logged-in hero section loading animation
-  if (loyaltyRewardsSection.dataset.darkMode === "true") {
-    playLoadingAnimationsBySection("[data-lr-logged-in-hero-section]",
-    ["[data-lr-logged-in-hero-bg]", 
-    "[data-lr-logged-in-hero-points-count]", "[data-lr-logged-in-hero-redeem-btn]"], 0.3, 700, () => {
-      removeTransitionDelay(loggedInHeroRedeemBtn);
-    });
+  if (loyaltyRewardsSection.dataset.userLoggedIn === "true") {
+    playLoadingAnimationsBySection("[data-lr-logged-in-hero-section]", ["[data-lr-logged-in-hero-bg]"], 0.3);
   }
 
   // not-logged-in hero section loading animation
@@ -61,7 +61,7 @@ if (document.querySelector("[data-loyalty-rewards-section]")) {
   "[data-lr-ep-footer-arrow-down]", "[data-lr-ep-footer-arrow-additions]"], 0.3);
 
   // take actions section loading animation
-  if (loyaltyRewardsSection.dataset.darkMode !== "true") {
+  if (loyaltyRewardsSection.dataset.userLoggedIn !== "true") {
     playLoadingAnimationsBySection("[data-lr-take-actions]", 
     ["[data-lr-ta-login-btn]", "[data-lr-ta-signup-btn]"], 0.4, 700, () => {
       removeTransitionDelay(takeActionsLoginBtn);
@@ -118,6 +118,7 @@ if (document.querySelector("[data-loyalty-rewards-section]")) {
 
   // lottie
   let sectionWasAlreadyInViewport = false;
+  let isFirstTime = true;
 
   function reloadPlayer(player) {
     player.load('../loyalty-rewards.lottie');
@@ -125,6 +126,19 @@ if (document.querySelector("[data-loyalty-rewards-section]")) {
     player.addEventListener('ready', () => {
       player.play();
       player.setSpeed(1.25);
+    });
+
+    player.addEventListener('complete', () => {
+      if (isFirstTime) {
+        lrLoggedInUserPointsCount.classList.add("animate-in");
+        lrLoggedInUserRedeemNowBtn.classList.add("animate-in");
+
+        setTimeout(() => {
+          removeTransitionDelay(loggedInHeroRedeemBtn);
+        }, onloadTransitionDurationLonger * 2 + onloadTransitionDelayStepLarger);
+
+        isFirstTime = false;
+      }
     });
   }
 
