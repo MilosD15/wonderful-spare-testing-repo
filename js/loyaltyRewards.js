@@ -124,7 +124,7 @@ if (document.querySelector("[data-loyalty-rewards-section]")) {
   
     player.addEventListener('ready', () => {
       player.play();
-      player.setSpeed(0.5);
+      player.setSpeed(1.25);
     });
   }
 
