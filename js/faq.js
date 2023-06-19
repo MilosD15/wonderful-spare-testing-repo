@@ -8,14 +8,18 @@ if (document.querySelector("[data-faq-section]")) {
     handleQuestionMouseOver(e);
     console.log("mouseenter");
   });
-  document.body.addEventListener("click", e => {
-    handleQuestionMouseDown(e);
-    console.log("click");
-  });
+  // document.body.addEventListener("click", e => {
+  //   handleQuestionMouseDown(e);
+  //   console.log("click");
+  // });
 
   document.body.addEventListener("mouseover", e => {
     handleQuestionMouseOver(e);
     console.log("mouseover");
+  });
+  document.body.addEventListener("mousedown", e => {
+    handleQuestionMouseDown(e);
+    console.log("mousedown");
   });
 
   function handleQuestionMouseOver(e) {
