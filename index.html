@@ -4,26 +4,63 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Loyalty Rewards | Wonderful</title>
-  <link rel="stylesheet" href="./css/loyalty-rewards.css">
-  <style>
-    body {
-      margin: 0;
-    }
-    .lr-take-actions__actions {
-      max-height: 100vh;
-      min-height: 100vh;
-      font-size: 4vw;
-    }
-    .lr-take-actions__actions-link {
-      width: 70%;
-    }
-  </style>
+  <title>FAQ | Wonderful</title>
+  <link rel="stylesheet" href="./font/lemonmilk/addLemonmilk.css">
+  <link rel="stylesheet" href="./font/helvetica-now/addHelveticaNow.css">
+  <link rel="stylesheet" href="./css/blur-effect.css">
+  <link rel="stylesheet" href="./css/grain-effect.css">
+  <link rel="stylesheet" href="./css/graphic-section.css">
+  <link rel="stylesheet" href="./css/vibrate.css">
+  <link rel="stylesheet" href="./css/boilerplate.css">
+  <link rel="stylesheet" href="./css/faq.css">
+  <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="./js/loadQuestions.js" type="module"></script>
+  <script src="./js/faq.js" type="module"></script>
 </head>
 <body>
-  <div class="lr-take-actions__actions">
-    <a href="./pages/logged-in-lr.html" class="lr-take-actions__actions-link">Logged in version</a>
-    <a href="./pages/not-logged-in-lr.html" class="lr-take-actions__actions-link"> Not logged in version</a>
-  </div>
+  <section class="faq" data-faq-section>
+    <div class="faq__wrapper">
+      <div class="faq__lottie-container">
+        <dotlottie-player mode="normal" class="faq__lottie-player" data-faq-lottie-player></dotlottie-player>
+      </div>
+      <div class="faq__questions" data-faq-questions></div>
+    </div>
+  </section>
+
+  <a href=""></a>
+
+  <template data-faq-question-template>
+    <div class="faq__question" data-faq-question>
+      <div class="faq__question-title">
+        <button class="faq__question-title-text" data-faq-question-btn data-question-hover-text="Reveal answer"></button>
+        <div class="faq__question-title-left-dot"></div>
+        <div class="faq__question-title-right-dot"></div>
+      </div>
+      <div class="faq__question-answer-wrapper" data-faq-answer>
+        <div class="faq__question-answer">
+          <div class="faq__question-answer-box">
+            <div class="faq__question-answer-box-bg-blanket"></div>
+            <p class="faq__question-answer-text" data-faq-answer-text></p>
+            <div class="faq__question-answer-pointer">
+              <div class="faq__question-answer-pointer-extra-bottom-stroke">
+                <svg viewBox="0 0 79 72">
+                  <path d="M77.5 1C53 16 16 13.5 1 8V71C35 59.4 74.5 20.5 77.5 1Z"/>
+                </svg>
+              </div>
+              <div class="faq__question-answer-pointer-white-part">
+                <svg viewBox="0 0 79 72">
+                  <path d="M77.5 1C53 16 16 13.5 1 8V71C35 59.4 74.5 20.5 77.5 1Z"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="faq__question-answer-character">
+            <img class="faq__question-answer-character-image" data-faq-answer-img>
+          </div>
+        </div>
+      </div>
+    </div>
+  </template>
 </body>
 </html>
