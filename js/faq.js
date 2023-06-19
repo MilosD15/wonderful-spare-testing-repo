@@ -4,23 +4,20 @@ if (document.querySelector("[data-faq-section]")) {
   const faqSection = document.querySelector("[data-faq-section]");
   const faqLottiePlayer = faqSection.querySelector("[data-faq-lottie-player]");
 
-  document.body.addEventListener("mouseenter", e => {
-    handleQuestionMouseOver(e);
-    console.log("mouseenter");
-  });
-  // document.body.addEventListener("click", e => {
-  //   handleQuestionMouseDown(e);
-  //   console.log("click");
-  // });
-
-  document.body.addEventListener("mouseover", e => {
-    handleQuestionMouseOver(e);
-    console.log("mouseover");
-  });
-  document.body.addEventListener("mousedown", e => {
-    handleQuestionMouseDown(e);
-    console.log("mousedown");
-  });
+  if (!isTouchDevice()) {
+    document.body.addEventListener("mouseenter", e => {
+      handleQuestionMouseOver(e);
+      console.log("mouseenter");
+    });
+    document.body.addEventListener("mouseover", e => {
+      handleQuestionMouseOver(e);
+      console.log("mouseover");
+    });
+    document.body.addEventListener("mousedown", e => {
+      handleQuestionMouseDown(e);
+      console.log("mousedown");
+    });
+  }
 
   function handleQuestionMouseOver(e) {
     if (e.target.matches("[data-faq-question-btn]")) {
@@ -40,28 +37,30 @@ if (document.querySelector("[data-faq-section]")) {
     }
   }
 
-  if (isTouchDevice()) {
-    document.body.addEventListener("touchstart", e => {
-      if (e.target.matches("[data-faq-question-btn]")) {
-        handleQuestionClick(e);
-        const questionHoverText = e.target.dataset.questionHoverText;
-  
-        if (questionHoverText === "Collapse answer") {
-          e.target.classList.add("on-hover");
-        }
+  document.body.addEventListener("touchstart", e => {
+    console.log("touchstart");
+
+    if (e.target.matches("[data-faq-question-btn]")) {
+      handleQuestionClick(e);
+      const questionHoverText = e.target.dataset.questionHoverText;
+
+      if (questionHoverText === "Collapse answer") {
+        e.target.classList.add("on-hover");
       }
-    });
-  
-    document.body.addEventListener("touchend", e => {
-      if (e.target.matches("[data-faq-question-btn]")) {
-        const questionHoverText = e.target.dataset.questionHoverText;
-  
-        if (questionHoverText === "Reveal answer") {
-          e.target.classList.remove("on-hover");
-        }
+    }
+  });
+
+  document.body.addEventListener("touchend", e => {
+    console.log("touchend");
+
+    if (e.target.matches("[data-faq-question-btn]")) {
+      const questionHoverText = e.target.dataset.questionHoverText;
+
+      if (questionHoverText === "Reveal answer") {
+        e.target.classList.remove("on-hover");
       }
-    });
-  }
+    }
+  });
   
   function handleQuestionClick(e) {
     const questionContainer = e.target.closest("[data-faq-question]");
@@ -74,7 +73,7 @@ if (document.querySelector("[data-faq-section]")) {
   }
 
   function isTouchDevice() {
-    return 'ontouchstart' in window || navigator.maxTouchPoints > 0 || navigator.msMaxTouchPoints > 0;
+    return Modernizr.touch;
   }
 
   // lottie
