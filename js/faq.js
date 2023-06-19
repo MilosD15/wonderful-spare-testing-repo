@@ -1,41 +1,46 @@
 import { isSectionInViewPort } from "./additional-func.js";
 
-console.log("script loaded");
-
 if (document.querySelector("[data-faq-section]")) {
   const faqSection = document.querySelector("[data-faq-section]");
   const faqLottiePlayer = faqSection.querySelector("[data-faq-lottie-player]");
 
-  console.log("faq section...");
+  // if (!isTouchDevice()) {
+  //   document.body.addEventListener("mouseenter", e => {
+  //     handleQuestionMouseOver(e);
+  //     console.log("mouseenter");
+  //   });
+  //   document.body.addEventListener("click", e => {
+  //     handleQuestionMouseDown(e);
+  //     console.log("click");
+  //   });
+  // }
 
-  if (!isTouchDevice()) {
-    document.body.addEventListener("mouseenter", e => {
-      handleQuestionMouseOver(e);
-      console.log("mouseenter");
-    });
-    document.body.addEventListener("click", e => {
-      handleQuestionMouseDown(e);
-      console.log("click");
-    });
-  }
+  document.body.addEventListener("mouseenter", e => {
+    handleQuestionMouseOver(e);
+    console.log("mouseenter");
+  });
+  document.body.addEventListener("click", e => {
+    handleQuestionMouseDown(e);
+    console.log("click");
+  });
 
   document.body.addEventListener("mouseover", e => {
     handleQuestionMouseOver(e);
     console.log("mouseover");
   });
-  document.body.addEventListener("mousedown", e => {
-    handleQuestionMouseDown(e);
-    console.log("mousedown");
-  });
+  // document.body.addEventListener("mousedown", e => {
+  //   handleQuestionMouseDown(e);
+  //   console.log("mousedown");
+  // });
 
   function handleQuestionMouseOver(e) {
-    if (isTouchDevice()) return;
+    // if (isTouchDevice()) return;
 
     if (e.target.matches("[data-faq-question-btn]")) {
       e.target.classList.add("on-hover");
 
       e.target.addEventListener("mouseleave", e => {
-        if (isTouchDevice()) return;
+        // if (isTouchDevice()) return;
 
         if (e.target.matches("[data-faq-question-btn]")) {
           e.target.classList.remove("on-hover");
@@ -45,7 +50,7 @@ if (document.querySelector("[data-faq-section]")) {
   }
 
   function handleQuestionMouseDown(e) {
-    if (isTouchDevice()) return;
+    // if (isTouchDevice()) return;
 
     if (e.target.matches("[data-faq-question-btn]")) {
       handleQuestionClick(e);
