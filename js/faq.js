@@ -43,28 +43,30 @@ if (document.querySelector("[data-faq-section]")) {
   document.body.addEventListener("touchstart", e => {
     if (!e.target.matches("[data-faq-question-btn]")) return;
     
-    const questionHoverText = e.target.dataset.questionHoverText;
     touchStartDate = new Date();
 
-    if (questionHoverText === "Collapse answer") {
-      e.target.classList.add("on-hover");
-    }
+    // const questionHoverText = e.target.dataset.questionHoverText;
+    // if (questionHoverText === "Collapse answer") {
+    //   e.target.classList.add("on-hover");
+    // }
   });
 
   document.body.addEventListener("touchend", e => {
     if (!e.target.matches("[data-faq-question-btn]")) return;
 
-    const questionHoverText = e.target.dataset.questionHoverText;
     touchEndDate = new Date();
-
-    if (questionHoverText === "Reveal answer") {
-      e.target.classList.remove("on-hover");
-    }
-
     const touchDuration = touchEndDate.getTime() - touchStartDate.getTime();
     if (touchDuration <= averageHumanTouchDuration) {
       handleQuestionClick(e);
+      e.target.classList.remove("on-hover");
+    } else {
+      e.target.classList.add("on-hover");
     }
+
+    // const questionHoverText = e.target.dataset.questionHoverText;
+    // if (questionHoverText === "Reveal answer") {
+    //   e.target.classList.remove("on-hover");
+    // }
   });
   
   function handleQuestionClick(e) {
