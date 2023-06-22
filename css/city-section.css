@@ -1,5 +1,5 @@
 :root {
-  --CITY-SEC-building-translate-down: 20rem;
+  --CITY-SEC-building-translate-down: calc(100% + 10rem);
   --CITY-SEC-building-transition-duration: 600;
   --CITY-SEC-building-transition-delay-step: 100;
 }
