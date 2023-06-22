@@ -1,0 +1,59 @@
+.city {
+  width: 100%;
+  aspect-ratio: 16/8;
+  position: relative;
+  overflow: hidden;
+}
+.city__wrapper {
+  aspect-ratio: 16/8;
+}
+.city__sky {
+  inset: 0;
+}
+.city__stars {
+  inset: 0;
+}
+.city__building-1 {
+  bottom: -50%;
+  left: -25%;
+  width: 50%;
+}
+.city__building-3 {
+  bottom: -54%;
+  left: -2%;
+  width: 45%;
+}
+.city__building-2 {
+  bottom: -24%;
+  left: 20%;
+  width: 22%;
+}
+.city__building-6 {
+  bottom: -82%;
+  right: -27%;
+  width: 52%;
+}
+.city__building-4 {
+  bottom: -40%;
+  right: 6%;
+  width: 22%;
+}
+.city__building-5 {
+  bottom: -40%;
+  right: 17%;
+  width: 30%;
+}
+.city__moon {
+  top: -12%;
+  left: -34%;
+  width: 200%;
+  -webkit-transform: rotate(36deg);
+          transform: rotate(36deg);
+}
+.city__lottie-placeholder {
+  top: 46%;
+  left: 50%;
+  width: 90%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
