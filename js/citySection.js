@@ -17,18 +17,17 @@ if (document.querySelector("[data-city-section]")) {
     "[data-city-section-building='3'], [data-city-section-building='6']"
   )];
   
-  // animate buildings on load
-  let cityBuildingsAlreadyAnimated = false;
-  
-  window.addEventListener("load", handleAnimatingBuildings);
-  window.addEventListener("scroll", handleAnimatingBuildings);
+  // animate buildings
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
 
-  function handleAnimatingBuildings() {
-    if (isSectionInViewPort(citySection) && cityBuildingsAlreadyAnimated === false) {
-      cityBuildingsAlreadyAnimated = true;
       animateBuildings();
-    }
-  }
+
+      observer.unobserve(entry.target);
+    });
+  }, { threshold: 0.8 });
+  observer.observe(citySection);
 
   function animateBuildings() {
     citySectionBuildings.forEach(building => {
