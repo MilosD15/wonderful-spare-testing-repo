@@ -16,21 +16,23 @@ if (document.querySelector("[data-city-section]")) {
   const cityClosestBuildings = [...citySection.querySelectorAll(
     "[data-city-section-building='3'], [data-city-section-building='6']"
   )];
-
-  // variables
-  const cityBuildingTransitionDuration = parseInt(getCSSPropertyValueFromRoot("--CITY-SEC-building-transition-duration"));
-  const cityBuildingTransitionDelayStep = parseInt(getCSSPropertyValueFromRoot("--CITY-SEC-building-transition-delay-step"));
-
+  
   // animate buildings on load
-  window.addEventListener("load", animateBuildings);
+  let cityBuildingsAlreadyAnimated = false;
+  
+  window.addEventListener("load", handleAnimatingBuildings);
+  window.addEventListener("scroll", handleAnimatingBuildings);
+
+  function handleAnimatingBuildings() {
+    if (isSectionInViewPort(citySection) && cityBuildingsAlreadyAnimated === false) {
+      cityBuildingsAlreadyAnimated = true;
+      animateBuildings();
+    }
+  }
 
   function animateBuildings() {
     citySectionBuildings.forEach(building => {
       building.classList.add("animate");
-  
-      setTimeout(() => {
-        building.classList.add("transition-none");
-      }, cityBuildingTransitionDuration + cityBuildingTransitionDelayStep * 2);
     });
   }
 

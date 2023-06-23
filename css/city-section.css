@@ -28,7 +28,7 @@
 .city-section__stars {
   inset: 0;
 }
-.city-section__building {
+.city-section__building-image {
   -webkit-transform: translateY(var(--CITY-SEC-building-translate-down));
           transform: translateY(var(--CITY-SEC-building-translate-down));
   -webkit-transition: -webkit-transform calc(var(--CITY-SEC-building-transition-duration) * 1ms) ease;
@@ -36,23 +36,19 @@
   transition: transform calc(var(--CITY-SEC-building-transition-duration) * 1ms) ease;
   transition: transform calc(var(--CITY-SEC-building-transition-duration) * 1ms) ease, -webkit-transform calc(var(--CITY-SEC-building-transition-duration) * 1ms) ease;
 }
-.city-section__building.animate {
+.city-section__building.animate .city-section__building-image {
   -webkit-transform: translateY(0);
           transform: translateY(0);
 }
-.city-section__building.transition-none {
-  -webkit-transition: none;
-  transition: none;
-}
-.city-section__building--2, .city-section__building--4 {
+.city-section__building--2 .city-section__building-image, .city-section__building--4 .city-section__building-image {
   -webkit-transition-delay: 0ms;
           transition-delay: 0ms;
 }
-.city-section__building--1, .city-section__building--5 {
+.city-section__building--1 .city-section__building-image, .city-section__building--5 .city-section__building-image {
   -webkit-transition-delay: calc(var(--CITY-SEC-building-transition-delay-step) * 1ms);
           transition-delay: calc(var(--CITY-SEC-building-transition-delay-step) * 1ms);
 }
-.city-section__building--3, .city-section__building--6 {
+.city-section__building--3 .city-section__building-image, .city-section__building--6 .city-section__building-image {
   -webkit-transition-delay: calc(var(--CITY-SEC-building-transition-delay-step) * 1ms * 2);
           transition-delay: calc(var(--CITY-SEC-building-transition-delay-step) * 1ms * 2);
 }
