@@ -1,5 +1,5 @@
 :root {
-  --TY-REVIEWS-SEC-character-translate-down: calc(100% + 10rem);
+  --TY-REVIEWS-SEC-character-translate-down: calc(120% + 10rem);
   --TY-REVIEWS-SEC-character-transition-duration: 600;
   --TY-REVIEWS-SEC-character-transition-delay-step: 100;
 }
@@ -67,29 +67,29 @@
           transition-delay: calc(var(--TY-REVIEWS-SEC-character-transition-delay-step) * 1ms * 2);
 }
 .ty-reviews__character--brush {
-  width: 40%;
-  top: -2%;
-  left: 0%;
+  width: 34%;
+  top: 0%;
+  left: 4%;
 }
 .ty-reviews__character--stick {
-  width: 36%;
-  top: 12%;
-  left: -6%;
+  width: 30%;
+  top: 14%;
+  left: -4%;
 }
 .ty-reviews__character--varnish-cup {
-  width: 44%;
-  top: 44%;
+  width: 40%;
+  top: 38%;
   left: 6%;
 }
 .ty-reviews__character--angles-blue {
-  width: 30%;
-  top: -6%;
-  right: -4%;
+  width: 25%;
+  top: -2%;
+  right: -2%;
 }
 .ty-reviews__character--prophy {
-  width: 44%;
-  top: 40%;
-  right: -4%;
+  width: 38%;
+  top: 36%;
+  right: -2%;
 }
 .ty-reviews__lottie {
   width: 74%;
