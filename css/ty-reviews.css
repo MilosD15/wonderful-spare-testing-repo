@@ -93,7 +93,86 @@
 }
 .ty-reviews__lottie {
   width: 74%;
-  top: -10%;
+  top: -24%;
   left: 13%;
   z-index: 2;
+}
+.ty-reviews__content {
+  width: 50%;
+  text-align: center;
+  z-index: 2;
+  top: 43%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  font-family: "LEMON MILK", sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #f1bf33;
+  font-size: 1.5vw;
+}
+.ty-reviews__message {
+  line-height: 1.6;
+  font-weight: 600;
+}
+.ty-reviews__link {
+  --medium-body-font-size: 16px;
+  --color-blue: #00cbff;
+  --color-light-blue: #caf0ff;
+  --font-family-lemonmilk: "LEMON MILK", sans-serif;
+  --font-weight-normal: 400;
+  cursor: pointer;
+  position: relative;
+  text-transform: uppercase;
+  margin-top: 0.5em;
+  padding: 0.8em 3em;
+  font-size: 1.5vw;
+  background-color: var(--color-blue);
+  color: #000;
+  border: 0.2em solid black;
+  border-radius: 100px;
+  text-decoration: none;
+  overflow: visible;
+  font-family: var(--font-family-lemonmilk);
+  font-weight: var(--font-weight-normal);
+  -webkit-transition: all 0.7s ease;
+  transition: all 0.7s ease;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.ty-reviews__link:hover {
+  background-color: var(--color-light-blue);
+  color: #000;
+  border: 3px solid #000;
+  scale: 1.2;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+@media screen and (max-width: 1300px) {
+  .ty-reviews__content {
+    width: 70%;
+    font-size: 2vw;
+  }
+  .ty-reviews__link {
+    font-size: 2.5vw;
+  }
 }
