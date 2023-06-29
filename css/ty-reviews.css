@@ -1,0 +1,58 @@
+.ty-reviews {
+  width: 100%;
+  aspect-ratio: 16/7;
+  position: relative;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.ty-reviews__wrapper {
+  aspect-ratio: 16/7;
+}
+.ty-reviews__bg {
+  inset: 0;
+}
+.ty-reviews__bg::after {
+  position: absolute;
+  content: "";
+  inset: 0;
+  -webkit-box-shadow: inset 0px 0px 6vw 2vw rgba(0, 0, 0, 0.5);
+          box-shadow: inset 0px 0px 6vw 2vw rgba(0, 0, 0, 0.5);
+}
+.ty-reviews__brush {
+  width: 34%;
+  top: -8%;
+  left: 3%;
+}
+.ty-reviews__stick {
+  width: 36%;
+  top: 6%;
+  left: -6%;
+}
+.ty-reviews__varnish-cup {
+  width: 42%;
+  top: 36%;
+  left: 8%;
+}
+.ty-reviews__angles-blue {
+  width: 26%;
+  top: -12%;
+  right: 0%;
+}
+.ty-reviews__prophy {
+  width: 42%;
+  top: 34%;
+  right: -2%;
+}
+.ty-reviews__lottie {
+  width: 68%;
+  top: -10%;
+  left: 14%;
+}
