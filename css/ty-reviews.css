@@ -125,7 +125,7 @@
 .ty-reviews__message {
   line-height: 1.6;
   font-weight: 600;
-  text-shadow: -0.2vw 0.2vw 0 rgba(0, 0, 0, 0.7);
+  text-shadow: -0.2vw 0.2vw 0 rgba(0, 0, 0, 0.15);
 }
 .ty-reviews__link {
   --medium-body-font-size: 14px;
@@ -137,11 +137,11 @@
   position: relative;
   text-transform: uppercase;
   margin-top: 0.5em;
-  padding: 0.6em 7em;
+  padding: 0.8em 8em;
   font-size: var(--medium-body-font-size);
   background-color: var(--color-blue);
   color: #000;
-  border: 0.2em solid black;
+  border: 0.25em solid black;
   border-radius: 100px;
   text-decoration: none;
   overflow: visible;
@@ -172,8 +172,5 @@
   .ty-reviews__content {
     width: 70%;
     font-size: 2vw;
-  }
-  .ty-reviews__link {
-    font-size: 2.5vw;
   }
 }
