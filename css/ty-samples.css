@@ -1,0 +1,86 @@
+.ty-samples {
+  width: 100%;
+  aspect-ratio: 16/10;
+  position: relative;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.ty-samples::before {
+  z-index: 3;
+}
+.ty-samples::after {
+  -webkit-box-shadow: inset 0 -16.9vw 8vw -1.5vw #000000;
+          box-shadow: inset 0 -16.9vw 8vw -1.5vw #000000;
+}
+.ty-samples__wrapper {
+  aspect-ratio: 16/10;
+}
+.ty-samples__bg {
+  inset: 0;
+  bottom: 12%;
+}
+.ty-samples__bg::after {
+  position: absolute;
+  content: "";
+  inset: 0;
+  -webkit-box-shadow: inset 0px 0px 6vw 2vw rgba(0, 0, 0, 0.5);
+          box-shadow: inset 0px 0px 6vw 2vw rgba(0, 0, 0, 0.5);
+}
+.ty-samples__cloud--1 {
+  width: 100%;
+  top: 0%;
+  left: -28%;
+}
+.ty-samples__cloud--2 {
+  width: 100%;
+  top: 40%;
+  left: 40%;
+}
+.ty-samples__cloud--3 {
+  width: 100%;
+  top: -24%;
+  left: -44%;
+}
+.ty-samples__cloud--4 {
+  width: 45%;
+  top: 0%;
+  left: 24%;
+}
+.ty-samples__cloud--5 {
+  width: 45%;
+  top: 40%;
+  left: -22%;
+}
+.ty-samples__cloud--6 {
+  width: 35%;
+  top: -6%;
+  left: 84%;
+}
+.ty-samples__birds {
+  width: 90%;
+  height: 90%;
+  top: 45%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+.ty-samples__airplane {
+  top: -8%;
+  left: -8%;
+  width: 116%;
+  z-index: 2;
+}
+.ty-samples__pilot-hand {
+  top: 32%;
+  left: 14%;
+  width: 32%;
+  z-index: 2;
+}
