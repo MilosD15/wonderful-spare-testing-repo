@@ -1,3 +1,8 @@
+:root {
+  --TY-SAMPLES-SEC-airplane-translate-down: calc(100% + 10rem);
+  --TY-SAMPLES-SEC-airplane-transition-duration: 900;
+}
+
 .ty-samples {
   width: 100%;
   aspect-ratio: 16/10;
@@ -72,15 +77,122 @@
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
 }
-.ty-samples__airplane {
-  top: -8%;
-  left: -8%;
-  width: 116%;
+.ty-samples__pilot-airplane-container {
+  position: absolute;
+  inset: 0;
   z-index: 2;
+  -webkit-transform: translateY(var(--TY-SAMPLES-SEC-airplane-translate-down));
+          transform: translateY(var(--TY-SAMPLES-SEC-airplane-translate-down));
+  -webkit-transition: -webkit-transform calc(var(--TY-SAMPLES-SEC-airplane-transition-duration) * 1ms) ease;
+  transition: -webkit-transform calc(var(--TY-SAMPLES-SEC-airplane-transition-duration) * 1ms) ease;
+  transition: transform calc(var(--TY-SAMPLES-SEC-airplane-transition-duration) * 1ms) ease;
+  transition: transform calc(var(--TY-SAMPLES-SEC-airplane-transition-duration) * 1ms) ease, -webkit-transform calc(var(--TY-SAMPLES-SEC-airplane-transition-duration) * 1ms) ease;
 }
-.ty-samples__pilot-hand {
-  top: 32%;
-  left: 14%;
-  width: 32%;
-  z-index: 2;
+.ty-samples__pilot-airplane-container.load-transition {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+.ty-samples__pilot-airplane-container.airplane-flying {
+  -webkit-animation: airplane-flying 3000ms linear infinite;
+          animation: airplane-flying 3000ms linear infinite;
+}
+.ty-samples__airplane {
+  position: absolute;
+  top: -10%;
+  left: -6%;
+  width: 112%;
+}
+.ty-samples__pilot-arm {
+  position: absolute;
+  top: 40%;
+  left: 25.3%;
+  width: 8%;
+  -webkit-transform-origin: bottom right;
+          transform-origin: bottom right;
+  -webkit-transform: rotate(-30deg);
+          transform: rotate(-30deg);
+  -webkit-animation: presenting-package 2600ms ease-in-out infinite forwards;
+          animation: presenting-package 2600ms ease-in-out infinite forwards;
+}
+
+@-webkit-keyframes presenting-package {
+  0%, 100% {
+    -webkit-transform: rotate(-30deg);
+            transform: rotate(-30deg);
+  }
+  40%, 60% {
+    -webkit-transform: rotate(15deg);
+            transform: rotate(15deg);
+  }
+}
+
+@keyframes presenting-package {
+  0%, 100% {
+    -webkit-transform: rotate(-30deg);
+            transform: rotate(-30deg);
+  }
+  40%, 60% {
+    -webkit-transform: rotate(15deg);
+            transform: rotate(15deg);
+  }
+}
+@-webkit-keyframes airplane-flying {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  21% {
+    -webkit-transform: translateY(-2%);
+            transform: translateY(-2%);
+  }
+  29% {
+    -webkit-transform: translateY(-2%);
+            transform: translateY(-2%);
+  }
+  50% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  71% {
+    -webkit-transform: translateY(2%);
+            transform: translateY(2%);
+  }
+  79% {
+    -webkit-transform: translateY(2%);
+            transform: translateY(2%);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+@keyframes airplane-flying {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  21% {
+    -webkit-transform: translateY(-2%);
+            transform: translateY(-2%);
+  }
+  29% {
+    -webkit-transform: translateY(-2%);
+            transform: translateY(-2%);
+  }
+  50% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  71% {
+    -webkit-transform: translateY(2%);
+            transform: translateY(2%);
+  }
+  79% {
+    -webkit-transform: translateY(2%);
+            transform: translateY(2%);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
 }
