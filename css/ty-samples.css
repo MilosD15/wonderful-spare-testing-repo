@@ -94,8 +94,8 @@
           transform: translateY(0) translateX(-2%);
 }
 .ty-samples__pilot-airplane-container .vibrate {
-  -webkit-animation-duration: 1200ms;
-          animation-duration: 1200ms;
+  -webkit-animation-duration: 400ms;
+          animation-duration: 400ms;
 }
 .ty-samples__airplane {
   position: absolute;
