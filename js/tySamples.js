@@ -20,9 +20,9 @@ if (document.querySelector("[data-ty-samples-section]")) {
 
       tySamplesAirplanePilotContainer.classList.add("load-transition");
 
-      setTimeout(() => {
-        tySamplesAirplanePilotContainer.classList.add("vibrate", "vibrate--version-3");
-      }, tySamplesAirplaneTransitionDuration);
+      // setTimeout(() => {
+      //   tySamplesAirplanePilotContainer.classList.add("vibrate", "vibrate--version-3");
+      // }, tySamplesAirplaneTransitionDuration);
 
       observer.unobserve(entry.target);
     });

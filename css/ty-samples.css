@@ -95,13 +95,17 @@
   -webkit-transform: translateY(0) translateX(-2%);
           transform: translateY(0) translateX(-2%);
 }
-.ty-samples__pilot-airplane-container.vibrate {
+.ty-samples__pilot-airplane-container .vibrate {
   -webkit-animation-duration: 800ms;
           animation-duration: 800ms;
 }
-.ty-samples__pilot-airplane-container.vibrate.vibrate--version-3 {
+.ty-samples__pilot-airplane-container .vibrate.vibrate--version-3 {
   -webkit-animation-name: airplane-vibrate;
           animation-name: airplane-vibrate;
+}
+.ty-samples__pilot-airplane-outer-wrapper {
+  position: absolute;
+  inset: 0;
 }
 .ty-samples__airplane {
   position: absolute;
