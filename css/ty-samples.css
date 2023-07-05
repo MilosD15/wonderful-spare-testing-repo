@@ -117,6 +117,60 @@
   -webkit-animation: presenting-package calc(var(--TY-SAMPLES-SEC-pilot-arm-animation-duration) * 1ms) ease-in-out infinite forwards;
           animation: presenting-package calc(var(--TY-SAMPLES-SEC-pilot-arm-animation-duration) * 1ms) ease-in-out infinite forwards;
 }
+.ty-samples__btn-container {
+  bottom: 2%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  z-index: 3;
+}
+.ty-samples__btn {
+  --medium-body-font-size: 15.5px;
+  --color-blue: #00cbff;
+  --color-light-blue: #caf0ff;
+  --font-family-lemonmilk: "LEMON MILK", sans-serif;
+  --font-weight-normal: 400;
+  position: relative;
+  letter-spacing: 0.6px;
+  cursor: pointer;
+  text-transform: uppercase;
+  margin-top: 0.5em;
+  padding: 0.8em 8em;
+  font-size: var(--medium-body-font-size);
+  background-color: var(--color-blue);
+  color: #000;
+  border: 0.25em solid black;
+  border-radius: 100px;
+  text-decoration: none;
+  overflow: visible;
+  font-family: var(--font-family-lemonmilk);
+  font-weight: var(--font-weight-normal);
+  -webkit-transition: all 0.7s ease;
+  transition: all 0.7s ease;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+@media screen and (max-width: 600px) {
+  .ty-samples__btn {
+    --medium-body-font-size: 14px;
+    padding: 0.8em 6em;
+  }
+}
+.ty-samples__btn:hover {
+  background-color: var(--color-light-blue);
+  color: #000;
+  border: 3px solid #000;
+  scale: 1.2;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
 
 @-webkit-keyframes presenting-package {
   0%, 100% {
@@ -139,8 +193,6 @@
             transform: rotate(15deg);
   }
 }
-/* make like a circular animation for airplane flying */
-/* add some delay to the arm animation */
 @-webkit-keyframes airplane-flying {
   0% {
     -webkit-transform: translateY(0) translateX(-2%);
