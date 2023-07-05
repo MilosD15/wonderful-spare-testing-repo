@@ -93,9 +93,9 @@
   -webkit-transform: translateY(0) translateX(-2%);
           transform: translateY(0) translateX(-2%);
 }
-.ty-samples__pilot-airplane-container.airplane-flying {
-  -webkit-animation: airplane-flying 5000ms linear infinite;
-          animation: airplane-flying 5000ms linear infinite;
+.ty-samples__pilot-airplane-container .vibrate {
+  -webkit-animation-duration: 1200ms;
+          animation-duration: 1200ms;
 }
 .ty-samples__airplane {
   position: absolute;
@@ -191,81 +191,5 @@
   50% {
     -webkit-transform: rotate(15deg);
             transform: rotate(15deg);
-  }
-}
-@-webkit-keyframes airplane-flying {
-  0% {
-    -webkit-transform: translateY(0) translateX(-2%);
-            transform: translateY(0) translateX(-2%);
-  }
-  12.5% {
-    -webkit-transform: translateY(-1.5%) translateX(-1%);
-            transform: translateY(-1.5%) translateX(-1%);
-  }
-  25% {
-    -webkit-transform: translateY(-2%) translateX(0);
-            transform: translateY(-2%) translateX(0);
-  }
-  37.5% {
-    -webkit-transform: translateY(-1.5%) translateX(1%);
-            transform: translateY(-1.5%) translateX(1%);
-  }
-  50% {
-    -webkit-transform: translateY(0) translateX(2%);
-            transform: translateY(0) translateX(2%);
-  }
-  62.5% {
-    -webkit-transform: translateY(1.5%) translateX(1%);
-            transform: translateY(1.5%) translateX(1%);
-  }
-  75% {
-    -webkit-transform: translateY(2%) translateX(0);
-            transform: translateY(2%) translateX(0);
-  }
-  87.5% {
-    -webkit-transform: translateY(1.5%) translateX(-1%);
-            transform: translateY(1.5%) translateX(-1%);
-  }
-  100% {
-    -webkit-transform: translateY(0) translateX(-2%);
-            transform: translateY(0) translateX(-2%);
-  }
-}
-@keyframes airplane-flying {
-  0% {
-    -webkit-transform: translateY(0) translateX(-2%);
-            transform: translateY(0) translateX(-2%);
-  }
-  12.5% {
-    -webkit-transform: translateY(-1.5%) translateX(-1%);
-            transform: translateY(-1.5%) translateX(-1%);
-  }
-  25% {
-    -webkit-transform: translateY(-2%) translateX(0);
-            transform: translateY(-2%) translateX(0);
-  }
-  37.5% {
-    -webkit-transform: translateY(-1.5%) translateX(1%);
-            transform: translateY(-1.5%) translateX(1%);
-  }
-  50% {
-    -webkit-transform: translateY(0) translateX(2%);
-            transform: translateY(0) translateX(2%);
-  }
-  62.5% {
-    -webkit-transform: translateY(1.5%) translateX(1%);
-            transform: translateY(1.5%) translateX(1%);
-  }
-  75% {
-    -webkit-transform: translateY(2%) translateX(0);
-            transform: translateY(2%) translateX(0);
-  }
-  87.5% {
-    -webkit-transform: translateY(1.5%) translateX(-1%);
-            transform: translateY(1.5%) translateX(-1%);
-  }
-  100% {
-    -webkit-transform: translateY(0) translateX(-2%);
-            transform: translateY(0) translateX(-2%);
   }
 }
