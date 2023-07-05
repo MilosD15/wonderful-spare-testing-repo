@@ -1,6 +1,7 @@
 :root {
   --TY-SAMPLES-SEC-airplane-translate-down: calc(100% + 10rem);
   --TY-SAMPLES-SEC-airplane-transition-duration: 900;
+  --TY-SAMPLES-SEC-pilot-arm-animation-duration: 2600;
 }
 
 .ty-samples {
@@ -89,12 +90,12 @@
   transition: transform calc(var(--TY-SAMPLES-SEC-airplane-transition-duration) * 1ms) ease, -webkit-transform calc(var(--TY-SAMPLES-SEC-airplane-transition-duration) * 1ms) ease;
 }
 .ty-samples__pilot-airplane-container.load-transition {
-  -webkit-transform: translateY(0);
-          transform: translateY(0);
+  -webkit-transform: translateY(0) translateX(-2%);
+          transform: translateY(0) translateX(-2%);
 }
 .ty-samples__pilot-airplane-container.airplane-flying {
-  -webkit-animation: airplane-flying 3000ms linear infinite;
-          animation: airplane-flying 3000ms linear infinite;
+  -webkit-animation: airplane-flying 5000ms linear infinite;
+          animation: airplane-flying 5000ms linear infinite;
 }
 .ty-samples__airplane {
   position: absolute;
@@ -111,8 +112,10 @@
           transform-origin: bottom right;
   -webkit-transform: rotate(-30deg);
           transform: rotate(-30deg);
-  -webkit-animation: presenting-package 2600ms ease-in-out infinite forwards;
-          animation: presenting-package 2600ms ease-in-out infinite forwards;
+}
+.ty-samples__pilot-arm.animate {
+  -webkit-animation: presenting-package calc(var(--TY-SAMPLES-SEC-pilot-arm-animation-duration) * 1ms) ease-in-out infinite forwards;
+          animation: presenting-package calc(var(--TY-SAMPLES-SEC-pilot-arm-animation-duration) * 1ms) ease-in-out infinite forwards;
 }
 
 @-webkit-keyframes presenting-package {
@@ -120,7 +123,7 @@
     -webkit-transform: rotate(-30deg);
             transform: rotate(-30deg);
   }
-  40%, 60% {
+  50% {
     -webkit-transform: rotate(15deg);
             transform: rotate(15deg);
   }
@@ -131,68 +134,86 @@
     -webkit-transform: rotate(-30deg);
             transform: rotate(-30deg);
   }
-  40%, 60% {
+  50% {
     -webkit-transform: rotate(15deg);
             transform: rotate(15deg);
   }
 }
+/* make like a circular animation for airplane flying */
+/* add some delay to the arm animation */
 @-webkit-keyframes airplane-flying {
   0% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
+    -webkit-transform: translateY(0) translateX(-2%);
+            transform: translateY(0) translateX(-2%);
   }
-  21% {
-    -webkit-transform: translateY(-2%);
-            transform: translateY(-2%);
+  12.5% {
+    -webkit-transform: translateY(-1.5%) translateX(-1%);
+            transform: translateY(-1.5%) translateX(-1%);
   }
-  29% {
-    -webkit-transform: translateY(-2%);
-            transform: translateY(-2%);
+  25% {
+    -webkit-transform: translateY(-2%) translateX(0);
+            transform: translateY(-2%) translateX(0);
+  }
+  37.5% {
+    -webkit-transform: translateY(-1.5%) translateX(1%);
+            transform: translateY(-1.5%) translateX(1%);
   }
   50% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
+    -webkit-transform: translateY(0) translateX(2%);
+            transform: translateY(0) translateX(2%);
   }
-  71% {
-    -webkit-transform: translateY(2%);
-            transform: translateY(2%);
+  62.5% {
+    -webkit-transform: translateY(1.5%) translateX(1%);
+            transform: translateY(1.5%) translateX(1%);
   }
-  79% {
-    -webkit-transform: translateY(2%);
-            transform: translateY(2%);
+  75% {
+    -webkit-transform: translateY(2%) translateX(0);
+            transform: translateY(2%) translateX(0);
+  }
+  87.5% {
+    -webkit-transform: translateY(1.5%) translateX(-1%);
+            transform: translateY(1.5%) translateX(-1%);
   }
   100% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
+    -webkit-transform: translateY(0) translateX(-2%);
+            transform: translateY(0) translateX(-2%);
   }
 }
 @keyframes airplane-flying {
   0% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
+    -webkit-transform: translateY(0) translateX(-2%);
+            transform: translateY(0) translateX(-2%);
   }
-  21% {
-    -webkit-transform: translateY(-2%);
-            transform: translateY(-2%);
+  12.5% {
+    -webkit-transform: translateY(-1.5%) translateX(-1%);
+            transform: translateY(-1.5%) translateX(-1%);
   }
-  29% {
-    -webkit-transform: translateY(-2%);
-            transform: translateY(-2%);
+  25% {
+    -webkit-transform: translateY(-2%) translateX(0);
+            transform: translateY(-2%) translateX(0);
+  }
+  37.5% {
+    -webkit-transform: translateY(-1.5%) translateX(1%);
+            transform: translateY(-1.5%) translateX(1%);
   }
   50% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
+    -webkit-transform: translateY(0) translateX(2%);
+            transform: translateY(0) translateX(2%);
   }
-  71% {
-    -webkit-transform: translateY(2%);
-            transform: translateY(2%);
+  62.5% {
+    -webkit-transform: translateY(1.5%) translateX(1%);
+            transform: translateY(1.5%) translateX(1%);
   }
-  79% {
-    -webkit-transform: translateY(2%);
-            transform: translateY(2%);
+  75% {
+    -webkit-transform: translateY(2%) translateX(0);
+            transform: translateY(2%) translateX(0);
+  }
+  87.5% {
+    -webkit-transform: translateY(1.5%) translateX(-1%);
+            transform: translateY(1.5%) translateX(-1%);
   }
   100% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
+    -webkit-transform: translateY(0) translateX(-2%);
+            transform: translateY(0) translateX(-2%);
   }
 }
