@@ -7,11 +7,14 @@ if (document.querySelector("[data-ty-samples-section]")) {
   const tySamplesSection = document.querySelector("[data-ty-samples-section]");
   const tySamplesAirplanePilotContainer = tySamplesSection.querySelector("[data-ty-samples-airplane-pilot-container]");
   const tySamplesPilotArm = tySamplesSection.querySelector("[data-ty-samples-pilot-arm]");
+  const tySamplesPassingCloud = tySamplesSection.querySelector("[data-ty-samples-passing-cloud]");
 
   // variables
   const tySamplesAirplaneTransitionDuration = parseInt(getCSSPropertyValueFromRoot("--TY-SAMPLES-SEC-airplane-transition-duration"));
   const tySamplesPilotArmAnimationDuration = parseInt(getCSSPropertyValueFromRoot("--TY-SAMPLES-SEC-pilot-arm-animation-duration"));
+  const tySamplesPassingCloudAnimationDuration = parseInt(getCSSPropertyValueFromRoot("--TY-SAMPLES-SEC-passing-cloud-animation-duration"));
   const delayBetweenPilotArmMovingSequences = 2000;
+  const delayBetweenPassingCloudAnimationSequences = 3000;
 
   // animate airplane and pilot
   const observer = new IntersectionObserver(entries => {
@@ -20,14 +23,32 @@ if (document.querySelector("[data-ty-samples-section]")) {
 
       tySamplesAirplanePilotContainer.classList.add("load-transition");
 
-      // setTimeout(() => {
-      //   tySamplesAirplanePilotContainer.classList.add("vibrate", "vibrate--version-3");
-      // }, tySamplesAirplaneTransitionDuration);
+      setInterval(() => {
+        animatePassingCloud();
+      }, delayBetweenPassingCloudAnimationSequences);
 
       observer.unobserve(entry.target);
     });
   }, { threshold: 0.8 });
   observer.observe(tySamplesSection);
+
+  function animatePassingCloud() {
+    if (!isSectionInViewPort(tySamplesSection)) return;
+
+    const randomTopPosition = getRandomNumber(1, 5);
+
+    tySamplesPassingCloud.classList.add("animate");
+    tySamplesPassingCloud.classList.add(`position-${randomTopPosition}`);
+
+    setTimeout(() => {
+      tySamplesPassingCloud.classList.remove("animate");
+      tySamplesPassingCloud.classList.remove(`position-${randomTopPosition}`);
+    }, tySamplesPassingCloudAnimationDuration);
+  }
+
+  function getRandomNumber(min, max) {
+    return Math.floor(Math.random() * (max - min)) + min;
+  }
 
   // control pilot arm moving
   animatePilotArm();
