@@ -102,8 +102,8 @@
 .ty-samples__pilot-airplane-container .vibrate.vibrate--version-3 {
   -webkit-animation-name: airplane-vibrate;
           animation-name: airplane-vibrate;
-  -webkit-animation-timing-function: ease-out;
-          animation-timing-function: ease-out;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
 }
 .ty-samples__pilot-airplane-outer-wrapper {
   position: absolute;
