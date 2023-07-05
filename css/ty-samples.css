@@ -96,14 +96,14 @@
           transform: translateY(0) translateX(-2%);
 }
 .ty-samples__pilot-airplane-container .vibrate {
-  -webkit-animation-duration: 800ms;
-          animation-duration: 800ms;
+  -webkit-animation-duration: 1500ms;
+          animation-duration: 1500ms;
 }
 .ty-samples__pilot-airplane-container .vibrate.vibrate--version-3 {
   -webkit-animation-name: airplane-vibrate;
           animation-name: airplane-vibrate;
-  -webkit-animation-timing-function: ease-in-out;
-          animation-timing-function: ease-in-out;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
 }
 .ty-samples__pilot-airplane-outer-wrapper {
   position: absolute;
@@ -190,20 +190,20 @@
             transform: translate(0);
   }
   20% {
-    -webkit-transform: translate(-15px, -15px);
-            transform: translate(-15px, -15px);
+    -webkit-transform: translate(-7px, -7px);
+            transform: translate(-7px, -7px);
   }
   40% {
-    -webkit-transform: translate(15px, 15px);
-            transform: translate(15px, 15px);
+    -webkit-transform: translate(7px, 7px);
+            transform: translate(7px, 7px);
   }
   60% {
-    -webkit-transform: translate(15px, -15px);
-            transform: translate(15px, -15px);
+    -webkit-transform: translate(7px, -7px);
+            transform: translate(7px, -7px);
   }
   80% {
-    -webkit-transform: translate(-15px, 15px);
-            transform: translate(-15px, 15px);
+    -webkit-transform: translate(-7px, 7px);
+            transform: translate(-7px, 7px);
   }
 }
 
@@ -213,20 +213,20 @@
             transform: translate(0);
   }
   20% {
-    -webkit-transform: translate(-15px, -15px);
-            transform: translate(-15px, -15px);
+    -webkit-transform: translate(-7px, -7px);
+            transform: translate(-7px, -7px);
   }
   40% {
-    -webkit-transform: translate(15px, 15px);
-            transform: translate(15px, 15px);
+    -webkit-transform: translate(7px, 7px);
+            transform: translate(7px, 7px);
   }
   60% {
-    -webkit-transform: translate(15px, -15px);
-            transform: translate(15px, -15px);
+    -webkit-transform: translate(7px, -7px);
+            transform: translate(7px, -7px);
   }
   80% {
-    -webkit-transform: translate(-15px, 15px);
-            transform: translate(-15px, 15px);
+    -webkit-transform: translate(-7px, 7px);
+            transform: translate(-7px, 7px);
   }
 }
 @-webkit-keyframes presenting-package {
