@@ -2,14 +2,15 @@
   --picture-width: 240px;
   width: 100%;
   background-color: #000000;
-  background-image: -webkit-gradient(linear, right top, left bottom, color-stop(50%, #000000), color-stop(hsl(0, 100%, 50%)), to(#ffff00));
-  background-image: linear-gradient(to bottom left, #000000 50%, hsl(0, 100%, 50%), #ffff00);
-  background-image: linear-gradient(194deg, rgb(0, 0, 0) 46%, hsla(0, 100%, 50%, 0.3) 58%, hsla(60, 100%, 50%, 0.3) 72%);
+  background-image: -webkit-gradient(linear, right top, left bottom, color-stop(50%, rgb(0, 0, 0)), color-stop(62%, hsla(0, 100%, 50%, 0.3)), color-stop(78%, hsla(60, 100%, 50%, 0.3)));
+  background-image: linear-gradient(to bottom left, rgb(0, 0, 0) 50%, hsla(0, 100%, 50%, 0.3) 62%, hsla(60, 100%, 50%, 0.3) 78%);
   background-size: 200% 200%;
   font-size: 16px;
   font-family: "Helvetica Now", sans-serif;
   -webkit-transition: background-image 50ms linear;
   transition: background-image 50ms linear;
+  position: relative;
+  overflow: hidden;
 }
 @media screen and (max-width: 480px) {
   .footer {
