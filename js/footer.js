@@ -7,7 +7,7 @@ function animateGradient() {
     // Update hue value
     hue = (hue + 1) % 360;
     // Apply the linear gradient with the updated hue value
-    footerElement.style.backgroundImage = `linear-gradient(to bottom left, #000000 50%, hsla(${hue}, 100%, 50%, 0.7))`;
+    footerElement.style.backgroundImage = `linear-gradient(194deg, #000000 46%, hsla(${hue}, 100%, 50%, 0.3) 58%, hsla(${(hue + 60) % 360}, 100%, 50%, 0.3) 72%)`;
 }
 setInterval(animateGradient, 50);
 
