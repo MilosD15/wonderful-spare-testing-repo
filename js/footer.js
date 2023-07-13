@@ -12,8 +12,10 @@ function animateGradient() {
 setInterval(animateGradient, 50);
 
 // dynamic pictures (make fade from one to another picture)
-let currentIndex = 1;
-const pictures = [
+const footerChangingPictureContainer = document.querySelector('[data-footer-changing-picture]');
+let currentIndex = -1;
+let changingPictureInProgress = false;
+const footerChangingPictures = [
   {
     src: './images/boy-character.webp',
     alt: 'A boy character',
@@ -56,22 +58,38 @@ const pictures = [
   },
 ];
 
-function changePicture() {
-    const pictureElement = document.querySelector('[data-footer-picture]');
-    const oldImg = pictureElement.querySelector('img');
+window.addEventListener('load', () => {
+    changePicture();
+});
 
-    const nextIndex = (currentIndex + 1) % pictures.length;
-    const randomPicture = pictures[nextIndex];
+footerChangingPictureContainer.addEventListener('click', () => {
+    changePicture();
+});
+
+function changePicture() {
+    if (changingPictureInProgress) return;
+
+    const oldImg = footerChangingPictureContainer.querySelector('img');
+    changingPictureInProgress = true;
+
+    let nextIndex;
+    do {
+        nextIndex = getRandomNumber(0, footerChangingPictures.length);
+    } while(nextIndex === currentIndex);
+    const randomPicture = footerChangingPictures[nextIndex];
     currentIndex = nextIndex;
     const newImg = document.createElement('img');
     newImg.src = randomPicture.src;
     newImg.alt = randomPicture.alt;
     newImg.style = randomPicture.style;
     newImg.classList.add("footer__dynamic-img");
-    pictureElement.appendChild(newImg);
+    footerChangingPictureContainer.appendChild(newImg);
 
-    oldImg.classList.remove('fade-in');
+    oldImg?.classList.remove('fade-in');
     setTimeout(() => { newImg.classList.add('fade-in'); }, 0);
-    setTimeout(() => { oldImg.remove(); }, 500);
+    setTimeout(() => { oldImg?.remove(); changingPictureInProgress = false; }, 500);
 }
-setInterval(changePicture, 6000);
+
+function getRandomNumber(min, max) {
+    return Math.floor(Math.random() * (max - min)) + min;
+}
