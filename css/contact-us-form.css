@@ -1,0 +1,244 @@
+.contact-us {
+  font-size: 16px;
+  width: 100%;
+  font-family: "Helvetica Now", sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.contact-us * {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.contact-us__title {
+  font-family: "LEMON MILK", sans-serif;
+  font-weight: 400;
+  text-align: center;
+  font-size: 1.5em;
+  margin-block: 0.7em 0.4em;
+  letter-spacing: 0.5px;
+}
+@media screen and (max-width: 768px) {
+  .contact-us__title {
+    font-size: 1.1em;
+  }
+}
+.contact-us__form {
+  font-size: 16px;
+  padding: 1em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  width: min(100%, 800px);
+}
+.contact-us__form-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0.5em;
+  padding-top: 1em;
+}
+.contact-us__form-title {
+  font-family: "LEMON MILK", sans-serif;
+  font-weight: 400;
+  text-align: center;
+  margin: 0;
+  letter-spacing: 0.5px;
+}
+@media screen and (max-width: 768px) {
+  .contact-us__form-title {
+    font-size: 1.1em;
+  }
+}
+.contact-us__form-required-fields-message {
+  color: #ff4e36;
+  font-size: 0.9em;
+  padding: 0.5em 0.5em 0 0.5em;
+  display: none;
+}
+.contact-us__form-submit-btn {
+  margin-block: 1em;
+}
+.contact-us__form-group {
+  padding: 0.5em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border: 0;
+}
+.contact-us__form-group.invalid {
+  border-color: #ff4e36;
+}
+.contact-us__form-group.invalid .contact-us__label {
+  color: #ff4e36;
+}
+.contact-us__form-group.invalid .contact-us__label--required::after {
+  opacity: 1;
+}
+.contact-us__form-group.invalid .contact-us__input {
+  border-color: #ff4e36;
+}
+.contact-us__form-group.invalid .contact-us__input:required ~ .contact-us__label::after {
+  opacity: 1;
+}
+.contact-us__form-group--row {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+.contact-us__form-group--column {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+}
+.contact-us__label {
+  font-size: 0.85em;
+  line-height: 2.5;
+  margin-bottom: 0.3em;
+  letter-spacing: 1.2px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: color 200ms ease;
+  transition: color 200ms ease;
+}
+.contact-us__label--required::after {
+  content: "*";
+  font-size: 1em;
+  color: #ff4e36;
+  -webkit-transition: opacity 200ms ease;
+  transition: opacity 200ms ease;
+  opacity: 0;
+}
+.contact-us__input {
+  font-size: 1em;
+  padding: 0.3em;
+  border-radius: 0.3em;
+  font-family: "Helvetica Now", sans-serif;
+  border: 1px solid #000;
+  letter-spacing: 1.2px;
+  width: 100%;
+  max-width: 100%;
+  background-color: #fff;
+  color: #000;
+  -webkit-transition: border-color 200ms ease;
+  transition: border-color 200ms ease;
+}
+.contact-us__input:required ~ .contact-us__label::after {
+  content: "*";
+  font-size: 1em;
+  color: #ff4e36;
+  -webkit-transition: opacity 200ms ease;
+  transition: opacity 200ms ease;
+  opacity: 0;
+}
+.contact-us__input--textarea {
+  resize: vertical;
+  min-height: 200px;
+}
+.contact-us__submit-btn {
+  background-color: #00cbff;
+  font-size: 0.95em;
+  font-weight: 700;
+  color: #000000;
+  border: 0.2em solid #000000;
+  width: 80%;
+  margin-inline: auto;
+  padding: 0.8em;
+  border-radius: 9999px;
+  cursor: pointer;
+  margin-block: 2em 1em;
+  letter-spacing: 1.2px;
+  -webkit-transition: background-color 700ms ease, -webkit-box-shadow 700ms ease;
+  transition: background-color 700ms ease, -webkit-box-shadow 700ms ease;
+  transition: background-color 700ms ease, box-shadow 700ms ease;
+  transition: background-color 700ms ease, box-shadow 700ms ease, -webkit-box-shadow 700ms ease;
+  -webkit-box-shadow: 0 0.3em 0 #f0f0f0;
+          box-shadow: 0 0.3em 0 #f0f0f0;
+  font-family: "Helvetica Now", sans-serif;
+}
+.contact-us__submit-btn:hover, .contact-us__submit-btn:focus-visible {
+  background-color: #caf0ff;
+  -webkit-box-shadow: 0 0.3em 0 rgba(240, 240, 240, 0);
+          box-shadow: 0 0.3em 0 rgba(240, 240, 240, 0);
+}
+.contact-us__thank-you-note {
+  font-family: "LEMON MILK", sans-serif;
+  line-height: 1.5;
+  text-align: center;
+  font-size: 1.3em;
+  padding-block: 2.4em 3em;
+  padding-inline: 1em;
+}
+@media screen and (max-width: 768px) {
+  .contact-us__thank-you-note {
+    font-size: 1.1em;
+  }
+}
+.contact-us__phone {
+  font-size: 16px;
+  padding: 1em;
+  width: min(100%, 800px);
+}
+.contact-us__phone-number {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 1em;
+}
+.contact-us__phone-number-icon {
+  width: 18px;
+  height: 18px;
+}
+.contact-us__phone-number-icon-svg {
+  width: 100%;
+  height: 100%;
+  fill: #000000;
+  stroke: none;
+}
+.contact-us__phone-number-link {
+  color: #000000;
+  text-decoration: none;
+}
+.contact-us__phone-number-link:hover {
+  text-decoration: underline;
+}
