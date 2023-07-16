@@ -24,13 +24,22 @@
   font-family: "LEMON MILK", sans-serif;
   font-weight: 400;
   text-align: center;
-  font-size: 1.5em;
+  font-size: 1.6em;
   margin-block: 0.7em 0.4em;
   letter-spacing: 0.5px;
 }
+.contact-us__title .smaller-font {
+  display: inline-block;
+  font-size: 0.7em;
+  font-weight: 300;
+  margin-top: 1em;
+}
 @media screen and (max-width: 768px) {
   .contact-us__title {
-    font-size: 1.1em;
+    font-size: 1.2em;
+  }
+  .contact-us__title .smaller-font {
+    font-size: 0.8em;
   }
 }
 .contact-us__form {
@@ -67,10 +76,11 @@
   text-align: center;
   margin: 0;
   letter-spacing: 0.5px;
+  font-size: 1.6em;
 }
 @media screen and (max-width: 768px) {
   .contact-us__form-title {
-    font-size: 1.1em;
+    font-size: 1.2em;
   }
 }
 .contact-us__form-required-fields-message {
@@ -78,9 +88,6 @@
   font-size: 0.9em;
   padding: 0.5em 0.5em 0 0.5em;
   display: none;
-}
-.contact-us__form-submit-btn {
-  margin-block: 1em;
 }
 .contact-us__form-group {
   padding: 0.5em;
@@ -170,8 +177,8 @@
 }
 .contact-us__submit-btn {
   background-color: #00cbff;
-  font-size: 0.95em;
-  font-weight: 700;
+  font-size: 0.9em;
+  font-weight: 400;
   color: #000000;
   border: 0.2em solid #000000;
   width: 80%;
@@ -181,18 +188,27 @@
   cursor: pointer;
   margin-block: 2em 1em;
   letter-spacing: 1.2px;
-  -webkit-transition: background-color 700ms ease, -webkit-box-shadow 700ms ease;
-  transition: background-color 700ms ease, -webkit-box-shadow 700ms ease;
-  transition: background-color 700ms ease, box-shadow 700ms ease;
-  transition: background-color 700ms ease, box-shadow 700ms ease, -webkit-box-shadow 700ms ease;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: background-color 700ms ease, -webkit-transform 700ms ease, -webkit-box-shadow 700ms ease;
+  transition: background-color 700ms ease, -webkit-transform 700ms ease, -webkit-box-shadow 700ms ease;
+  transition: background-color 700ms ease, transform 700ms ease, box-shadow 700ms ease;
+  transition: background-color 700ms ease, transform 700ms ease, box-shadow 700ms ease, -webkit-transform 700ms ease, -webkit-box-shadow 700ms ease;
   -webkit-box-shadow: 0 0.3em 0 #f0f0f0;
           box-shadow: 0 0.3em 0 #f0f0f0;
-  font-family: "Helvetica Now", sans-serif;
+  font-family: "LEMON MILK", sans-serif;
+}
+@media screen and (max-width: 478px) {
+  .contact-us__submit-btn {
+    width: 100%;
+  }
 }
 .contact-us__submit-btn:hover, .contact-us__submit-btn:focus-visible {
   background-color: #caf0ff;
   -webkit-box-shadow: 0 0.3em 0 rgba(240, 240, 240, 0);
           box-shadow: 0 0.3em 0 rgba(240, 240, 240, 0);
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 .contact-us__thank-you-note {
   font-family: "LEMON MILK", sans-serif;
@@ -223,7 +239,6 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding-top: 1em;
 }
 .contact-us__phone-number-icon {
   width: 18px;
