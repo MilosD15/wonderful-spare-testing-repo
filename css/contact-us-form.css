@@ -13,6 +13,8 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  overflow: hidden;
+  background-color: #f8f8f8;
 }
 .contact-us * {
   -webkit-box-sizing: border-box;
