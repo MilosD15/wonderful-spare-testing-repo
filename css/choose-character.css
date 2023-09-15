@@ -236,13 +236,10 @@
   }
 }
 .choose-character .character-representation:hover .character-representation__image-wrapper .character-representation__image--static-anim, .choose-character .character-representation.highlight .character-representation__image-wrapper .character-representation__image--static-anim {
-  display: none;
+  opacity: 0;
 }
 .choose-character .character-representation:hover .character-representation__image-wrapper .character-representation__image--on-hover-anim, .choose-character .character-representation.highlight .character-representation__image-wrapper .character-representation__image--on-hover-anim {
-  display: inline-block;
-  width: 1000%;
-  -webkit-animation: animate-character calc(var(--CHOOSE-CHARACTER-SEC-character-anim-duration) * 1ms) steps(10) infinite;
-          animation: animate-character calc(var(--CHOOSE-CHARACTER-SEC-character-anim-duration) * 1ms) steps(10) infinite;
+  opacity: 1;
 }
 .choose-character .character-representation:hover .character-representation__link, .choose-character .character-representation.highlight .character-representation__link {
   background-color: var(--CHOOSE-CHARACTER-SEC-lighter-yellow-btn-color);
@@ -347,6 +344,11 @@
   transition: transform calc(var(--CHOOSE-CHARACTER-SEC-character-enlarging-transition-duration) * 1ms) ease, bottom calc(var(--CHOOSE-CHARACTER-SEC-character-enlarging-transition-duration) * 1ms) ease;
   transition: transform calc(var(--CHOOSE-CHARACTER-SEC-character-enlarging-transition-duration) * 1ms) ease, bottom calc(var(--CHOOSE-CHARACTER-SEC-character-enlarging-transition-duration) * 1ms) ease, -webkit-transform calc(var(--CHOOSE-CHARACTER-SEC-character-enlarging-transition-duration) * 1ms) ease;
 }
+.choose-character .character-representation__image-wrapper > picture:nth-child(2) {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
 @media screen and (max-width: 81.25rem) {
   .choose-character .character-representation__image-wrapper { /* 1300px */
     -webkit-transition: -webkit-transform calc(var(--CHOOSE-CHARACTER-SEC-character-enlarging-transition-duration) * 1ms) ease;
@@ -366,9 +368,14 @@
   width: 1200%;
   -webkit-animation: animate-character calc(var(--CHOOSE-CHARACTER-SEC-character-anim-duration) * 1ms) steps(12) infinite;
           animation: animate-character calc(var(--CHOOSE-CHARACTER-SEC-character-anim-duration) * 1ms) steps(12) infinite;
+  opacity: 1;
 }
 .choose-character .character-representation__image--on-hover-anim {
-  display: none;
+  display: inline-block;
+  width: 1000%;
+  -webkit-animation: animate-character calc(var(--CHOOSE-CHARACTER-SEC-character-anim-duration) * 1ms) steps(10) infinite;
+          animation: animate-character calc(var(--CHOOSE-CHARACTER-SEC-character-anim-duration) * 1ms) steps(10) infinite;
+  opacity: 0;
 }
 .choose-character .character-representation__link-wrapper {
   height: 13%;
