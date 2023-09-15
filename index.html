@@ -1,65 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Us</title>
-  <link rel="stylesheet" href="./font/helvetica-now/addHelveticaNow.css">
-  <link rel="stylesheet" href="./font/lemonmilk/addLemonmilk.css">
-  <link rel="stylesheet" href="./css/grain-effect.css">
-  <link rel="stylesheet" href="./css/boilerplate.css">
-  <link rel="stylesheet" href="./css/contact-us-form.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="./js/contact-us-form.js" type="module"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose your character</title>
+    <link rel="stylesheet" href="./font/lemonmilk/addLemonmilk.css">
+    <link rel="stylesheet" href="./css/blur-effect.css">
+    <link rel="stylesheet" href="./css/grain-effect.css">
+    <link rel="stylesheet" href="./css/graphic-section.css">
+    <link rel="stylesheet" href="./css/vibrate.css">
+    <link rel="stylesheet" href="./css/boilerplate.css">
+    <link rel="stylesheet" href="./css/choose-character.css">
+    <script src="https://unpkg.com/@dotlottie/player-component@1.4.0/dist/dotlottie-player.js"></script>
+    <script src="./js/chooseCharacter.js" type="module"></script>
 </head>
 <body>
-  <section class="contact-us grain-effect" data-contact-us>
-    <form method="post" action="" class="contact-us__form" data-contact-us-dialog-form>
-      <div class="contact-us__form-header">
-        <h1 class="contact-us__form-title">Questions? <br>Message Dr. Epstein</h1>
-      </div>
-      <div class="contact-us__form-required-fields-message" data-required-fields-error-message></div>
-      <fieldset class="contact-us__form-group contact-us__form-group--column" data-form-group>
-        <input 
-          type="email" 
-          id="contact-us-email-field" 
-          name="contact-us-email-field" 
-          class="contact-us__input" 
-          placeholder="yourname@yoursite.com"
-          required
-        >
-        <label for="contact-us-email-field" class="contact-us__label contact-us__label--required">Email:&nbsp;</label>
-      </fieldset>
-      <fieldset class="contact-us__form-group contact-us__form-group--column" data-form-group>
-        <textarea 
-          name="contact-us-message-field" 
-          id="contact-us-message-field" 
-          class="contact-us__input contact-us__input--textarea contact-us__form-textarea" 
-          placeholder="Type your message here..."
-          required
-        ></textarea>
-        <label for="contact-us-message-field" class="contact-us__label contact-us__form-label contact-us__label--required">Message:&nbsp;</label>
-      </fieldset>
-      <fieldset class="contact-us__form-group contact-us__form-group--row" data-form-group>
-        <input type="submit" value="Send Message" class="contact-us__submit-btn contact-us__form-submit-btn">
-      </fieldset>
-    </form>
-    <div class="contact-us__phone">
-      <h2 class="contact-us__title contact-us__phone-title">
-        Prefer the phone? <br>
-        <span class="smaller-font">Call Dr. Epstein</span>
-      </h2>
-      <address class="contact-us__phone-number">
-        <div class="contact-us__phone-number-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" class="contact-us__phone-number-icon-svg" width="64" height="64" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
-            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-            <path d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2" />
-          </svg>
-        </div>&nbsp;
-        <a href="tel:8669204561" class="contact-us__phone-number-link">866.920.4561</a>
-      </address>
-    </div>
-  </section>
+    <section class="choose-character graphic-section" data-choose-character-section>
+        <div class="choose-character__wrapper graphic-section__wrapper blur-effect grain-effect">
+            <div class="choose-character__bg">
+                <div class="choose-character__bg-stage">
+                    <img src="" data-src="./images/cyc-stage.webp" alt="Stage piece of the background image(theatre stage)" data-lazy-loading-image>
+                </div>
+                <div class="choose-character__bg-very-back" data-cyc-very-back-bg>
+                    <img src="" data-src="./images/cyc-very-background.webp" alt="Very background piece of the background image(theatre stage)" data-lazy-loading-image>
+                </div>
+                <div class="choose-character__bg-left-box vibrate vibrate--version-4">
+                    <img src="" data-src="./images/cyc-left-box.webp" alt="Left box on the stage(theatre stage)" data-lazy-loading-image>
+                </div>
+                <div class="choose-character__bg-right-boxes vibrate vibrate--version-2">
+                    <img src="" data-src="./images/cyc-right-boxes.webp" alt="Right boxes on the stage(theatre stage)" data-lazy-loading-image>
+                </div>
+                <div class="choose-character__bg-vertical-curtains vibrate vibrate--version-1">
+                    <img src="" data-src="./images/cyc-vertical-curtains.webp" alt="Vertical curtains piece of the background image(theatre stage)" data-lazy-loading-image>
+                </div>
+                <div class="choose-character__bg-pieces-of-horizontal-curtains vibrate vibrate--version-3">
+                    <img src="" data-src="./images/cyc-pieces-of-horizontal-curtains.webp" alt="Pieces of horizontal curtains of the background image(theatre stage)" data-lazy-loading-image>
+                </div>
+                <div class="choose-character__bg-very-left-and-right-horizontal-curtains vibrate vibrate--version-2">
+                    <img src="" data-src="./images/cyc-very-left-and-right-horizontal-curtains.webp" alt="Very right and left horizontal curtains of the background image(theatre stage)" data-lazy-loading-image>
+                </div>
+                <div class="choose-character__bg-left-and-right-horizontal-curtains vibrate vibrate--version-4">
+                    <img src="" data-src="./images/cyc-left-and-right-horizontal-curtains.webp" alt="Left and right horizontal curtains of the background image(theatre stage)" data-lazy-loading-image>
+                </div>
+                <div class="choose-character__bg-centered-horizontal-curtains vibrate vibrate--version-1">
+                    <img src="" data-src="./images/cyc-centered-horizontal-curtains.webp" alt="Centered horizontal curtains of the background image(theatre stage)" data-lazy-loading-image>
+                </div>
+            </div>
+            <div class="choose-character__bg-mobile">
+                <img src="" data-src="./images/cyc-bg-mobile.webp" alt="Radial Gradient Background that matches with colors of the theatre scene on desktops" data-lazy-loading-image>
+            </div>
+            <dotlottie-player 
+                mode="normal" 
+                class="choose-character__lottie" 
+                data-cyc-lottie-player
+                data-src="../choose-your-character.lottie"
+                data-src-mobile="../choose-your-character-mobile.lottie"
+            ></dotlottie-player>
+            <div class="choose-character__radial-dark-shadow"></div>
+            <div class="choose-character__characters-container">
+                <div class="character-representation character-representation--left priority" data-cyc-character-representation="left"> <!-- data-id="1" data-position="left" --> <!-- necessary for modal to work -->
+                    <div class="character-representation__light character-representation__light--left">
+                        <img src="" data-src="./images/cyc-left-light.webp" class="character-representation__light-image-desktop" alt="A ceiling beam for left character" data-lazy-loading-image>
+                        <img src="" data-src="./images/cyc-beam-left-blur.webp" class="character-representation__light-image-mobile" alt="A ceiling beam for top character" data-lazy-loading-image>
+                    </div>
+                    <div class="character-representation__image-container">
+                        <div class="character-representation__image-wrapper">
+                            <!-- <picture data-lazy-loading-picture>
+                                <source srcset="" data-srcset="./images/varnish-cups-sheet-with-shadow-mobile.webp" media="(max-width: 500px)">
+                                <source srcset="" data-srcset="./images/varnish-cups-sheet-with-shadow-tablet.webp" media="(max-width: 1000px)">
+                                <img src="" data-src="./images/varnish-cups-sheet-with-shadow-desktop.webp" class="character-representation__image character-representation__image--static-anim" alt="A fluoride varnish cup character">
+                            </picture> -->
+                            <img src="" data-lazy-loading-image data-src="./images/varnish-cups-sheet-with-shadow-desktop.webp" class="character-representation__image character-representation__image--static-anim" alt="A fluoride varnish cup character">
+                            <!-- <picture data-lazy-loading-picture>
+                                <source srcset="" data-srcset="./images/varnish-cups-sheet-wave-with-shadow-mobile.webp" media="(max-width: 500px)">
+                                <source srcset="" data-srcset="./images/varnish-cups-sheet-wave-with-shadow-tablet.webp" media="(max-width: 1000px)">
+                                <img src="" data-src="./images/varnish-cups-sheet-wave-with-shadow-desktop.webp" class="character-representation__image character-representation__image--on-hover-anim" alt="A fluoride varnish cup character">
+                            </picture> -->
+                            <img src="" data-lazy-loading-image data-src="./images/varnish-cups-sheet-wave-with-shadow-desktop.webp" class="character-representation__image character-representation__image--on-hover-anim" alt="A fluoride varnish cup character">
+                        </div>
+                    </div>
+                    <div class="character-representation__link-wrapper">
+                        <a href="/" class="character-representation__link">fluoride <br> varnish cups</a>
+                    </div>
+                </div>
+                <div class="character-representation character-representation--center priority" data-cyc-character-representation="center"> <!-- data-id="2" data-position="center" --> <!-- necessary for modal to work -->
+                    <div class="character-representation__light character-representation__light--center">
+                        <img src="" data-src="./images/cyc-center-light.webp" class="character-representation__light-image-desktop" alt="A ceiling beam for center character" data-lazy-loading-image>
+                        <img src="" data-src="./images/cyc-beam-right-blur.webp" class="character-representation__light-image-mobile" alt="A ceiling beam for middle character on mobile" data-lazy-loading-image>
+                    </div>
+                    <div class="character-representation__image-container">
+                        <div class="character-representation__image-wrapper">
+                            <!-- <picture data-lazy-loading-picture>
+                                <source srcset="" data-srcset="./images/varnish-sheet-with-shadow-mobile.webp" media="(max-width: 500px)">
+                                <source srcset="" data-srcset="./images/varnish-sheet-with-shadow-tablet.webp" media="(max-width: 1000px)">
+                                <img src="" data-src="./images/varnish-sheet-with-shadow-desktop.webp" class="character-representation__image character-representation__image--static-anim" alt="A fluoride varnish character">
+                            </picture> -->
+                            <img src="" data-lazy-loading-image data-src="./images/varnish-sheet-with-shadow-desktop.webp" class="character-representation__image character-representation__image--static-anim" alt="A fluoride varnish character">
+                            <!-- <picture data-lazy-loading-picture>
+                                <source srcset="" data-srcset="./images/varnish-sheet-wave-with-shadow-mobile.webp" media="(max-width: 500px)">
+                                <source srcset="" data-srcset="./images/varnish-sheet-wave-with-shadow-tablet.webp" media="(max-width: 1000px)">
+                                <img src="" data-src="./images/varnish-sheet-wave-with-shadow-desktop.webp" class="character-representation__image character-representation__image--on-hover-anim" alt="A fluoride varnish character">
+                            </picture> -->
+                            <img src="" data-lazy-loading-image data-src="./images/varnish-sheet-wave-with-shadow-desktop.webp" class="character-representation__image character-representation__image--on-hover-anim" alt="A fluoride varnish character">
+                        </div>
+                    </div>
+                    <div class="character-representation__link-wrapper">
+                        <a href="/" class="character-representation__link">fluoride <br> varnish</a>
+                    </div>
+                </div>
+                <div class="character-representation character-representation--right" data-cyc-character-representation="right"> <!-- data-id="3" data-position="right" --> <!-- necessary for modal to work -->
+                    <div class="character-representation__light character-representation__light--right">
+                        <img src="" data-src="./images/cyc-right-light.webp" class="character-representation__light-image-desktop" alt="A ceiling beam for right character" data-lazy-loading-image>
+                        <img src="" data-src="./images/cyc-beam-left-blur.webp" class="character-representation__light-image-mobile" alt="A ceiling beam for bottom character" data-lazy-loading-image>
+                    </div>
+                    <div class="character-representation__image-container">
+                        <div class="character-representation__image-wrapper">
+                            <!-- <picture data-lazy-loading-picture>
+                                <source srcset="" data-srcset="./images/prophy-cups-with-shadow-sprites-mobile.webp" media="(max-width: 500px)">
+                                <source srcset="" data-srcset="./images/prophy-cups-with-shadow-sprites-tablet.webp" media="(max-width: 1000px)">
+                                <img src="" data-src="./images/prophy-cups-with-shadow-sprites-desktop.webp" class="character-representation__image character-representation__image--static-anim" alt="A prophy paste character">
+                            </picture> -->
+                            <img src="" data-lazy-loading-image data-src="./images/prophy-cups-with-shadow-sprites-desktop.webp" class="character-representation__image character-representation__image--static-anim" alt="A prophy paste character">
+                            <!-- <picture data-lazy-loading-picture>
+                                <source srcset="" data-srcset="./images/prophy-cups-sheet-wave-with-shadow-mobile.webp" media="(max-width: 500px)">
+                                <source srcset="" data-srcset="./images/prophy-cups-sheet-wave-with-shadow-tablet.webp" media="(max-width: 1000px)">
+                                <img src="" data-src="./images/prophy-cups-sheet-wave-with-shadow-desktop.webp" class="character-representation__image character-representation__image--on-hover-anim" alt="A prophy paste character">
+                            </picture> -->
+                            <img src="" data-lazy-loading-image data-src="./images/prophy-cups-sheet-wave-with-shadow-desktop.webp" class="character-representation__image character-representation__image--on-hover-anim" alt="A prophy paste character">
+                        </div>
+                    </div>
+                    <div class="character-representation__link-wrapper">
+                        <a href="/" class="character-representation__link">prophy <br> paste</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="modal-container" data-active="" data-character-position="center">
+            <div class="modal">
+                <div class="content">
+                    <div class="text">
+                        <p data-modal-description>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere dolore cum itaque ducimus facilis neque sint tempora quas enim exercitationem maiores quo, nobis dicta eum praesentium accusantium eius repellat, fugit quibusdam omnis! Aut nemo, ipsam tenetur officiis vel incidunt laudantium.</p>
+                        <a href="/" data-modal-link>visit my product page</a>
+                    </div>
+                    <div class="image">
+                        <div class="wrapper">
+                            <img src="./images/varnish-cup-sprite.webp" class="static-animation" alt="A fluoride varnish cup character" data-modal-image-static-animation>
+                            <img src="./images/varnish-cup-sprite.webp" class="on-hover-animation" alt="A fluoride varnish cup character" data-modal-image-on-hover-animation>
+                        </div>
+                    </div>
+                </div>
+                <button class="close-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <line x1="18" y1="6" x2="6" y2="18" />
+                        <line x1="6" y1="6" x2="18" y2="18" />
+                    </svg>
+                </button>
+                <div class="clipping-border"></div>
+                <div class="clipping"></div>
+            </div>
+        </div> -->
+    </section>
 </body>
 </html>
