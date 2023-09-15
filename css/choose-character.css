@@ -361,7 +361,7 @@
   --translate-y: 0;
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
-  will-change: transform;
+  will-change: transform, opacity;
 }
 .choose-character .character-representation__image--static-anim {
   display: inline-block;
