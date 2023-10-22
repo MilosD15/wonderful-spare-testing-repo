@@ -247,19 +247,20 @@ body {
 .product-hero[data-product=cup] .product-hero__product-image--cup {
   display: block;
   position: relative;
+  width: 90%;
   z-index: 1;
-  -webkit-transform: translate(0%, 7%);
-          transform: translate(0%, 7%);
+  -webkit-transform: translate(30%, 18%);
+          transform: translate(30%, 18%);
 }
 .product-hero[data-product=cup] .product-hero__product-image--brush {
   display: block;
   position: absolute;
-  width: 150%;
+  width: 170%;
   height: auto;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-40%, -46%);
-          transform: translate(-40%, -46%);
+  -webkit-transform: translate(-62%, -46%);
+          transform: translate(-62%, -46%);
 }
 .product-hero[data-product=cup] .product-hero__product-image--angle {
   display: none;
