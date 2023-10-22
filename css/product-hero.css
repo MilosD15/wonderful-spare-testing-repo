@@ -248,18 +248,18 @@ body {
   display: block;
   position: relative;
   z-index: 1;
-  -webkit-transform: translateY(6%);
-          transform: translateY(6%);
+  -webkit-transform: translate(0%, 7%);
+          transform: translate(0%, 7%);
 }
 .product-hero[data-product=cup] .product-hero__product-image--brush {
   display: block;
   position: absolute;
-  width: 100%;
+  width: 150%;
   height: auto;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-26%, -42%);
-          transform: translate(-26%, -42%);
+  -webkit-transform: translate(-40%, -46%);
+          transform: translate(-40%, -46%);
 }
 .product-hero[data-product=cup] .product-hero__product-image--angle {
   display: none;
