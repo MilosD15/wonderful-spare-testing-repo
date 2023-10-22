@@ -249,8 +249,8 @@ body {
   position: relative;
   width: 90%;
   z-index: 1;
-  -webkit-transform: translate(30%, 18%);
-          transform: translate(30%, 18%);
+  -webkit-transform: translate(10%, 15%);
+          transform: translate(10%, 15%);
 }
 .product-hero[data-product=cup] .product-hero__product-image--brush {
   display: block;
