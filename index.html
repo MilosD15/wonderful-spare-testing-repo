@@ -2,88 +2,145 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./font/lemonmilk/addLemonmilk.css">
-  <link rel="stylesheet" href="./css/blur-effect.css">
-  <link rel="stylesheet" href="./css/grain-effect.css">
-  <link rel="stylesheet" href="./css/graphic-section.css">
-  <link rel="stylesheet" href="./css/vibrate.css">
-  <link rel="stylesheet" href="./css/product-hero.css">
-  <title>Product Page - Hero Section</title>
-  <script src="./js/productHero.js" type="module"></script>
+  <title>UI Elements</title>
+  <link rel="stylesheet" href="font/poppins/include.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/button.css">
+  <link rel="stylesheet" href="css/pricing.css">
+  <script src="./js/pricing.js"></script>
 </head>
 <body>
-  <section class="product-hero-container graphic-section" data-product-hero-container>
-    <div class="product-hero graphic-section" data-product="cup" data-product-hero-graphic-part>
-      <div class="product-hero__wrapper graphic-section__wrapper grain-effect">
-        <div class="product-hero__very-bg">
-          <img src="./images/ph-blue-sky-bg.webp" alt="Blue sky background">
-        </div>
-        <div class="product-hero__clouds-piece-1">
-          <img src="./images/ph-clouds-piece-1.webp" alt="A bunch of clouds - piece 1">
-        </div>
-        <div class="product-hero__clouds-piece-2">
-          <img src="./images/ph-clouds-piece-2.webp" alt="A bunch of clouds - piece 2">
-        </div>
-        <div class="product-hero__clouds-piece-3">
-          <img src="./images/ph-clouds-piece-3.webp" alt="A bunch of clouds - piece 3">
-        </div>
-        <div class="product-hero__clouds-piece-4">
-          <img src="./images/ph-clouds-piece-4.webp" alt="A bunch of clouds - piece 4">
-        </div>
-        <div class="product-hero__bg">
-          <img src="./images/ph-bg-clouds.webp" alt="White background made of clouds">
-        </div>
-        <div class="product-hero__product-highlight">
-          <img src="./images/ph-product-highlight.webp" alt="A product highlight behind it">
-        </div>
-        <div class="product-hero__product">
-          <img src="./images/ph-product-stick.webp" class="product-hero__product-image product-hero__product-image--stick" alt="A picture of Varnish Sticks">
-          <img src="./images/ph-product-cup.webp" class="product-hero__product-image product-hero__product-image--cup" alt="A picture of Fluoride Varnish Cups">
-          <img src="./images/ph-product-paste.webp" class="product-hero__product-image product-hero__product-image--paste" alt="A picture of Prophy Paste">
-          <img src="./images/ph-product-brush.webp" class="product-hero__product-image product-hero__product-image--brush" alt="A picture of Brush">
-          <img src="./images/ph-product-prophy-angle.webp" class="product-hero__product-image product-hero__product-image--angle" alt="A picture of Prophy Angle">
-        </div>
-        <div class="product-hero__product-character">
-          <img src="./images/prophy-presents.webp" alt="A picture of Prophy Paste character" class="product-hero__product-character-image product-hero__product-character-image--paste priority">
-          <img src="./images/sticks-varnish-presents.webp" alt="A picture of Varnish Sticks character" class="product-hero__product-character-image product-hero__product-character-image--stick priority">
-          <div class="product-hero__product-character-image-container product-hero__product-character-image-container--cup">
-            <img src="./images/varnish-presents.webp" alt="A picture of Fluoride Varnish Cups character" class="product-hero__product-character-image product-hero__product-character-image--cup priority">
-          </div>
-          <div class="product-hero__product-character-image-container product-hero__product-character-image-container--brush">
-            <img src="./images/brush-presents.webp" alt="A picture of Brush character" class="product-hero__product-character-image product-hero__product-character-image--brush priority">
-          </div>
-          <img src="./images/angle-presents.webp" alt="A picture of Prophy Angle character" class="product-hero__product-character-image product-hero__product-character-image--angle priority">
-        </div>
-        <div class="product-hero__clouds-piece-character-feet-cover">
-          <img src="./images/ph-clouds-piece-character-feet-cover.webp" alt="A bunch of clouds - a piece that covers the character's feet">
+  <!-- <div class="btn-holder">
+    <button class="main-btn">Sign up free</button>
+  </div> -->
+  <section class="pricing-section">
+    <div class="heading">
+      <h3>Pricing plans</h3>
+      <p>Whether you're looking for pay-as-you-go options, monthly subscriptions, or an annual unlimited access with full commercial rights, we have you covered.</p>
+      <div class="button-group">
+        <button id="monthlyButton" class="monthly-btn deselected">Monthly</button>
+        <button id="annualButton" class="annual-btn selected">Annual</button>
+        <div class="bg-shift"></div>
+        <div class="pointing-arrow">
+          <svg
+            width="95"
+            height="62"
+            viewBox="0 0 95 62"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            class="pointing-arrow-svg"
+          >
+            <path
+              d="M14.7705 15.8619C33.2146 15.2843 72.0772 22.1597 79.9754 54.2825"
+              stroke-width="3"
+            />
+            <path
+              d="M17.7987 7.81217C18.0393 11.5987 16.4421 15.8467 15.5055 19.282C15.2179 20.3369 14.9203 21.3791 14.5871 22.4078C14.4728 22.7608 14.074 22.8153 13.9187 23.136C13.5641 23.8683 12.0906 22.7958 11.7114 22.5416C8.63713 20.4812 5.49156 18.3863 2.58664 15.9321C1.05261 14.6361 2.32549 14.1125 3.42136 13.0646C4.37585 12.152 5.13317 11.3811 6.22467 10.7447C8.97946 9.13838 12.7454 8.32946 15.8379 8.01289"
+              stroke-width="3"
+              stroke-linecap="round"
+            />
+          </svg>
+          <span class="pointing-arrow-text">
+            Save $$$
+          </span>
         </div>
       </div>
     </div>
-    <div class="product-hero__content" data-product-hero-content-part>
-      <div class="product-hero__content-title">
-        <h1 class="product-hero__content-title-text">Fluoride Varnish Cups w/ Brushes</h1>
+    <div class="price-cards" data-pricing-plan="A" data-pricing-cards-container>
+      <div class="price-card price-card--free">
+        <p class="title">Free</p>
+        <p class="subtitle">Everything to start</p>
+        <div class="price">
+          <p class="price-line">
+            <span>$0</span>
+            <span class="price-detail">/month</span>
+          </p>
+        </div>
+        <div class="feature">
+          <img src="./icons/checkmark.svg" alt="Checkmark Icon">
+          <span className="feature-text">10,000 requests/month</span>
+        </div>
+        <div class="feature">
+          <img src="./icons/checkmark.svg" alt="Checkmark Icon">
+          <span className="feature-text">Basic in-app support</span>
+        </div>
+        <div class="feature">
+          <img src="./icons/checkmark.svg" alt="Checkmark Icon">
+          <span className="feature-text">2 users on your account</span>
+        </div>
+        <div class="feature">
+          <img src="./icons/checkmark.svg" alt="Checkmark Icon">
+          <span className="feature-text">1 workspace</span>
+        </div>
+        <button class="sign-up-button" id="freeSignUp">Sign up free</button>
       </div>
-      <div class="product-hero__content-description">
-        <p class="product-hero__content-description-text">The Prophy Angle is a high quality, durable, and easy to use prophy angle. It is designed to be used with a prophy cup and prophy paste.</p>
+
+      <div class="price-card price-card--professional">
+        <p class="title">Professional</p>
+        <p class="subtitle">Everything to launch</p>
+        <div class="price">
+          <p class="price-line price-line--annual active" data-annual>
+            <span>$39</span>
+            <span class="price-detail">/month</span>
+          </p>
+          <p class="price-line price-line--monthly inactive" data-monthly>
+            <span>$49</span>
+            <span class="price-detail">/month</span>
+          </p>
+        </div>
+        <div class="feature">
+          <img src="./icons/checkmark.svg" alt="Checkmark Icon">
+          <span className="feature-text">100,000 requests/month</span>
+        </div>
+        <div class="feature">
+          <img src="./icons/checkmark.svg" alt="Checkmark Icon">
+          <span className="feature-text">Email in app support</span>
+        </div>
+        <div class="feature">
+          <img src="./icons/checkmark.svg" alt="Checkmark Icon">
+          <span className="feature-text">10 users on your account</span>
+        </div>
+        <div class="feature">
+          <img src="./icons/checkmark.svg" alt="Checkmark Icon">
+          <span className="feature-text">10 workspace</span>
+        </div>
+        <button class="sign-up-button" id="freeSignUp">Sign up professional</button>
       </div>
-      <div class="product-hero__content-cta">
-        <a href="#" class="product-hero__content-cta-button">Learn More</a>
-      </div>
-      <div class="product-hero__content-description">
-        <p class="product-hero__content-description-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Asperiores, sapiente velit quis voluptatibus sint perferendis voluptate repellendus quidem dolore accusamus itaque, sunt vitae. Nisi velit perferendis nemo, soluta blanditiis sapiente culpa quas necessitatibus ipsum est dolores molestias qui possimus nesciunt dolor inventore. Ipsum illo unde incidunt, quae consequuntur eligendi deserunt provident, minus, quo vitae dignissimos! Soluta, rem aperiam maiores libero consequuntur dolorum facilis itaque voluptatem quidem minus provident. Dignissimos voluptate voluptatem cum eaque obcaecati culpa optio expedita doloremque, aliquam non? Nostrum reprehenderit aperiam eum dolor obcaecati delectus adipisci fugit, placeat cumque vero voluptatum debitis sunt doloribus autem ducimus nesciunt nihil!</p>
-      </div>
-      <div class="product-hero__content-cta">
-        <a href="#" class="product-hero__content-cta-button">Learn More</a>
-      </div>
-      <div class="product-hero__content-description">
-        <p class="product-hero__content-description-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Asperiores, sapiente velit quis voluptatibus sint perferendis voluptate repellendus quidem dolore accusamus itaque, sunt vitae. Nisi velit perferendis nemo, soluta blanditiis sapiente culpa quas necessitatibus ipsum est dolores molestias qui possimus nesciunt dolor inventore. Ipsum illo unde incidunt, quae consequuntur eligendi deserunt provident, minus, quo vitae dignissimos! Soluta, rem aperiam maiores libero consequuntur dolorum facilis itaque voluptatem quidem minus provident. Dignissimos voluptate voluptatem cum eaque obcaecati culpa optio expedita doloremque, aliquam non? Nostrum reprehenderit aperiam eum dolor obcaecati delectus adipisci fugit, placeat cumque vero voluptatum debitis sunt doloribus autem ducimus nesciunt nihil!</p>
-      </div>
-      <div class="product-hero__content-cta">
-        <a href="#" class="product-hero__content-cta-button">Learn More</a>
-      </div>
+
+      <div class="price-card price-card--enterprise">
+        <p class="title">Enterprise</p>
+        <p class="subtitle">Everything to go public</p>
+        <div class="price">
+          <p class="price-line price-line--annual active" data-annual>
+            <span>$399</span>
+            <span class="price-detail">/month</span>
+          </p>
+          <p class="price-line price-line--monthly inactive" data-monthly>
+            <span>$499</span>
+            <span class="price-detail">/month</span>
+          </p>
+        </div>
+        <div class="feature">
+          <img src="./icons/checkmark.svg" alt="Checkmark Icon">
+          <span className="feature-text">10,000,000 requests/month</span>
+        </div>
+        <div class="feature">
+          <img src="./icons/checkmark.svg" alt="Checkmark Icon">
+          <span className="feature-text">Phone support</span>
+        </div>
+        <div class="feature">
+          <img src="./icons/checkmark.svg" alt="Checkmark Icon">
+          <span className="feature-text">∞ users on your account</span>
+        </div>
+        <div class="feature">
+          <img src="./icons/checkmark.svg" alt="Checkmark Icon">
+          <span className="feature-text">∞ work spaces</span>
+        </div>
+        <button class="sign-up-button" id="freeSignUp">Sign up enterprise</button>
+      </p>
     </div>
   </section>
+  
 </body>
 </html>

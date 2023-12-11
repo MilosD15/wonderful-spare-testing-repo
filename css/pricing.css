@@ -1,0 +1,292 @@
+.pricing-section {
+  --text-color: #FFE2DD;
+  /* choose plan section */
+  --active-btn-bg: #ffffff;
+  --active-btn-text-color: #000000;
+  --pointing-arrow-color: #6ec1ee;
+  /* cards */
+  --cards-bg: #000000;
+  --cards-price-text-color: #ffffff;
+  --cards-btn-text-color: #000000;
+  --cards-btn-bg: #FFE2DD;
+  --middle-card-emphasis-color: #be6096;
+
+  width: 100%;
+  color: var(--text-color);
+  padding: 1rem;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+@media (min-width: 1024px) {
+  .pricing-section {
+    padding: 3rem 2rem;
+  }
+}
+
+.heading {
+  margin-bottom: 6rem;
+  position: relative;
+  z-index: 10;
+}
+
+.heading h3 {
+  font-weight: 600;
+  font-size: 3.125rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  margin-top: 0;
+}
+
+.heading p {
+  text-align: center;
+  margin: auto;
+  max-width: 32rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 1024px) {
+  .example {
+    font-size: 5rem;
+  }
+}
+
+.button-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: max-content;
+  margin: 0 auto;
+  gap: 0.75rem;
+  position: relative;
+}
+
+.button-group button {
+  color: var(--text-color);
+  font-weight: 500;
+  border-radius: 0.5rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  width: 7rem;
+  background-color: transparent;
+  position: relative;
+  border: 0;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.button-group .bg-shift {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: var(--active-btn-bg);
+  border-radius: 0.5rem;
+  z-index: -10;
+  width: 7rem;
+  height: 100%;
+  transform: translateX(calc(7rem + 0.75rem));
+  transition: transform 300ms ease-in-out;
+  transform-origin: 50% 50% 0px;
+}
+
+.button-group .monthly-btn.selected ~ .bg-shift {
+  transform: translateX(0%);
+}
+
+.button-group .annual-btn.selected ~ .bg-shift {
+  transform: translateX(calc(7rem + 0.75rem));
+}
+
+.button-group button.selected {
+  color: var(--active-btn-text-color);
+}
+
+.button-group button.deselected {
+  transition: colors 0.15s ease-in-out;
+}
+
+.button-group button:not(.selected):hover,
+.button-group button:not(.selected):focus-visible {
+  background-color: var(--active-btn-bg);
+  color: var(--active-btn-text-color);
+}
+
+.button-group .pointing-arrow {
+  position: absolute;
+  right: -112px;
+  top: 0.6rem;
+}
+
+.button-group .pointing-arrow-svg {
+  stroke: var(--pointing-arrow-color);
+  transform: rotate(0) scale(0.7);
+  animation: arrow-rotate 2200ms ease-out infinite;
+}
+
+@keyframes arrow-rotate {
+  0%, 100% {
+    transform: rotate(0) scale(0.7);
+  }
+  50% {
+    transform: rotate(-5deg) scale(0.75);
+  }
+}
+
+.button-group .pointing-arrow-text {
+  display: block;
+  font-size: 0.75rem;
+  width: fit-content;
+  background-color: var(--pointing-arrow-color);
+  color: var(--active-btn-text-color);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  padding: 0.375rem 0.375rem;
+  border-radius: 0.25rem;
+  margin-top: -0.6rem;
+  margin-left: 2.6rem;
+  transform: rotate(-2deg);
+  font-weight: 300;
+  font-style: italic;
+}
+
+@media (min-width: 640px) {
+  .button-group .pointing-arrow {
+    top: 0;
+  }
+  .button-group .pointing-arrow-svg {
+    transform: scale(0.75);
+  }
+}
+
+.price-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+  max-width: 96rem;
+  margin-inline: auto;
+  position: relative;
+  z-index: 10;
+}
+
+@media (min-width: 1024px) {
+  .price-cards {
+    flex-direction: row;
+    gap: 1rem;
+  }
+}
+
+.price-card {
+  width: 100%;
+  background-color: var(--cards-bg);
+  padding: 1.5rem;
+  border: 1px solid var(--cards-bg);
+  border-radius: 0.75rem;
+}
+
+.price-card .title {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.price-card .subtitle {
+  margin: 0;
+  font-size: 1.125rem;
+  margin-bottom: 1.5rem;
+}
+
+.price-card .price {
+  margin: 0;
+  overflow: hidden;
+  margin-bottom: 2rem;
+  position: relative;
+  color: var(--cards-price-text-color);
+}
+
+.price-card .price .price-line {
+  margin: 0;
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.price-card--professional .price .price-line {
+  color: var(--middle-card-emphasis-color);
+}
+
+.price-card .price .price-line--monthly,
+.price-card .price .price-line--annual {
+  transition: all 300ms ease-in-out;
+}
+
+.price-cards[data-pricing-plan=M] .price-card .price .price-line--monthly,
+.price-cards[data-pricing-plan=A] .price-card .price .price-line--annual {
+  position: relative;
+  top: 0;
+  left: 0;
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.price-card .price .price-line.inactive {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(-100%);
+  opacity: 0;
+}
+
+.price-card .price .price-line.active {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(100%);
+  opacity: 0;
+}
+
+.price-card .price-detail {
+  font-weight: 400;
+  font-size: 1.25rem;
+}
+
+.price-card .feature {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem; 
+}
+
+.price-card .feature-text {
+  font-size: 1rem;
+}
+
+.price-card .sign-up-button {
+  width: 100%;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  margin-top: 2rem;
+  font-weight: 600;
+  background-color: var(--cards-btn-bg);
+  color: var(--cards-btn-text-color);
+  border-radius: 0.5rem;
+  text-transform: uppercase;
+  border: 0;
+  transition: all 0.3s;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.price-card .sign-up-button:hover,
+.price-card .sign-up-button:focus-visible {
+  transform: scale(1.015);
+}
+
+.price-card .sign-up-button:active {
+  transform: scale(0.985);
+}
+
+.price-card--professional .sign-up-button {
+  background-color: var(--middle-card-emphasis-color);
+}
