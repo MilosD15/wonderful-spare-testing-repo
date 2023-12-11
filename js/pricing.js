@@ -53,3 +53,15 @@ document.addEventListener("DOMContentLoaded", function() {
   // Initialize with default selection
   updateSelection(selectedPlan);
 });
+
+window.addEventListener("load", function() {
+  const pricingPlanLinks = {
+    annualIndividual: "https://trackshack.xyz/checkout/?add-to-cart=7322&quantity=1",
+    annualProfessional: "https://trackshack.xyz/checkout/?add-to-cart=7325&quantity=1",
+    monthlyIndividual: "https://trackshack.xyz/checkout/?add-to-cart=6689&quantity=1",
+    monthlyProfessional: "https://trackshack.xyz/checkout/?add-to-cart=6737&quantity=1",
+    payAsYouGo: "https://trackshack.xyz/music/"
+  }
+
+  
+});

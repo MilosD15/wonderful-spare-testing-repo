@@ -3,13 +3,13 @@
   /* choose plan section */
   --active-btn-bg: #ffffff;
   --active-btn-text-color: #000000;
-  --pointing-arrow-color: #6ec1ee;
+  --pointing-arrow-color: #bbe9ff;
   /* cards */
   --cards-bg: #000000;
   --cards-price-text-color: #ffffff;
   --cards-btn-text-color: #000000;
   --cards-btn-bg: #FFE2DD;
-  --middle-card-emphasis-color: #be6096;
+  --middle-card-emphasis-color: #fc7092;
 
   width: 100%;
   color: var(--text-color);
@@ -182,6 +182,8 @@
   padding: 1.5rem;
   border: 1px solid var(--cards-bg);
   border-radius: 0.75rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .price-card .title {
@@ -258,15 +260,20 @@
   margin-bottom: 0.5rem; 
 }
 
+.price-card .feature:nth-last-child(2) {
+  margin-bottom: 2rem;
+}
+
 .price-card .feature-text {
   font-size: 1rem;
 }
 
 .price-card .sign-up-button {
+  display: block;
+  text-align: center;
   width: 100%;
   padding-top: 1rem;
   padding-bottom: 1rem;
-  margin-top: 2rem;
   font-weight: 600;
   background-color: var(--cards-btn-bg);
   color: var(--cards-btn-text-color);
@@ -276,6 +283,8 @@
   transition: all 0.3s;
   font-size: 1rem;
   cursor: pointer;
+  text-decoration: none;
+  margin-top: auto;
 }
 
 .price-card .sign-up-button:hover,
