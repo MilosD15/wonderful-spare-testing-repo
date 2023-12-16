@@ -128,7 +128,7 @@
 
 .hint {
   position: absolute;
-  left: calc(100% + 1rem);
+  left: calc(100% + 1.5rem);
   top: 50%;
   transform: translateY(-50%);
   display: flex;
@@ -154,13 +154,12 @@
 .hint .hint-text {
   font-family: "Permanent Marker", cursive;
   font-size: 1.1rem;
-  margin-left: 0.5rem;
+  margin-left: 0.2rem;
   font-weight: 300;
   font-style: italic;
-  padding: 0.5em;
   border-radius: 0.2em;
-  color: var(--active-btn-text-color);
-  background-color: var(--pointing-arrow-color);
+  color: var(--active-btn-bg);
+  background-color: transparent;
 }
 
 /* .button-group .pointing-arrow {
