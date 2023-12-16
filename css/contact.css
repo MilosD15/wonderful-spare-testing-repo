@@ -1,0 +1,65 @@
+.contact-form {
+  background-color: #7C3AED;
+  background-image: url("../images/3.jpg");
+  background-position: center;
+  background-size: cover;
+  padding-inline: 1rem;
+  padding-block: 3rem;
+  height: auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-form .contact-window {
+  position: relative;
+  height: 24rem;
+  background-color: rgba(17, 24, 39, 0.7);
+  backdrop-filter: blur(20px);
+  border-radius: 0.5rem;
+  width: 100%;
+  max-width: 48rem;
+  margin-inline: auto;
+  overflow-y: scroll;
+  box-shadow: 
+    0 10px 15px -3px rgba(0, 0, 0, 0.1), 
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  cursor: text;
+  font-family: monospace;
+  z-index: 52;
+}
+
+.contact-form .contact-window-wrapper {
+  padding: 0.5rem;
+  color: #F1F5F9;
+  font-size: 1.125rem;
+}
+
+.contact-form .contact-window-wrapper p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+.contact-form .contact-window-wrapper .divider {
+  white-space: nowrap;
+  overflow: hidden;
+  font-weight: 300;
+}
+
+.contact-form .contact-window-wrapper .post-highlighting {
+  color: #FFE2DD;
+}
+
+.contact-form .contact-window-wrapper .post-success {
+  color: #6EE7B7;
+}
+
+.contact-form .contact-window-wrapper .post-success .icon {
+  fill: #6EE7B7;
+  height: 22px;
+  transform: translate(0px, 6px);
+}
+
+.contact-form .contact-window-wrapper .post-success .input {
+  display: inline-block;
+  transform: translate(-4px, 0px);
+}

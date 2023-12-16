@@ -1,416 +1,278 @@
-import React, { useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
+import { FiCheckCircle } from "react-icons/fi";
+import { Fragment, useEffect, useRef, useState } from "react";
 
-export default function SlidePricing() {
-  const [selected, setSelected] = useState("M");
+const TerminalContact = () => {
+  const containerRef = useRef(null);
+  const inputRef = useRef(null);
 
   return (
-    <section className="w-full text-black bg-white px-4 lg:px-8 py-12 lg:py-24 relative overflow-hidden">
-      <Heading selected={selected} setSelected={setSelected} />
-      <PriceCards selected={selected} />
-      <TopLeftCircle />
-      <BottomRightCircle />
+    <section
+      style={{
+        backgroundImage:
+          "url(https://images.unsplash.com/photo-1482686115713-0fbcaced6e28?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1734&q=80)",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+      className="px-4 py-12 bg-violet-600"
+    >
+      <div
+        ref={containerRef}
+        onClick={() => {
+          inputRef.current?.focus();
+        }}
+        className="h-96 bg-slate-950/70 backdrop-blur rounded-lg w-full max-w-3xl mx-auto overflow-y-scroll shadow-xl cursor-text font-mono"
+      >
+        <TerminalBody inputRef={inputRef} containerRef={containerRef} />
+      </div>
     </section>
   );
-}
+};
 
-const SELECTED_STYLES = "text-white font-medium rounded-lg py-3 w-28 relative";
-const DESELECTED_STYLES =
-  "font-medium rounded-lg py-3 w-28 hover:bg-slate-100 transition-colors relative";
+const TerminalBody = ({ containerRef, inputRef }) => {
+  const [focused, setFocused] = useState(false);
+  const [text, setText] = useState("");
 
-const Heading = ({ selected, setSelected }) => {
+  const [questions, setQuestions] = useState(QUESTIONS);
+
+  const curQuestion = questions.find((q) => !q.complete);
+
+  const handleSubmitLine = (value) => {
+    if (curQuestion) {
+      setQuestions((pv) =>
+        pv.map((q) => {
+          if (q.key === curQuestion.key) {
+            return {
+              ...q,
+              complete: true,
+              value,
+            };
+          }
+          return q;
+        })
+      );
+    }
+  };
+
   return (
-    <div className="mb-12 lg:mb-24 relative z-10">
-      <h3 className="font-semibold text-5xl lg:text-7xl text-center mb-6">
-        Pricing plans
-      </h3>
-      <p className="text-center mx-auto max-w-lg mb-8">
-        Lorem ipsum dolor sit amet consectetur. Pulvinar eu rhoncus tincidunt
-        eget mattis netus ridiculus.
+    <div className="p-2 text-slate-100 text-lg">
+      <InitialText />
+      <PreviousQuestions questions={questions} />
+      <CurrentQuestion curQuestion={curQuestion} />
+      {curQuestion ? (
+        <CurLine
+          text={text}
+          focused={focused}
+          setText={setText}
+          setFocused={setFocused}
+          inputRef={inputRef}
+          command={curQuestion?.key || ""}
+          handleSubmitLine={handleSubmitLine}
+          containerRef={containerRef}
+        />
+      ) : (
+        <Summary questions={questions} setQuestions={setQuestions} />
+      )}
+    </div>
+  );
+};
+
+const InitialText = () => {
+  return (
+    <>
+      <p>Hey there! We're excited to link 🔗</p>
+      <p className="whitespace-nowrap overflow-hidden font-light">
+        ------------------------------------------------------------------------
       </p>
-      <div className="flex items-center justify-center gap-3">
-        <button
-          onClick={() => setSelected("M")}
-          className={selected === "M" ? SELECTED_STYLES : DESELECTED_STYLES}
-        >
-          Monthly
-          {selected === "M" && <BackgroundShift />}
-        </button>
-        <div className="relative">
+    </>
+  );
+};
+
+const PreviousQuestions = ({ questions }) => {
+  return (
+    <>
+      {questions.map((q, i) => {
+        if (q.complete) {
+          return (
+            <Fragment key={i}>
+              <p>
+                {q.text || ""}
+                {q.postfix && (
+                  <span className="text-violet-300">{q.postfix}</span>
+                )}
+              </p>
+              <p className="text-emerald-300">
+                <FiCheckCircle className="inline-block mr-2" />
+                <span>{q.value}</span>
+              </p>
+            </Fragment>
+          );
+        }
+        return <Fragment key={i}></Fragment>;
+      })}
+    </>
+  );
+};
+
+const CurrentQuestion = ({ curQuestion }) => {
+  if (!curQuestion) return <></>;
+
+  return (
+    <p>
+      {curQuestion.text || ""}
+      {curQuestion.postfix && (
+        <span className="text-violet-300">{curQuestion.postfix}</span>
+      )}
+    </p>
+  );
+};
+
+const Summary = ({ questions, setQuestions }) => {
+  const [complete, setComplete] = useState(false);
+
+  const handleReset = () => {
+    setQuestions((pv) => pv.map((q) => ({ ...q, value: "", complete: false })));
+  };
+
+  const handleSend = () => {
+    const formData = questions.reduce((acc, val) => {
+      return { ...acc, [val.key]: val.value };
+    }, {});
+
+    // Send this data to your server or whatever :)
+    console.log(formData);
+
+    setComplete(true);
+  };
+
+  return (
+    <>
+      <p>Beautiful! Here's what we've got:</p>
+      {questions.map((q) => {
+        return (
+          <p key={q.key}>
+            <span className="text-blue-300">{q.key}:</span> {q.value}
+          </p>
+        );
+      })}
+      <p>Look good?</p>
+      {complete ? (
+        <p className="text-emerald-300">
+          <FiCheckCircle className="inline-block mr-2" />
+          <span>Sent! We'll get back to you ASAP 😎</span>
+        </p>
+      ) : (
+        <div className="flex gap-2 mt-2">
           <button
-            onClick={() => setSelected("A")}
-            className={selected === "A" ? SELECTED_STYLES : DESELECTED_STYLES}
+            onClick={handleReset}
+            className="px-3 py-1 text-base hover:opacity-90 transition-opacity rounded bg-slate-100 text-black"
           >
-            Annual
-            {selected === "A" && <BackgroundShift />}
+            Restart
           </button>
-          <CTAArrow />
+          <button
+            onClick={handleSend}
+            className="px-3 py-1 text-base hover:opacity-90 transition-opacity rounded bg-indigo-500 text-white"
+          >
+            Send it!
+          </button>
         </div>
-      </div>
-    </div>
+      )}
+    </>
   );
 };
 
-const BackgroundShift = () => (
-  <motion.span
-    layoutId="bg-shift"
-    className="absolute inset-0 bg-black rounded-lg -z-10"
-  />
-);
+const CurLine = ({
+  text,
+  focused,
+  setText,
+  setFocused,
+  inputRef,
+  command,
+  handleSubmitLine,
+  containerRef,
+}) => {
+  const scrollToBottom = () => {
+    if (containerRef.current) {
+      containerRef.current.scrollTop = containerRef.current.scrollHeight;
+    }
+  };
 
-const CTAArrow = () => (
-  <div className="absolute -right-[100px] top-2 sm:top-0">
-    <motion.svg
-      width="95"
-      height="62"
-      viewBox="0 0 95 62"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      className="scale-50 sm:scale-75"
-      initial={{ scale: 0.7, rotate: 5 }}
-      animate={{ scale: 0.75, rotate: 0 }}
-      transition={{
-        repeat: Infinity,
-        repeatType: "mirror",
-        duration: 1,
-        ease: "easeOut",
-      }}
-    >
-      <path
-        d="M14.7705 15.8619C33.2146 15.2843 72.0772 22.1597 79.9754 54.2825"
-        stroke="#7D7BE5"
-        strokeWidth="3"
-      />
-      <path
-        d="M17.7987 7.81217C18.0393 11.5987 16.4421 15.8467 15.5055 19.282C15.2179 20.3369 14.9203 21.3791 14.5871 22.4078C14.4728 22.7608 14.074 22.8153 13.9187 23.136C13.5641 23.8683 12.0906 22.7958 11.7114 22.5416C8.63713 20.4812 5.49156 18.3863 2.58664 15.9321C1.05261 14.6361 2.32549 14.1125 3.42136 13.0646C4.37585 12.152 5.13317 11.3811 6.22467 10.7447C8.97946 9.13838 12.7454 8.32946 15.8379 8.01289"
-        stroke="#7D7BE5"
-        strokeWidth="3"
-        strokeLinecap="round"
-      />
-    </motion.svg>
-    <span className="block text-xs w-fit bg-indigo-500 text-white shadow px-1.5 py-0.5 rounded -mt-1 ml-8 -rotate-2 font-light italic">
-      Save $$$
-    </span>
-  </div>
-);
+  const onSubmit = (e) => {
+    e.preventDefault();
+    handleSubmitLine(text);
+    setText("");
+    setTimeout(() => {
+      scrollToBottom();
+    }, 0);
+  };
 
-const PriceCards = ({ selected }) => (
-  <div className="flex flex-col lg:flex-row gap-8 lg:gap-4 w-full max-w-6xl mx-auto relative z-10">
-    {/* FREE */}
-    <div className="w-full bg-white p-6 border-[1px] border-slate-300 rounded-xl">
-      <p className="text-2xl font-bold mb-2">Free</p>
-      <p className="text-lg mb-6">Everything to start</p>
-      <p className="text-6xl font-bold mb-8">
-        $0<span className="font-normal text-xl">/month</span>
+  const onChange = (e) => {
+    setText(e.target.value);
+    scrollToBottom();
+  };
+
+  useEffect(() => {
+    return () => setFocused(false);
+  }, []);
+
+  return (
+    <>
+      <form onSubmit={onSubmit}>
+        <input
+          ref={inputRef}
+          onChange={onChange}
+          value={text}
+          type="text"
+          className="sr-only"
+          autoComplete="off"
+          onFocus={() => setFocused(true)}
+          onBlur={() => setFocused(false)}
+        />
+      </form>
+      <p>
+        <span className="text-emerald-400">➜</span>{" "}
+        <span className="text-cyan-300">~</span>{" "}
+        {command && <span className="opacity-50">Enter {command}: </span>}
+        {text}
+        {focused && (
+          <motion.span
+            animate={{ opacity: [1, 1, 0, 0] }}
+            transition={{
+              repeat: Infinity,
+              duration: 1,
+              ease: "linear",
+              times: [0, 0.5, 0.5, 1],
+            }}
+            className="inline-block w-2 h-5 bg-slate-400 translate-y-1 ml-0.5"
+          />
+        )}
       </p>
-      <div className="flex items-center gap-2 mb-2">
-        <svg
-          width="20"
-          height="15"
-          viewBox="0 0 20 15"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className="shrink-0"
-        >
-          <path
-            d="M6.35588 11.8345L1.61455 7.17002L0 8.7472L6.35588 15L20 1.57718L18.3968 0L6.35588 11.8345Z"
-            fill="black"
-          />
-        </svg>
-        <span className="text-base">10,000 requests/month</span>
-      </div>
-      <div className="flex items-center gap-2 mb-2">
-        <svg
-          width="20"
-          height="15"
-          viewBox="0 0 20 15"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className="shrink-0"
-        >
-          <path
-            d="M6.35588 11.8345L1.61455 7.17002L0 8.7472L6.35588 15L20 1.57718L18.3968 0L6.35588 11.8345Z"
-            fill="black"
-          />
-        </svg>
-        <span className="text-base">Basic in app support</span>
-      </div>
-      <div className="flex items-center gap-2 mb-2">
-        <svg
-          width="20"
-          height="15"
-          viewBox="0 0 20 15"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className="shrink-0"
-        >
-          <path
-            d="M6.35588 11.8345L1.61455 7.17002L0 8.7472L6.35588 15L20 1.57718L18.3968 0L6.35588 11.8345Z"
-            fill="black"
-          />
-        </svg>
-        <span className="text-base">2 users on your account</span>
-      </div>
-      <div className="flex items-center gap-2 mb-2">
-        <svg
-          width="20"
-          height="15"
-          viewBox="0 0 20 15"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className="shrink-0"
-        >
-          <path
-            d="M6.35588 11.8345L1.61455 7.17002L0 8.7472L6.35588 15L20 1.57718L18.3968 0L6.35588 11.8345Z"
-            fill="black"
-          />
-        </svg>
-        <span className="text-base">1 workspace</span>
-      </div>
-
-      <motion.button
-        whileHover={{ scale: 1.015 }}
-        whileTap={{ scale: 0.985 }}
-        className="w-full py-4 mt-8 font-semibold bg-black text-white rounded-lg uppercase"
-      >
-        Sign up free
-      </motion.button>
-    </div>
-
-    {/* PRO  */}
-    <div className="w-full bg-white p-6 border-[1px] border-slate-300 rounded-xl">
-      <p className="text-2xl font-bold mb-2">Professional</p>
-      <p className="text-lg mb-6">Everything to launch</p>
-      <div className="overflow-hidden mb-8">
-        <AnimatePresence mode="wait">
-          {selected === "M" ? (
-            <motion.p
-              key="monthly1"
-              initial={{ y: -50, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              exit={{ y: 50, opacity: 0 }}
-              transition={{ ease: "linear", duration: 0.25 }}
-              className="text-6xl font-bold text-indigo-500"
-            >
-              <span>$49</span>
-              <span className="font-normal text-xl">/month</span>
-            </motion.p>
-          ) : (
-            <motion.p
-              key="monthly2"
-              initial={{ y: -50, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              exit={{ y: 50, opacity: 0 }}
-              transition={{ ease: "linear", duration: 0.25 }}
-              className="text-6xl font-bold text-indigo-500"
-            >
-              <span>$39</span>
-              <span className="font-normal text-xl">/month</span>
-            </motion.p>
-          )}
-        </AnimatePresence>
-      </div>
-      <div className="flex items-center gap-2 mb-2">
-        <svg
-          width="20"
-          height="15"
-          viewBox="0 0 20 15"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className="shrink-0"
-        >
-          <path
-            d="M6.35588 11.8345L1.61455 7.17002L0 8.7472L6.35588 15L20 1.57718L18.3968 0L6.35588 11.8345Z"
-            fill="black"
-          />
-        </svg>
-        <span className="text-base">100,000 requests/month</span>
-      </div>
-      <div className="flex items-center gap-2 mb-2">
-        <svg
-          width="20"
-          height="15"
-          viewBox="0 0 20 15"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className="shrink-0"
-        >
-          <path
-            d="M6.35588 11.8345L1.61455 7.17002L0 8.7472L6.35588 15L20 1.57718L18.3968 0L6.35588 11.8345Z"
-            fill="black"
-          />
-        </svg>
-        <span className="text-base">Email in app support</span>
-      </div>
-      <div className="flex items-center gap-2 mb-2">
-        <svg
-          width="20"
-          height="15"
-          viewBox="0 0 20 15"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className="shrink-0"
-        >
-          <path
-            d="M6.35588 11.8345L1.61455 7.17002L0 8.7472L6.35588 15L20 1.57718L18.3968 0L6.35588 11.8345Z"
-            fill="black"
-          />
-        </svg>
-        <span className="text-base">10 users on your account</span>
-      </div>
-      <div className="flex items-center gap-2 mb-2">
-        <svg
-          width="20"
-          height="15"
-          viewBox="0 0 20 15"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className="shrink-0"
-        >
-          <path
-            d="M6.35588 11.8345L1.61455 7.17002L0 8.7472L6.35588 15L20 1.57718L18.3968 0L6.35588 11.8345Z"
-            fill="black"
-          />
-        </svg>
-        <span className="text-base">10 work spaces</span>
-      </div>
-
-      <motion.button
-        whileHover={{ scale: 1.015 }}
-        whileTap={{ scale: 0.985 }}
-        className="w-full py-4 mt-8 font-semibold bg-indigo-500 text-white rounded-lg uppercase"
-      >
-        Sign up professional
-      </motion.button>
-    </div>
-
-    {/* ENTERPRISE */}
-    <div className="w-full bg-white p-6 border-[1px] border-slate-300 rounded-xl">
-      <p className="text-2xl font-bold mb-2">Enterprise</p>
-      <p className="text-lg mb-6">Everything to go public</p>
-      <div className="overflow-hidden mb-8">
-        <AnimatePresence mode="wait">
-          {selected === "M" ? (
-            <motion.p
-              key="yearly1"
-              initial={{ y: -50, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              exit={{ y: 50, opacity: 0 }}
-              transition={{ ease: "linear", duration: 0.25 }}
-              className="text-6xl font-bold"
-            >
-              <span>$499</span>
-              <span className="font-normal text-xl">/month</span>
-            </motion.p>
-          ) : (
-            <motion.p
-              key="yearly2"
-              initial={{ y: -50, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              exit={{ y: 50, opacity: 0 }}
-              transition={{ ease: "linear", duration: 0.25 }}
-              className="text-6xl font-bold"
-            >
-              <span>$399</span>
-              <span className="font-normal text-xl">/month</span>
-            </motion.p>
-          )}
-        </AnimatePresence>
-      </div>
-      <div className="flex items-center gap-2 mb-2">
-        <svg
-          width="20"
-          height="15"
-          viewBox="0 0 20 15"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className="shrink-0"
-        >
-          <path
-            d="M6.35588 11.8345L1.61455 7.17002L0 8.7472L6.35588 15L20 1.57718L18.3968 0L6.35588 11.8345Z"
-            fill="black"
-          />
-        </svg>
-        <span className="text-base">10,000,000 requests/month</span>
-      </div>
-      <div className="flex items-center gap-2 mb-2">
-        <svg
-          width="20"
-          height="15"
-          viewBox="0 0 20 15"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className="shrink-0"
-        >
-          <path
-            d="M6.35588 11.8345L1.61455 7.17002L0 8.7472L6.35588 15L20 1.57718L18.3968 0L6.35588 11.8345Z"
-            fill="black"
-          />
-        </svg>
-        <span className="text-base">Phone support</span>
-      </div>
-      <div className="flex items-center gap-2 mb-2">
-        <svg
-          width="20"
-          height="15"
-          viewBox="0 0 20 15"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className="shrink-0"
-        >
-          <path
-            d="M6.35588 11.8345L1.61455 7.17002L0 8.7472L6.35588 15L20 1.57718L18.3968 0L6.35588 11.8345Z"
-            fill="black"
-          />
-        </svg>
-        <span className="text-base">∞ users on your account</span>
-      </div>
-      <div className="flex items-center gap-2 mb-2">
-        <svg
-          width="20"
-          height="15"
-          viewBox="0 0 20 15"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className="shrink-0"
-        >
-          <path
-            d="M6.35588 11.8345L1.61455 7.17002L0 8.7472L6.35588 15L20 1.57718L18.3968 0L6.35588 11.8345Z"
-            fill="black"
-          />
-        </svg>
-        <span className="text-base">∞ work spaces</span>
-      </div>
-
-      <motion.button
-        whileHover={{ scale: 1.015 }}
-        whileTap={{ scale: 0.985 }}
-        className="w-full py-4 mt-8 font-semibold bg-black text-white rounded-lg uppercase"
-      >
-        Sign up enterprise
-      </motion.button>
-    </div>
-  </div>
-);
-
-const TopLeftCircle = () => {
-  return (
-    <motion.div
-      initial={{ rotate: "0deg" }}
-      animate={{ rotate: "360deg" }}
-      transition={{ duration: 100, ease: "linear", repeat: Infinity }}
-      className="w-[450px] h-[450px] rounded-full border-2 border-slate-500 border-dotted absolute z-0 -left-[250px] -top-[200px]"
-    />
+    </>
   );
 };
 
-const BottomRightCircle = () => {
-  return (
-    <motion.div
-      initial={{ rotate: "0deg" }}
-      animate={{ rotate: "-360deg" }}
-      transition={{ duration: 100, ease: "linear", repeat: Infinity }}
-      className="w-[450px] h-[450px] rounded-full border-2 border-slate-500 border-dotted absolute z-0 -right-[250px] -bottom-[200px]"
-    />
-  );
-};
+export default TerminalContact;
+
+const QUESTIONS = [
+  {
+    key: "email",
+    text: "To start, could you give us ",
+    postfix: "your email?",
+    complete: false,
+    value: "",
+  },
+  {
+    key: "name",
+    text: "Awesome! And what's ",
+    postfix: "your name?",
+    complete: false,
+    value: "",
+  },
+  {
+    key: "description",
+    text: "Perfect, and ",
+    postfix: "how can we help you?",
+    complete: false,
+    value: "",
+  },
+];

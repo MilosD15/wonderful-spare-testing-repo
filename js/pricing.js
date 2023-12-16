@@ -1,7 +1,16 @@
-document.addEventListener("DOMContentLoaded", function() {
+window.addEventListener("load", function() {
   var selectedPlan = "A"; // Default selection
+  const pricingPlanLinks = {
+    annualIndividual: "https://trackshack.xyz/checkout/?add-to-cart=7322&quantity=1",
+    annualProfessional: "https://trackshack.xyz/checkout/?add-to-cart=7325&quantity=1",
+    monthlyIndividual: "https://trackshack.xyz/checkout/?add-to-cart=6689&quantity=1",
+    monthlyProfessional: "https://trackshack.xyz/checkout/?add-to-cart=6737&quantity=1",
+  }
+
   const pricingCardsContainer = document.querySelector("[data-pricing-cards-container]");
   const pricingPrices = document.querySelectorAll(".price-line[data-annual], .price-line[data-monthly]");
+  const signUpIndividualLink = document.getElementById("sign-up-individual");
+  const signUpProLink = document.getElementById("sign-up-pro");
 
   function updateSelection(plan) {
     selectedPlan = plan;
@@ -22,6 +31,8 @@ document.addEventListener("DOMContentLoaded", function() {
           }, 300);
         }
       });
+      signUpIndividualLink.href = pricingPlanLinks.monthlyIndividual;
+      signUpProLink.href = pricingPlanLinks.monthlyProfessional;
     } else {
       document.getElementById("monthlyButton").classList.remove("selected");
       document.getElementById("monthlyButton").classList.add("deselected");
@@ -39,6 +50,8 @@ document.addEventListener("DOMContentLoaded", function() {
           }, 300);
         }
       });
+      signUpIndividualLink.href = pricingPlanLinks.annualIndividual;
+      signUpProLink.href = pricingPlanLinks.annualProfessional;
     }
   }
 
@@ -52,16 +65,4 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // Initialize with default selection
   updateSelection(selectedPlan);
-});
-
-window.addEventListener("load", function() {
-  const pricingPlanLinks = {
-    annualIndividual: "https://trackshack.xyz/checkout/?add-to-cart=7322&quantity=1",
-    annualProfessional: "https://trackshack.xyz/checkout/?add-to-cart=7325&quantity=1",
-    monthlyIndividual: "https://trackshack.xyz/checkout/?add-to-cart=6689&quantity=1",
-    monthlyProfessional: "https://trackshack.xyz/checkout/?add-to-cart=6737&quantity=1",
-    payAsYouGo: "https://trackshack.xyz/music/"
-  }
-
-  
 });

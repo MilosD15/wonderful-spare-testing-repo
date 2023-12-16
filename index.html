@@ -5,45 +5,110 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>UI Elements</title>
   <link rel="stylesheet" href="font/poppins/include.css">
+  <link rel="stylesheet" href="font/permanent-marker/include.css">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/grain-effect.css">
+  <link rel="stylesheet" href="css/tv-effect.css">
+  <link rel="stylesheet" href="css/nav-links.css">
   <link rel="stylesheet" href="css/button.css">
   <link rel="stylesheet" href="css/pricing.css">
-  <script src="./js/pricing.js"></script>
+  <link rel="stylesheet" href="css/contact.css">
+  <!-- <script src="./js/pricing.js"></script> -->
 </head>
 <body>
+  <!-- <section class="contact-form">
+    <div class="contact-window">
+      <div class="contact-window-wrapper">
+        <p>Hey there! We're excited to link 🔗</p>
+        <p class="divider">------------------------------------------------------------------------</p>
+        <p>To start, could you give us <span class="post-highlighting">your email?</span></p>
+        <p class="post-success">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 -960 960 960" width="24">
+            <path d="M480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q65 0 123 19t107 53l-58 59q-38-24-81-37.5T480-800q-133 0-226.5 93.5T160-480q0 133 93.5 226.5T480-160q133 0 226.5-93.5T800-480q0-18-2-36t-6-35l65-65q11 32 17 66t6 70q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm-56-216L254-466l56-56 114 114 400-401 56 56-456 457Z"/>
+          </svg>
+          <span class="input">milosdronjak47@gmail.com</span>
+        </p>
+        <p>Awesome! And what's <span class="post-highlighting">your name?</span></p>
+
+      </div>
+    </div>
+  </section> -->
+  <!-- <div class="nav-links" id="custom-nav-links">
+    <nav>
+      <ul>
+        <li>
+          <a href="#" rel="nofollow" class="nav-link">Music</a>
+        </li>
+        <li>
+          <a href="#" rel="nofollow" class="nav-link">Pricing</a>
+        </li>
+        <li>
+          <a href="#" rel="nofollow" class="nav-link">Sign in</a>
+        </li>
+      </ul>
+    </nav>
+    <script>
+      window.addEventListener("load", () => {
+        const navLinks = document.querySelectorAll("#custom-nav-links .nav-link");
+
+        function transformNavLinks() {
+          navLinks.forEach(elem => {
+            const navLinkText = elem.textContent;
+            elem.textContent = "";
+
+            const navLinkTextWrapper = document.createElement("div");
+            navLinkTextWrapper.classList.add("nav-link-text-wrapper");
+
+            const navLinkTextContainer = document.createElement("div");
+            navLinkTextContainer.classList.add("nav-link-text-container");
+
+            const navLinkTextElemInitial = document.createElement("span");
+            navLinkTextElemInitial.classList.add("nav-link-text-elem", "nav-link-text-elem--initial");
+            navLinkTextElemInitial.textContent = navLinkText;
+
+            const navLinkTextElemHover = document.createElement("span");
+            navLinkTextElemHover.classList.add("nav-link-text-elem", "nav-link-text-elem--hover");
+            navLinkTextElemHover.textContent = navLinkText;
+
+            navLinkTextContainer.appendChild(navLinkTextElemInitial);
+            navLinkTextContainer.appendChild(navLinkTextElemHover);
+
+            navLinkTextWrapper.appendChild(navLinkTextContainer);
+            elem.appendChild(navLinkTextWrapper);
+          });
+        }
+        transformNavLinks();
+
+        navLinks.forEach(elem => {
+          elem.addEventListener("mouseenter", function() {
+            elem.classList.add("hover-state");
+            elem.classList.remove("initial-state");
+          });
+          elem.addEventListener("mouseleave", function() {
+            elem.classList.remove("hover-state");
+            elem.classList.add("initial-state");
+          });
+        });
+      });
+    </script>
+  </div> -->
   <!-- <div class="btn-holder">
     <button class="main-btn">Sign up free</button>
   </div> -->
-  <section class="pricing-section">
+  <section class="pricing-section grain-effect tv-effect">
     <div class="heading">
       <h3>Pricing plans</h3>
       <p>Whether you're looking for pay-as-you-go options, monthly subscriptions, or an annual unlimited access with full commercial rights, we have you covered.</p>
       <div class="button-group">
-        <button id="monthlyButton" class="monthly-btn deselected">Monthly</button>
-        <button id="annualButton" class="annual-btn selected">Annual</button>
+        <button id="monthlyButton" class="button monthly-btn deselected">Monthly</button>
+        <button id="annualButton" class="button annual-btn selected">Annual</button>
         <div class="bg-shift"></div>
-        <div class="pointing-arrow">
-          <svg
-            width="95"
-            height="62"
-            viewBox="0 0 95 62"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            class="pointing-arrow-svg"
-          >
-            <path
-              d="M14.7705 15.8619C33.2146 15.2843 72.0772 22.1597 79.9754 54.2825"
-              stroke-width="3"
-            />
-            <path
-              d="M17.7987 7.81217C18.0393 11.5987 16.4421 15.8467 15.5055 19.282C15.2179 20.3369 14.9203 21.3791 14.5871 22.4078C14.4728 22.7608 14.074 22.8153 13.9187 23.136C13.5641 23.8683 12.0906 22.7958 11.7114 22.5416C8.63713 20.4812 5.49156 18.3863 2.58664 15.9321C1.05261 14.6361 2.32549 14.1125 3.42136 13.0646C4.37585 12.152 5.13317 11.3811 6.22467 10.7447C8.97946 9.13838 12.7454 8.32946 15.8379 8.01289"
-              stroke-width="3"
-              stroke-linecap="round"
-            />
-          </svg>
-          <span class="pointing-arrow-text">
-            Save $$$
-          </span>
+
+        <div class="hint">
+          <div class="hint-arrow">
+            <img src="./icons/right-arrow.gif" alt="Rainbow animated right-pointing arrow">
+          </div>
+          <div class="hint-text">Save 45%</div>
         </div>
       </div>
     </div>
@@ -62,34 +127,118 @@
           </p>
         </div>
         <div class="feature">
-          <img src="./icons/checkmark.svg" alt="Checkmark Icon">
+          <svg
+            width="20"
+            height="15"
+            viewBox="0 0 20 15"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            className="shrink-0"
+          >
+            <path
+              d="M6.35588 11.8345L1.61455 7.17002L0 8.7472L6.35588 15L20 1.57718L18.3968 0L6.35588 11.8345Z"
+              fill="#FFE2DD"
+            />
+          </svg>
           <span className="feature-text">Personal and social media use (non-commercial)</span>
         </div>
         <div class="feature">
-          <img src="./icons/checkmark.svg" alt="Checkmark Icon">
+          <svg
+            width="20"
+            height="15"
+            viewBox="0 0 20 15"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            className="shrink-0"
+          >
+            <path
+              d="M6.35588 11.8345L1.61455 7.17002L0 8.7472L6.35588 15L20 1.57718L18.3968 0L6.35588 11.8345Z"
+              fill="#FFE2DD"
+            />
+          </svg>
           <span className="feature-text">Unlimited downloads</span>
         </div>
         <div class="feature">
-          <img src="./icons/checkmark.svg" alt="Checkmark Icon">
+          <svg
+            width="20"
+            height="15"
+            viewBox="0 0 20 15"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            className="shrink-0"
+          >
+            <path
+              d="M6.35588 11.8345L1.61455 7.17002L0 8.7472L6.35588 15L20 1.57718L18.3968 0L6.35588 11.8345Z"
+              fill="#FFE2DD"
+            />
+          </svg>
           <span className="feature-text">Covers websites, social media, apps, games, podcasts, live streaming</span>
         </div>
         <div class="feature">
-          <img src="./icons/checkmark.svg" alt="Checkmark Icon">
+          <svg
+            width="20"
+            height="15"
+            viewBox="0 0 20 15"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            className="shrink-0"
+          >
+            <path
+              d="M6.35588 11.8345L1.61455 7.17002L0 8.7472L6.35588 15L20 1.57718L18.3968 0L6.35588 11.8345Z"
+              fill="#FFE2DD"
+            />
+          </svg>
           <span className="feature-text">Global, indefinite content protection</span>
         </div>
         <div class="feature">
-          <img src="./icons/checkmark.svg" alt="Checkmark Icon">
+          <svg
+            width="20"
+            height="15"
+            viewBox="0 0 20 15"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            className="shrink-0"
+          >
+            <path
+              d="M6.35588 11.8345L1.61455 7.17002L0 8.7472L6.35588 15L20 1.57718L18.3968 0L6.35588 11.8345Z"
+              fill="#FFE2DD"
+            />
+          </svg>
           <span className="feature-text">Mp3 & MIDI files</span>
         </div>
         <div class="feature">
-          <img src="./icons/checkmark.svg" alt="Checkmark Icon">
+          <svg
+            width="20"
+            height="15"
+            viewBox="0 0 20 15"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            className="shrink-0"
+          >
+            <path
+              d="M6.35588 11.8345L1.61455 7.17002L0 8.7472L6.35588 15L20 1.57718L18.3968 0L6.35588 11.8345Z"
+              fill="#FFE2DD"
+            />
+          </svg>
           <span className="feature-text">Monetize one channel per platform</span>
         </div>
         <div class="feature">
-          <img src="./icons/checkmark.svg" alt="Checkmark Icon">
+          <svg
+            width="20"
+            height="15"
+            viewBox="0 0 20 15"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            className="shrink-0"
+          >
+            <path
+              d="M6.35588 11.8345L1.61455 7.17002L0 8.7472L6.35588 15L20 1.57718L18.3968 0L6.35588 11.8345Z"
+              fill="#FFE2DD"
+            />
+          </svg>
           <span className="feature-text">Weekly new music releases</span>
         </div>
-        <a href="https://trackshack.xyz/checkout/?add-to-cart=7322&quantity=1" class="sign-up-button">Sign me up</a>
+        <a href="https://trackshack.xyz/checkout/?add-to-cart=7322&quantity=1" class="sign-up-button" id="sign-up-individual">Sign me up</a>
       </div>
 
       <div class="price-card price-card--professional">
@@ -106,52 +255,218 @@
           </p>
         </div>
         <div class="feature">
-          <img src="./icons/checkmark.svg" alt="Checkmark Icon">
+          <svg
+            width="20"
+            height="15"
+            viewBox="0 0 20 15"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            className="shrink-0"
+          >
+            <path
+              d="M6.35588 11.8345L1.61455 7.17002L0 8.7472L6.35588 15L20 1.57718L18.3968 0L6.35588 11.8345Z"
+              fill="#FFE2DD"
+            />
+          </svg>
           <span className="feature-text">All Individual Plan features</span>
         </div>
         <div class="feature">
-          <img src="./icons/checkmark.svg" alt="Checkmark Icon">
+          <svg
+            width="20"
+            height="15"
+            viewBox="0 0 20 15"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            className="shrink-0"
+          >
+            <path
+              d="M6.35588 11.8345L1.61455 7.17002L0 8.7472L6.35588 15L20 1.57718L18.3968 0L6.35588 11.8345Z"
+              fill="#FFE2DD"
+            />
+          </svg>
           <span className="feature-text">Suitable for commercial use, including paid ads and client work</span>
         </div>
         <div class="feature">
-          <img src="./icons/checkmark.svg" alt="Checkmark Icon">
+          <svg
+            width="20"
+            height="15"
+            viewBox="0 0 20 15"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            className="shrink-0"
+          >
+            <path
+              d="M6.35588 11.8345L1.61455 7.17002L0 8.7472L6.35588 15L20 1.57718L18.3968 0L6.35588 11.8345Z"
+              fill="#FFE2DD"
+            />
+          </svg>
           <span className="feature-text">Adjustable team size</span>
         </div>
         <div class="feature">
-          <img src="./icons/checkmark.svg" alt="Checkmark Icon">
+          <svg
+            width="20"
+            height="15"
+            viewBox="0 0 20 15"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            className="shrink-0"
+          >
+            <path
+              d="M6.35588 11.8345L1.61455 7.17002L0 8.7472L6.35588 15L20 1.57718L18.3968 0L6.35588 11.8345Z"
+              fill="#FFE2DD"
+            />
+          </svg>
           <span className="feature-text">Mp3, MIDI, WAV files</span>
         </div>
         <div class="feature">
-          <img src="./icons/checkmark.svg" alt="Checkmark Icon">
+          <svg
+            width="20"
+            height="15"
+            viewBox="0 0 20 15"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            className="shrink-0"
+          >
+            <path
+              d="M6.35588 11.8345L1.61455 7.17002L0 8.7472L6.35588 15L20 1.57718L18.3968 0L6.35588 11.8345Z"
+              fill="#FFE2DD"
+            />
+          </svg>
           <span className="feature-text">Unlimited channel monetization</span>
         </div>
-        <a href="https://trackshack.xyz/checkout/?add-to-cart=7325&quantity=1" class="sign-up-button">Sign me up</a>
-    </div>
+        <a href="https://trackshack.xyz/checkout/?add-to-cart=7325&quantity=1" class="sign-up-button" id="sign-up-pro">Sign me up</a>
+      </div>
 
-    <div class="price-card price-card--pay-as-you-go">
+      <div class="price-card price-card--pay-as-you-go">
       <p class="title">Pay As You Go</p>
       <p class="subtitle"></p>
       <div class="price">
         <p class="price-line">
           <span>$0.99</span>
-          <span class="price-detail">/per song</span>
+          <span class="price-detail">/song</span>
         </p>
       </div>
       <div class="feature">
-        <img src="./icons/checkmark.svg" alt="Checkmark Icon">
+        <svg
+          width="20"
+          height="15"
+          viewBox="0 0 20 15"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className="shrink-0"
+        >
+          <path
+            d="M6.35588 11.8345L1.61455 7.17002L0 8.7472L6.35588 15L20 1.57718L18.3968 0L6.35588 11.8345Z"
+            fill="#FFE2DD"
+          />
+        </svg>
         <span className="feature-text">Limited commercial use</span>
       </div>
       <div class="feature">
-        <img src="./icons/checkmark.svg" alt="Checkmark Icon">
+        <svg
+          width="20"
+          height="15"
+          viewBox="0 0 20 15"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className="shrink-0"
+        >
+          <path
+            d="M6.35588 11.8345L1.61455 7.17002L0 8.7472L6.35588 15L20 1.57718L18.3968 0L6.35588 11.8345Z"
+            fill="#FFE2DD"
+          />
+        </svg>
         <span className="feature-text">Remixable downloads</span>
       </div>
       <div class="feature">
-        <img src="./icons/checkmark.svg" alt="Checkmark Icon">
+        <svg
+          width="20"
+          height="15"
+          viewBox="0 0 20 15"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className="shrink-0"
+        >
+          <path
+            d="M6.35588 11.8345L1.61455 7.17002L0 8.7472L6.35588 15L20 1.57718L18.3968 0L6.35588 11.8345Z"
+            fill="#FFE2DD"
+          />
+        </svg>
         <span className="feature-text">Use on 1 commercial channel</span>
       </div>
-      <a href="" class="sign-up-button" id="freeSignUp">Sign up free</a>
+      <a href="https://trackshack.xyz/music/" class="sign-up-button" id="browse-music">Browse music</a>
+      </div>
     </div>
-  </section>
+    <script>
+      window.addEventListener("load", function() {
+        var selectedPlan = "A"; // Default selection
+        const pricingPlanLinks = {
+          annualIndividual: "https://trackshack.xyz/checkout/?add-to-cart=7322&quantity=1",
+          annualProfessional: "https://trackshack.xyz/checkout/?add-to-cart=7325&quantity=1",
+          monthlyIndividual: "https://trackshack.xyz/checkout/?add-to-cart=6689&quantity=1",
+          monthlyProfessional: "https://trackshack.xyz/checkout/?add-to-cart=6737&quantity=1",
+        }
   
+        const pricingCardsContainer = document.querySelector("[data-pricing-cards-container]");
+        const pricingPrices = document.querySelectorAll(".price-line[data-annual], .price-line[data-monthly]");
+        const signUpIndividualLink = document.getElementById("sign-up-individual");
+        const signUpProLink = document.getElementById("sign-up-pro");
+  
+        function updateSelection(plan) {
+          selectedPlan = plan;
+          if (plan === "M") {
+            document.getElementById("monthlyButton").classList.add("selected");
+            document.getElementById("monthlyButton").classList.remove("deselected");
+            document.getElementById("annualButton").classList.remove("selected");
+            document.getElementById("annualButton").classList.add("deselected");
+            pricingCardsContainer.dataset.pricingPlan = "M";
+            pricingPrices.forEach(elem => {
+              if (elem.classList.contains("price-line--monthly")) {
+                elem.classList.add("active");
+                elem.classList.remove("inactive");
+              } else {
+                setTimeout(() => {
+                  elem.classList.add("inactive");
+                  elem.classList.remove("active");
+                }, 300);
+              }
+            });
+            signUpIndividualLink.href = pricingPlanLinks.monthlyIndividual;
+            signUpProLink.href = pricingPlanLinks.monthlyProfessional;
+          } else {
+            document.getElementById("monthlyButton").classList.remove("selected");
+            document.getElementById("monthlyButton").classList.add("deselected");
+            document.getElementById("annualButton").classList.add("selected");
+            document.getElementById("annualButton").classList.remove("deselected");
+            pricingCardsContainer.dataset.pricingPlan = "A";
+            pricingPrices.forEach(elem => {
+              if (elem.classList.contains("price-line--annual")) {
+                elem.classList.add("active");
+                elem.classList.remove("inactive");
+              } else {
+                setTimeout(() => {
+                  elem.classList.add("inactive");
+                  elem.classList.remove("active");
+                }, 300);
+              }
+            });
+            signUpIndividualLink.href = pricingPlanLinks.annualIndividual;
+            signUpProLink.href = pricingPlanLinks.annualProfessional;
+          }
+        }
+  
+        document.getElementById("monthlyButton").addEventListener("click", function() {
+          updateSelection("M");
+        });
+  
+        document.getElementById("annualButton").addEventListener("click", function() {
+          updateSelection("A");
+        });
+  
+        // Initialize with default selection
+        updateSelection(selectedPlan);
+      });
+    </script>
+  </section>
 </body>
 </html>

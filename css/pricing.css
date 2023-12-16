@@ -26,10 +26,17 @@
 }
 
 .heading {
-  margin-bottom: 6rem;
+  /* margin-bottom: 6rem; */
+  margin-bottom: 3rem;
   position: relative;
-  z-index: 10;
+  z-index: 52;
 }
+
+/* @media (max-width: 640px) {
+  .heading {
+    margin-bottom: 3rem;
+  }
+} */
 
 .heading h3 {
   font-weight: 600;
@@ -44,6 +51,7 @@
   margin: auto;
   max-width: 32rem;
   margin-bottom: 1.5rem;
+  font-size: 1.2rem;
 }
 
 @media (min-width: 1024px) {
@@ -62,7 +70,7 @@
   position: relative;
 }
 
-.button-group button {
+.button-group .button {
   color: var(--text-color);
   font-weight: 500;
   border-radius: 0.5rem;
@@ -98,21 +106,64 @@
   transform: translateX(calc(7rem + 0.75rem));
 }
 
-.button-group button.selected {
+.button-group .button.selected {
   color: var(--active-btn-text-color);
 }
 
-.button-group button.deselected {
-  transition: colors 0.15s ease-in-out;
+.button-group .button.deselected {
+  transition: colors 0.15s ease-in-out, background-color 0.1s ease-in-out;
 }
 
-.button-group button:not(.selected):hover,
-.button-group button:not(.selected):focus-visible {
+.button-group .button:not(.selected):hover,
+.button-group .button:not(.selected):focus-visible {
   background-color: var(--active-btn-bg);
   color: var(--active-btn-text-color);
 }
 
-.button-group .pointing-arrow {
+/* .button-group .button.save-81-btn {
+  text-decoration: none;
+  text-align: center;
+  margin-bottom: 0;
+} */
+
+.hint {
+  position: absolute;
+  left: calc(100% + 1rem);
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  width: max-content;
+  height: max-content;
+}
+
+.hint .hint-arrow {
+  width: 1rem;
+  height: 1rem;
+  fill: var(--pointing-arrow-color);
+  margin-right: 0.5rem;
+  transform: translateY(2px) rotate(180deg);
+}
+
+.hint .hint-arrow img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.hint .hint-text {
+  font-family: "Permanent Marker", cursive;
+  font-size: 1.1rem;
+  margin-left: 0.5rem;
+  font-weight: 300;
+  font-style: italic;
+  padding: 0.5em;
+  border-radius: 0.2em;
+  color: var(--active-btn-text-color);
+  background-color: var(--pointing-arrow-color);
+}
+
+/* .button-group .pointing-arrow {
   position: absolute;
   right: -112px;
   top: 0.6rem;
@@ -158,6 +209,12 @@
   }
 }
 
+@media (max-width: 640px) {
+  .button-group .pointing-arrow {
+    display: none;
+  }
+} */
+
 .price-cards {
   display: flex;
   flex-direction: column;
@@ -166,7 +223,7 @@
   max-width: 96rem;
   margin-inline: auto;
   position: relative;
-  z-index: 10;
+  z-index: 52;
 }
 
 @media (min-width: 1024px) {
@@ -184,6 +241,7 @@
   border-radius: 0.75rem;
   display: flex;
   flex-direction: column;
+  box-sizing: border-box;
 }
 
 .price-card .title {
@@ -258,6 +316,12 @@
   align-items: center;
   gap: 0.5rem;
   margin-bottom: 0.5rem; 
+}
+
+.price-card .feature > svg {
+  width: 20px;
+  height: 15px;
+  flex-shrink: 0;
 }
 
 .price-card .feature:nth-last-child(2) {
