@@ -174,7 +174,7 @@ function printFinalButtons() {
   buttonsWrapper.classList.add("final-buttons-container");
 
   const restartButton = document.createElement("button");
-  restartButton.classList.add("final-btn", "final-btn--restart");
+  restartButton.classList.add("final-btn", "final-btn--restart", "main-btn");
   restartButton.setAttribute("data-final-button", "true");
   restartButton.textContent = "Restart";
   restartButton.addEventListener("click", () => {
@@ -182,7 +182,7 @@ function printFinalButtons() {
   });
 
   const sendButton = document.createElement("button");
-  sendButton.classList.add("final-btn", "final-btn--send");
+  sendButton.classList.add("final-btn", "final-btn--send", "main-btn");
   sendButton.setAttribute("data-final-button", "true");
   sendButton.textContent = "Send it!";
   sendButton.addEventListener("click", () => {
@@ -280,7 +280,7 @@ const QUESTIONS_DATA = [
     validation: [
       {
         type: "email",
-        message: "Please enter a valid email address",
+        message: "Please enter a valid email address.",
       },
     ],
     value: "",
@@ -302,7 +302,6 @@ const QUESTIONS_DATA = [
     previousSuccessText: "Perfect, and",
     previousErrorText: "Could you tell us again ",
     highlighted: "how can we help you?",
-    postfix: ":",
     validation: [],
     value: "",
     complete: false,

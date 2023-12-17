@@ -138,21 +138,39 @@
   border-radius: 0.25rem;
   font-family: monospace;
   border: none;
-  transition: opacity 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
   cursor: pointer;
 }
 
-.contact-form .contact-window-wrapper .final-btn:focus-visible,
+/* .contact-form .contact-window-wrapper .final-btn:focus-visible,
 .contact-form .contact-window-wrapper .final-btn:hover {
   opacity: 0.9;
-}
+} */
 
 .contact-form .contact-window-wrapper .final-btn--restart {
+  border: 1px solid #F1F5F9;
+  background-color: transparent;
+  color: #F1F5F9;
+}
+
+.contact-form .contact-window-wrapper .final-btn--restart::before {
   background-color: #F1F5F9;
+}
+
+.contact-form .contact-window-wrapper .final-btn--restart:hover,
+.contact-form .contact-window-wrapper .final-btn--restart:focus-visible {
+  transform: scale(1.05);
   color: #000000;
 }
 
 .contact-form .contact-window-wrapper .final-btn--send {
-  background-color: #6366F1;
-  color: #ffffff;
+  border: 1px solid var(--main-btn-color);
+  background-color: transparent;
+  color: var(--main-btn-color);
+}
+
+.contact-form .contact-window-wrapper .final-btn--send:hover,
+.contact-form .contact-window-wrapper .final-btn--send:focus-visible {
+  transform: scale(1.05);
+  color: var(--bg-color);
 }
