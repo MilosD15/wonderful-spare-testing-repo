@@ -49,8 +49,46 @@
   color: #FFE2DD;
 }
 
+.contact-form .contact-window-wrapper .p-input {
+  line-height: 1.75rem;
+}
+
+.contact-form .contact-window-wrapper .p-input .input-field:focus {
+  outline: none;
+  caret-color: transparent;
+}
+
+.contact-form .contact-window-wrapper .p-input .green-detail,
 .contact-form .contact-window-wrapper .post-success {
   color: #6EE7B7;
+}
+
+.contact-form .contact-window-wrapper .p-input .blue-detail {
+  color: #67E8F9;
+}
+
+.contact-form .contact-window-wrapper .p-input .text {
+  opacity: 0.5;
+  padding-right: 0.25rem;
+}
+
+.contact-form .contact-window-wrapper .p-input .cursor-gutter {
+  display: inline-block;
+  width: 0.5rem;
+  height: 1.25rem;
+  background-color: #94a3b8;
+  transform: translate(-0.625rem, 0.25rem);
+  margin-left: 0.125rem;
+  animation: cursor-gutter-blinking 1000ms steps(1) infinite;
+}
+
+@keyframes cursor-gutter-blinking {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
 }
 
 .contact-form .contact-window-wrapper .post-success .icon {
@@ -59,7 +97,62 @@
   transform: translate(0px, 6px);
 }
 
+.contact-form .contact-window-wrapper .post-error {
+  color: #E76E6E;
+}
+
+.contact-form .contact-window-wrapper .error {
+  color: #E76E6E;
+  text-transform: uppercase;
+}
+
+.contact-form .contact-window-wrapper .error .value {
+  text-transform: initial;
+}
+
+.contact-form .contact-window-wrapper .post-error .icon {
+  fill: #E76E6E;
+  height: 22px;
+  transform: translate(0px, 6px);
+}
+
+.contact-form .contact-window-wrapper .post-error .input,
 .contact-form .contact-window-wrapper .post-success .input {
-  display: inline-block;
-  transform: translate(-4px, 0px);
+  margin-left: 0.25rem;
+}
+
+.contact-form .contact-window-wrapper .summary-blue {
+  color: #93C5FD;
+}
+
+.contact-form .contact-window-wrapper .final-buttons-container {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.contact-form .contact-window-wrapper .final-btn {
+  padding-inline: 0.75rem;
+  padding-block: 0.5rem;
+  font-size: 1rem;
+  border-radius: 0.25rem;
+  font-family: monospace;
+  border: none;
+  transition: opacity 0.15s ease-in-out;
+  cursor: pointer;
+}
+
+.contact-form .contact-window-wrapper .final-btn:focus-visible,
+.contact-form .contact-window-wrapper .final-btn:hover {
+  opacity: 0.9;
+}
+
+.contact-form .contact-window-wrapper .final-btn--restart {
+  background-color: #F1F5F9;
+  color: #000000;
+}
+
+.contact-form .contact-window-wrapper .final-btn--send {
+  background-color: #6366F1;
+  color: #ffffff;
 }

@@ -14,25 +14,75 @@
   <link rel="stylesheet" href="css/pricing.css">
   <link rel="stylesheet" href="css/contact.css">
   <!-- <script src="./js/pricing.js"></script> -->
+  <script defer src="./js/contact.js"></script>
 </head>
 <body>
-  <!-- <section class="contact-form">
-    <div class="contact-window">
-      <div class="contact-window-wrapper">
-        <p>Hey there! We're excited to link 🔗</p>
-        <p class="divider">------------------------------------------------------------------------</p>
-        <p>To start, could you give us <span class="post-highlighting">your email?</span></p>
-        <p class="post-success">
-          <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 -960 960 960" width="24">
-            <path d="M480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q65 0 123 19t107 53l-58 59q-38-24-81-37.5T480-800q-133 0-226.5 93.5T160-480q0 133 93.5 226.5T480-160q133 0 226.5-93.5T800-480q0-18-2-36t-6-35l65-65q11 32 17 66t6 70q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm-56-216L254-466l56-56 114 114 400-401 56 56-456 457Z"/>
+  <section class="contact-form" data-contact-section>
+    <form id="contact-us-form">
+      <input type="hidden" name="email" data-email-field>
+      <input type="hidden" name="name" data-name-field>
+      <input type="hidden" name="description" data-description-field>
+    </form>
+    <div class="contact-window" data-contact-terminal-window>
+      <div class="contact-window-wrapper" data-contact-terminal-window-wrapper>
+        <!-- Intro -->
+        <!-- <p>Hey there! We're excited to link 🔗</p>
+        <p class="divider">------------------------------------------------------------------------</p> -->
+
+        <!-- invalid data entered -->
+        <!-- <p>To start, could you give us <span class="post-highlighting">your email?</span></p>
+        <p class="post-error">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 -960 960 960">
+            <path d="m480-424 116 116q11 11 28 11t28-11q11-11 11-28t-11-28L536-480l116-116q11-11 11-28t-11-28q-11-11-28-11t-28 11L480-536 364-652q-11-11-28-11t-28 11q-11 11-11 28t11 28l116 116-116 116q-11 11-11 28t11 28q11 11 28 11t28-11l116-116Zm0 344q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/>
           </svg>
           <span class="input">milosdronjak47@gmail.com</span>
         </p>
-        <p>Awesome! And what's <span class="post-highlighting">your name?</span></p>
+        <p class="error">
+          Error: <span class="value">Email is not valid.</span>
+        </p>
+        <p>Let's try again. Can we get <span class="post-highlighting">your email?</span></p> -->
 
+        <!-- successfully entered data -->
+        <!-- <p class="post-success">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 -960 960 960">
+            <path d="M480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q65 0 123 19t107 53l-58 59q-38-24-81-37.5T480-800q-133 0-226.5 93.5T160-480q0 133 93.5 226.5T480-160q133 0 226.5-93.5T800-480q0-18-2-36t-6-35l65-65q11 32 17 66t6 70q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm-56-216L254-466l56-56 114 114 400-401 56 56-456 457Z"/>
+          </svg>
+          <span class="input">milosdronjak47@gmail.com</span>
+        </p> -->
+
+        <!-- Current question -->
+        <!-- <p>Awesome! And what's <span class="post-highlighting">your name?</span></p>
+        <p class="p-input" data-current-line>
+          <span class="green-detail">➜</span>
+          <span class="blue-detail">~</span>
+          <span class="text">Enter name: </span>
+          <span class="input-field" data-input-field contenteditable="true" spellcheck="false"></span>
+        </p> -->
+
+        <!-- Summary of data entered -->
+        <!-- <p>Beautiful! Here's what we've got:</p>
+        <p>
+          <span class="summary-blue">email:</span>
+          <span>milosdronjak47@gmail.com</span>
+        </p>
+        <p>Look good?</p> -->
+
+        <!-- Final buttons -->
+        <!-- <div class="final-buttons-container">
+          <button class="final-btn final-btn--restart">Restart</button>
+          <button class="final-btn final-btn--send">Send it!</button>
+        </div> -->
+
+        <!-- Final send-success message -->
+        <!-- <p class="post-success">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 -960 960 960" width="24">
+            <path d="M480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q65 0 123 19t107 53l-58 59q-38-24-81-37.5T480-800q-133 0-226.5 93.5T160-480q0 133 93.5 226.5T480-160q133 0 226.5-93.5T800-480q0-18-2-36t-6-35l65-65q11 32 17 66t6 70q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm-56-216L254-466l56-56 114 114 400-401 56 56-456 457Z"/>
+          </svg>
+          <span class="input">Sent! We'll get back to you ASAP 😎</span>
+        </p> -->
       </div>
     </div>
-  </section> -->
+  </section>
   <!-- <div class="nav-links" id="custom-nav-links">
     <nav>
       <ul>
@@ -95,10 +145,10 @@
   <!-- <div class="btn-holder">
     <button class="main-btn">Sign up free</button>
   </div> -->
-  <section class="pricing-section grain-effect tv-effect">
+  <!-- <section class="pricing-section grain-effect tv-effect">
     <div class="heading">
       <h3>Pricing plans</h3>
-      <p>Whether you're looking for pay-as-you-go options, monthly subscriptions, or an annual unlimited access with full commercial rights, we have you covered.</p>
+      <p class="subtle-p-text-shadow">Whether you're looking for pay-as-you-go options, monthly subscriptions, or an annual unlimited access with full commercial rights, we have you covered.</p>
       <div class="button-group">
         <button id="monthlyButton" class="button monthly-btn deselected">Monthly</button>
         <button id="annualButton" class="button annual-btn selected">Annual</button>
@@ -106,7 +156,7 @@
 
         <div class="hint">
           <div class="hint-arrow">
-            <img src="./icons/right-arrow.gif" alt="Rainbow animated right-pointing arrow">
+            <img src="http://trackshack.xyz/wp-content/uploads/2023/12/right-arrow.gif" alt="Rainbow animated right-pointing arrow">
           </div>
           <div class="hint-text">Save 45%</div>
         </div>
@@ -467,6 +517,6 @@
         updateSelection(selectedPlan);
       });
     </script>
-  </section>
+  </section> -->
 </body>
 </html>
