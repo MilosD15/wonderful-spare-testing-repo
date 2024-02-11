@@ -1,0 +1,25 @@
+.curved-heading {
+    width: 100%;
+    z-index: 200;
+    font-family: LEMON MILK;
+    color: #fbf5d1;
+    font-size: 5vw;
+    font-weight: 600;
+    margin: 0;
+    -webkit-text-stroke: 0.03em #ebb042;
+    /* text-shadow: -0.12em 0.09em 0.015em #2f404a; */
+    /* text-shadow: -0.92em 0.09em 0.015em #2f404a; */
+    /* background-color: aliceblue; */
+    letter-spacing: -0.045px;
+    position: relative;
+}
+
+.curved-heading__piece {
+    position: relative;
+}
+
+.curved-heading__text-shadow {
+    position: absolute;
+    inset: 0;
+    text-shadow: -0.12em 0.09em 0.015em #2f404a;
+}

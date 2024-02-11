@@ -1,278 +1,254 @@
-import { motion } from "framer-motion";
-import { FiCheckCircle } from "react-icons/fi";
-import { Fragment, useEffect, useRef, useState } from "react";
+// imports
+import { getCSSPropertyValueFromRoot, isSectionInViewPort } from "./additional-func.js";
+// import { makeHeadingCurved } from "./curvedText.js";
+// import ElementParallax from "./ElementParallax.js";
 
-const TerminalContact = () => {
-  const containerRef = useRef(null);
-  const inputRef = useRef(null);
+// DOM elements
+const walkingCharactersSection = document.querySelector("[data-walking-characters-section]");
+const furtherCharactersContainer = walkingCharactersSection.querySelector("[data-wc-further-characters]");
+const closerCharactersContainer = walkingCharactersSection.querySelector("[data-wc-closer-characters]");
+// const furtherHillsElement = walkingCharactersSection.querySelector("[data-wc-further-hills-and-lane]");
+// const closerHillsElement = walkingCharactersSection.querySelector("[data-wc-closer-hills-and-lane]");
+// const mountainsElement = walkingCharactersSection.querySelector("[data-wc-mountains]");
+// const BushAndBoardElement = walkingCharactersSection.querySelector("[data-wc-bush-and-board]");
+const sunElement = walkingCharactersSection.querySelector("[data-wc-sun]");
 
-  return (
-    <section
-      style={{
-        backgroundImage:
-          "url(https://images.unsplash.com/photo-1482686115713-0fbcaced6e28?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1734&q=80)",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
-      className="px-4 py-12 bg-violet-600"
-    >
-      <div
-        ref={containerRef}
-        onClick={() => {
-          inputRef.current?.focus();
-        }}
-        className="h-96 bg-slate-950/70 backdrop-blur rounded-lg w-full max-w-3xl mx-auto overflow-y-scroll shadow-xl cursor-text font-mono"
-      >
-        <TerminalBody inputRef={inputRef} containerRef={containerRef} />
-      </div>
-    </section>
-  );
-};
+// global variables
+const furtherCharacterAnimationDuration = parseInt(getCSSPropertyValueFromRoot("--WALKING-CHARACTERS-further-walking-animation-duration"));
+const closerCharacterAnimationDuration = parseInt(getCSSPropertyValueFromRoot("--WALKING-CHARACTERS-closer-walking-animation-duration"));
+const walkingCharactersTravelDelay = 600;
+const walkingCharactersTimeBetweenWalkingSequences = 6000;
+const walkingCharactersNumberOfCharactersInCrew = 5;
 
-const TerminalBody = ({ containerRef, inputRef }) => {
-  const [focused, setFocused] = useState(false);
-  const [text, setText] = useState("");
-
-  const [questions, setQuestions] = useState(QUESTIONS);
-
-  const curQuestion = questions.find((q) => !q.complete);
-
-  const handleSubmitLine = (value) => {
-    if (curQuestion) {
-      setQuestions((pv) =>
-        pv.map((q) => {
-          if (q.key === curQuestion.key) {
-            return {
-              ...q,
-              complete: true,
-              value,
-            };
-          }
-          return q;
-        })
-      );
-    }
-  };
-
-  return (
-    <div className="p-2 text-slate-100 text-lg">
-      <InitialText />
-      <PreviousQuestions questions={questions} />
-      <CurrentQuestion curQuestion={curQuestion} />
-      {curQuestion ? (
-        <CurLine
-          text={text}
-          focused={focused}
-          setText={setText}
-          setFocused={setFocused}
-          inputRef={inputRef}
-          command={curQuestion?.key || ""}
-          handleSubmitLine={handleSubmitLine}
-          containerRef={containerRef}
-        />
-      ) : (
-        <Summary questions={questions} setQuestions={setQuestions} />
-      )}
-    </div>
-  );
-};
-
-const InitialText = () => {
-  return (
-    <>
-      <p>Hey there! We're excited to link 🔗</p>
-      <p className="whitespace-nowrap overflow-hidden font-light">
-        ------------------------------------------------------------------------
-      </p>
-    </>
-  );
-};
-
-const PreviousQuestions = ({ questions }) => {
-  return (
-    <>
-      {questions.map((q, i) => {
-        if (q.complete) {
-          return (
-            <Fragment key={i}>
-              <p>
-                {q.text || ""}
-                {q.postfix && (
-                  <span className="text-violet-300">{q.postfix}</span>
-                )}
-              </p>
-              <p className="text-emerald-300">
-                <FiCheckCircle className="inline-block mr-2" />
-                <span>{q.value}</span>
-              </p>
-            </Fragment>
-          );
-        }
-        return <Fragment key={i}></Fragment>;
-      })}
-    </>
-  );
-};
-
-const CurrentQuestion = ({ curQuestion }) => {
-  if (!curQuestion) return <></>;
-
-  return (
-    <p>
-      {curQuestion.text || ""}
-      {curQuestion.postfix && (
-        <span className="text-violet-300">{curQuestion.postfix}</span>
-      )}
-    </p>
-  );
-};
-
-const Summary = ({ questions, setQuestions }) => {
-  const [complete, setComplete] = useState(false);
-
-  const handleReset = () => {
-    setQuestions((pv) => pv.map((q) => ({ ...q, value: "", complete: false })));
-  };
-
-  const handleSend = () => {
-    const formData = questions.reduce((acc, val) => {
-      return { ...acc, [val.key]: val.value };
-    }, {});
-
-    // Send this data to your server or whatever :)
-    console.log(formData);
-
-    setComplete(true);
-  };
-
-  return (
-    <>
-      <p>Beautiful! Here's what we've got:</p>
-      {questions.map((q) => {
-        return (
-          <p key={q.key}>
-            <span className="text-blue-300">{q.key}:</span> {q.value}
-          </p>
-        );
-      })}
-      <p>Look good?</p>
-      {complete ? (
-        <p className="text-emerald-300">
-          <FiCheckCircle className="inline-block mr-2" />
-          <span>Sent! We'll get back to you ASAP 😎</span>
-        </p>
-      ) : (
-        <div className="flex gap-2 mt-2">
-          <button
-            onClick={handleReset}
-            className="px-3 py-1 text-base hover:opacity-90 transition-opacity rounded bg-slate-100 text-black"
-          >
-            Restart
-          </button>
-          <button
-            onClick={handleSend}
-            className="px-3 py-1 text-base hover:opacity-90 transition-opacity rounded bg-indigo-500 text-white"
-          >
-            Send it!
-          </button>
-        </div>
-      )}
-    </>
-  );
-};
-
-const CurLine = ({
-  text,
-  focused,
-  setText,
-  setFocused,
-  inputRef,
-  command,
-  handleSubmitLine,
-  containerRef,
-}) => {
-  const scrollToBottom = () => {
-    if (containerRef.current) {
-      containerRef.current.scrollTop = containerRef.current.scrollHeight;
-    }
-  };
-
-  const onSubmit = (e) => {
-    e.preventDefault();
-    handleSubmitLine(text);
-    setText("");
-    setTimeout(() => {
-      scrollToBottom();
-    }, 0);
-  };
-
-  const onChange = (e) => {
-    setText(e.target.value);
-    scrollToBottom();
-  };
-
-  useEffect(() => {
-    return () => setFocused(false);
-  }, []);
-
-  return (
-    <>
-      <form onSubmit={onSubmit}>
-        <input
-          ref={inputRef}
-          onChange={onChange}
-          value={text}
-          type="text"
-          className="sr-only"
-          autoComplete="off"
-          onFocus={() => setFocused(true)}
-          onBlur={() => setFocused(false)}
-        />
-      </form>
-      <p>
-        <span className="text-emerald-400">➜</span>{" "}
-        <span className="text-cyan-300">~</span>{" "}
-        {command && <span className="opacity-50">Enter {command}: </span>}
-        {text}
-        {focused && (
-          <motion.span
-            animate={{ opacity: [1, 1, 0, 0] }}
-            transition={{
-              repeat: Infinity,
-              duration: 1,
-              ease: "linear",
-              times: [0, 0.5, 0.5, 1],
-            }}
-            className="inline-block w-2 h-5 bg-slate-400 translate-y-1 ml-0.5"
-          />
-        )}
-      </p>
-    </>
-  );
-};
-
-export default TerminalContact;
-
-const QUESTIONS = [
-  {
-    key: "email",
-    text: "To start, could you give us ",
-    postfix: "your email?",
-    complete: false,
-    value: "",
-  },
-  {
-    key: "name",
-    text: "Awesome! And what's ",
-    postfix: "your name?",
-    complete: false,
-    value: "",
-  },
-  {
-    key: "description",
-    text: "Perfect, and ",
-    postfix: "how can we help you?",
-    complete: false,
-    value: "",
-  },
+// constants
+const WALKING_ANIMATION_CHARACTERS = [
+    { name: 'angles-blue' },
+    { name: 'angles-yellow' },
+    { name: 'tooth-walk' },
+    { name: 'varnish-cup' },
+    { name: 'prophy'},
+    { name: 'stick'},
+    { name: 'brush'}
 ];
+const WALKING_ANIMATION_POSSIBLE_ROUTES = ["first", "second", "third", "fourth", "fifth"];
+
+// DEFINE 10 CHARACTER ITERATIONS
+const NUMBERS_OF_CHARACTERS = [
+  new Map([
+    [0, 1]
+  ]),
+  new Map([
+    [0, 5],
+    [1, 1],
+    [2, 4],
+    [3, 3],
+    [4, 2]
+  ]),
+  new Map([
+    [0, 4],
+    [1, 3],
+    [2, 6],
+    [3, 1]
+  ]),
+  new Map([
+    [0, 3],
+    [1, 0],
+    [2, 1]
+  ]),
+  new Map([
+    [0, 1],
+    [1, 5]
+  ]),
+  new Map([
+    [0, 6],
+    [1, 4],
+    [2, 2]
+  ]),
+  new Map([
+    [0, 0],
+    [1, 5],
+    [2, 2],
+    [3, 6],
+    [4, 4]
+  ]),
+  new Map([
+    [0, 0],
+    [1, 2],
+    [2, 3],
+    [3, 1]
+  ]),
+  new Map([
+    [0, 2]
+  ]),
+  new Map([
+    [0, 0],
+    [1, 2],
+    [2, 3]
+  ])
+];
+const CHARACTERS_POSITIONS = [
+    [6],
+    [5, 1, 4, 3, 2],
+    [4, 3, 6, 1],
+    [3, 0, 1],
+    [0, 4],
+    [6, 4, 2],
+    [0, 5, 2, 6, 4],
+    [0, 2, 3, 1],
+    [2],
+    [0, 2]
+];
+const CHARACTERS_ROUTES = [
+    [2],
+    [0, 3, 2, 1, 4],
+    [3, 1, 2, 0],
+    [1, 2, 3],
+    [1, 2],
+    [3, 1, 2],
+    [2, 4, 0, 1, 3],
+    [4, 1, 2, 3],
+    [2],
+    [2, 3]
+];
+let currentIteration;
+
+// sun moving
+const sunMovingIntersectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            sunElement.classList.add("moving");
+        } else {
+            sunElement.classList.remove("moving");
+        }
+    });
+}, { rootMargin: "20%" });
+sunMovingIntersectionObserver.observe(walkingCharactersSection);
+
+// walking characters
+const walkingCharactersIntersectionObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            currentIteration = getRandomNumber(1, NUMBERS_OF_CHARACTERS.length - 1);
+            performIntroductoryAnimation();
+            playJustCloserLaneAnimation();
+
+            observer.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0 });
+walkingCharactersIntersectionObserver.observe(walkingCharactersSection);
+
+function performIntroductoryAnimation() {
+    // console.log("currentIteration: ", currentIteration);
+    // console.time("characters DOM manipulation");
+    const numberOfCharacters = NUMBERS_OF_CHARACTERS[currentIteration].size;
+    const characters = getCharacters(numberOfCharacters, currentIteration);
+    // console.timeEnd("characters DOM manipulation");
+
+    const {furtherCharacters, closerCharacters} = findCharactersElements(characters);
+    animateCharacters(furtherCharacters, closerCharacters);
+}
+
+function playJustCloserLaneAnimation() {
+    const closeLaneCurrentIteration = currentIteration - 1;
+    const numberOfCharacters = NUMBERS_OF_CHARACTERS[closeLaneCurrentIteration].size;
+    const characters = getCharacters(numberOfCharacters, closeLaneCurrentIteration);
+    const closerCharacters = findCloserCharacterElements(characters);
+
+    setTimeout(() => {
+        closerCharacters.forEach(closerCharacter => {
+            animateCharacter(closerCharacter, "walk", closerCharacterAnimationDuration);
+        });
+    }, walkingCharactersTravelDelay);
+}
+
+function animateCharacters(furtherCharacters, closerCharacters) {
+    let generalDelay = 0;
+    setTimeout(() => {
+        furtherCharacters.forEach(furtherCharacter => {
+            animateCharacter(furtherCharacter, "walk", furtherCharacterAnimationDuration);
+        });
+    }, generalDelay);
+
+    generalDelay += furtherCharacterAnimationDuration + walkingCharactersTravelDelay;
+    setTimeout(() => {
+        closerCharacters.forEach(closerCharacter => {
+            animateCharacter(closerCharacter, "walk", closerCharacterAnimationDuration);
+        });
+    }, generalDelay);
+
+    generalDelay += closerCharacterAnimationDuration;
+    setTimeout(() => {
+        currentIteration = currentIteration === 8 ? 0 : currentIteration + 1;
+        performIntroductoryAnimation();
+    }, walkingCharactersTimeBetweenWalkingSequences);
+}
+
+function animateCharacter(characterElement, toggleClass, animationDuration) {
+    characterElement.classList.add(toggleClass);
+
+    setTimeout(() => {
+        characterElement.classList.remove(toggleClass);
+        characterElement.dataset.wcCharacterReserved = 'false';
+    }, animationDuration);
+}
+
+function findCharactersElements(characters) {
+    let furtherCharacters = [], closerCharacters = [];
+
+    for (let i = 0; i < characters.length; i++) {
+        furtherCharacters.push(findFurtherCharacterElement(characters[i]));
+        closerCharacters.push(findCloserCharacterElement(characters[i]));
+    }
+
+    return { furtherCharacters, closerCharacters };
+}
+
+function findCloserCharacterElements(characters) {
+    let closerCharacters = [];
+
+    for (let i = 0; i < characters.length; i++) {
+        closerCharacters.push(findCloserCharacterElement(characters[i]));
+    }
+
+    return closerCharacters;
+}
+
+function findFurtherCharacterElement(character) {
+    const furtherCharacterElement = furtherCharactersContainer.querySelector(`[data-wc-character-name="${character.name}"][data-wc-character-reserved="false"]`);
+    furtherCharacterElement.className = '';
+    furtherCharacterElement.classList.add("walking-characters__character", "walking-characters__character--further", character.position);
+    furtherCharacterElement.dataset.wcCharacterReserved = 'true';
+
+    return furtherCharacterElement;
+}
+
+function findCloserCharacterElement(character) {
+    const closerCharacterElement = closerCharactersContainer.querySelector(`[data-wc-character-name="${character.name}"][data-wc-character-reserved="false"]`);
+    closerCharacterElement.className = '';
+    closerCharacterElement.classList.add("walking-characters__character", "walking-characters__character--closer", character.position);
+    closerCharacterElement.dataset.wcCharacterReserved = 'true';
+
+    return closerCharacterElement;
+}
+
+function getCharacters(numberOfCharacters, currentIteration) {
+    const characters = [];
+
+    const charactersPositions = CHARACTERS_POSITIONS[currentIteration];
+    charactersPositions.forEach(position => {
+        const character = { ...WALKING_ANIMATION_CHARACTERS[position] };
+        characters.push(character);
+    });
+
+    const positions = CHARACTERS_ROUTES[currentIteration];
+    for (let i = 0; i < numberOfCharacters; i++) {
+        characters[i] = { ...characters[i], position: WALKING_ANIMATION_POSSIBLE_ROUTES[positions[i]] }
+    }
+
+    return characters;
+}
+
+function getRandomNumber(min, max) {
+    return Math.floor(Math.random() * (max - min)) + min;
+}
