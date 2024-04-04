@@ -1,0 +1,205 @@
+.filters {
+  // padding-inline: 1rem;
+
+  &__form {
+    padding: 2rem;
+    // background-color: rgb(55, 117, 172);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    @media (max-width: 768px) {
+      padding: 1rem;
+      padding-top: 4rem;
+    }
+  }
+
+  &__divider {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-bottom: 1px solid var(--white-color-900);
+  }
+
+  &__title {
+    margin: 0;
+    padding: 0;
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: var(--white-color-900);
+  }
+
+  &__tab-label {
+    display: flex;
+    list-style-type: none;
+    overflow: hidden;
+    border-radius: 10px;
+    border-bottom: 1px solid var(--white-color-900);
+    border-top: 1px solid var(--white-color-900);
+    // width: max-content;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      // border-bottom: 1px solid var(--white-color-900);
+    }
+
+    &-item {
+      display: block;
+      padding: 10px 20px;
+      box-sizing: border-box;
+      color: var(--white-color-900);
+      cursor: pointer;
+      transition: all 150ms ease-in-out;
+      border-radius: 10px;
+
+      &:hover,
+      &:focus-visible {
+        background-color: var(--black-color-800);
+      }
+
+      &--active {
+        // border-bottom: 1px solid var(--white-color-900);
+        background-color: var(--black-color-700);
+
+        &:hover,
+        &:focus-visible {
+          background-color: var(--black-color-700);
+        }
+      }
+    }
+  }
+
+  &__tabs {
+  }
+
+  &__tab {
+    display: none;
+    padding-block: 0 1rem;
+
+    &--expandable {
+      overflow: hidden;
+      height: 130px;
+      padding-bottom: 2.5rem;
+      position: relative;
+      transition: height 400ms ease-in-out;
+    }
+
+    &:nth-child(1) {
+      .filters__tab-content {
+        height: 200px;
+      }
+    }
+    &:nth-child(2) {
+      .filters__tab-content {
+        height: 300px;
+      }
+    }
+
+    &--active {
+      display: block;
+    }
+
+    &-expand-collapse-button {
+      border: 0;
+      padding: 0.6rem 1.2rem;
+      background-color: transparent;
+      color: var(--white-color-900);
+      text-transform: uppercase;
+      font-size: 1rem;
+      cursor: pointer;
+      border-radius: 10px;
+      transition: all 150ms ease-in-out;
+      font-family: "futura-pt", "Montserrat", sans-serif;
+
+      &-container {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        background-color: var(--black-color-900);
+        padding-block: 0.1rem;
+      }
+
+      &:hover,
+      &:focus-visible {
+        background-color: var(--black-color-800);
+      }
+    }
+
+    &-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 0.5rem 0.7rem;
+      padding-inline: 0.5rem;
+      padding-block: 0;
+      margin-block: 0;
+    }
+
+    &-item {
+      margin-top: 0;
+      box-sizing: border-box;
+      & > input {
+        display: none;
+
+        &:checked + label {
+          background-color: var(--green-color-filters-transparent);
+
+          &:hover,
+          &:focus-visible {
+            background-color: var(--red-color-filters-transparent);
+
+            &::after {
+              background-image: url('../images/remove-icon.svg');
+              background-position: 94% 50%;
+              border: 1px solid var(--red-color-filters-filled);
+            }
+          }
+
+          &::after {
+            opacity: 1;
+          }
+        }
+      }
+
+      & > label {
+        cursor: pointer;
+        display: inline-block;
+        box-sizing: border-box;
+        text-align: center;
+        width: 100%;
+        padding: 10px 20px;
+        border-radius: 10px;
+        color: var(--white-color-900);
+        background-color: var(--black-color-800);
+        transition: all 150ms ease-in-out;
+        position: relative;
+        overflow: hidden;
+
+        &::after {
+          content: '';
+          position: absolute;
+          background-image: url('../images/plus-icon.svg');
+          background-repeat: no-repeat;
+          background-position: 6% 50%;
+          inset: 0;
+          border-radius: 10px;
+          background-color: transparent;
+          border: 1px solid var(--green-color-filters-filled);
+          transition: all 150ms ease-in-out;
+          opacity: 0;
+        }
+
+        &:hover,
+        &:focus-visible {
+          background-color: var(--black-color-700);
+
+          &::after {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}

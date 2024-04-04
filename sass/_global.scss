@@ -1,0 +1,65 @@
+body {
+  --black-color-900: #282828;
+  --black-color-800: #363636;
+  --black-color-700: #424242;
+  --white-color-900: #f8f8f8;
+  --white-color-400: #cfcfcf;
+  --white-color-300: #b1b1b1;
+  --white-color-100: #888888;
+  --green-color-filters-filled: #6dca6d;
+  --green-color-filters-transparent: hsla(120, 82%, 36%, 0.2);
+  --red-color-filters-filled: #e74d3c;
+  --red-color-filters-transparent: hsla(0, 82%, 36%, 0.2);
+
+  font-family: 'Montserrat', sans-serif;
+  background-color: var(--black-color-900);
+  color: var(--white-color-900);
+  margin: 0;
+  padding: 0;
+  padding-bottom: calc(70px + 1rem);
+  overflow-x: hidden;
+}
+
+input,
+button {
+  font-family: 'Montserrat', sans-serif;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: space-between;
+  width: 100%;
+}
+
+/* SCROLLBAR STYLING */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--black-color-800);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--black-color-900);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover,
+::-webkit-scrollbar-thumb:active {
+  background-color: var(--black-color-700);
+}
+
+::-webkit-scrollbar-button,
+::-webkit-scrollbar-corner,
+::-webkit-scrollbar-track-piece {
+  display: none;
+}
