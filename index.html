@@ -24,34 +24,38 @@
   <script src="./js/expandCollapseTags.js" defer></script>
 </head>
 <body>
-    <!-- <div class="loader"></div> -->
-    <section class="walking-characters graphic-section" data-walking-characters-section>
-        <div class="walking-characters__wrapper graphic-section__wrapper grain-effect">
-            <video class="walking-characters__video" autoplay loop muted>
-                <source src="./hero_section_video.mp4">
-                Video element is not supported in your browser.
-            </video>
-            <div class="walking-characters__sky">
-                <img 
-                    src="https://cdn.shopify.com/s/files/1/1715/6045/files/wc-sky1.webp?v=1694871367" 
-                    alt="A beautiful blue sky" 
-                    width="1600" height="680"
-                    srcset="
-                        https://cdn.shopify.com/s/files/1/1715/6045/files/wc-sky1.webp?v=1694871367&width=4096 4000w,
-                        https://cdn.shopify.com/s/files/1/1715/6045/files/wc-sky1.webp?v=1694871367&width=3550 3500w,
-                        https://cdn.shopify.com/s/files/1/1715/6045/files/wc-sky1.webp?v=1694871367&width=3050 3000w,
-                        https://cdn.shopify.com/s/files/1/1715/6045/files/wc-sky1.webp?v=1694871367&width=2550 2500w,
-                        https://cdn.shopify.com/s/files/1/1715/6045/files/wc-sky1.webp?v=1694871367&width=2050 2000w,
-                        https://cdn.shopify.com/s/files/1/1715/6045/files/wc-sky1.webp?v=1694871367&width=1750 1700w,
-                        https://cdn.shopify.com/s/files/1/1715/6045/files/wc-sky1.webp?v=1694871367&width=1450 1400w,
-                        https://cdn.shopify.com/s/files/1/1715/6045/files/wc-sky1.webp?v=1694871367&width=1350 1300w,
-                        https://cdn.shopify.com/s/files/1/1715/6045/files/wc-sky1.webp?v=1694871367&width=1150 1100w,
-                        https://cdn.shopify.com/s/files/1/1715/6045/files/wc-sky1.webp?v=1694871367&width=950 900w,
-                        https://cdn.shopify.com/s/files/1/1715/6045/files/wc-sky1.webp?v=1694871367&width=750 700w,
-                        https://cdn.shopify.com/s/files/1/1715/6045/files/wc-sky1.webp?v=1694871367&width=540 500w,
-                        https://cdn.shopify.com/s/files/1/1715/6045/files/wc-sky1.webp?v=1694871367&width=360 350w,
-                    " 
-                >
+  <main>
+    <aside>
+      <a class="myplaylists__button playlists-open-btn" onclick="jQuery('.myplaylists').addClass('active'); setTimeout(() => { $('.myplaylists .playermodal__modal').addClass('scale-up'); }, 0);">
+        <svg class="playlists-open-btn__svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+          <path d="M14 17m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" fill="var(--white-color-900)" />
+          <path d="M17 17v-13h4" />
+          <path d="M13 5h-10" />
+          <path d="M3 9l10 0" />
+          <path d="M9 13h-6" />
+        </svg>
+        <span class="playlists-open-btn__text">My Playlists</span>
+      </a>
+      <form action="" onsubmit="return false;" autocomplete="off" class="filters__form">
+        <h3 class="filters__title">FILTERS</h3>
+        <div class="tabs filters">
+          <ul class="tabs-head filters__tab-label">
+            <li data-for="genre" class="filters__tab-label-item filters__tab-label-item--active active">Genre</li>
+            <li data-for="mood" class="filters__tab-label-item">Mood</li>
+          </ul>
+          <div class="tabs-body filters__tabs">
+            <div class="tab-genre active filters__tab filters__tab--active">
+              <ul class="taxonomy filters__tab-content">
+                <li class="filters__tab-item">
+                  <input type="checkbox" value="genre_pop" data-filter_id="pop" id="filter-genre-pop" />
+                  <label for="filter-genre-pop">Pop</label>
+                </li>
+                <li class="filters__tab-item">
+                  <input type="checkbox" value="genre_rock" data-filter_id="rock" id="filter-genre-rock" />
+                  <label for="filter-genre-rock">Rock</label>
+                </li>
+              </ul>
             </div>
             <div class="tab-mood filters__tab">
               <ul class="taxonomy filters__tab-content">
@@ -623,229 +627,149 @@
                 <div class="track-info song-list__song-info">
                 <h4 class="title song-list__song-name">${track_list[n].name}</h4> 
                 </div>
-                <div 
-                class="walking-characters__character walking-characters__character--closer first" 
-                data-wc-character-reserved="false" 
-                data-wc-character-name="stick"
-                >
-                    <img 
-                    src="./images/wc-stick.webp" 
-                    alt="Stick character walk" width="2400" height="537"
-                    class="walking-characters__character-image precedence" 
-                    >
-                </div>
-                <div 
-                class="walking-characters__character walking-characters__character--closer first" 
-                data-wc-character-reserved="false" 
-                data-wc-character-name="stick"
-                >
-                    <img 
-                    src="./images/wc-stick.webp" 
-                    alt="Stick character walk" width="2400" height="537"
-                    class="walking-characters__character-image precedence" 
-                    >
-                </div>
-    
-                <div 
-                class="walking-characters__character walking-characters__character--closer first" 
-                data-wc-character-reserved="false" 
-                data-wc-character-name="brush"
-                >
-                    <img 
-                    src="./images/wc-brush.webp" 
-                    alt="Brush character walk" width="2400" height="537"
-                    class="walking-characters__character-image precedence" 
-                    >
-                </div>
-                <div 
-                class="walking-characters__character walking-characters__character--closer first" 
-                data-wc-character-reserved="false" 
-                data-wc-character-name="brush"
-                >
-                    <img 
-                    src="./images/wc-brush.webp" 
-                    alt="Brush character walk" width="2400" height="537"
-                    class="walking-characters__character-image precedence" 
-                    >
-                </div>
-                <div 
-                class="walking-characters__character walking-characters__character--closer first" 
-                data-wc-character-reserved="false" 
-                data-wc-character-name="brush"
-                >
-                    <img 
-                    src="./images/wc-brush.webp" 
-                    alt="Brush character walk" width="2400" height="537"
-                    class="walking-characters__character-image precedence" 
-                    >
-                </div>
-                <div 
-                class="walking-characters__character walking-characters__character--closer first" 
-                data-wc-character-reserved="false" 
-                data-wc-character-name="brush"
-                >
-                    <img 
-                    src="./images/wc-brush.webp" 
-                    alt="Brush character walk" width="2400" height="537"
-                    class="walking-characters__character-image precedence" 
-                    >
-                </div>
-                <div 
-                class="walking-characters__character walking-characters__character--closer first" 
-                data-wc-character-reserved="false" 
-                data-wc-character-name="brush"
-                >
-                    <img 
-                    src="./images/wc-brush.webp" 
-                    alt="Brush character walk" width="2400" height="537"
-                    class="walking-characters__character-image precedence" 
-                    >
-                </div>
-                <div 
-                class="walking-characters__character walking-characters__character--closer first" 
-                data-wc-character-reserved="false" 
-                data-wc-character-name="brush"
-                >
-                    <img 
-                    src="./images/wc-brush.webp" 
-                    alt="Brush character walk" width="2400" height="537"
-                    class="walking-characters__character-image precedence" 
-                    >
-                </div>
-            </div>
-            <div class="walking-characters__bush-and-board" data-wc-bush-and-board>
-                <img src="./images/wc-hero-parallax-bird.webp" alt="Bush, Dentist board and a joyful bird" width="500" height="795">
-            </div>
-        </div>
-    </section>
-    <!-- <section class="walking-characters graphic-section">
-        <div class="walking-characters__wrapper graphic-section__wrapper grain-effect">
-            <video class="walking-characters__video" autoplay loop muted>
-                <source src="./hero_section_demo.mp4">
-                Video element is not supported in your browser.
-            </video>
-        </div>
-    </section> -->
+                <div class="song-list__song-duration">${track.duration}</div>
+              <div class="song-list__song-bpm">${track.bpm}</div>
+              <div class="song-list__song-actions">
+              <a class="song-list__song-add-to-playlist-btn"><i class="fa fa-plus" title="Add to Playlist"></i></a>
+              <a class="song-list__song-download-btn"><i class="fa fa-download" title="Download"></i></a>
+              </div>
+                      </li>`;
+                if(track_list[n+1].parent==undefined) break; 
+              }
+            }
+            html+=`</ul>`;
+
+        jQuery('.songs-list').append(html);
+        }
+        else{
+        jQuery('.songs-list').append(
+          `<li data-index="${n}" ` +
+            (!track.active ? ' style="display:none;" ' : '') +
+            ` data-id="${track.id}" class="${classcss} song-list__song">
+              <input type="hidden" name="song_paths[]" value="${track.path}">
+              <div class="track-art song-list__song-image" style="background-image:url('${track.image}');" ><i class="fa fa-play-circle song-list__song-image-play-icon"></i></div>
+              <div class="track-info song-list__song-info">
+              <h4 class="title song-list__song-name">${track.name}</h4>
+              <p class="song-list__song-artist">${track.artist}</p>
+              </div>
+              <div class="song-list__song-duration">${track.duration}</div>
+              <div class="song-list__song-bpm">${track.bpm}</div>
+              <div class="song-list__song-actions">
+              <a   class="song-list__song-add-to-playlist-btn"><i class="fa fa-plus" title="Add to Playlist"></i></a>
+              <a href="${track.path}" target="_blank" class="song-list__song-download-btn"><i class="fa fa-download" title="Download"></i></a>
+              </div>
+            </li>`
+                  );
+        }
+        if (n == track_list.length - 1) {
+          $('.songs-list li .stemlist_open').click(function(){
+            var track_id = parseInt($(this).data('track'));
+            if ($(this).hasClass('closed')){
+              playingStem = track_id;
+              $(this).removeClass("song-list__song-open-stems-btn--closed").removeClass('closed');
+              $(this).addClass("song-list__song-open-stems-btn--opened").addClass('opened');
+              $('.songs-list ul').css('display','none');
+              // $('[data-parent='+track_id+']').css('display','block');
+              animateOpeningStems(track_id);
+            } else {
+              playingStem = 0;
+              $(this).removeClass("song-list__song-open-stems-btn--opened").removeClass('opened');
+              $(this).addClass("song-list__song-open-stems-btn--closed").addClass('closed');
+              // $('.songs-list ul').css('display','none');
+              animateClosingStems(track_id);
+            }
+          });
+
+          function animateOpeningStems(track_id) {
+            $('[data-parent='+track_id+']').slideDown();
+            setTimeout(() => {
+              $('[data-parent='+track_id+']').css('opacity', 1);
+            }, 300);
+          }
+
+          function animateClosingStems(track_id) {
+            $('[data-parent='+track_id+']').css('opacity', 0);
+            setTimeout(() => {
+              $('[data-parent='+track_id+']').slideUp(300);
+            }, 300);
+          }
+
+          function ajaxRequest(data,cb){
+            /*
+            $.ajax({
+              data:data,
+              method:'POST',
+              success:cb,
+              url:injection.dataurl
+            });
+            */
+            setTimeout(cb,1500);
+          }
+
+          jQuery('.song-list__song-add-to-playlist-btn').click(function(){
+            // $('.add_to_playlist').addClass('active');
+            // $('.playermodal__modal').addClass('scale-up');
+            var song_id = $(this).closest('li').data('id');
+            $('.add_to_playlist').addClass('waiting');
+            ajaxRequest({
+              player_action:'playlist_selection_modal',
+              song_id:song_id
+            },function(result){
+              $('.add_to_playlist').removeClass('waiting');
+              $('.add_to_playlist').addClass('active');
+              setTimeout(() => {
+                $('.add_to_playlist .playermodal__modal').addClass('scale-up');
+              }, 1);
+              /*var d = JSON.parse(result);
+              if(d.msg=='Forbidden'){
+                $('.subscription_modal').addClass('visible');
+              }*/
+            });
+          });
+
+          jQuery('.song-list__song-download-btn').click(function(){
+            var song_id = $(this).closest('li').data('id');
+            $('.song_details').addClass('waiting');
+            ajaxRequest({
+              player_action:'playlist_selection_modal',
+              song_id:song_id
+            },function(result){
+              $('.song_details').removeClass('waiting');
+              $('.song_details').addClass('active');
+              setTimeout(() => { $('.song_details .playermodal__modal').addClass('scale-up'); }, 1);
+              /*var d = JSON.parse(result);
+              if(d.msg=='Forbidden'){
+                $('.subscription_modal').addClass('visible');
+              }*/
+            });
+          });
+
+          jQuery('.songs-list .song-list__song').click(function (e) {
+            if (jQuery(e.target).closest('.song-list__song-download-btn').length || 
+            jQuery(e.target).closest('.song-list__song-add-to-playlist-btn').length ||
+            jQuery(e.target).closest('.song-list__song-open-stems-btn').length) {
+              // If it's clicked on the download button, don't do anything
+              return;
+            }
+
+            var index = jQuery(this).closest('li').data('index');
+            track_index = index;
+            playingStem = $(this).closest('li').data('isstem')!=undefined ? 
+                          parseInt($(this).closest('li').data('id')) 
+                          : 0;
+            // if($(this).closest('li').data('isstem')==undefined){
+            //   $('.songs-list ul').css('display','none'); 
+            // }
+            // $('.stemlist_open').removeClass('fa-caret-up').addClass('fa-caret-down');
+            loadTrack(track_index);
+            playTrack();
+          });
+          jQuery('.songs-list input').clone().appendTo('.download-form');
+          jQuery('.songs-list,#download-button').show();
+        }
+      } 
+    }
+  </script>
+  <script src="./js/slider.js" defer></script>
 </body>
-<!-- <script> window.addEventListener("load", () => {document.querySelector(".loader").classList.add("fade-out");}); </script> -->
 </html>
-
-<!-- <div class="walking-characters__character c further-very-right-1"><img src="./images/wc-stick.webp" class="walking-characters__character-image precedence"></div>
-            <div class="walking-characters__character c further-very-right-2"><img src="./images/wc-stick.webp" class="walking-characters__character-image precedence"></div>
-            <div class="walking-characters__character c further-very-right-3"><img src="./images/wc-stick.webp" class="walking-characters__character-image precedence"></div>
-            <div class="walking-characters__character c further-very-right-4"><img src="./images/wc-stick.webp" class="walking-characters__character-image precedence"></div>
-            <div class="walking-characters__character c further-very-right-5"><img src="./images/wc-stick.webp" class="walking-characters__character-image precedence"></div>
-            <div class="walking-characters__character c further-very-right-6"><img src="./images/wc-stick.webp" class="walking-characters__character-image precedence"></div>
-            <div class="walking-characters__character c further-very-right-7"><img src="./images/wc-stick.webp" class="walking-characters__character-image precedence"></div>
-            <div class="walking-characters__character c further-very-right-8"><img src="./images/wc-stick.webp" class="walking-characters__character-image precedence"></div>
-            <div class="walking-characters__character c further-very-right-9"><img src="./images/wc-stick.webp" class="walking-characters__character-image precedence"></div>
-            <div class="walking-characters__character c further-very-right-10"><img src="./images/wc-stick.webp" class="walking-characters__character-image precedence"></div>
-            <div class="walking-characters__character c further-very-right-11"><img src="./images/wc-stick.webp" class="walking-characters__character-image precedence"></div>
-
-            <div class="walking-characters__character c further-right-1"><img src="./images/wc-angles-blue.webp" class="walking-characters__character-image precedence"></div>
-            <div class="walking-characters__character c further-right-2"><img src="./images/wc-angles-blue.webp" class="walking-characters__character-image precedence"></div>
-            <div class="walking-characters__character c further-right-3"><img src="./images/wc-angles-blue.webp" class="walking-characters__character-image precedence"></div>
-            <div class="walking-characters__character c further-right-4"><img src="./images/wc-angles-blue.webp" class="walking-characters__character-image precedence"></div>
-            <div class="walking-characters__character c further-right-5"><img src="./images/wc-angles-blue.webp" class="walking-characters__character-image precedence"></div>
-            <div class="walking-characters__character c further-right-6"><img src="./images/wc-angles-blue.webp" class="walking-characters__character-image precedence"></div>
-            <div class="walking-characters__character c further-right-7"><img src="./images/wc-angles-blue.webp" class="walking-characters__character-image precedence"></div>
-            <div class="walking-characters__character c further-right-8"><img src="./images/wc-angles-blue.webp" class="walking-characters__character-image precedence"></div>
-            <div class="walking-characters__character c further-right-9"><img src="./images/wc-angles-blue.webp" class="walking-characters__character-image precedence"></div>
-            <div class="walking-characters__character c further-right-10"><img src="./images/wc-angles-blue.webp" class="walking-characters__character-image precedence"></div>
-            <div class="walking-characters__character c further-right-11"><img src="./images/wc-angles-blue.webp" class="walking-characters__character-image precedence"></div>
-
-            <div class="walking-characters__character c further-middle-1"><img src="./images/wc-angles-blue.webp" class="walking-characters__character-image precedence"></div>
-            <div class="walking-characters__character c further-middle-2"><img src="./images/wc-angles-blue.webp" class="walking-characters__character-image precedence"></div>
-            <div class="walking-characters__character c further-middle-3"><img src="./images/wc-angles-blue.webp" class="walking-characters__character-image precedence"></div>
-            <div class="walking-characters__character c further-middle-4"><img src="./images/wc-angles-blue.webp" class="walking-characters__character-image precedence"></div>
-            <div class="walking-characters__character c further-middle-5"><img src="./images/wc-angles-blue.webp" class="walking-characters__character-image precedence"></div>
-            <div class="walking-characters__character c further-middle-6"><img src="./images/wc-angles-blue.webp" class="walking-characters__character-image precedence"></div>
-            <div class="walking-characters__character c further-middle-7"><img src="./images/wc-angles-blue.webp" class="walking-characters__character-image precedence"></div>
-            <div class="walking-characters__character c further-middle-8"><img src="./images/wc-angles-blue.webp" class="walking-characters__character-image precedence"></div>
-            <div class="walking-characters__character c further-middle-9"><img src="./images/wc-angles-blue.webp" class="walking-characters__character-image precedence"></div>
-            <div class="walking-characters__character c further-middle-10"><img src="./images/wc-angles-blue.webp" class="walking-characters__character-image precedence"></div>
-            <div class="walking-characters__character c further-middle-11"><img src="./images/wc-angles-blue.webp" class="walking-characters__character-image precedence"></div>
-
-            <div class="walking-characters__character c further-left-1"><img src="./images/wc-angles-blue.webp" class="walking-characters__character-image precedence"></div>
-            <div class="walking-characters__character c further-left-2"><img src="./images/wc-angles-blue.webp" class="walking-characters__character-image precedence"></div>
-            <div class="walking-characters__character c further-left-3"><img src="./images/wc-angles-blue.webp" class="walking-characters__character-image precedence"></div>
-            <div class="walking-characters__character c further-left-4"><img src="./images/wc-angles-blue.webp" class="walking-characters__character-image precedence"></div>
-            <div class="walking-characters__character c further-left-5"><img src="./images/wc-angles-blue.webp" class="walking-characters__character-image precedence"></div>
-            <div class="walking-characters__character c further-left-6"><img src="./images/wc-angles-blue.webp" class="walking-characters__character-image precedence"></div>
-            <div class="walking-characters__character c further-left-7"><img src="./images/wc-angles-blue.webp" class="walking-characters__character-image precedence"></div>
-            <div class="walking-characters__character c further-left-8"><img src="./images/wc-angles-blue.webp" class="walking-characters__character-image precedence"></div>
-            <div class="walking-characters__character c further-left-9"><img src="./images/wc-angles-blue.webp" class="walking-characters__character-image precedence"></div>
-            <div class="walking-characters__character c further-left-10"><img src="./images/wc-angles-blue.webp" class="walking-characters__character-image precedence"></div>
-            <div class="walking-characters__character c further-left-11"><img src="./images/wc-angles-blue.webp" class="walking-characters__character-image precedence"></div>
-
-            <div class="walking-characters__character c further-very-left-1"><img src="./images/wc-angles-blue.webp" class="walking-characters__character-image precedence"></div>
-            <div class="walking-characters__character c further-very-left-2"><img src="./images/wc-angles-blue.webp" class="walking-characters__character-image precedence"></div>
-            <div class="walking-characters__character c further-very-left-3"><img src="./images/wc-angles-blue.webp" class="walking-characters__character-image precedence"></div>
-            <div class="walking-characters__character c further-very-left-4"><img src="./images/wc-angles-blue.webp" class="walking-characters__character-image precedence"></div>
-            <div class="walking-characters__character c further-very-left-5"><img src="./images/wc-angles-blue.webp" class="walking-characters__character-image precedence"></div>
-            <div class="walking-characters__character c further-very-left-6"><img src="./images/wc-angles-blue.webp" class="walking-characters__character-image precedence"></div>
-            <div class="walking-characters__character c further-very-left-7"><img src="./images/wc-angles-blue.webp" class="walking-characters__character-image precedence"></div>
-            <div class="walking-characters__character c further-very-left-8"><img src="./images/wc-angles-blue.webp" class="walking-characters__character-image precedence"></div>
-            <div class="walking-characters__character c further-very-left-9"><img src="./images/wc-angles-blue.webp" class="walking-characters__character-image precedence"></div>
-            <div class="walking-characters__character c further-very-left-10"><img src="./images/wc-angles-blue.webp" class="walking-characters__character-image precedence"></div>
-            <div class="walking-characters__character c further-very-left-11"><img src="./images/wc-angles-blue.webp" class="walking-characters__character-image precedence"></div> -->
-
-            <!-- <div class="walking-characters__character c walking-characters__character closer-very-right-1"><img src="./images/wc-stick.webp" class="walking-characters__character-image precedence"></div>
-            <div class="walking-characters__character c walking-characters__character closer-very-right-2"><img src="./images/wc-stick.webp" class="walking-characters__character-image precedence"></div>
-            <div class="walking-characters__character c walking-characters__character closer-very-right-3"><img src="./images/wc-stick.webp" class="walking-characters__character-image precedence"></div>
-            <div class="walking-characters__character c walking-characters__character closer-very-right-4"><img src="./images/wc-stick.webp" class="walking-characters__character-image precedence"></div>
-            <div class="walking-characters__character c walking-characters__character closer-very-right-5"><img src="./images/wc-stick.webp" class="walking-characters__character-image precedence"></div>
-            <div class="walking-characters__character c walking-characters__character closer-very-right-6"><img src="./images/wc-stick.webp" class="walking-characters__character-image precedence"></div>
-            <div class="walking-characters__character c walking-characters__character closer-very-right-7"><img src="./images/wc-stick.webp" class="walking-characters__character-image precedence"></div>
-            <div class="walking-characters__character c walking-characters__character closer-very-right-8"><img src="./images/wc-stick.webp" class="walking-characters__character-image precedence"></div>
-            <div class="walking-characters__character c walking-characters__character closer-very-right-9"><img src="./images/wc-stick.webp" class="walking-characters__character-image precedence"></div>
-            <div class="walking-characters__character c walking-characters__character closer-very-right-10"><img src="./images/wc-stick.webp" class="walking-characters__character-image precedence"></div>
-            <div class="walking-characters__character c walking-characters__character closer-very-right-11"><img src="./images/wc-stick.webp" class="walking-characters__character-image precedence"></div>
-
-            <div class="walking-characters__character c walking-characters__character closer-right-1"><img src="./images/wc-angles-blue.webp" class="walking-characters__character-image precedence"></div>
-            <div class="walking-characters__character c walking-characters__character closer-right-2"><img src="./images/wc-angles-blue.webp" class="walking-characters__character-image precedence"></div>
-            <div class="walking-characters__character c walking-characters__character closer-right-3"><img src="./images/wc-angles-blue.webp" class="walking-characters__character-image precedence"></div>
-            <div class="walking-characters__character c walking-characters__character closer-right-4"><img src="./images/wc-angles-blue.webp" class="walking-characters__character-image precedence"></div>
-            <div class="walking-characters__character c walking-characters__character closer-right-5"><img src="./images/wc-angles-blue.webp" class="walking-characters__character-image precedence"></div>
-            <div class="walking-characters__character c walking-characters__character closer-right-6"><img src="./images/wc-angles-blue.webp" class="walking-characters__character-image precedence"></div>
-            <div class="walking-characters__character c walking-characters__character closer-right-7"><img src="./images/wc-angles-blue.webp" class="walking-characters__character-image precedence"></div>
-            <div class="walking-characters__character c walking-characters__character closer-right-8"><img src="./images/wc-angles-blue.webp" class="walking-characters__character-image precedence"></div>
-            <div class="walking-characters__character c walking-characters__character closer-right-9"><img src="./images/wc-angles-blue.webp" class="walking-characters__character-image precedence"></div>
-            <div class="walking-characters__character c walking-characters__character closer-right-10"><img src="./images/wc-angles-blue.webp" class="walking-characters__character-image precedence"></div>
-            <div class="walking-characters__character c walking-characters__character closer-right-11"><img src="./images/wc-angles-blue.webp" class="walking-characters__character-image precedence"></div>
-
-            <div class="walking-characters__character c walking-characters__character closer-middle-1"><img src="./images/wc-angles-blue.webp" class="walking-characters__character-image precedence"></div>
-            <div class="walking-characters__character c walking-characters__character closer-middle-2"><img src="./images/wc-angles-blue.webp" class="walking-characters__character-image precedence"></div>
-            <div class="walking-characters__character c walking-characters__character closer-middle-3"><img src="./images/wc-angles-blue.webp" class="walking-characters__character-image precedence"></div>
-            <div class="walking-characters__character c walking-characters__character closer-middle-4"><img src="./images/wc-angles-blue.webp" class="walking-characters__character-image precedence"></div>
-            <div class="walking-characters__character c walking-characters__character closer-middle-5"><img src="./images/wc-angles-blue.webp" class="walking-characters__character-image precedence"></div>
-            <div class="walking-characters__character c walking-characters__character closer-middle-6"><img src="./images/wc-angles-blue.webp" class="walking-characters__character-image precedence"></div>
-            <div class="walking-characters__character c walking-characters__character closer-middle-7"><img src="./images/wc-angles-blue.webp" class="walking-characters__character-image precedence"></div>
-            <div class="walking-characters__character c walking-characters__character closer-middle-8"><img src="./images/wc-angles-blue.webp" class="walking-characters__character-image precedence"></div>
-            <div class="walking-characters__character c walking-characters__character closer-middle-9"><img src="./images/wc-angles-blue.webp" class="walking-characters__character-image precedence"></div>
-            <div class="walking-characters__character c walking-characters__character closer-middle-10"><img src="./images/wc-angles-blue.webp" class="walking-characters__character-image precedence"></div>
-            <div class="walking-characters__character c walking-characters__character closer-middle-11"><img src="./images/wc-angles-blue.webp" class="walking-characters__character-image precedence"></div>
-
-            <div class="walking-characters__character c walking-characters__character closer-left-1"><img src="./images/wc-angles-blue.webp" class="walking-characters__character-image precedence"></div>
-            <div class="walking-characters__character c walking-characters__character closer-left-2"><img src="./images/wc-angles-blue.webp" class="walking-characters__character-image precedence"></div>
-            <div class="walking-characters__character c walking-characters__character closer-left-3"><img src="./images/wc-angles-blue.webp" class="walking-characters__character-image precedence"></div>
-            <div class="walking-characters__character c walking-characters__character closer-left-4"><img src="./images/wc-angles-blue.webp" class="walking-characters__character-image precedence"></div>
-            <div class="walking-characters__character c walking-characters__character closer-left-5"><img src="./images/wc-angles-blue.webp" class="walking-characters__character-image precedence"></div>
-            <div class="walking-characters__character c walking-characters__character closer-left-6"><img src="./images/wc-angles-blue.webp" class="walking-characters__character-image precedence"></div>
-            <div class="walking-characters__character c walking-characters__character closer-left-7"><img src="./images/wc-angles-blue.webp" class="walking-characters__character-image precedence"></div>
-            <div class="walking-characters__character c walking-characters__character closer-left-8"><img src="./images/wc-angles-blue.webp" class="walking-characters__character-image precedence"></div>
-            <div class="walking-characters__character c walking-characters__character closer-left-9"><img src="./images/wc-angles-blue.webp" class="walking-characters__character-image precedence"></div>
-            <div class="walking-characters__character c walking-characters__character closer-left-10"><img src="./images/wc-angles-blue.webp" class="walking-characters__character-image precedence"></div>
-            <div class="walking-characters__character c walking-characters__character closer-left-11"><img src="./images/wc-angles-blue.webp" class="walking-characters__character-image precedence"></div>
-
-            <div class="walking-characters__character c walking-characters__character closer-very-left-1"><img src="./images/wc-angles-blue.webp" class="walking-characters__character-image precedence"></div>
-            <div class="walking-characters__character c walking-characters__character closer-very-left-2"><img src="./images/wc-angles-blue.webp" class="walking-characters__character-image precedence"></div>
-            <div class="walking-characters__character c walking-characters__character closer-very-left-3"><img src="./images/wc-angles-blue.webp" class="walking-characters__character-image precedence"></div>
-            <div class="walking-characters__character c walking-characters__character closer-very-left-4"><img src="./images/wc-angles-blue.webp" class="walking-characters__character-image precedence"></div>
-            <div class="walking-characters__character c walking-characters__character closer-very-left-5"><img src="./images/wc-angles-blue.webp" class="walking-characters__character-image precedence"></div>
-            <div class="walking-characters__character c walking-characters__character closer-very-left-6"><img src="./images/wc-angles-blue.webp" class="walking-characters__character-image precedence"></div>
-            <div class="walking-characters__character c walking-characters__character closer-very-left-7"><img src="./images/wc-angles-blue.webp" class="walking-characters__character-image precedence"></div>
-            <div class="walking-characters__character c walking-characters__character closer-very-left-8"><img src="./images/wc-angles-blue.webp" class="walking-characters__character-image precedence"></div>
-            <div class="walking-characters__character c walking-characters__character closer-very-left-9"><img src="./images/wc-angles-blue.webp" class="walking-characters__character-image precedence"></div>
-            <div class="walking-characters__character c walking-characters__character closer-very-left-10"><img src="./images/wc-angles-blue.webp" class="walking-characters__character-image precedence"></div>
-            <div class="walking-characters__character c walking-characters__character closer-very-left-11"><img src="./images/wc-angles-blue.webp" class="walking-characters__character-image precedence"></div> -->
