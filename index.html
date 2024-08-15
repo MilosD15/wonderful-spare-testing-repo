@@ -1,775 +1,155 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Demo</title>
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
-  />
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/themes/base/jquery-ui.min.css"
-    integrity="sha512-ELV+xyi8IhEApPS/pSj66+Jiw+sOT1Mqkzlh8ExXihe4zfqbWkxPRi8wptXIO9g73FSlhmquFlUOuMSoXz5IRw=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-  />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="./css/style.css">
-  <script src="./js/sort.js" defer></script>
-  <script src="./js/expandCollapseTags.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carousel videos</title>
+  <link rel="stylesheet" href="./css/blur-effect.css">
+  <link rel="stylesheet" href="./css/grain-effect.css">
+  <link rel="stylesheet" href="./css/graphic-section.css">
+  <link rel="stylesheet" href="./css/boilerplate.css">
+  <link rel="stylesheet" href="./css/carousel-videos.css">
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+  <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 </head>
 <body>
-  <main>
-    <aside>
-      <a class="myplaylists__button playlists-open-btn" onclick="jQuery('.myplaylists').addClass('active'); setTimeout(() => { $('.myplaylists .playermodal__modal').addClass('scale-up'); }, 0);">
-        <svg class="playlists-open-btn__svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
-          <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-          <path d="M14 17m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" fill="var(--white-color-900)" />
-          <path d="M17 17v-13h4" />
-          <path d="M13 5h-10" />
-          <path d="M3 9l10 0" />
-          <path d="M9 13h-6" />
+  <div class="carousel-videos carousel-videos--hero graphic-section">
+    <div class="carousel-videos__wrapper graphic-section__wrapper blur-effect grain-effect">
+      <div class="carousel-videos__sections">
+        <div class="carousel-videos__section carousel-videos__section--walking-characters">
+          <video class="carousel-videos__section-video carousel-videos__section-video--mobile" autoplay="true" loop="true" muted playsinline>
+            <source src="https://cdn.shopify.com/videos/c/o/v/a2fefcd91fa74feab5b74577a821ef88.mp4">
+            Video element is not supported in your browser.
+          </video>
+          <video class="carousel-videos__section-video carousel-videos__section-video--desktop" autoplay="true" loop="true" muted playsinline>
+            <source src="https://cdn.shopify.com/videos/c/o/v/4680fef4d29c42c2b9590e3c8f4f16b9.mp4">
+            Video element is not supported in your browser.
+          </video>
+        </div>
+        <div class="carousel-videos__section carousel-videos__section--kids-love-taste">
+          <video class="carousel-videos__section-video carousel-videos__section-video--mobile" autoplay="true" loop="true" muted playsinline>
+            <source src="https://cdn.shopify.com/videos/c/o/v/b104d6d39f7f4ba1b0788749de3a45f4.mp4">
+            Video element is not supported in your browser.
+          </video>
+          <video class="carousel-videos__section-video carousel-videos__section-video--desktop" autoplay="true" loop="true" muted playsinline>
+            <source src="https://cdn.shopify.com/videos/c/o/v/8594d78f3a68434393bdcf06d1f1a476.mp4">
+            Video element is not supported in your browser.
+          </video>
+        </div>
+        <div class="carousel-videos__section carousel-videos__section--we-love-love-wonderful">
+          <video class="carousel-videos__section-video carousel-videos__section-video--mobile" autoplay="true" loop="true" muted playsinline>
+            <source src="https://cdn.shopify.com/videos/c/o/v/d384af210e684731bb39814f775a9e30.mp4">
+            Video element is not supported in your browser.
+          </video>
+          <video class="carousel-videos__section-video carousel-videos__section-video--desktop" autoplay="true" loop="true" muted playsinline>
+            <source src="https://cdn.shopify.com/videos/c/o/v/2774f573e0ab45fd89903bd43df6386c.mp4">
+            Video element is not supported in your browser.
+          </video>
+        </div>
+      </div>
+      <button class="carousel-videos__btn carousel-videos__btn--prev">
+        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+          <path d="M9 6l6 6l-6 6"></path>
         </svg>
-        <span class="playlists-open-btn__text">My Playlists</span>
-      </a>
-      <form action="" onsubmit="return false;" autocomplete="off" class="filters__form">
-        <h3 class="filters__title">FILTERS</h3>
-        <div class="tabs filters">
-          <ul class="tabs-head filters__tab-label">
-            <li data-for="genre" class="filters__tab-label-item filters__tab-label-item--active active">Genre</li>
-            <li data-for="mood" class="filters__tab-label-item">Mood</li>
-          </ul>
-          <div class="tabs-body filters__tabs">
-            <div class="tab-genre active filters__tab filters__tab--active">
-              <ul class="taxonomy filters__tab-content">
-                <li class="filters__tab-item">
-                  <input type="checkbox" value="genre_pop" data-filter_id="pop" id="filter-genre-pop" />
-                  <label for="filter-genre-pop">Pop</label>
-                </li>
-                <li class="filters__tab-item">
-                  <input type="checkbox" value="genre_rock" data-filter_id="rock" id="filter-genre-rock" />
-                  <label for="filter-genre-rock">Rock</label>
-                </li>
-              </ul>
-            </div>
-            <div class="tab-mood filters__tab">
-              <ul class="taxonomy filters__tab-content">
-                <li class="filters__tab-item">
-                  <input type="checkbox" value="mood_cheesy" data-filter_id="cheesy" id="filter-mood-cheesy" />
-                  <label for="filter-mood-cheesy">Cheesy</label>
-                </li>
-                <li class="filters__tab-item">
-                  <input type="checkbox" value="mood_aggressive" data-filter_id="aggressive" id="filter-mood-aggressive" />
-                  <label for="filter-mood-aggressive">Aggressive</label>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <!-- <hr class="filters__divider"> -->
-      </form>
-    </aside>
-
-    <article class="song-list">
-      <div class="song-list__header">
-        <h2 class="song-list__title">SONGS</h2>
-      </div>
-
-      <div class="song-list__search">
-        <div class="currently-marked song-list__search__selected-tags"></div>
-        <input type="text" placeholder="Search Tags" name="autocomplete" class="ac song-list__search__input" />
-      </div>
-
-      <div class="song-list__songs-header">
-        <div class="song-list__songs-header-item"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M464 256A208 208 0 1 1 48 256a208 208 0 1 1 416 0zM0 256a256 256 0 1 0 512 0A256 256 0 1 0 0 256zM232 120V256c0 8 4 15.5 10.7 20l96 64c11 7.4 25.9 4.4 33.3-6.7s4.4-25.9-6.7-33.3L280 243.2V120c0-13.3-10.7-24-24-24s-24 10.7-24 24z"/></svg></div>
-        <div class="song-list__songs-header-item">BPM</div>
-        <div class="song-list__sort" data-js-selector="custom-select" data-open="false">
-          <select name="sort" id="sort" class="song-list__sort__select" data-js-selector="select-element">
-            <option value="song">Song Name</option>
-            <option value="artist">Artist</option>
-          </select>
-        </div>
-      </div>
-      <ul class="songs-list song-list__songs"></ul>
-
-      <form action="downloader.php" method="post" class="song-list__download">
-        <div class="download-form"></div>
-        <input
-          class="song-list__download-btn"
-          type="submit"
-          value="Download All"
-          id="download-button"
-          style="display: none;"
-        />
-      </form>
-    </article>
-  </main>
-
-  <div class="player">
-    <div class="details player__song-details"> 
-      <div class="player__song-details__inner-container">
-        <div class="track-art player__song-image"></div>
-        <div class="player__song-info">
-          <div class="track-name player__song-name">Track Name</div>
-          <div class="track-artist player__song-artist">Track Artist</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="buttons player__main-buttons">
-      <div class="prev-track player__button player__button--previous" onclick="prevTrack()">
-        <i class="fa fa-step-backward"></i>
-      </div>
-      <div class="playpause-track player__button player__button--play" onclick="playpauseTrack()">
-        <i class="fa fa-play-circle"></i>
-      </div>
-      <div class="next-track player__button player__button--next" onclick="nextTrack()">
-        <i class="fa fa-step-forward"></i>
-      </div>
-    </div>
-
-    <div class="slider_container player__slider-container player__slider-container--seek">
-      <div class="current-time player__slider-current-time">00:00</div>
-      <div class="player__slider-wrapper player__slider-wrapper--seek">
-        <input type="range" min="1" max="100" step="0.001" value="0" class="seek_slider player__slider player__slider--seek" oninput="seekTo()" />
-        <div class="player__slider-progress-bar" data-start-value="0"></div>
-      </div>
-      <div class="total-duration player__slider-total-duration">00:00</div>
-    </div>
-
-    <div class="slider_container player__slider-container player__slider-container--volume">
-      <i class="fa fa-volume-up player__slider-volume-up-icon"></i>
-      <div class="player__slider-wrapper player__slider-wrapper--volume">
-        <input type="range" min="1" max="100" value="50" class="volume_slider player__slider player__slider--volume" oninput="setVolume()" data-start-value="50" />
-        <div class="player__slider-progress-bar"></div>
-      </div>
+      </button>
+      <button class="carousel-videos__btn carousel-videos__btn--next">
+        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+          <path d="M9 6l6 6l-6 6"></path>
+        </svg>
+      </button>
     </div>
   </div>
-
-  <div class="playermodal signin modal__wrapper">
-    <div class="playermodal__modal modal modal--sign-in">
-      <div class="modal-header modal__header">
-        <span class="modal-title modal__title">Sign In</span>
-        <i class="fas fa-times modal__close-btn" onclick="jQuery(this).closest('.playermodal').removeClass('active'); jQuery(this).closest('.playermodal__modal').removeClass('scale-up');"></i>
-      </div>
-        <form method="post" class="modal-body modal__form">
-          <div class="field-div modal__form-field">
-            <label for="username-field" class="modal__form-label">Username</label>
-            <input type="text" id="username-field" name="username" class="modal__form-input">
-          </div>
-          <div class="field-div modal__form-field">
-            <label for="password-field" class="modal__form-label">Password</label>
-            <input type="password" id="password-field" name="password" class="modal__form-input">
-          </div>
-          <div class="field-div modal__form-field modal__form-field--btns">
-            <button class="modal__form-btn modal__form-btn--sign-in">Sign In</button>
-            <button class="modal__form-btn modal__form-btn--sign-up">Sign Up</button>
-          </div>
-        </form>
-    </div>
-  </div>
-  
-  <div class="playermodal myplaylists modal__wrapper">
-    <div class="playermodal__modal modal">
-      <div class="modal-header modal__header">
-        <span class="modal-title modal__title">My Playlists</span>
-        <i class="fas fa-times modal__close-btn" onclick="jQuery(this).closest('.playermodal').removeClass('active'); jQuery(this).closest('.playermodal__modal').removeClass('scale-up');"></i>
-      </div>
-        <form method="post" class="modal-body modal__form">
-           
-          <div class="playlists-list modal__playlists">
-            <div class="playlist modal__playlist" data-playlist="1"><i class="fas fa-play"></i>My first demo playlist</div>
-            <div class="playlist modal__playlist" data-playlist="1"><i class="fas fa-play"></i>My second demo playlist</div>
-          </div>
-          
-        </form> 
-  
-    </div>
-  </div>
-  
-  <div class="playermodal add_to_playlist modal__wrapper">
-    <div class="modal__loader">
-      <span class="modal__loader-bar"></span>
-      <span class="modal__loader-bar"></span>
-      <span class="modal__loader-bar"></span>
-    </div>
-    <div class="playermodal__modal modal">
-      <div class="modal-header modal__header">
-        <span class="modal-title modal__title">My Playlists</span>
-        <i class="fas fa-times modal__close-btn" onclick="jQuery(this).closest('.playermodal').removeClass('active'); jQuery(this).closest('.playermodal__modal').removeClass('scale-up');"></i>
-      </div>
-      <form method="post" class="modal-body modal__form">
-          
-        <div class="playlists-list modal__playlists">
-          <div class="playlist modal__playlist" data-playlist="1"><i class="fas fa-play"></i>Demo playlist</div>
+  <div class="carousel-videos carousel-videos--wonderful-story graphic-section">
+    <div class="carousel-videos__wrapper graphic-section__wrapper blur-effect grain-effect">
+      <div class="carousel-videos__sections">
+        <div class="carousel-videos__section carousel-videos__section--made-with-love">
+          <video class="carousel-videos__section-video carousel-videos__section-video--mobile" autoplay="true" loop="true" muted playsinline>
+            <source src="https://cdn.shopify.com/videos/c/o/v/4d8a55a966174b8aa06b9c9b28f83e06.mp4">
+            Video element is not supported in your browser.
+          </video>
+          <video class="carousel-videos__section-video carousel-videos__section-video--desktop" autoplay="true" loop="true" muted playsinline>
+            <source src="https://cdn.shopify.com/videos/c/o/v/45b5089fcb4f449db7a4693ae29945f6.mp4">
+            Video element is not supported in your browser.
+          </video>
         </div>
-        <div class="new-playlist modal__new-playlist">
-          <div class="modal__new-playlist-wrapper">
-            <input type="text" class="add_to_playlist__text modal__new-playlist-name" placeholder="Playlist name">
-            <button class="add_to_playlist__cancel modal__new-playlist-btn modal__new-playlist-btn--save" >Save</button>
-            <button class="add_to_playlist__cancel modal__new-playlist-btn modal__new-playlist-btn--cancel" onclick="event.preventDefault();jQuery('.add_to_playlist__newplaylist').fadeIn();jQuery('.new-playlist').css('display' ,'none');">Cancel</button>
-          </div>
+        <div class="carousel-videos__section carousel-videos__section--save-teeth-save-money">
+          <video class="carousel-videos__section-video carousel-videos__section-video--mobile" autoplay="true" loop="true" muted playsinline>
+            <source src="https://cdn.shopify.com/videos/c/o/v/bd98acb0fe0849178e32a65417f76432.mp4">
+            Video element is not supported in your browser.
+          </video>
+          <video class="carousel-videos__section-video carousel-videos__section-video--desktop" autoplay="true" loop="true" muted playsinline>
+            <source src="https://cdn.shopify.com/videos/c/o/v/6e3c857507bf437e89545a98f80349b0.mp4">
+            Video element is not supported in your browser.
+          </video>
         </div>
-
-          <span class="add_to_playlist__newplaylist modal__new-playlist-btn modal__new-playlist-btn--add-playlist" onclick="jQuery('.new-playlist').fadeIn();jQuery(this).css('display' ,'none');">Add</span> 
-      </form>
-    </div>
-  </div>
-
-  <div class="playermodal song_details modal__wrapper modal__wrapper--details">
-    <div class="modal__loader">
-      <span class="modal__loader-bar"></span>
-      <span class="modal__loader-bar"></span>
-      <span class="modal__loader-bar"></span>
-    </div>
-    <div class="playermodal__modal modal modal--song-details">
-      <div class="modal-header modal__header">
-        <span class="modal-title modal__title">Song Details</span>
-        <i class="fas fa-times modal__close-btn" onclick="jQuery(this).closest('.playermodal').removeClass('active'); jQuery(this).closest('.playermodal__modal').removeClass('scale-up');"></i>
+        <div class="carousel-videos__section carousel-videos__section--additives-be-gone">
+          <video class="carousel-videos__section-video carousel-videos__section-video--mobile" autoplay="true" loop="true" muted playsinline>
+            <source src="https://cdn.shopify.com/videos/c/o/v/821b4f078d874fbd987413f4e6630dce.mp4">
+            Video element is not supported in your browser.
+          </video>
+          <video class="carousel-videos__section-video carousel-videos__section-video--desktop" autoplay="true" loop="true" muted playsinline>
+            <source src="https://cdn.shopify.com/videos/c/o/v/a55e9cab20434e928abde9292c577c91.mp4">
+            Video element is not supported in your browser.
+          </video>
+        </div>
       </div>
-      <form action="" class="modal-body modal__form modal__form--song-details">
-        <div class="details modal__song-details-wrapper">
-          <div class="song-cover modal__song-cover" style="background-image: url('https://upload.wikimedia.org/wikipedia/en/0/09/Eh%2C_Eh_%28Nothing_Else_I_Can_Say%29_by_Lady_Gaga_alternative_cover.png');"></div>
-          <span class="song-name modal__song-name">Eh eh</span>
-          <span class="song-author modal__song-author">Lady Gaga</span>
-        </div>
-        <span class="subtitle modal__song-subtitle">Song Details</span>
-        <table class="modal__song-details-table">
-          <tr class="modal__song-details-row">
-            <td><label>Duration</label></td>
-            <td>2:58</td>
-          </tr>
-          <tr class="modal__song-details-row">
-            <td><label>Genre</label></td>
-            <td><a href="">Pop</a></td>
-          </tr>
-          <tr class="modal__song-details-row">
-            <td><label>Mood</label></td>
-            <td><a href="">Cheesy</a></td>
-          </tr>
-          <tr class="modal__song-details-row">
-            <td><label>BPM</label></td>
-            <td>120</td>
-          </tr>
-        </table>
-        <span class="subtitle modal__song-subtitle">Available Downloads</span>
-        <table class="modal__song-details-table">
-          <tr class="modal__song-downloads-row">
-            <td>Eh Eh</td>
-            <td><button class="song_details__downloadbutton modal__song-download-btn"><i class="fas fa-download"></i>Download</button></td>
-          </tr>
-          <tr class="modal__song-downloads-row">
-            <td>Eh Eh (Vocals)</td>
-            <td><button class="song_details__downloadbutton modal__song-download-btn"><i class="fas fa-download"></i>Download</button></td>
-          </tr>
-          <tr class="modal__song-downloads-row">
-            <td>Eh Eh (Karaoke)</td>
-            <td><button class="song_details__downloadbutton modal__song-download-btn"><i class="fas fa-download"></i>Download</button></td>
-          </tr>
-        </table>
-        <button class="song_details__downloadbutton modal__song-download-btn modal__song-download-btn--download-all"><i class="fas fa-download"></i>Download All</button>
-      </form>
+      <button class="carousel-videos__btn carousel-videos__btn--prev">
+        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+          <path d="M9 6l6 6l-6 6"></path>
+        </svg>
+      </button>
+      <button class="carousel-videos__btn carousel-videos__btn--next">
+        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+          <path d="M9 6l6 6l-6 6"></path>
+        </svg>
+      </button>
     </div>
   </div>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-  <script
-    src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"
-    integrity="sha512-57oZ/vW8ANMjR/KQ6Be9v/+/h6bq9/l3f0Oc7vn6qMqyhvPd1cvKBRWWpzu0QoneImqr2SkmO4MSqU+RpHom3Q=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-  ></script>
-  <script>
-    let now_playing = document.querySelector('.now-playing');
-    let track_art = document.querySelector('.details .track-art');
-    let track_name = document.querySelector('.track-name');
-    let track_artist = document.querySelector('.track-artist');
-
-    let playpause_btn = document.querySelector('.playpause-track');
-    let next_btn = document.querySelector('.next-track');
-    let prev_btn = document.querySelector('.prev-track');
-
-    let seek_slider = document.querySelector('.seek_slider');
-    let volume_slider = document.querySelector('.volume_slider');
-    let curr_time = document.querySelector('.current-time');
-    let total_duration = document.querySelector('.total-duration');
-
-    let track_index = 0;
-    let isPlaying = false;
-    let updateTimer;
-    let playingStem = 0;
-
-    let curr_track = document.createElement('audio');
-
-    curr_track.addEventListener('timeupdate', function() {
-      // Calculate the current time as a percentage of the duration
-      const value = (this.currentTime / this.duration) * 100;
-
-      // Update the width of the progress bar
-      const progressBar = document.querySelector('.player__slider-wrapper--seek .player__slider-progress-bar');
-      progressBar.style.width = `${value}%`;
-    });
-
-    let track_list = [
-      {
-        id: 1,
-        name: 'Nothing Else I Can Say Nothing Nothing',
-        artist: 'Lady Gaga',
-        bpm:120,
-        duration:'2:58',
-        image:
-          'https://upload.wikimedia.org/wikipedia/en/0/09/Eh%2C_Eh_%28Nothing_Else_I_Can_Say%29_by_Lady_Gaga_alternative_cover.png',
-        path: 'eheh.mp3',
-        tax: { genre: ['pop'], mood: ['cheesy'] },
-        active: true,
-        stem:true
-      },
-      {
-        id: 2,
-        name: 'Nothing Else I Can Say Nothing Nothing (Vocals)',
-        artist: 'Lady Gaga',
-        bpm:120,
-        duration:'2:58',
-        image:
-          'https://upload.wikimedia.org/wikipedia/en/0/09/Eh%2C_Eh_%28Nothing_Else_I_Can_Say%29_by_Lady_Gaga_alternative_cover.png',
-        path: 'ehehv.mp3',
-        tax: { genre: ['pop'], mood: ['cheesy'] },
-        active: true,
-        parent:1
-      },
-      {
-        id: 3,
-        name: 'Nothing Else I Can Say Nothing Nothing (Karaoke)',
-        artist: 'Lady Gaga',
-        bpm:120,
-        duration:'2:58',
-        image:
-          'https://upload.wikimedia.org/wikipedia/en/0/09/Eh%2C_Eh_%28Nothing_Else_I_Can_Say%29_by_Lady_Gaga_alternative_cover.png',
-        path: 'ehehi.mp3',
-        tax: { genre: ['pop'], mood: ['cheesy'] },
-        active: true,
-        parent:1
-      },
-      {
-        id: 4,
-        name: 'Run to the Hills',
-        artist: 'Iron Maiden',
-        bpm:120,
-        duration:'4:06',
-        image: 'https://upload.wikimedia.org/wikipedia/en/f/f9/Iron_Maiden_-_Run_to_the_Hills.jpg',
-        path: 'run.mp3',
-        tax: { genre: ['rock'], mood: ['aggressive'] },
-        active: true,
-        stem:false
-      },
-      {
-        id: 5,
-        name: 'Lollipop',
-        artist: 'Viuda e Hijas',
-        bpm:120,
-        duration:'2:21',
-        image: 'https://cdns-images.dzcdn.net/images/artist/918aa0132360d8950b3eb61fa93279bd/500x500.jpg',
-        path: 'lol.mp3',
-        tax: { genre: ['rock'], mood: ['cheesy'] },
-        active: true,
-        stem:false
-      }
-    ];
-
-    function loadTrack(track_index) {
-      clearInterval(updateTimer);
-      resetValues();
-
-      curr_track.src = track_list[track_index].path;
-      curr_track.load();
-
-      track_art.style.backgroundImage = 'url(' + track_list[track_index].image + ')';
-      track_name.textContent = track_list[track_index].name;
-      track_artist.textContent = track_list[track_index].artist; 
-      jQuery('#download-link').attr('href', track_list[track_index].path);
-
-      updateTimer = setInterval(seekUpdate, 1000);
-
-      curr_track.addEventListener('ended', nextTrack);
-    }
-
-    function resetValues() {
-      curr_time.textContent = '00:00';
-      total_duration.textContent = '00:00';
-      seek_slider.value = 0;
-    }
-
-    function playpauseTrack() {
-      if (!isPlaying) playTrack();
-      else pauseTrack();
-    }
-
-    function playTrack() {
-      curr_track.play();
-      isPlaying = true;
-      playpause_btn.innerHTML = '<i class="fa fa-pause-circle"></i>';
-    }
-
-    function pauseTrack() {
-      curr_track.pause();
-      isPlaying = false;
-      playpause_btn.innerHTML = '<i class="fa fa-play-circle"></i>';
-    }
-
-    function nextTrack() {
-      do {
-        if (track_index < track_list.length - 1) track_index += 1;
-        else track_index = 0;
-      } while (!track_list[track_index].active || (track_list[track_index].parent!=undefined && playingStem!=track_list[track_index].parent));
-      loadTrack(track_index);
-      playTrack();
-    }
-
-    function prevTrack() { 
-      do {
-        if (track_index > 0) track_index -= 1;
-        else track_index = track_list.length-1;
-      } while (!track_list[track_index].active || (track_list[track_index].parent!=undefined && playingStem!=track_list[track_index].parent));
-      loadTrack(track_index);
-      playTrack();
-    }
-
-    function seekTo() {
-      seekto = curr_track.duration * (seek_slider.value / 100);
-      curr_track.currentTime = seekto;
-    }
-
-    function setVolume() {
-      curr_track.volume = volume_slider.value / 100;
-    }
-
-    function seekUpdate() {
-      let seekPosition = 0;
-
-      if (!isNaN(curr_track.duration)) {
-        seekPosition = curr_track.currentTime * (100 / curr_track.duration);
-        seek_slider.value = seekPosition;
-
-        let currentMinutes = Math.floor(curr_track.currentTime / 60);
-        let currentSeconds = Math.floor(curr_track.currentTime - currentMinutes * 60);
-        let durationMinutes = Math.floor(curr_track.duration / 60);
-        let durationSeconds = Math.floor(curr_track.duration - durationMinutes * 60);
-
-        if (currentSeconds < 10) {
-          currentSeconds = '0' + currentSeconds;
-        }
-        if (durationSeconds < 10) {
-          durationSeconds = '0' + durationSeconds;
-        }
-        if (currentMinutes < 10) {
-          currentMinutes = '0' + currentMinutes;
-        }
-        if (durationMinutes < 10) {
-          durationMinutes = '0' + durationMinutes;
-        }
-
-        curr_time.textContent = currentMinutes + ':' + currentSeconds;
-        total_duration.textContent = durationMinutes + ':' + durationSeconds;
-      }
-    }
-
-    loadTrack(track_index);
-
-    jQuery('.taxonomy :checkbox').click(function () {
-      var value = jQuery(this).val(),
-        label = jQuery(this).closest('li').text().trim();
-      jQuery('.download-form').html(``);
-      jQuery('.songs-list li').hide();
-      var tags = jQuery('.taxonomy :checkbox:checked')
-        .map(function () {
-          return '.' + jQuery(this).val();
-        })
-        .get();
-
-      jQuery(tags.join('')).fadeIn();
-      jQuery(tags.join('')).find('input').clone().appendTo('.download-form');
-
-      var ids = jQuery(tags.join(''))
-        .map(function () {
-          return parseInt(jQuery(this).data('id'));
-        })
-        .get();
-
-      for (var i = 0; i < track_list.length; i++) {
-        if (ids.indexOf(track_list[i].id) === -1) {
-          track_list[i].active = false;
-        } else {
-          track_list[i].active = true;
-        }
-      }
-      if (this.checked)
-        jQuery('.currently-marked').append(
-          `<div class="mark song-list__search__selected-tags-item">${label}<i class="fa fa-times song-list__search__selected-tags-item__remove-btn" onclick="if(jQuery('[value=${value}]' ).prop('checked')){ jQuery(this).closest('.mark').remove(); jQuery( '[value=${value}]' ).click(); console.log('Esto es',this); }"></i></div>`
-        );
-
-      if (tags.join('') == '') {
-        jQuery('.songs-list li').fadeIn();
-      }
-    });
-
-    jQuery(function () {
-      //starting function
-
-      function sortTrackList() {
-        // console.log('Sorting', jQuery('#sort').val().trim());
-        switch (jQuery('#sort').val().trim()) {
-          case 'artist':
-            track_list.sort(function (a, b) {
-              return a.artist.localeCompare(b.artist);
-            });
-            break;
-
-          case 'song':
-            track_list.sort(function (a, b) {
-              return a.name.localeCompare(b.name);
-            });
-            break;
-        }
-        renderList();
-      }
-
-      jQuery('#sort').change(sortTrackList);
-
-      jQuery('.ac').autocomplete({
-        source: [
-          {
-            value: 'mood_cheesy',
-            label: 'Cheesy'
-          },
-          {
-            value: 'mood_aggressive',
-            label: 'Aggressive'
-          },
-          {
-            value: 'genre_pop',
-            label: 'Pop'
-          },
-          {
-            value: 'genre_rock',
-            label: 'Rock'
-          }
-        ],
-        focus: function (event, ui) {
-          jQuery('.ac').val(ui.item.label);
-          return false;
-        },
-        select: function (event, ui) {
-          jQuery('.ac').val(ui.item.label);
-          if (!jQuery('[value=' + ui.item.value + ']').prop('checked'))
-            jQuery('[value=' + ui.item.value + ']').click();
-
-          return false;
-        }
-      });
-      jQuery('.tabs-head li').click(function () {
-        var name = jQuery(this).data('for');
-        console.log('Err name',name);
-        jQuery('.tabs-body > *').removeClass('filters__tab--active');
-        jQuery('.tabs-head li').removeClass('filters__tab-label-item--active');
-        jQuery(this).addClass('filters__tab-label-item--active');
-        jQuery('.tab-' + name).addClass('filters__tab--active');
-      });
-
-      jQuery('.songs-list').html();
-
-      sortTrackList();
-      // jQuery('.signin').addClass('active');
-      // setTimeout(() => { $('.signin .playermodal__modal').addClass('scale-up'); }, 0);
-    }); //of starting function
-
-    function renderList() {
-      jQuery('.songs-list').html('');
-      for (var n = 0; n < track_list.length; n++) {
-        var track = track_list[n]; 
-        var classcss = '';
-        for (prefix in track.tax) {
-          for (var i = 0; i < track.tax[prefix].length; i++) {
-            classcss += prefix + '_' + track.tax[prefix][i] + ' ';
-          }
-        }
-        if(track.stem){
-          var parenttrack = track.id;
-          var html = `<li data-index="${n}" ` +
-            (!track.active ? ' style="display:none;" ' : '') +
-            ` data-id="${track.id}" class="${classcss} song-list__song">
-              <input type="hidden" name="song_paths[]" value="${track.path}">
-              <div class="track-art song-list__song-image" style="background-image:url('${track.image}');" ><i class="fa fa-play-circle song-list__song-image-play-icon"></i></div>
-              <div class="track-info song-list__song-info song-list__song-info--with-stems">
-              <div class="song-list__song-details">
-              <h4 class="title song-list__song-name">${track.name}</h4>
-              <p class="song-list__song-artist">${track.artist}</p>
-              </div>
-              <button class="stemlist_open closed song-list__song-open-stems-btn song-list__song-open-stems-btn--closed" data-track="${track.id}"><i class="fas fa-caret-down song-list__song-open-stems-btn-icon"></i></button>
-              </div>
-              <div class="song-list__song-duration">${track.duration}</div>
-              <div class="song-list__song-bpm">${track.bpm}</div>
-              <div class="song-list__song-actions">
-              <a class="song-list__song-add-to-playlist-btn"><i class="fa fa-plus" title="Add to Playlist"></i></a>
-              <a class="song-list__song-download-btn"><i class="fa fa-download" title="Download"></i></a>
-              </div>
-            </li>`; 
-            html+=`<ul class="stemlist song-list__stem-list" style="display:none;" data-parent="`+parenttrack+`">`;
-            if(track_list[n+1]!=undefined && track_list[n+1].parent==parenttrack){ 
-              while(track_list[++n].parent==parenttrack){
-                html+= `<li data-index="${n}" data-isstem="true" data-id="${track_list[n].id}" class="${classcss} song-list__song">
-                <input type="hidden" name="song_paths[]" value="${track_list[n].path}">
-                <div class="track-art song-list__song-image"  ><i class="fa fa-play-circle song-list__song-image-play-icon"></i></div>
-                <div class="track-info song-list__song-info">
-                <h4 class="title song-list__song-name">${track_list[n].name}</h4> 
-                </div>
-                <div class="song-list__song-duration">${track.duration}</div>
-              <div class="song-list__song-bpm">${track.bpm}</div>
-              <div class="song-list__song-actions">
-              <a class="song-list__song-add-to-playlist-btn"><i class="fa fa-plus" title="Add to Playlist"></i></a>
-              <a class="song-list__song-download-btn"><i class="fa fa-download" title="Download"></i></a>
-              </div>
-                      </li>`;
-                if(track_list[n+1].parent==undefined) break; 
-              }
-            }
-            html+=`</ul>`;
-
-        jQuery('.songs-list').append(html);
-        }
-        else{
-        jQuery('.songs-list').append(
-          `<li data-index="${n}" ` +
-            (!track.active ? ' style="display:none;" ' : '') +
-            ` data-id="${track.id}" class="${classcss} song-list__song">
-              <input type="hidden" name="song_paths[]" value="${track.path}">
-              <div class="track-art song-list__song-image" style="background-image:url('${track.image}');" ><i class="fa fa-play-circle song-list__song-image-play-icon"></i></div>
-              <div class="track-info song-list__song-info">
-              <h4 class="title song-list__song-name">${track.name}</h4>
-              <p class="song-list__song-artist">${track.artist}</p>
-              </div>
-              <div class="song-list__song-duration">${track.duration}</div>
-              <div class="song-list__song-bpm">${track.bpm}</div>
-              <div class="song-list__song-actions">
-              <a   class="song-list__song-add-to-playlist-btn"><i class="fa fa-plus" title="Add to Playlist"></i></a>
-              <a href="${track.path}" target="_blank" class="song-list__song-download-btn"><i class="fa fa-download" title="Download"></i></a>
-              </div>
-            </li>`
-                  );
-        }
-        if (n == track_list.length - 1) {
-          $('.songs-list li .stemlist_open').click(function(){
-            var track_id = parseInt($(this).data('track'));
-            if ($(this).hasClass('closed')){
-              playingStem = track_id;
-              $(this).removeClass("song-list__song-open-stems-btn--closed").removeClass('closed');
-              $(this).addClass("song-list__song-open-stems-btn--opened").addClass('opened');
-              $('.songs-list ul').css('display','none');
-              // $('[data-parent='+track_id+']').css('display','block');
-              animateOpeningStems(track_id);
-            } else {
-              playingStem = 0;
-              $(this).removeClass("song-list__song-open-stems-btn--opened").removeClass('opened');
-              $(this).addClass("song-list__song-open-stems-btn--closed").addClass('closed');
-              // $('.songs-list ul').css('display','none');
-              animateClosingStems(track_id);
-            }
-          });
-
-          function animateOpeningStems(track_id) {
-            $('[data-parent='+track_id+']').slideDown();
-            setTimeout(() => {
-              $('[data-parent='+track_id+']').css('opacity', 1);
-            }, 300);
-          }
-
-          function animateClosingStems(track_id) {
-            $('[data-parent='+track_id+']').css('opacity', 0);
-            setTimeout(() => {
-              $('[data-parent='+track_id+']').slideUp(300);
-            }, 300);
-          }
-
-          function ajaxRequest(data,cb){
-            /*
-            $.ajax({
-              data:data,
-              method:'POST',
-              success:cb,
-              url:injection.dataurl
-            });
-            */
-            setTimeout(cb,1500);
-          }
-
-          jQuery('.song-list__song-add-to-playlist-btn').click(function(){
-            // $('.add_to_playlist').addClass('active');
-            // $('.playermodal__modal').addClass('scale-up');
-            var song_id = $(this).closest('li').data('id');
-            $('.add_to_playlist').addClass('waiting');
-            ajaxRequest({
-              player_action:'playlist_selection_modal',
-              song_id:song_id
-            },function(result){
-              $('.add_to_playlist').removeClass('waiting');
-              $('.add_to_playlist').addClass('active');
-              setTimeout(() => {
-                $('.add_to_playlist .playermodal__modal').addClass('scale-up');
-              }, 1);
-              /*var d = JSON.parse(result);
-              if(d.msg=='Forbidden'){
-                $('.subscription_modal').addClass('visible');
-              }*/
-            });
-          });
-
-          jQuery('.song-list__song-download-btn').click(function(){
-            var song_id = $(this).closest('li').data('id');
-            $('.song_details').addClass('waiting');
-            ajaxRequest({
-              player_action:'playlist_selection_modal',
-              song_id:song_id
-            },function(result){
-              $('.song_details').removeClass('waiting');
-              $('.song_details').addClass('active');
-              setTimeout(() => { $('.song_details .playermodal__modal').addClass('scale-up'); }, 1);
-              /*var d = JSON.parse(result);
-              if(d.msg=='Forbidden'){
-                $('.subscription_modal').addClass('visible');
-              }*/
-            });
-          });
-
-          jQuery('.songs-list .song-list__song').click(function (e) {
-            if (jQuery(e.target).closest('.song-list__song-download-btn').length || 
-            jQuery(e.target).closest('.song-list__song-add-to-playlist-btn').length ||
-            jQuery(e.target).closest('.song-list__song-open-stems-btn').length) {
-              // If it's clicked on the download button, don't do anything
-              return;
-            }
-
-            var index = jQuery(this).closest('li').data('index');
-            track_index = index;
-            playingStem = $(this).closest('li').data('isstem')!=undefined ? 
-                          parseInt($(this).closest('li').data('id')) 
-                          : 0;
-            // if($(this).closest('li').data('isstem')==undefined){
-            //   $('.songs-list ul').css('display','none'); 
-            // }
-            // $('.stemlist_open').removeClass('fa-caret-up').addClass('fa-caret-down');
-            loadTrack(track_index);
-            playTrack();
-          });
-          jQuery('.songs-list input').clone().appendTo('.download-form');
-          jQuery('.songs-list,#download-button').show();
-        }
-      } 
-    }
-  </script>
-  <script src="./js/slider.js" defer></script>
+  <!-- <div class="carousel-videos graphic-section">
+    <div class="carousel-videos__wrapper graphic-section__wrapper blur-effect grain-effect">
+      <div class="carousel-videos__sections">
+        <div class="carousel-videos__section carousel-videos__section--dentists-section">
+          <video class="carousel-videos__section-video carousel-videos__section-video--mobile" autoplay="true" loop="true" muted playsinline>
+            <source src="https://cdn.shopify.com/videos/c/o/v/b4a9c0dc1fed473bb568362832c80e2d.mp4">
+            Video element is not supported in your browser.
+          </video>
+          <video class="carousel-videos__section-video carousel-videos__section-video--desktop" autoplay="true" loop="true" muted playsinline>
+            <source src="https://cdn.shopify.com/videos/c/o/v/379063d5525c41579ad338d2cd12cf3c.mp4">
+            Video element is not supported in your browser.
+          </video>
+        </div>
+      </div>
+    </div>
+  </div> -->
 </body>
+<script>
+  $('.carousel-videos--hero .carousel-videos__sections').slick({
+    infinite: true,
+    speed: 500,
+    fade: true,
+    cssEase: 'linear',
+    autoplay: true,
+    pauseOnHover: false,
+    autoplaySpeed: 10000,
+    prevArrow: $('.carousel-videos--hero .carousel-videos__btn--prev'),
+    nextArrow: $('.carousel-videos--hero .carousel-videos__btn--next'),
+  });
+  $('.carousel-videos--wonderful-story .carousel-videos__sections').slick({
+    infinite: true,
+    speed: 500,
+    fade: true,
+    cssEase: 'linear',
+    autoplay: true,
+    pauseOnHover: false,
+    autoplaySpeed: 10000,
+    prevArrow: $('.carousel-videos--wonderful-story .carousel-videos__btn--prev'),
+    nextArrow: $('.carousel-videos--wonderful-story .carousel-videos__btn--next'),
+  });
+</script>
 </html>
