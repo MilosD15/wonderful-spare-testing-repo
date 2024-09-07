@@ -1,0 +1,108 @@
+.quizzes-cta {
+  width: 100%;
+  aspect-ratio: 16 / 8;
+  overflow: hidden;
+  position: relative;
+
+  &__wrapper {
+    aspect-ratio: 16 / 8;
+    position: relative;
+  }
+
+  &__bg {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: auto;
+    transition: transform 300ms ease;
+  }
+
+  &__rotating-flare {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 75%;
+    animation: rotate_backlight 5s linear infinite;
+  }
+
+  &__content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: var(--color-black);
+    font-family: 'The Bold Font', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
+  }
+
+  &__title {
+    font-size: clamp(3.75rem, 4.5vw, 6rem);
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    margin: 0;
+  }
+
+  &__btn {
+    font-family: 'The Bold Font', sans-serif !important;
+    font-size: clamp(1.8rem, 2vw, 2.5rem) !important;
+    border: 0.2em solid #000000 !important;
+    margin-top: 0 !important;
+    width: max-content;
+  }
+
+  &__female-dentist {
+    position: absolute;
+    bottom: 3%;
+    right: 2%;
+    width: 34%;
+    height: auto;
+  }
+}
+
+/* MEDIA QUERIES */
+@media screen and (max-width: 81.25rem) {
+  /* 1300px */
+  .quizzes-cta {
+    aspect-ratio: 16 / 12;
+
+    &__wrapper {
+      aspect-ratio: 16 / 12;
+    }
+
+    &__bg {
+      left: 51%;
+      width: 144%;
+    }
+
+    &__rotating-flare {
+      width: 120%;
+    }
+
+    &__female-dentist {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  /* 1300px */
+  .quizzes-cta {
+    &__content {
+      gap: 1.5rem;
+    }
+
+    &__title {
+      font-size: 8vw !important;
+    }
+
+    &__btn {
+      font-size: 4vw !important;
+    }
+  }
+}

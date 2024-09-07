@@ -1,155 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Carousel videos</title>
-  <link rel="stylesheet" href="./css/blur-effect.css">
-  <link rel="stylesheet" href="./css/grain-effect.css">
-  <link rel="stylesheet" href="./css/graphic-section.css">
-  <link rel="stylesheet" href="./css/boilerplate.css">
-  <link rel="stylesheet" href="./css/carousel-videos.css">
-  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-  <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-  <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-  <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-</head>
-<body>
-  <div class="carousel-videos carousel-videos--hero graphic-section">
-    <div class="carousel-videos__wrapper graphic-section__wrapper blur-effect grain-effect">
-      <div class="carousel-videos__sections">
-        <div class="carousel-videos__section carousel-videos__section--walking-characters">
-          <video class="carousel-videos__section-video carousel-videos__section-video--mobile" autoplay="true" loop="true" muted playsinline>
-            <source src="https://cdn.shopify.com/videos/c/o/v/a2fefcd91fa74feab5b74577a821ef88.mp4">
-            Video element is not supported in your browser.
-          </video>
-          <video class="carousel-videos__section-video carousel-videos__section-video--desktop" autoplay="true" loop="true" muted playsinline>
-            <source src="https://cdn.shopify.com/videos/c/o/v/4680fef4d29c42c2b9590e3c8f4f16b9.mp4">
-            Video element is not supported in your browser.
-          </video>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quizzes CTA Section</title>
+    <link rel="stylesheet" href="./font/TheBoldFont/addTheBoldFont.css" />
+    <link rel="stylesheet" href="./css/blur-effect.css" />
+    <link rel="stylesheet" href="./css/grain-effect.css" />
+    <link rel="stylesheet" href="./css/graphic-section.css" />
+    <link rel="stylesheet" href="./css/vibrate.css" />
+    <link rel="stylesheet" href="./css/boilerplate.css" />
+    <link rel="stylesheet" href="./css/quizzes-cta.css" />
+    <script src="./js/quizzesCTA.js" type="module"></script>
+  </head>
+  <body>
+    <section class="quizzes-cta graphic-section" data-quizzes-cta>
+      <div class="quizzes-cta__wrapper graphic-section__wrapper grain-effect blur-effect">
+        <div class="quizzes-cta__bg" data-quizzes-cta-bg>
+          <img src="./images/quizzes-cta-bg.png" alt="Radial blue circles" />
         </div>
-        <div class="carousel-videos__section carousel-videos__section--kids-love-taste">
-          <video class="carousel-videos__section-video carousel-videos__section-video--mobile" autoplay="true" loop="true" muted playsinline>
-            <source src="https://cdn.shopify.com/videos/c/o/v/b104d6d39f7f4ba1b0788749de3a45f4.mp4">
-            Video element is not supported in your browser.
-          </video>
-          <video class="carousel-videos__section-video carousel-videos__section-video--desktop" autoplay="true" loop="true" muted playsinline>
-            <source src="https://cdn.shopify.com/videos/c/o/v/8594d78f3a68434393bdcf06d1f1a476.mp4">
-            Video element is not supported in your browser.
-          </video>
+        <div class="quizzes-cta__rotating-flare">
+          <img
+            src="https://cdn.shopify.com/s/files/1/1715/6045/files/flare2.png?v=1662051753"
+            alt="Rotating flare"
+          />
         </div>
-        <div class="carousel-videos__section carousel-videos__section--we-love-love-wonderful">
-          <video class="carousel-videos__section-video carousel-videos__section-video--mobile" autoplay="true" loop="true" muted playsinline>
-            <source src="https://cdn.shopify.com/videos/c/o/v/d384af210e684731bb39814f775a9e30.mp4">
-            Video element is not supported in your browser.
-          </video>
-          <video class="carousel-videos__section-video carousel-videos__section-video--desktop" autoplay="true" loop="true" muted playsinline>
-            <source src="https://cdn.shopify.com/videos/c/o/v/2774f573e0ab45fd89903bd43df6386c.mp4">
-            Video element is not supported in your browser.
-          </video>
+        <div class="quizzes-cta__female-dentist">
+          <img
+            src="https://cdn.shopify.com/s/files/1/1715/6045/files/dentist-female-character-2.webp?v=1689887324"
+            alt="Female Dentist Character"
+          />
+        </div>
+        <div class="quizzes-cta__content">
+          <h2 class="quizzes-cta__title">
+            What's the #1 <br />
+            product for you?
+          </h2>
+          <button class="quizzes-cta__btn main-btn main-btn--black-white">Take our quiz!</button>
         </div>
       </div>
-      <button class="carousel-videos__btn carousel-videos__btn--prev">
-        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
-          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-          <path d="M9 6l6 6l-6 6"></path>
-        </svg>
-      </button>
-      <button class="carousel-videos__btn carousel-videos__btn--next">
-        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
-          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-          <path d="M9 6l6 6l-6 6"></path>
-        </svg>
-      </button>
-    </div>
-  </div>
-  <div class="carousel-videos carousel-videos--wonderful-story graphic-section">
-    <div class="carousel-videos__wrapper graphic-section__wrapper blur-effect grain-effect">
-      <div class="carousel-videos__sections">
-        <div class="carousel-videos__section carousel-videos__section--made-with-love">
-          <video class="carousel-videos__section-video carousel-videos__section-video--mobile" autoplay="true" loop="true" muted playsinline>
-            <source src="https://cdn.shopify.com/videos/c/o/v/4d8a55a966174b8aa06b9c9b28f83e06.mp4">
-            Video element is not supported in your browser.
-          </video>
-          <video class="carousel-videos__section-video carousel-videos__section-video--desktop" autoplay="true" loop="true" muted playsinline>
-            <source src="https://cdn.shopify.com/videos/c/o/v/45b5089fcb4f449db7a4693ae29945f6.mp4">
-            Video element is not supported in your browser.
-          </video>
-        </div>
-        <div class="carousel-videos__section carousel-videos__section--save-teeth-save-money">
-          <video class="carousel-videos__section-video carousel-videos__section-video--mobile" autoplay="true" loop="true" muted playsinline>
-            <source src="https://cdn.shopify.com/videos/c/o/v/bd98acb0fe0849178e32a65417f76432.mp4">
-            Video element is not supported in your browser.
-          </video>
-          <video class="carousel-videos__section-video carousel-videos__section-video--desktop" autoplay="true" loop="true" muted playsinline>
-            <source src="https://cdn.shopify.com/videos/c/o/v/6e3c857507bf437e89545a98f80349b0.mp4">
-            Video element is not supported in your browser.
-          </video>
-        </div>
-        <div class="carousel-videos__section carousel-videos__section--additives-be-gone">
-          <video class="carousel-videos__section-video carousel-videos__section-video--mobile" autoplay="true" loop="true" muted playsinline>
-            <source src="https://cdn.shopify.com/videos/c/o/v/821b4f078d874fbd987413f4e6630dce.mp4">
-            Video element is not supported in your browser.
-          </video>
-          <video class="carousel-videos__section-video carousel-videos__section-video--desktop" autoplay="true" loop="true" muted playsinline>
-            <source src="https://cdn.shopify.com/videos/c/o/v/a55e9cab20434e928abde9292c577c91.mp4">
-            Video element is not supported in your browser.
-          </video>
-        </div>
-      </div>
-      <button class="carousel-videos__btn carousel-videos__btn--prev">
-        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
-          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-          <path d="M9 6l6 6l-6 6"></path>
-        </svg>
-      </button>
-      <button class="carousel-videos__btn carousel-videos__btn--next">
-        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
-          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-          <path d="M9 6l6 6l-6 6"></path>
-        </svg>
-      </button>
-    </div>
-  </div>
-  <!-- <div class="carousel-videos graphic-section">
-    <div class="carousel-videos__wrapper graphic-section__wrapper blur-effect grain-effect">
-      <div class="carousel-videos__sections">
-        <div class="carousel-videos__section carousel-videos__section--dentists-section">
-          <video class="carousel-videos__section-video carousel-videos__section-video--mobile" autoplay="true" loop="true" muted playsinline>
-            <source src="https://cdn.shopify.com/videos/c/o/v/b4a9c0dc1fed473bb568362832c80e2d.mp4">
-            Video element is not supported in your browser.
-          </video>
-          <video class="carousel-videos__section-video carousel-videos__section-video--desktop" autoplay="true" loop="true" muted playsinline>
-            <source src="https://cdn.shopify.com/videos/c/o/v/379063d5525c41579ad338d2cd12cf3c.mp4">
-            Video element is not supported in your browser.
-          </video>
-        </div>
-      </div>
-    </div>
-  </div> -->
-</body>
-<script>
-  $('.carousel-videos--hero .carousel-videos__sections').slick({
-    infinite: true,
-    speed: 500,
-    fade: true,
-    cssEase: 'linear',
-    autoplay: true,
-    pauseOnHover: false,
-    autoplaySpeed: 10000,
-    prevArrow: $('.carousel-videos--hero .carousel-videos__btn--prev'),
-    nextArrow: $('.carousel-videos--hero .carousel-videos__btn--next'),
-  });
-  $('.carousel-videos--wonderful-story .carousel-videos__sections').slick({
-    infinite: true,
-    speed: 500,
-    fade: true,
-    cssEase: 'linear',
-    autoplay: true,
-    pauseOnHover: false,
-    autoplaySpeed: 10000,
-    prevArrow: $('.carousel-videos--wonderful-story .carousel-videos__btn--prev'),
-    nextArrow: $('.carousel-videos--wonderful-story .carousel-videos__btn--next'),
-  });
-</script>
+    </section>
+  </body>
 </html>
