@@ -1,44 +1,117 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Quizzes CTA Section</title>
-    <link rel="stylesheet" href="./font/TheBoldFont/addTheBoldFont.css" />
-    <link rel="stylesheet" href="./css/blur-effect.css" />
-    <link rel="stylesheet" href="./css/grain-effect.css" />
-    <link rel="stylesheet" href="./css/graphic-section.css" />
-    <link rel="stylesheet" href="./css/vibrate.css" />
-    <link rel="stylesheet" href="./css/boilerplate.css" />
-    <link rel="stylesheet" href="./css/quizzes-cta.css" />
-    <script src="./js/quizzesCTA.js" type="module"></script>
-  </head>
-  <body>
-    <section class="quizzes-cta graphic-section" data-quizzes-cta>
-      <div class="quizzes-cta__wrapper graphic-section__wrapper grain-effect blur-effect">
-        <div class="quizzes-cta__bg" data-quizzes-cta-bg>
-          <img src="./images/quizzes-cta-bg.png" alt="Radial blue circles" />
+<html lang="en" id="swup">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wonderful Quizzes</title>
+  <link rel="stylesheet" href="./font/TheBoldFont/addTheBoldFont.css">
+  <link rel="stylesheet" href="./font/Friem/addFriem.css">
+  <link rel="stylesheet" href="./font/helvetica-now/helvetica-now.css">
+  <link rel="stylesheet" href="./css/boilerplate.css">
+  <link rel="stylesheet" href="./css/simple-form.css">
+  <link rel="stylesheet" href="./css/quizzes.css">
+  <script src="./js/quizzes.js" type="module"></script>
+</head>
+<body>
+  <button data-open-quizzes-modal-btn>Take our Quiz!</button>
+    
+  <div class="quizzes-form__container" data-quizzes-form-container data-state="close">
+    <div class="quizzes-form__overlay fade-in-element" data-quizzes-form-overlay></div>
+    <div class="quizzes-form__wrapper">
+      <form class="quizzes-form fade-in-element" data-quizzes-form>
+        <div class="quizzes-form__progress">
+          <div class="quizzes-form__progress-bar-container">
+            <div class="quizzes-form__progress-bar" data-quizzes-progress-bar></div>
+          </div>
+          <div class="quizzes-form__progress-number-container">
+            <span class="quizzes-form__progress-number">
+              <div class="quizzes-form__progress-number-inner-container" data-quizzes-progress-number>4</div>
+            </span>
+          </div>
         </div>
-        <div class="quizzes-cta__rotating-flare">
-          <img
-            src="https://cdn.shopify.com/s/files/1/1715/6045/files/flare2.png?v=1662051753"
-            alt="Rotating flare"
-          />
+        <input type="hidden" name="top_product_handles" id="topProductHandles">
+
+        <div class="quizzes-form__questions-container" data-quiz-questions-container></div>
+
+        <div class="quizzes-form__row quizzes-form__row--buttons elements-spaced" data-quiz-buttons-row>
+          <button class="quizzes-form__btn quizzes-form__btn--primary" data-quiz-prev-btn>&lt; Back</button>
+          <button class="quizzes-form__btn quizzes-form__btn--primary" data-quiz-next-btn>Next &gt;</button>
+          <input type="submit" class="quizzes-form__btn quizzes-form__btn--blue" value="Get Results" data-quiz-submit-btn>
         </div>
-        <div class="quizzes-cta__female-dentist">
-          <img
-            src="https://cdn.shopify.com/s/files/1/1715/6045/files/female-dentist-2--higher-res.png?v=1725706239"
-            alt="Female Dentist Character"
-          />
+
+        <button class="quizzes-form__btn quizzes-form__btn--secondary quizzes-form__btn--close-popup" data-close-popup-btn>Close</button>
+
+        <div class="quizzes-form__character quizzes-form__character--angles">
+          <img src="https://cdn.shopify.com/s/files/1/1715/6045/files/tyr-angles-blue.webp?v=1689887064" alt="Prophy Angles Soft character elated">
         </div>
-        <div class="quizzes-cta__content">
-          <h2 class="quizzes-cta__title">
-            What's the #1 <br />
-            product for you?
-          </h2>
-          <button class="quizzes-cta__btn main-btn main-btn--black-white">Take our quiz!</button>
+        <div class="quizzes-form__character quizzes-form__character--prophy">
+          <img src="https://cdn.shopify.com/s/files/1/1715/6045/files/tyr-prophy.webp?v=1688982680" alt="Prophy Paste character winking">
         </div>
+        <div class="quizzes-form__character quizzes-form__character--sticks">
+          <img src="https://cdn.shopify.com/s/files/1/1715/6045/files/tyr-stick.webp?v=1689887094" alt="Fluoride Varnish Sticks character smiling">
+        </div>
+        <div class="quizzes-form__character quizzes-form__character--cups">
+          <img src="https://cdn.shopify.com/s/files/1/1715/6045/files/tyr-varnish-cup.webp?v=1688982680" alt="Fluoride Varnish Cups character elated">
+        </div>
+      </form>
+    </div>
+    <div class="quizzes-form__error hidden" data-error-message-popup>
+      <span class="quizzes-form__error-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g clip-path="url(#clip0_503_51)">
+          <rect width="24" height="24" rx="12" fill="#FF0000"/>
+          <mask id="mask0_503_51" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+          <rect width="24" height="24" fill="#1F1B1B"/>
+          </mask>
+          <g mask="url(#mask0_503_51)">
+          <path d="M12 13.4L9.10005 16.3C8.91672 16.4833 8.68338 16.575 8.40005 16.575C8.11672 16.575 7.88338 16.4833 7.70005 16.3C7.51672 16.1167 7.42505 15.8833 7.42505 15.6C7.42505 15.3167 7.51672 15.0833 7.70005 14.9L10.6 12L7.70005 9.12501C7.51672 8.94168 7.42505 8.70835 7.42505 8.42501C7.42505 8.14168 7.51672 7.90835 7.70005 7.72501C7.88338 7.54168 8.11672 7.45001 8.40005 7.45001C8.68338 7.45001 8.91672 7.54168 9.10005 7.72501L12 10.625L14.875 7.72501C15.0584 7.54168 15.2917 7.45001 15.575 7.45001C15.8584 7.45001 16.0917 7.54168 16.275 7.72501C16.475 7.92501 16.575 8.16251 16.575 8.43751C16.575 8.71251 16.475 8.94168 16.275 9.12501L13.375 12L16.275 14.9C16.4584 15.0833 16.55 15.3167 16.55 15.6C16.55 15.8833 16.4584 16.1167 16.275 16.3C16.075 16.5 15.8375 16.6 15.5625 16.6C15.2875 16.6 15.0584 16.5 14.875 16.3L12 13.4Z" fill="white"/>
+          </g>
+          </g>
+          <defs>
+          <clipPath id="clip0_503_51">
+          <rect width="24" height="24" rx="12" fill="white"/>
+          </clipPath>
+          </defs>
+        </svg>
+      </span>
+      <span class="quizzes-form__error-text" data-error-message-text>Daj nesto</span>
+      <button class="quizzes-form__error-close-btn">
+        <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <mask id="mask0_502_50" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="25" height="25">
+          <rect x="0.414795" y="0.145203" width="24" height="24" fill="#D9D9D9"/>
+          </mask>
+          <g mask="url(#mask0_502_50)">
+          <path d="M12.4148 13.5452L9.51484 16.4452C9.33151 16.6285 9.09818 16.7202 8.81484 16.7202C8.53151 16.7202 8.29818 16.6285 8.11484 16.4452C7.93151 16.2619 7.83984 16.0285 7.83984 15.7452C7.83984 15.4619 7.93151 15.2285 8.11484 15.0452L11.0148 12.1452L8.11484 9.27022C7.93151 9.08688 7.83984 8.85355 7.83984 8.57021C7.83984 8.28688 7.93151 8.05355 8.11484 7.87021C8.29818 7.68688 8.53151 7.59521 8.81484 7.59521C9.09818 7.59521 9.33151 7.68688 9.51484 7.87021L12.4148 10.7702L15.2898 7.87021C15.4732 7.68688 15.7065 7.59521 15.9898 7.59521C16.2732 7.59521 16.5065 7.68688 16.6898 7.87021C16.8898 8.07021 16.9898 8.30771 16.9898 8.58271C16.9898 8.85771 16.8898 9.08688 16.6898 9.27022L13.7898 12.1452L16.6898 15.0452C16.8732 15.2285 16.9648 15.4619 16.9648 15.7452C16.9648 16.0285 16.8732 16.2619 16.6898 16.4452C16.4898 16.6452 16.2523 16.7452 15.9773 16.7452C15.7023 16.7452 15.4732 16.6452 15.2898 16.4452L12.4148 13.5452Z" fill="#000000"/>
+          </g>
+        </svg>
+      </button>
+    </div>
+
+    <template data-quiz-question-template>
+      <fieldset class="quizzes-form__row" data-quiz-question>
+        <div class="quizzes-form__question" data-quiz-question-title></div>
+        <div class="quizzes-form__options" data-quiz-question-options></div>
+      </fieldset>
+    </template>
+
+    <template data-quiz-option-template>
+      <div class="quizzes-form__option" data-quiz-option>
+        <input type="radio" class="quizzes-form__input">
+        <label class="quizzes-form__label">
+          <div class="quizzes-form__label-text"></div>
+        </label>
       </div>
-    </section>
-  </body>
+    </template>
+
+    <template data-quiz-email-question-template>
+      <fieldset class="quizzes-form__row quizzes-form__row--text-block" data-quiz-question data-self-changing-question="false" data-input-text-question="true">
+        <label class="quizzes-form__question" for="quizzes-email-field" data-quiz-question-title>Share your email for results</label>
+        <div class="quizzes-form__single-input-wrapper" data-quiz-question-options>
+          <input type="email" class="quizzes-form__input quizzes-form__input--text" id="quizzes-email-field" name="quizzes-email-field">
+        </div>
+      </fieldset>
+    </template>
+  </div>
+</body>
 </html>

@@ -1,0 +1,13 @@
+@font-face {
+    font-family: "Friem";
+    src: url('Friem.eot');
+    src: local('Friem'),
+        url('Friem.eot?#iefix') format('embedded-opentype'),
+        url('Friem.woff2') format('woff2'),
+        url('Friem.woff') format('woff'),
+        url('Friem.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+

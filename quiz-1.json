@@ -1,0 +1,765 @@
+{
+  "id": "1",
+  "name": "Find Your Perfect Product and Quantity",
+  "klaviyoTag": "Quiz Find Perfect Product Results",
+  "questions": [
+    {
+      "id": "1.1",
+      "questionText": "What kind of office are you?",
+      "klaviyoTag": "Office Type?",
+      "dataAttributes": {
+        "selfChangingQuestion": true
+      },
+      "optionsType": "radio",
+      "optionsGridType": "two-column-grid",
+      "labelType": "row",
+      "pointsType": "productType",
+      "options": [
+        {
+          "id": "1.1.1",
+          "optionText": "Family clinic",
+          "productPoints": [
+            {
+              "pointsTypeName": "adultProphyPaste",
+              "points": 2
+            },
+            {
+              "pointsTypeName": "prophyPaste",
+              "points": 2
+            },
+            {
+              "pointsTypeName": "varnishSticks",
+              "points": 1
+            },
+            {
+              "pointsTypeName": "varnishCups",
+              "points": 1
+            }
+          ]
+        },
+        {
+          "id": "1.1.2",
+          "optionText": "General dentist",
+          "productPoints": [
+            {
+              "pointsTypeName": "adultProphyPaste",
+              "points": 2
+            },
+            {
+              "pointsTypeName": "prophyPaste",
+              "points": 2
+            },
+            {
+              "pointsTypeName": "varnishSticks",
+              "points": 1
+            },
+            {
+              "pointsTypeName": "varnishCups",
+              "points": 1
+            }
+          ]
+        },
+        {
+          "id": "1.1.3",
+          "optionText": "Pediatric dentist",
+          "productPoints": [
+            {
+              "pointsTypeName": "prophyPaste",
+              "points": 2
+            },
+            {
+              "pointsTypeName": "varnishSticks",
+              "points": 2
+            },
+            {
+              "pointsTypeName": "varnishCups",
+              "points": 2
+            }
+          ]
+        },
+        {
+          "id": "1.1.4",
+          "optionText": "Orthodontist",
+          "productPoints": [
+            {
+              "pointsTypeName": "adultProphyPaste",
+              "points": 2
+            },
+            {
+              "pointsTypeName": "prophyPaste",
+              "points": 2
+            },
+            {
+              "pointsTypeName": "varnishSticks",
+              "points": 1
+            },
+            {
+              "pointsTypeName": "varnishCups",
+              "points": 1
+            }
+          ]
+        },
+        {
+          "id": "1.1.5",
+          "optionText": "Multi-Office/DSO",
+          "productPoints": [
+            {
+              "pointsTypeName": "adultProphyPaste",
+              "points": 2
+            },
+            {
+              "pointsTypeName": "prophyPaste",
+              "points": 2
+            },
+            {
+              "pointsTypeName": "varnishSticks",
+              "points": 1
+            },
+            {
+              "pointsTypeName": "varnishCups",
+              "points": 1
+            }
+          ]
+        },
+        {
+          "id": "1.1.6",
+          "optionText": "Other",
+          "productPoints": [
+            {
+              "pointsTypeName": "adultProphyPaste",
+              "points": 2
+            },
+            {
+              "pointsTypeName": "prophyPaste",
+              "points": 2
+            },
+            {
+              "pointsTypeName": "accessories",
+              "points": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1.2",
+      "questionText": "What is your primary concern when choosing flavors?",
+      "klaviyoTag": "Choosing-flavors Primary Concern?",
+      "dataAttributes": {
+        "selfChangingQuestion": true
+      },
+      "optionsType": "radio",
+      "optionsGridType": "row",
+      "labelType": "row",
+      "pointsType": "productFlavor",
+      "options": [
+        {
+          "id": "1.2.1",
+          "optionText": "Patient preference",
+          "productPoints": [
+            {
+              "pointsTypeName": "variety",
+              "points": 2
+            },
+            {
+              "pointsTypeName": "marshmallow",
+              "points": 1
+            },
+            {
+              "pointsTypeName": "strawberry",
+              "points": 1
+            },
+            {
+              "pointsTypeName": "smores",
+              "points": 1
+            },
+            {
+              "pointsTypeName": "mint",
+              "points": 1
+            },
+            {
+              "pointsTypeName": "chocolate",
+              "points": 1
+            }
+          ]
+        },
+        {
+          "id": "1.2.2",
+          "optionText": "Variety",
+          "productPoints": [
+            {
+              "pointsTypeName": "variety",
+              "points": 2
+            },
+            {
+              "pointsTypeName": "bubblegum",
+              "points": 1
+            },
+            {
+              "pointsTypeName": "mint",
+              "points": 1
+            }
+          ]
+        },
+        {
+          "id": "1.2.3",
+          "optionText": "Mildness",
+          "productPoints": [
+            {
+              "pointsTypeName": "strawberry",
+              "points": 2
+            },
+            {
+              "pointsTypeName": "plain",
+              "points": 4
+            }
+          ]
+        },
+        {
+          "id": "1.2.4",
+          "optionText": "Popularity",
+          "productPoints": [
+            {
+              "pointsTypeName": "strawberry",
+              "points": 1
+            },
+            {
+              "pointsTypeName": "marshmallow",
+              "points": 2
+            },
+            {
+              "pointsTypeName": "mint",
+              "points": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1.3",
+      "questionText": "How important is it to have flavors suitable for sensitive kids?",
+      "klaviyoTag": "Having Flavors For Sensitive Kids?",
+      "dataAttributes": {
+        "selfChangingQuestion": true
+      },
+      "optionsType": "radio",
+      "optionsGridType": "row",
+      "labelType": "row",
+      "pointsType": "productFlavor",
+      "options": [
+        {
+          "id": "1.3.1",
+          "optionText": "Very Important",
+          "productPoints": [
+            {
+              "pointsTypeName": "strawberry",
+              "points": 2
+            },
+            {
+              "pointsTypeName": "plain",
+              "points": 3
+            },
+            {
+              "pointsTypeName": "mint",
+              "points": -3
+            }
+          ]
+        },
+        {
+          "id": "1.3.2",
+          "optionText": "Somewhat Important",
+          "productPoints": [
+            {
+              "pointsTypeName": "strawberry",
+              "points": 1
+            },
+            {
+              "pointsTypeName": "plain",
+              "points": 2
+            },
+            {
+              "pointsTypeName": "mint",
+              "points": -1
+            }
+          ]
+        },
+        {
+          "id": "1.3.3",
+          "optionText": "Not Important",
+          "productPoints": [
+            {
+              "pointsTypeName": "chocolate",
+              "points": 1
+            },
+            {
+              "pointsTypeName": "mint",
+              "points": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1.4",
+      "questionText": "How many flavors do you like to stock in your office?",
+      "klaviyoTag": "Number Of Flavors In Stock?",
+      "dataAttributes": {
+        "selfChangingQuestion": true
+      },
+      "optionsType": "radio",
+      "optionsGridType": "row",
+      "labelType": "row",
+      "pointsType": "productFlavor",
+      "options": [
+        {
+          "id": "1.4.1",
+          "optionText": "1 - 2",
+          "productPoints": [
+            {
+              "pointsTypeName": "strawberry",
+              "points": 2
+            },
+            {
+              "pointsTypeName": "marshmallow",
+              "points": 2
+            },
+            {
+              "pointsTypeName": "mint",
+              "points": 2
+            }
+          ]
+        },
+        {
+          "id": "1.4.2",
+          "optionText": "3 - 4",
+          "productPoints": [
+            {
+              "pointsTypeName": "variety",
+              "points": 2
+            },
+            {
+              "pointsTypeName": "bubblegum",
+              "points": 1
+            },
+            {
+              "pointsTypeName": "smores",
+              "points": 2
+            }
+          ]
+        },
+        {
+          "id": "1.4.3",
+          "optionText": "5+",
+          "productPoints": [
+            {
+              "pointsTypeName": "variety",
+              "points": 3
+            },
+            {
+              "pointsTypeName": "mint",
+              "points": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1.5",
+      "questionText": "What most matters to you in packaging?",
+      "klaviyoTag": "Most Important in Packaging?",
+      "dataAttributes": {
+        "selfChangingQuestion": true
+      },
+      "optionsType": "radio",
+      "optionsGridType": "row",
+      "labelType": "row",
+      "pointsType": "productType",
+      "options": [
+        {
+          "id": "1.5.1",
+          "optionText": "Brush and varnish together",
+          "productPoints": [
+            {
+              "pointsTypeName": "varnishSticks",
+              "points": 1
+            }
+          ]
+        },
+        {
+          "id": "1.5.2",
+          "optionText": "Less plastic waste",
+          "productPoints": [
+            {
+              "pointsTypeName": "varnishCups",
+              "points": 1
+            }
+          ]
+        },
+        {
+          "id": "1.5.3",
+          "optionText": "More storage space",
+          "productPoints": [
+            {
+              "pointsTypeName": "varnishCups",
+              "points": 1
+            }
+          ]
+        },
+        {
+          "id": "1.5.4",
+          "optionText": "Fun looking products",
+          "productPoints": [
+            {
+              "pointsTypeName": "varnishCups",
+              "points": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1.6",
+      "questionText": "Which of our flavors do your patients love the most?",
+      "klaviyoTag": "Favorite Patient Flavors?",
+      "dataAttributes": {
+        "selfChangingQuestion": true
+      },
+      "optionsType": "radio",
+      "optionsGridType": "three-column-grid",
+      "labelType": "row",
+      "pointsType": "productFlavor",
+      "options": [
+        {
+          "id": "1.6.1",
+          "optionText": "Marshmallow",
+          "thumbnail": {
+            "src": "./images/quizzes-marshmallow.png",
+            "altText": "Marshmallow Character Picture"
+          },
+          "productPoints": [
+            {
+              "pointsTypeName": "marshmallow",
+              "points": 3
+            }
+          ]
+        },
+        {
+          "id": "1.6.1",
+          "optionText": "Marshmallow",
+          "thumbnail": {
+            "src": "./images/quizzes-marshmallow.png",
+            "altText": "Marshmallow Character Picture"
+          },
+          "productPoints": [
+            {
+              "pointsTypeName": "marshmallow",
+              "points": 3
+            }
+          ]
+        },
+        {
+          "id": "1.6.1",
+          "optionText": "Marshmallow",
+          "thumbnail": {
+            "src": "./images/quizzes-marshmallow.png",
+            "altText": "Marshmallow Character Picture"
+          },
+          "productPoints": [
+            {
+              "pointsTypeName": "marshmallow",
+              "points": 3
+            }
+          ]
+        },
+        {
+          "id": "1.6.1",
+          "optionText": "Marshmallow",
+          "thumbnail": {
+            "src": "./images/quizzes-marshmallow.png",
+            "altText": "Marshmallow Character Picture"
+          },
+          "productPoints": [
+            {
+              "pointsTypeName": "marshmallow",
+              "points": 3
+            }
+          ]
+        },
+        {
+          "id": "1.6.1",
+          "optionText": "Marshmallow",
+          "thumbnail": {
+            "src": "./images/quizzes-marshmallow.png",
+            "altText": "Marshmallow Character Picture"
+          },
+          "productPoints": [
+            {
+              "pointsTypeName": "marshmallow",
+              "points": 3
+            }
+          ]
+        },
+        {
+          "id": "1.6.1",
+          "optionText": "Marshmallow",
+          "thumbnail": {
+            "src": "./images/quizzes-marshmallow.png",
+            "altText": "Marshmallow Character Picture"
+          },
+          "productPoints": [
+            {
+              "pointsTypeName": "marshmallow",
+              "points": 3
+            }
+          ]
+        },
+        {
+          "id": "1.6.1",
+          "optionText": "Marshmallow",
+          "thumbnail": {
+            "src": "./images/quizzes-marshmallow.png",
+            "altText": "Marshmallow Character Picture"
+          },
+          "productPoints": [
+            {
+              "pointsTypeName": "marshmallow",
+              "points": 3
+            }
+          ]
+        },
+        {
+          "id": "1.6.1",
+          "optionText": "Marshmallow",
+          "thumbnail": {
+            "src": "./images/quizzes-marshmallow.png",
+            "altText": "Marshmallow Character Picture"
+          },
+          "productPoints": [
+            {
+              "pointsTypeName": "marshmallow",
+              "points": 3
+            }
+          ]
+        },
+        {
+          "id": "1.6.1",
+          "optionText": "Marshmallow",
+          "thumbnail": {
+            "src": "./images/quizzes-marshmallow.png",
+            "altText": "Marshmallow Character Picture"
+          },
+          "productPoints": [
+            {
+              "pointsTypeName": "marshmallow",
+              "points": 3
+            }
+          ]
+        },
+        {
+          "id": "1.6.1",
+          "optionText": "Marshmallow",
+          "thumbnail": {
+            "src": "./images/quizzes-marshmallow.png",
+            "altText": "Marshmallow Character Picture"
+          },
+          "productPoints": [
+            {
+              "pointsTypeName": "marshmallow",
+              "points": 3
+            }
+          ]
+        },
+        {
+          "id": "1.6.1",
+          "optionText": "Marshmallow",
+          "thumbnail": {
+            "src": "./images/quizzes-marshmallow.png",
+            "altText": "Marshmallow Character Picture"
+          },
+          "productPoints": [
+            {
+              "pointsTypeName": "marshmallow",
+              "points": 3
+            }
+          ]
+        },
+        {
+          "id": "1.6.1",
+          "optionText": "Marshmallow",
+          "thumbnail": {
+            "src": "./images/quizzes-marshmallow.png",
+            "altText": "Marshmallow Character Picture"
+          },
+          "productPoints": [
+            {
+              "pointsTypeName": "marshmallow",
+              "points": 3
+            }
+          ]
+        },
+        {
+          "id": "1.6.1",
+          "optionText": "Marshmallow",
+          "thumbnail": {
+            "src": "./images/quizzes-marshmallow.png",
+            "altText": "Marshmallow Character Picture"
+          },
+          "productPoints": [
+            {
+              "pointsTypeName": "marshmallow",
+              "points": 3
+            }
+          ]
+        },
+        {
+          "id": "1.6.1",
+          "optionText": "Marshmallow",
+          "thumbnail": {
+            "src": "./images/quizzes-marshmallow.png",
+            "altText": "Marshmallow Character Picture"
+          },
+          "productPoints": [
+            {
+              "pointsTypeName": "marshmallow",
+              "points": 3
+            }
+          ]
+        },
+        {
+          "id": "1.6.1",
+          "optionText": "Marshmallow",
+          "thumbnail": {
+            "src": "./images/quizzes-marshmallow.png",
+            "altText": "Marshmallow Character Picture"
+          },
+          "productPoints": [
+            {
+              "pointsTypeName": "marshmallow",
+              "points": 3
+            }
+          ]
+        },
+        {
+          "id": "1.6.1",
+          "optionText": "Marshmallow",
+          "thumbnail": {
+            "src": "./images/quizzes-marshmallow.png",
+            "altText": "Marshmallow Character Picture"
+          },
+          "productPoints": [
+            {
+              "pointsTypeName": "marshmallow",
+              "points": 3
+            }
+          ]
+        },
+        {
+          "id": "1.6.1",
+          "optionText": "Marshmallow",
+          "thumbnail": {
+            "src": "./images/quizzes-marshmallow.png",
+            "altText": "Marshmallow Character Picture"
+          },
+          "productPoints": [
+            {
+              "pointsTypeName": "marshmallow",
+              "points": 3
+            }
+          ]
+        },
+        {
+          "id": "1.6.2",
+          "optionText": "Strawberry",
+          "thumbnail": {
+            "src": "./images/quizzes-strawberry.png",
+            "altText": "Strawberry Character Picture"
+          },
+          "productPoints": [
+            {
+              "pointsTypeName": "strawberry",
+              "points": 3
+            }
+          ]
+        },
+        {
+          "id": "1.6.3",
+          "optionText": "Mint",
+          "thumbnail": {
+            "src": "./images/quizzes-mint.png",
+            "altText": "Mint Character Picture"
+          },
+          "productPoints": [
+            {
+              "pointsTypeName": "mint",
+              "points": 3
+            }
+          ]
+        },
+        {
+          "id": "1.6.4",
+          "optionText": "S'mores",
+          "thumbnail": {
+            "src": "./images/quizzes-smores.png",
+            "altText": "S'mores Character Picture"
+          },
+          "productPoints": [
+            {
+              "pointsTypeName": "smores",
+              "points": 3
+            }
+          ]
+        },
+        {
+          "id": "1.6.5",
+          "optionText": "Chocolate",
+          "thumbnail": {
+            "src": "./images/quizzes-chocolate.png",
+            "altText": "Chocolate Character Picture"
+          },
+          "productPoints": [
+            {
+              "pointsTypeName": "chocolate",
+              "points": 3
+            }
+          ]
+        },
+        {
+          "id": "1.6.6",
+          "optionText": "Bubblegum",
+          "thumbnail": {
+            "src": "./images/quizzes-bubblegum.png",
+            "altText": "Bubblegum Character Picture"
+          },
+          "productPoints": [
+            {
+              "pointsTypeName": "bubblegum",
+              "points": 3
+            }
+          ]
+        },
+        {
+          "id": "1.6.9",
+          "optionText": "Haven't tried Wonderful yet",
+          "dataAttributes": {
+            "singleSelectableOption": "true",
+            "colSpan": 3
+          },
+          "thumbnail": {
+            "src": "./images/quizzes-have-not-tried.png",
+            "altText": "Female Dentist Wondering about something Character Picture"
+          },
+          "productPoints": [
+            {
+              "pointsTypeName": "variety",
+              "points": 3
+            },
+            {
+              "pointsTypeName": "mint",
+              "points": 3
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
